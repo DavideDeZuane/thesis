@@ -1,0 +1,86 @@
+% Chapter 1
+
+\chapter{State of The Art} 
+
+\label{Chapter1}  
+
+%----------------------------------------------------------------------------------------
+
+% Define some commands to keep the formatting separated from the content 
+\newcommand{\keyword}[1]{\textbf{#1}}
+\newcommand{\tabhead}[1]{\textbf{#1}}
+\newcommand{\code}[1]{\texttt{#1}}
+\newcommand{\file}[1]{\texttt{\bfseries#1}}
+\newcommand{\option}[1]{\texttt{\itshape#1}}
+
+%----------------------------------------------------------------------------------------
+
+\section{Problem}
+
+Dire quelle che sono le problematiche del post quantum
+Esempi di problematiche:
+\begin{itemize}
+\item non esiste il diffie hellman post quantum
+\item i messaggi diventano molto più lunghi (problemi per frammentazione,
+	certificati molto più grandi, chiavi pubbliche piu grandi)
+\end{itemize}
+
+%----------------------------------------------------------------------------------------
+
+\section{Solution}
+
+Dare una panoramica delle attuali soluzioni tappabuchi che sono state
+realizzate. Andare per stack network, per esempio TLS PQ, IKEv2 PQ
+
+Dire quelle che sono le possibili soluzioni, in particolare perchè si è scelto
+di utilizzare IKEv2 Post quantum
+
+Parlare della libreria openquantumsafe
+
+\subsection{TLS-PQ}
+
+Dire che non è la cosa giusta da utilizzare in quanto non sono presenti RFC che
+abbiano ben definito come realizzarla. Inoltre sono presenti online numerose
+implementazioni custom di quest'ultima che tuttavia fanno uso sia di POst
+quantum crittograpy che Quantum Key Distribution
+
+\subsection{IKEv2-PQ}
+
+Parlare nel dettaglio della sua architettura e altro nel secondo capitolo
+
+Spiegare che ci concentreremo su questa per quanto riguarda le comunicazioni
+sicure poichè è presente un RFC, c'èuna comunity ampia che si occupa di questo
+problema
+
+
+Test strongswan tempistiche, dimnesioni post quantum
+Come peggiorano le prestazioni nel caso post quantum 
+
+(Confronto tra i due casi)
+
+Interessante vedere anche cosa cambia se utilizziamo scheduler real time
+
+- Spinqs+ no perchè è una merda
+- Guardare tutti gli algoritmi tranne quelli del 4° Round del NIST, l'unico da
+provare è bike (HQC no)
+
+
+Gli schemi sono divisi in 
+
+- l1:aes128
+- l3:aes192
+- l5:aes256
+
+Mentre per quanto riguarda i certificati vedre sia falcon che dilithium
+(Falcon in teoria dovrebbe essere più lento a causa di operazioni float)
+Sia in termini di dimensioni che di tempi
+
+
+
+Provare solo quello che è L1 (livello di sicurezza 
+
+
+\subsection{Liboqs}
+
+Dire che in generale per la transizione al post quantum fanno tutti utilizzo di
+questa libreria

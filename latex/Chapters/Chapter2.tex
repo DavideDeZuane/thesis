@@ -1,0 +1,226 @@
+% Chapter Template
+
+\newcommand{\drawkey}[3]{
+    \draw[line width=0.07cm, draw=#2] (#1) circle [radius=0.15cm];
+    \draw[line width=0.07cm, draw=#2] (#1 -0.15) -- ++(0,-0.4);
+    \draw[line width=0.07cm, draw=#2] (#1 -0.35) -- ++(-0.2,0);
+    \draw[line width=0.07cm, draw=#2] (#1 -0.51) -- ++(-0.2,0);
+    \node[below, text=#2] at (#1 -0.6) {#3}
+}
+
+% Definizione del comando per disegnare la parentesi
+\newcommand{\drawcurlybrace}[3]{% posizione finale, posizione iniziale, testo sopra
+    \draw [decorate,decoration={brace,amplitude=10pt,mirror},xshift=-4pt,yshift=0pt]
+    (#1) -- (#2) node [black,midway,xshift=-2cm] {};
+}
+
+\chapter{IKEv2}
+\label{Chapter2} 
+
+\section{Pre-Quantum}
+
+Andiamo a vedere quello che era il funzionamento di IKEv2 nel caso di crittografia classica.
+IkEv2 funziona sul principio di \textit{exchange} ovvero di richiesta e risposta, in Fig. \ref{fig:ike_exchange} sono riportate le varie interazioni tra 
+initiator e responder volte ad instaurare una Security Association.
+
+\begin{figure}[htbp]
+    \centering
+    \begin{tikzpicture}[node distance=1.5cm]
+        % Initiator and Responder
+        \node (entity1) [draw=red, rectangle] {Initiator (\textit{i})};
+        \node (entity2) [draw=blue, rectangle, right=of entity1, xshift=3cm] {Responder (\textit{r})};
+        \draw (entity1) -- ++(0,-6.7) coordinate (vertical1);
+        \draw (entity2) -- ++(0,-6.7);
+        % IKE_INIT_SA
+        \draw[-stealth] (entity1) ++(0,-1) -- (entity2 |-,-1) node[midway, above, text=red, font=\footnotesize] {$SA_{i1}, KE_i, N_i$};
+        \draw[stealth-] (entity1) ++(0,-2) -- (entity2 |-,-2) node[midway, above, text=blue, font=\footnotesize] {$SA_{r1},KE_r,N_r$};
+        % IKE_AUTH
+        \draw[-stealth] (entity1) ++(0,-3.5) -- (entity2 |-,-3.5) node[midway, above, text=red, font=\footnotesize] {$SK\{ID_i, CERT, \{AUTH\}^s_{pk}\}$};
+        \draw[stealth-] (entity1) ++(0,-4.5) -- (entity2 |-,-4.5) node[midway, above, text=blue, font=\footnotesize] {$SK\{ID_r, CERT, \{AUTH\}^s_{pk}\}$};
+        % CHILD_SA 
+        \node at (-1.7,-6) {\inlinecode{CHILD\_SA}};
+        \node at (-2,-1.5) {\inlinecode{IKE\_SA\_INIT}};
+        \node at (-1.7,-4) {\inlinecode{IKE\_AUTH}};
+        \draw (entity1) ++(0.2,-6) ellipse (0.2cm and 0.2cm);
+        \draw [-] (0.2,-6.2) -- (6.65,-6.2);
+        \draw [-] (0.2,-5.8) -- (6.65,-5.8) node[midway, above, font=\footnotesize]{$SK_d, N_i, N_r$};
+        \draw (entity2) ++(-0.2,-6) ellipse (0.2cm and 0.2cm);
+        % Key for encryption and authtenticatoin
+        \drawkey{-1, -2.3}{red}{$SK_{ei}$};
+        \drawkey{-1.8, -2.3}{red}{$SK_{ai}$};
+        \drawkey{8, -2.3}{blue}{$SK_{ar}$};
+        \drawkey{8.8, -2.3}{blue}{$SK_{er}$};
+        % Group
+        \drawcurlybrace{0,-1}{0, -2}{};
+        \drawcurlybrace{0,-3.5}{0, -4.5}{};
+    \end{tikzpicture}
+    \label{fig:ike_exchange}
+    \caption{Rappresentazioni delle fasi di IKEv2}
+\end{figure}
+
+
+\subsection{\textbf{IKE\_SA\_INIT}}
+
+Lo scopo di questa prima fase è quello di creare una \textbf{IKE SA}, che consenta di rendere sicure i successivi scambi di dati al fine di realizzare una \textbf{IPsec SA}.
+Dunque funge da apripista al fine di stabilire quelli che sono i parametri di sicurezza al fine di avere una comunicazione sicura. Per questo motivo in questo scambio i peer 
+si scambiano le seguenti informazioni:
+
+\begin{table}[htbp]
+    \centering
+    \caption{Tabella dei parametri e delle descrizioni}
+    \begin{tabular}{ll}
+        \toprule
+        \textbf{Parametro} & \textbf{Descrizione} \\
+        \midrule
+        \textit{SA} & Security Association, vengono negoziati i parametri per la SA\\
+        \textit{KE} & Key Exchange, e nel caso classico è l'esponente DH \\
+        \textit{N} & Nonce \\
+    \bottomrule
+    \end{tabular}
+\end{table}
+
+\noindent
+Al termine di questo scambio i due peer ottengono il \textit{DH Shared Secret} (indicato con $g^{ir}$), il quale insisme ai nonce, consentirà di ottenere 
+quelli che sono i parametri di sicurezza della $IKE SA$ al fine di instauare un canale sicuro, per approfondimenti in \href{AppendixA}{appendice}.
+
+% Tabella che riporta le varie funzioni delle chiavi
+
+\subsection{IKE\_AUTH}
+
+Il risultato della fase precedente è un canale sicuro su cui comunicare, in quanto è cifrato e utenticato. Si questo hanno luogo gli scambi per instaurare la IPsec SA.
+In questa fase i nodi si autenticano mutuamente:
+
+\begin{table}[htbp]
+    \centering
+    \caption{Tabella dei parametri e delle descrizioni}
+    \begin{tabular}{ll}
+        \toprule
+        \textbf{Parametro} & \textbf{Descrizione} \\
+        \midrule
+        \textit{AUTH} & Payload che deve essere firmato affinchè ci sia autenticazione \\
+        \textit{CERT} & Si allega il certificato digitale per la chiave pubblica \\
+        \textit{CERTQ} & Si fa richiesta al peer di fornire il certificato \\
+    \bottomrule
+    \end{tabular}
+\end{table}
+
+Tutto il contenuto appena descritto è protetto mediante le chiavi segrete di quella direzione. Ciò è indicato mediante la notazione $SK\{...\}$
+La modalità di autenticazione può essere: PSK, EAP oppure mediante chiave pubblica.
+
+\subsection{CHILD\_SA}
+
+
+\section{Problemi}
+
+IKEv2 utilizza come porotocollo a livello trasporto UDP per per inoltrare i propri messaggi. La maggior parte dei messaggi che i peer si scambiano hanno dimensioni relativamente piccole e
+quindi che non eccedono l'\textbf{MTU} di un pacchetto IP, tuttavia abbiamo degli scambi che richiedono un trasferimento di dati abbastanza grandi.
+
+Per esempio nel caso di autenticazione tramite pubkey nella fase di \inlinecode{IKE\_AUTH} è necessario trasferire il proprio certificato che in base allo schema di firma utilizzato
+può arrivare anche a diversi Kbyte di dimensione. In questi casi si verifica la frammentazione a livello IP.
+
+%Immagine frammentazione
+
+\begin{figure}[htbp]
+    \centering
+    \begin{tikzpicture}[node distance=2cm,>=Latex]
+        % Nodi
+        \node (initiator) [client] {Initiator};
+        \node (device) [router, right=of initiator] {Device};
+        \node (responder) [client, right=of device] {Responder};
+        \node (message) [messageclosed, fill=orange!40, minimum size=0.6cm] at (1.9,0.5) {};
+        \node (message2) [messageclosed, fill=gray!40, minimum size=0.6cm] at (1.2,0.5) {};
+        \node (drop) [messageclosed, fill=gray!40, minimum size=0.6cm, , font=\small, text=red] at (3,1) {};
+        \node (message3) [messageclosed, fill=orange!40, minimum size=0.6cm, , font=\small, text=red] at (4.5,0.5) {};
+
+        \draw[-] (initiator.east) -- (device.west);
+        \draw[-] (device.east) -- (responder.west);
+
+    \end{tikzpicture}
+    \vspace*{1cm}
+    \caption{Drop Pacchetti}
+    \label{fig:cgnatdrop}
+\end{figure}
+
+Diversi test hanno mostrato che nel caso in cui i peer si trovino in presenza di CGNAT potrebbero non istausarsi le SA. Questo è dovuto al fatto che i device degli ISP non
+consentono ai frammenti IP di passare attravers di loro, ovvero scartano i pacchetti e di conseguenza bloccano le comunicazioni IKE.
+Questo è riportato schematicamente in Fig. \ref{fig:cgnatdrop}.
+Questo drop dei pacchetti avviene perchè esistono numerosi vettori di attacco che fanno affidamento sulla frammentazione IP, per questo motivo gli ISP operano un filtro su questa tipologia di pacchetti.
+Ance se in teoria uno dei requisiti del CGNAT definito dagli RFC è proprio consentire la frammentazione.
+
+Per risolvere questa problematica e dunque consentire il passaggio dei messaggi attraverso i dispositivi di rete che non consentono il passaggio degli IP fragment attraverso 
+di loro nell' RFC 7283 viene introdotta la IKEv2 \textit{Message Fragmentation}. In cui la frammentazione dei messaggi è gestita direttamente da parte di chi implementa IKEv2
+
+\subsection{\inlinecode{IKE\_INTERMEDIATE}}
+
+Per evitare che nel trasferimento di grandi dati ciò avvenga viene introdotto uno scambio aggiuntivo. Questo scambio è introdotto per quei casi in cui la dimensione dei dati
+da trasferire ecceda la dimensione massima che causerebbe la frammentazione IP. Questo scambio va fatto dopo la \inlinecode{IKE\_INIT\_SA} e prima della \inlinecode{IKE\_AUTH} in questo
+modo è sia autenticato che cifrato tramite le chiavi negoziate dal primo scambio.
+
+\begin{figure}[htbp]
+    \centering
+    \begin{tikzpicture}[node distance=1.5cm]
+        % Initiator and Responder
+        \node (entity1) [draw=red, rectangle] {Initiator (\textit{i})};
+        \node (entity2) [draw=blue, rectangle, right=of entity1, xshift=3cm] {Responder (\textit{r})};
+        \draw (entity1) -- ++(0,-4.5) coordinate (vertical1);
+        \draw (entity2) -- ++(0,-4.5);
+        % IKE_AUTH
+        \draw[stealth-stealth] (entity1) ++(0,-1.5) -- (entity2 |-,-1.5) node[midway, above] {\inlinecode{IKE\_SA\_INIT}};
+        \draw[stealth-stealth] (entity1) ++(0,-2.5) -- (entity2 |-,-2.5) node[midway, above] {[\inlinecode{IKE\_INTERMEDIATE}]};
+        \draw[stealth-stealth] (entity1) ++(0,-3.5) -- (entity2 |-,-3.5) node[midway, above] {\inlinecode{IKE\_AUTH}};
+    \end{tikzpicture}
+    \caption{Scambio nuovo}
+    \label{fig:ikeintermediate}
+\end{figure}
+
+Questo scambio è posizionato qui in quanto nella \inlinecode{IKE\_SA\_INIT} per motivi di sicurezza non è possibile applicare la frammentazione.
+Di solito i messaggi sono piccoli abbastanza da non causare la frammentazione IP, tuttavia questo potrebbe cambiare se si utilizzano scambi di chiave QC-resistant; in quanto
+hanno chiavi pubbliche larghe e che quindi causerebbero frammentazione IP.
+
+Per questo viene aggiunto questo scambio che viene utilizzato per trasferire grandi quantità di dati.
+
+L'utilizzo principale di questo scambio è quello di trasferire le chiavi pubbliche QC-resistant, tuttavia in generale può essere utilizzzato per trasferire qualsiasi tipologia di dato.
+Quindi il principale utilizzo è quello di fare un \textbf{enforcing} delle chiavi negoziate tramite DH al fine di renderle QC-resistant. Infatti se durante questo scambio si scambiano 
+altre chiavi allora le coppie $\{SK_{a[i/r]}, SK_{e[i/r]}\}$ vengono aggiornate.
+
+Permette di realizzare Multiple Key Exchange
+Gli scambi di chiave aggiuntivi vengono aggiunti alla proposal tramite \inlinecode{PQ\_KEM\_1}
+
+
+
+Lo scambio \inlinecode{IKE\_FOLLOWUP\_KE} è introdotto specificatamente per trasferire dati sulla chiavi addizionali da realizzare in una CHILD SA.
+In questo caso le chiavi aggiuntive vengono utilizzate per aggiornare il KEYMAT
+
+
+
+\begin{itemize}
+    \item flag \inlinecode{IKE\_FRAGMENTATION\_SUPPORT}: il peer dice di supportare la frammentazione IKEv2, affinchè venga utilizzata entrambi i peer devono supportarla.
+    \item flag \inlinecode{INTERMEDIATE\_EXCHANGE\_SUPPORT}: il peer dice di supportare gli scambi intermedi
+\end{itemize}
+
+Una volta terminati gli scambi, per proteggere lo scambio \inlinecode{IKE\_AUTH} e gli scambi successivi vengno utilizzata le ultime chiavi calcolate
+Dato che i dati trasferiti in questi scambi aggiuntivi vanno autenticati si aggiungono all'\inlinecode{AUTH} payload che poi andrà 
+
+
+
+Il supporto per lo scambio aggiuntivo viene comunicato aggiungendo all'interno
+dell \inlinecode{IKE\_SA\_INIT} il flag \inlinecode{IKE\_INT\_SUP} (che sta per
+Intermediate Exchange Support).
+Se anche il responder lo supporta lo includerà nel messaggio di risposta dello
+scambio.
+
+
+
+
+Considerazioni, L'IKE fragmentation viene introdotta a causa del NAT tuttavia nel nostro caso di satelliti non ha senso utilizzarla in quanto non credo che si utilizzi
+il NAT soprattutto perchè introduce ritardi dovuti alla traduzione degli indirizzi
+
+
+
+\section{Post-Quantum}
+
+Un solo KEM con Kyber L1 usando come suite AES\_GCM has vabene come certificato dilithium L1
+
+Nel KEM quanti cifrano?
+
+Cioè l'initiator manda il certificato e poi il responder cifra 
