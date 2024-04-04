@@ -17,6 +17,43 @@
 
 \section{Problem}
 
+Quando è stato annunciato che il quantum-computer avrebbe rotto algoritmi come RSA, ECDSA e DES Internet aveva ormai decretato la fine della crittografia.
+Tuttavia c'è una sostanziale differenza tra rompere qualche crittosistema a rompere la crittografia, infatti esistono importanti classi di sistemi crittografici
+oltre a quelli precedentemente citati. Tra questi abbiamo:
+
+\begin{itemize}
+	\item Hash-based cryptography
+	\item Code-based cryptography
+	\item Lattice-based cryptography
+\end{itemize}
+
+Tuttavia il quantum computing porta ad aumentare la dimensione della chiave, in questo modo si perde di efficienza. Inoltre ha particolare effetto sui sistemi a chiave
+pubblica, mentre su quelli basati su chiave segreta o funzioni di hash non sono molto vulnerabili a questo.
+
+Le sfide della post-quantum cryptography sono le seguenti:
+
+\begin{itemize}
+	\item Occorre migliorare l'efficienza 
+	\item Occorre migliorarne l'usabilità
+\end{itemize}
+
+Ovvero occorre preparare il mondo per una transizione alla crittografia post-quantum
+
+\subsection{Efficency}
+
+Quanto deve essere la chiave per garantire lo stesso livello di sicurezza. Questa è necesssaria per i server in Internet che devono gestire centinaia di clienti ogni secondo.
+Google con il suo motore di ricerca già esegue il redirect su http per non rallnetare
+
+\subsection{Confidence}
+
+La community deve avere confidenza nei sistemi e affinchè ciò sia possbibile è richiesto tempo affincheè i crittoanalisti cerchino degli attacchi per questi sistemi. 
+Per esempio non esiste alcun problema studiato bene come il  Diffie-Hellman e la gente ha totale confidenza nei suoi confronti (da quando è stato introdotto non è mai stato rotto).
+
+
+\subsection{Usability}
+
+
+
 Dire quelle che sono le problematiche del post quantum
 Esempi di problematiche:
 \begin{itemize}

@@ -9,6 +9,16 @@ Riportare i vari approfondimenti riguardanti IKE
 per esempio come vengono generate le varie chiavi e il significato delle informazioni presenti tra i messaggi
 
 
+\subsection{Authentication}
+
+L'autenticazione dei peer avviene effettuando il sign (o calcolando il MAC) di un payload che dipende dagli scambi precedenti.
+In particolare questo payload è cmposto da un ottetto che viene autenticato in base alla modalità di aunteticazione scelta:
+
+\begin{itemize}
+    \item Nel caso di \textit{PubKey} questo viene firmato con la chiave privata del peer e ne viene allegato il certificato della chiave pubblica 
+    \item Nel caso di \textit{PSK} l'AUTH payload viene generato a partire dalla chiave condivisa a cui viene aggiunge della unpredicability tramite del padding e una prf
+\end{itemize}
+
 \section{Key Derivation}
 
 \subsection{IKE SA}
