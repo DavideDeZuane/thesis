@@ -1,0 +1,62 @@
+#!/bin/bash
+
+GREEN='\033[0;32m' 
+DEFAULT='\033[0m' 
+BOLD='\033[1m' 
+
+KB=8000
+
+sanitize() { 
+	tr -d '\n' | tr -d '[:space:]' 
+}
+
+pem_sanitize() { 
+	grep -v "BEGIN" | grep -v "END" | tr -d '=' | sanitize 
+}
+
+
+KEY=$1
+CERT="$1.crt"
+PUBKEY="$1.pubkey.pem"
+PRIKEY="$1.prikey.pem"
+
+
+SIG_OPT="-certopt ca_default -certopt no_validity -certopt no_serial -certopt no_subject -certopt no_extensions -certopt no_signame"
+
+
+key_type=$(openssl pkey -in $PRIKEY -text -noout | sed -n '1p' | awk '{print $1}')
+dim_pubk=$(openssl pkey -in $PRIKEY -text -noout -pubout | grep -v "public" | grep -v "PQ" | sed 's/://g' | sanitize | wc -c)
+dim_pubk=$(echo "scale=2; $dim_pubk * 4 / $KB" | bc)
+dim_prik=$(openssl pkey -in $PRIKEY -text -noout | sed -n '/PQ key material:/,/PQ key material/p' | grep -v "PQ" | sed 's/://g' | sanitize | wc -c)
+dim_prik=$(echo "scale=2; $dim_prik * 4 / $KB" | bc)
+dim_file=$(stat -c "%s" "$PRIKEY")
+dim_file=$(echo "scale=2; $dim_file / 1024" | bc)
+dim_ovhe=$(echo "scale=2; $dim_file - ($dim_pubk + $dim_prik)" | bc)
+
+
+alg_sig=$(openssl x509 -in $CERT -text -noout $SIG_OPT | grep 'Signature Algorithm' | awk -F ': ' '{print $2}')
+dim_sig=$(openssl x509 -in $CERT -text -noout $SIG_OPT | grep -v 'Signature Algorithm' | grep -v 'Signature Value' | sed 's/://g' | sanitize | wc -c)
+dim_sig=$(echo "scale=2; $dim_sig * 4 / $KB" | bc)
+dim_cer=$(stat -c "%s" "$CERT")
+dim_cer=$(echo "scale=2; $dim_cer / 1024" | bc)
+dim_ovh=$(echo "scale=2; $dim_cer - ($dim_pubk + $dim_sig)" | bc)
+
+echo '--------------------------------------------------------------------'
+echo 'Key'
+echo '--------------------------------------------------------------------'
+echo -e "${BOLD}- Key Type${DEFAULT}: \t\t\t${GREEN}$key_type ${DEFAULT}"
+echo -e "${BOLD}- Private Key Dimension${DEFAULT}: \t${GREEN}$dim_prik Kbyte${DEFAULT}"
+echo -e "${BOLD}- Public Key Dimension${DEFAULT}: \t${GREEN}$dim_pubk Kbyte${DEFAULT}"
+echo -e "${BOLD}- File Dimension${DEFAULT}: \t\t${GREEN}$dim_file Kbyte${DEFAULT}"
+echo -e "${BOLD}- Bloat${DEFAULT}: \t\t\t${GREEN}$dim_ovhe Kbyte${DEFAULT}"
+echo ""
+
+echo '--------------------------------------------------------------------'
+echo 'Certificate'
+echo '--------------------------------------------------------------------'
+echo -e "${BOLD}- Algorithm${DEFAULT}: \t\t\t${GREEN}$alg_sig${DEFAULT}"
+echo -e "${BOLD}- Signature Dimension${DEFAULT}: \t\t${GREEN}$dim_sig Kbyte${DEFAULT}"
+echo -e "${BOLD}- File Dimension${DEFAULT}: \t\t${GREEN}$dim_cer Kbyte${DEFAULT}"
+echo -e "${BOLD}- Bloat${DEFAULT}: \t\t\t${GREEN}$dim_ovh Kbyte${DEFAULT}"
+echo ""
+

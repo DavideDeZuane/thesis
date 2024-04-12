@@ -1,6 +1,6 @@
 [x] farsi inviare il materiale ESA da Paolo
-[] definire quelle che sono le metriche di valutazione delle perfomrance degli
-algoritmi
+[] definire quelle che sono le metriche di valutazione delle perfomrance
+[] vedere certificati creati con il container funzionano con strongswan
 
 Configuration A (Only classical security)
 

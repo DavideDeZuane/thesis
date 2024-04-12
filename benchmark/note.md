@@ -22,11 +22,44 @@ Le chiavi sono in formato `pem` che codifica le informazioni in base64, quindi o
 
 In RSA abbiamo che le la dimensoine della chiave pubblica non è 4096 perchè oltre al modulo contiene anche il valore degli esponenti
 
+### OCSP
+
+Online Certificate Status Protocol.
+Un modo intelligente per gestire agevolmente i certificati senza mettere i root certificate su ogni peer è specificare l'ocsp uri all'interno della configurazione di strongswan. In questo modo sarà lui a dire se il certificato è valido o meno
+
 ## Configuration
 
 Il file `strongswan.conf` è il file di configurazione letto da libstrongswan al
 momento di inizializzazione o di reloading. (Il file legacy di ipsec.conf è
 troppo oneroos da leggere)
+
+## PQ-Openssl
+
+Per vedere quelli che sono gli algoritmi di firma che si possono utilizzare con oqsprovider
+```
+./pq openssl list -signature-algorithms -provider oqsprovider
+```
+Per generare una chiave e un certificato da root:
+
+```
+openssl req -x509 -new -newkey dilithium5 -keyout dilithium5.prikey.pem -out dilithium5.crt -nodes -subj "/CN=oqstest" -days 365
+```
+Una volta generati quelli da firmare bisogna generare una csr (richiesta di certificato)
+```
+openssl req -new -newkey dilithium3 -keyout dilithium3_srv.key -out dilithium3_srv.csr -nodes -subj "/CN=test server" -config openssl/apps/openssl.cnf
+o
+```
+Per firmare la richiesta di certificato con quella della CA:
+
+```
+openssl x509 -req -in dilithium3_srv.csr -out dilithium3_srv.crt -CA dilithium3_CA.crt -CAkey dilithium3_CA.key -CAcreateserial -days 365
+```
+
+
+
+
+In una chiave dilithium abbiamo chiave pubblica e chiave privata.
+Quindi quando andiamo a printare la chiave privata ci vengono mostrate due parti di cui una è la chiave pubblica (la seconda) mentre la priva è la chiave privata.
 
 ### Docker
 
@@ -76,22 +109,3 @@ connections {
 ```
 
 
-## Docker
-
-Per far staiblire la connessione tra i due host utilizzare il comando:
-
-```
-swanctl --initiate --child <name> > /dev/null
-```
-
-
-
-
-
-
-
-IKE_SA_INIT request 0 [ SA KE No N(NATD_S_IP) N(NATD_D_IP) N(FRAG_SUP) N(HASH_ALG) N(REDIR_SUP) N(IKE_INT_SUP) V ]
-
-- KE è il payload tradizionale che contiene il fattore pubblico dello scambio
-  ECDH
-- due flag aggiuntivi FRAG_SUP e IKE_INT_SUP
