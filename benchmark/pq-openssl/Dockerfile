@@ -69,8 +69,7 @@ RUN $BUILD_DIR/bin/openssl list -providers -verbose -provider oqsprovider
 RUN apt-get update && apt-get install -y bc
 RUN apt-get clean
 
-COPY script/cert /usr/local/bin/cert
-RUN chomd +x /usr/local/bin/cert
+COPY script/* /usr/local/bin/
 
 
 # Default command

@@ -24,3 +24,15 @@ Configuration C (Post-quantum security)
 - SHA-512 
 - Kyber\_L1 
 - Falcon\_L2
+
+Vedere quelli che sono i parametri principali e valutare le varie configurazioni rispetti a questo.
+
+- tempo
+- dimensione
+- utilizzo cpu
+
+
+
+
+Simulare rumore nel canale, con probabilità basse cambiare dei bit. 
+

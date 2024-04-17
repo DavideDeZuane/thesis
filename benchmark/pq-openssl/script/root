@@ -1,0 +1,34 @@
+#!/bin/bash
+
+DIR="/workspace"
+
+print_usage() {
+    	echo "Opzioni:"
+    	echo "  -h, Mostra l'utilizzo del comando"
+    	echo "  -s, Specificare l'algoritmo di firma da utilizzare"
+	echo "  -d, Speficicare il DN da utilizzare per la CA"
+}
+
+
+
+while getopts ":s:d:h:" option; do
+	case $option in 
+		s) ALG="$OPTARG";;
+		d) DN="$OPTARG";;
+		h) print_usage; exit 0;; 
+	esac
+done
+
+if [ -z $ALG ] || [ -z $DN ]
+then
+	print_usage
+	exit 1
+fi
+
+echo "Generating CA Key and Certificate..."
+openssl req -x509 -new -newkey $ALG -keyout $DIR/CA.$ALG.key -out $DIR/CA.$ALG.crt -nodes -subj $DN -days 365
+
+echo 'Generated:'
+echo "CA.$ALG.key"
+echo "CA.$ALG.crt"
+
