@@ -1,5 +1,6 @@
 #!/bin/bash
 # Aggiungere un flag che permette di eseguire i comandi direttamente all'interno del container in modo tale da utilizzare per esempio pki con primitive post quantum
+# Aggiungere un flag per eseguire una bash all'interno del container, per esempio per vedere quelli che sono gli algoritmi supportati da swanctl
 
 GREEN='\033[0;32m'
 YELLOW='\033[0;33m'
@@ -10,6 +11,8 @@ declare -A connections=(
  ["alpha"]="aes128ctr-sha256-x22519"
  ["bravo"]="aes128ctr-sha256-kyber1"
  ["charlie"]="aes256ctr-sha512-kyber3"
+ ["delta"]="aes128ctr-sha256-modp3072-ke1_kyber1"
+ ["echo"]="aes128ctr-sha256-ecp256-ke1_hqc1"
 )
 
 # ENV Variable 
@@ -18,12 +21,18 @@ RESPONDER="192.168.0.2"
 CONTAINER="carol"
 
 usage() {
-    echo "Usage: $(basename "$0") [-h] [-l] [-i CONNECTION_NAME] [-p COMMAND]"
-    echo "Options:"
-    echo "  -h                 Show this help message"
-    echo "  -l                 List available connections and details"
-    echo "  -i CONNECTION_NAME Initiate the specified connections"
-    echo "  -p, --pki COMMAND  Run the specified command with pki tool"
+	echo -e "${RED}"
+	echo -e '   (\"-  ╔═╗┌┬┐┬─┐┌─┐┌┐┌┌─┐┌─┐┬ ┬┌─┐┌┐┌'
+	echo -e '\\\_\     ╚═╗ │ ├┬┘│ │││││ ┬└─┐│││├─┤│││'
+	echo -e '<____)   ╚═╝ ┴ ┴└─└─┘┘└┘└─┘└─┘└┴┘┴ ┴┘└┘'
+	echo -e "${DEFAULT}"
+	echo "Usage: $(basename "$0") [-h] [-l] [-i CONNECTION_NAME] [-p COMMAND] [-n ATTEMPS]"
+	echo "Options:"
+	echo "  -h                 Show this help message"
+	echo "  -l                 List available connections and details"
+	echo "  -i CONNECTION_NAME Initiate the specified connections"
+	echo "  -n ATTEMPS         Initiate the specified connections"
+	echo "  -p, --pki COMMAND  Run the specified command with pki tool"
 }
 
 run_pki() {
@@ -81,10 +90,21 @@ pre_command() {
     fi
     # Terminating existing connection
     echo -en "Terminating existing connections... \t\t\t\t\t"
-    if sudo docker exec "$CONTAINER" swanctl --list-sas | grep "$CONN" > /dev/null; then
-        sudo docker exec "$CONTAINER" bash -c "$PRE_CMD" > /dev/null
+    if docker exec "$CONTAINER" swanctl --list-sas | grep "$CONN" > /dev/null; then
+        docker exec "$CONTAINER" bash -c "$PRE_CMD" > /dev/null
     fi
     echo -e "${GREEN}Completed${DEFAULT}"
+}
+
+listening() {
+
+		echo -en "Listening on interface ${YELLOW}$INTERFACE${DEFAULT} for new ${YELLOW}$CONN${DEFAULT} connection... \t"
+		sudo timeout --preserve-status 6 tcpdump -tt -i $INTERFACE -w init -n "udp port 500"  > /dev/null 2>&1 &
+		sudo timeout --preserve-status 6 tcpdump -tt -i $INTERFACE -w auth -n "udp port 4500 or (ip[6:2] & 0x1fff != 0)"  > /dev/null 2>&1 &
+		sleep 1
+		sudo docker "exec" $CONTAINER bash -c "$COMMAND" > /dev/null
+		sleep 5
+		echo -e "${GREEN}Completed${DEFAULT}"
 }
 
 main(){
@@ -94,11 +114,13 @@ main(){
     	fi
 	local switch=0
 	local CMD=""
+	local N=1
 
-	while getopts ":hli:p:" opt; do
+	while getopts ":hli:n:p:" opt; do
 		case $opt in
 			h) usage; exit 0;;
 			l) switch=1;;
+			n) N="$OPTARG";;
 			i) CONN="$OPTARG";;
 			p) CMD="$OPTARG";;
 		esac
@@ -114,81 +136,73 @@ main(){
 		exit 0
 	fi
 
-	if [ -n "$CONN" ]; then
+	tot_auth_time=0
+	tot_init_time=0
+	tot_inte_time=0
 
-		OUTD="logs"
-		TIMESTAMP=$(date +"%s")
-		OUTF="./logs/$CONN.$TIMESTAMP.log"
+	if [ -n "$CONN" ]; then
+		
 		COMMAND="swanctl --initiate --ike $CONN"
 		PRE_CMD="swanctl --terminate --ike $CONN"
-		pre_command
-		# Listening with tcpdump and starting connection
-		#
-		INTERFACE=$(sudo ./utils/dockerveth.sh 2> /dev/null | grep $CONTAINER | awk '{print $2}')
-		echo -en "Listening on interface ${YELLOW}$INTERFACE${DEFAULT} for new ${YELLOW}$CONN${DEFAULT} connection... \t"
-		sudo timeout --preserve-status 6 tcpdump -tt -i $INTERFACE -w init -n "udp port 500"  > /dev/null 2>&1 &
-		sudo timeout --preserve-status 6 tcpdump -tt -i $INTERFACE -w auth -n "udp port 4500 or (ip[6:2] & 0x1fff != 0)"  > /dev/null 2>&1 &
-		sleep 1
-		sudo docker "exec" $CONTAINER bash -c "$COMMAND" > $OUTF
-		sleep 5
-		echo -e "${GREEN}Completed${DEFAULT}"
+		for((att=1; att<=$N; att++))
+		do
+			pre_command
+			INTERFACE=$(sudo ./utils/dockerveth.sh 2> /dev/null | grep $CONTAINER | awk '{print $2}')
+			listening
+			echo -en "Genereting the results for establishing connection... \t\t\t"
+			tcpdump -tt -r init -e -n 2> /dev/null > init.packet
+			tcpdump -tt -r auth -e -n 2> /dev/null > intero.packet
+			tcpdump -tt -r auth -e -n 2> /dev/null | awk '/ikev2_auth\[I\]/ || /ikev2_auth\[R\]/{flag=1} flag' > auth.packet
+			# Generating INIT information
+			init_time=$(time_difference "init")
+			init=$(tcpdump -r init -e 2> /dev/null | length)
+			init_i=$(echo $init | awk -F' ' '{print $1}')
+			init_r=$(echo $init | awk -F' ' '{print $2}')
+			# Generating AUTH information
+			auth_time=$(time_difference "auth")
+			auth_i=$(reassemble $(tcpdump -r auth -e -n "udp and src host $INITIATOR" 2>/dev/null | awk '/ikev2_auth\[I\]/ || /ikev2_auth\[R\]/{flag=1} flag' | length))
+			auth_r=$(reassemble $(tcpdump -r auth -e -n "udp and src host $RESPONDER" 2>/dev/null | awk '/ikev2_auth\[I\]/ || /ikev2_auth\[R\]/{flag=1} flag' | length))
+			# Checking presence of INTERMEDIATE
+			if [ $(stat -c %s "intero.packet") -gt $(stat -c %s "auth.packet") ]; then
+				inte_time=$(echo "$(time_difference "intero") - $auth_time" | bc)
+				inte_i=$(echo "$(reassemble $(tcpdump -tt -r auth -e -n "udp and src host $INITIATOR" 2> /dev/null | length))-$auth_i" | bc) 
+				inte_r=$(echo "$(reassemble $(tcpdump -tt -r auth -e -n "udp and src host $RESPONDER" 2> /dev/null | length))-$auth_r" | bc)
+				tot_inte_time=$(echo "$inte_time + $tot_inte_time" | bc)
+			else
 
-		echo -en "Genereting the results for establishing connection... \t\t\t"
+				inte_time="0"
+				inte_i="0"
+				inte_r="0"
+			fi
+			echo -e "${GREEN}Completed${DEFAULT}"
 
-		tcpdump -tt -r init -e -n 2> /dev/null > init.packet
-		tcpdump -tt -r auth -e -n 2> /dev/null | awk '/#43/ || /fragmented IP/ {print}' > intermediate.packet
-		tcpdump -tt -r auth -e -n 2> /dev/null | awk '/ikev2_auth\[I\]/ || /ikev2_auth\[R\]/{flag=1} flag' > auth.packet
+			{
+				printf 'Phase\tInitiator\tResponder\tTime\n';
+				printf '%s\t%s\t%s\t%s\n' "INIT" "$init_i byte" "$init_r byte" "0$init_time s";
+				printf '%s\t%s\t%s\t%s\n' "INTERMEDIATE" "$inte_i byte" "$inte_r byte" "0$inte_time s";
+				printf '%s\t%s\t%s\t%s\n' "AUTH" "$auth_i byte" "$auth_r byte" "0$auth_time s";
 
-		init_time=$(time_difference "init")
-		init=$(tcpdump -r init -e 2> /dev/null | length)
-		init_i=$(echo $init | awk -F' ' '{print $1}')
-		init_r=$(echo $init | awk -F' ' '{print $2}')
+			} | ./utils/table.sh 4 green
+			tot_auth_time=$(echo "scale=6; $auth_time + $tot_auth_time" | bc)
+			echo "Errore prima di questa istruzione"
+			tot_init_time=$(echo "scale=6; $init_time + $tot_init_time" | bc)
+		done
 
-		# Intermediate info
-		if [ -s intermediate.packet ]; then
-			inte_time=$(time_difference "intermediate")
-			inte_i=$(reassemble $(tcpdump -r auth -e -n "udp and src host $INITIATOR" 2> /dev/null | awk '/#43/ || /fragmented IP/ {print}' | length))
-			inte_r=$(reassemble $(tcpdump -r auth -e -n "udp and src host $RESPONDER" 2> /dev/null | awk '/#43/ || /fragmented IP/ {print}' | length))
-		else
-			inte_time="N/S"
-			inte_i="N/S"
-			inte_r="N/S"
+		if [ $N -gt 1 ]; then
+			ave_auth_time=$(echo "scale=6; $tot_auth_time / $N" | bc)
+			ave_init_time=$(echo "scale=6; $tot_init_time / $N" | bc)
+			echo "Avarage INIT Time: 0$ave_init_time"
+			if [ $tot_inte_time != "0" ]; then
+				ave_inte_time=$(echo "scale=6; 0$tot_inte_time / $N" | bc)
+				echo "Avarage INTERMEDIATE Time: 0$ave_inte_time"
+			fi
+			echo "Avarage AUTH Time: 0$ave_auth_time"
 		fi
 
-		# Auth info
-		auth_time=$(time_difference "auth")
-		auth_i=$(reassemble $(tcpdump -r auth -e -n "udp and src host $INITIATOR" 2>/dev/null | awk '/ikev2_auth\[I\]/ || /ikev2_auth\[R\]/{flag=1} flag' | length))
-		auth_r=$(reassemble $(tcpdump -r auth -e -n "udp and src host $RESPONDER" 2>/dev/null | awk '/ikev2_auth\[I\]/ || /ikev2_auth\[R\]/{flag=1} flag' | length))
-
-		echo -e "${GREEN}Completed${DEFAULT}"
-		{
-			printf 'Phase\tInitiator\tResponder\tTime\n';
-			printf '%s\t%s\t%s\t%s\n' "INIT" "$init_i byte" "$init_r byte" "0$init_time s";
-			printf '%s\t%s\t%s\t%s\n' "INTERMEDIATE" "$inte_i byte" "$inte_r byte" "0$inte_time s";
-			printf '%s\t%s\t%s\t%s\n' "AUTH" "$auth_i byte" "$auth_r byte" "0$auth_time s";
-
-		} | ./utils/table.sh 4 green
-		
-		##log_dim=$(cat $OUTF | grep "^\[NET\]"  | grep -o -P "(?<=\().*?(?=\))" | awk -F' ' '{print $1}')
-		#init_i_payload=$(echo $log_dim | awk -F' ' '{print $1}')
-		#init_r_payload=$(echo $log_dim | awk -F' ' '{print $2}')
-		#auth_i_payload=$(echo $log_dim | awk -F' ' '{print $3}')
-		#auth_r_payload=$(echo $log_dim | awk -F' ' '{print $4}')
-		#echo "$init_i_payload"
-		#echo "$init_r_payload"
-		#echo "$auth_i_payload"
-		#echo "$auth_r_payload"
-
 	fi
-	rm -rf auth init
+	#rm -rf auth init
 	rm -rf *.packet
 }
 
-echo -e "${RED}"
-echo -e '   (\"-  ╔═╗┌┬┐┬─┐┌─┐┌┐┌┌─┐┌─┐┬ ┬┌─┐┌┐┌'
-echo -e '\\\_\     ╚═╗ │ ├┬┘│ │││││ ┬└─┐│││├─┤│││'
-echo -e '<____)   ╚═╝ ┴ ┴└─└─┘┘└┘└─┘└─┘└┴┘┴ ┴┘└┘'
-echo -e "${DEFAULT}"
 
 main "$@"
-

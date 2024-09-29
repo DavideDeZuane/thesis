@@ -1,0 +1,23 @@
+\doxysection{initiator.\+h}
+\hypertarget{initiator_8h_source}{}\label{initiator_8h_source}\index{src/initiator/initiator.h@{src/initiator/initiator.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ INITIATOR\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ INITIATOR\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}../config/config.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <stddef.h>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <netinet/in.h>}\ \textcolor{comment}{//\ Per\ struct\ sockaddr\_in}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keywordtype}{int}\ socketfd;}
+\DoxyCodeLine{00010\ \ \ \ \ uint64\_t\ spi;\ \ \ \ }
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{struct\ }sockaddr\_in\ node;}
+\DoxyCodeLine{00012\ \}\ \mbox{\hyperlink{structInitiator}{Initiator}};}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keywordtype}{int}\ initiator\_init(\mbox{\hyperlink{structInitiator}{Initiator}}\ *initiator,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structNode}{Node}}\ *conf);}
+\DoxyCodeLine{00015\ \textcolor{keywordtype}{void}\ receive\_data(\textcolor{keywordtype}{int}\ sockfd,\ \textcolor{keywordtype}{char}\ *buffer,\ \textcolor{keywordtype}{size\_t}\ buffer\_size);}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,69 @@
+\doxysection{constant.\+h}
+\hypertarget{constant_8h_source}{}\label{constant_8h_source}\index{src/ike/constant.h@{src/ike/constant.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ RFC\_CONSTANTS\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ RFC\_CONSTANTS\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#define\ MAX\_TRANSFORMS\ 4}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00007\ \ \ \ \ IKE\ =\ 1,}
+\DoxyCodeLine{00008\ \ \ \ \ AH\ \ =\ 2,}
+\DoxyCodeLine{00009\ \ \ \ \ ESP\ =\ 3}
+\DoxyCodeLine{00010\ \}\ protocol;}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ ENCR\ \ \ \ \ =\ 1,}
+\DoxyCodeLine{00014\ \ \ \ \ PRF\ \ \ \ \ \ =\ 2,}
+\DoxyCodeLine{00015\ \ \ \ \ INTEG\ \ \ \ =\ 3,}
+\DoxyCodeLine{00016\ \ \ \ \ DH\_GROUP\ =\ 4,}
+\DoxyCodeLine{00017\ \ \ \ \ ESN\ \ \ \ \ \ =\ 5}
+\DoxyCodeLine{00018\ \}\ transform\_type;}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#define\ MID\_NULL\ 0x00000000}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#define\ SPI\_NULL\ 0x0000000000000000\ }\textcolor{comment}{//valore\ speciale\ del\ campo\ che\ indica\ che\ l'initiator\ non\ conosce\ l'SPI\ del\ responder}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#define\ SPI\_LENGTH\ 64}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{comment}{/*\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#}}
+\DoxyCodeLine{00025\ \textcolor{comment}{Flag,\ sono\ le\ maschere\ binarie\ per\ settare\ i\ flag}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#*/}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#define\ FLAG\_R\ 0x20\ \ }\textcolor{comment}{//\ Bit\ R\ (0010\ 0000\ in\ binario)}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#define\ FLAG\_V\ 0x10\ \ }\textcolor{comment}{//\ Bit\ V\ (0001\ 0000\ in\ binario)}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ FLAG\_I\ 0x08\ \ }\textcolor{comment}{//\ Bit\ I\ (0000\ 1000\ in\ binario)}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{comment}{/*\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#}}
+\DoxyCodeLine{00032\ \textcolor{comment}{Next\ Payload\ Type}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#*/}}
+\DoxyCodeLine{00034\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00035\ \ \ \ \ NONE\ =\ 0,}
+\DoxyCodeLine{00036\ \ \ \ \ SA\ =\ 33,}
+\DoxyCodeLine{00037\ \ \ \ \ KE\ =\ 34,}
+\DoxyCodeLine{00038\ \ \ \ \ IDi\ =\ 35,}
+\DoxyCodeLine{00039\ \ \ \ \ IDr\ =\ 36,}
+\DoxyCodeLine{00040\ \ \ \ \ CERT\ =\ 37,}
+\DoxyCodeLine{00041\ \ \ \ \ CERTREQ\ =\ 38,}
+\DoxyCodeLine{00042\ \ \ \ \ AUTH\ =\ 39,}
+\DoxyCodeLine{00043\ \ \ \ \ Ni\ =\ 40,}
+\DoxyCodeLine{00044\ \ \ \ \ Nr\ =\ 40,}
+\DoxyCodeLine{00045\ \ \ \ \ N\ =\ 41,}
+\DoxyCodeLine{00046\ \ \ \ \ D\ =\ 42,}
+\DoxyCodeLine{00047\ \ \ \ \ TSi\ =\ 44,}
+\DoxyCodeLine{00048\ \ \ \ \ TSr\ =\ 45,}
+\DoxyCodeLine{00049\ \ \ \ \ SK\ =\ 46}
+\DoxyCodeLine{00050\ \}\ next\_payload\_t;}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{comment}{/*\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#}}
+\DoxyCodeLine{00053\ \textcolor{comment}{Exchange\ Type}}
+\DoxyCodeLine{00054\ \textcolor{comment}{\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#*/}}
+\DoxyCodeLine{00055\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00056\ \ \ \ \ IKE\_SA\_INIT\ =\ 34,}
+\DoxyCodeLine{00057\ \ \ \ \ IKE\_AUTH\ =\ 35,\ }
+\DoxyCodeLine{00058\ \ \ \ \ CREATE\_CHILD\_SA\ =\ 36,}
+\DoxyCodeLine{00059\ \ \ \ \ INFORMATIONAL\ =\ 37\ \ \ }
+\DoxyCodeLine{00060\ \}\ exchange\_type\_t;}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

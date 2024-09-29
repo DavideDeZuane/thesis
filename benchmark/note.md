@@ -85,14 +85,6 @@ Alcune opzioni interessanti per quanto riguarda la ike sa sono:
 
 ## Configuration
 
-Il file di confiugurazione di strongswan sono due
-
-- `/etc/ipsec.conf`: questo è ormai deprecato
-- `/etc/strongswan.conf`: si utilizza questo per avere maggiore flessibilità
-
-Il file `strongswan.conf` è il file di configurazione letto da libstrongswan al
-momento di inizializzazione o di reloading. (Il file legacy di ipsec.conf è
-troppo oneroos da leggere)
 
 ### Dumping Traffic 
 

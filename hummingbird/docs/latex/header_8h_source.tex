@@ -1,0 +1,52 @@
+\doxysection{header.\+h}
+\hypertarget{header_8h_source}{}\label{header_8h_source}\index{src/ike/header.h@{src/ike/header.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ header\_builder.h}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#ifndef\ HEADER\_BUILDER\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#define\ HEADER\_BUILDER\_H}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}../initiator/initiator.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}constant.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <stddef.h>}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ IKE\_HEADER\_DIM\ sizeof(ike\_header\_t)}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{comment}{/*\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#}}
+\DoxyCodeLine{00013\ \textcolor{comment}{IKE\ Header\ Struct}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#*/}}
+\DoxyCodeLine{00015\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00016\ \ \ \ \ uint64\_t\ initiator\_spi;\ \ \ }
+\DoxyCodeLine{00017\ \ \ \ \ uint64\_t\ responder\_spi;\ \ }
+\DoxyCodeLine{00018\ \ \ \ \ uint8\_t\ next\_payload;\ }
+\DoxyCodeLine{00019\ \ \ \ \ uint8\_t\ version;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00020\ \ \ \ \ uint8\_t\ exchange\_type;\ }
+\DoxyCodeLine{00021\ \ \ \ \ uint8\_t\ flags;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00022\ \ \ \ \ uint32\_t\ message\_id;\ \ }
+\DoxyCodeLine{00023\ \ \ \ \ uint32\_t\ length;\ \ \ \ \ }
+\DoxyCodeLine{00024\ \}\ \mbox{\hyperlink{struct____attribute____}{\_\_attribute\_\_}}((packed))\ ike\_header\_t;}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{comment}{/*\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#}}
+\DoxyCodeLine{00027\ \textcolor{comment}{Pattern\ Builder}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#*/}}
+\DoxyCodeLine{00029\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00030\ \ \ \ \ ike\_header\_t\ header;}
+\DoxyCodeLine{00031\ \}\ \mbox{\hyperlink{structike__header__builder__t}{ike\_header\_builder\_t}};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \mbox{\hyperlink{structike__header__builder__t}{ike\_header\_builder\_t}}*\ create\_builder();}
+\DoxyCodeLine{00034\ \textcolor{keywordtype}{void}\ destroy\_builder(\mbox{\hyperlink{structike__header__builder__t}{ike\_header\_builder\_t}}\ *builder);}
+\DoxyCodeLine{00035\ \textcolor{keywordtype}{void}\ set\_exchange\_type(\mbox{\hyperlink{structike__header__builder__t}{ike\_header\_builder\_t}}\ *builder,\ exchange\_type\_t\ exchange\_type);}
+\DoxyCodeLine{00036\ \textcolor{keywordtype}{void}\ set\_length(\mbox{\hyperlink{structike__header__builder__t}{ike\_header\_builder\_t}}\ *builder,\ uint32\_t\ length);}
+\DoxyCodeLine{00037\ \textcolor{keywordtype}{void}\ set\_flags(\mbox{\hyperlink{structike__header__builder__t}{ike\_header\_builder\_t}}\ *builder,\ \textcolor{keyword}{const}\ uint8\_t\ flags[],\ \textcolor{keywordtype}{size\_t}\ num\_flags);}
+\DoxyCodeLine{00038\ \textcolor{keywordtype}{void}\ set\_message\_id(\mbox{\hyperlink{structike__header__builder__t}{ike\_header\_builder\_t}}\ *builder,\ uint32\_t\ message\_id);}
+\DoxyCodeLine{00039\ \textcolor{keywordtype}{void}\ set\_initiator\_spi(\mbox{\hyperlink{structike__header__builder__t}{ike\_header\_builder\_t}}\ *builder,\ uint64\_t\ initiator\_spi);}
+\DoxyCodeLine{00040\ \textcolor{keywordtype}{void}\ set\_responder\_spi(\mbox{\hyperlink{structike__header__builder__t}{ike\_header\_builder\_t}}\ *builder,\ uint64\_t\ responder\_spi);}
+\DoxyCodeLine{00041\ \textcolor{keywordtype}{void}\ set\_next\_payload(\mbox{\hyperlink{structike__header__builder__t}{ike\_header\_builder\_t}}\ *builder,\ next\_payload\_t\ next\_payload);}
+\DoxyCodeLine{00042\ ike\_header\_t\ build\_header(\mbox{\hyperlink{structike__header__builder__t}{ike\_header\_builder\_t}}\ *builder);}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{keywordtype}{void}\ create\_header(\mbox{\hyperlink{structike__header__builder__t}{ike\_header\_builder\_t}}\ *builder,\ \mbox{\hyperlink{structInitiator}{Initiator}}\ *initiator,\ exchange\_type\_t\ exchange);}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ HEADER\_BUILDER\_H}}
+
+\end{DoxyCode}

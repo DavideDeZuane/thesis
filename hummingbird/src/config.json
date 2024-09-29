@@ -1,0 +1,21 @@
+{
+    "version": 2,
+    "nat_traversal_port": 4500,
+    "nonce_length" : 240,
+    "responder" :{
+        "ip": "127.0.0.1",
+        "hostname": "fenrir",
+        "port": 501
+    },
+    "initiator": {
+        "ip": "127.0.0.1",
+        "hostname": "jormungander",
+        "port": 500
+    },
+    "proposal" : {
+        "Encryption": "AES_CBC",
+        "Pseudorandom": "HMAC_SHA1",
+        "Integrity": "HMAC_SHA1_96",
+        "DH Group": "MODP2048"
+    }
+}

@@ -1,0 +1,21 @@
+\doxysection{responder.\+h}
+\hypertarget{responder_8h_source}{}\label{responder_8h_source}\index{src/initiator/responder.h@{src/initiator/responder.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ RESPONDER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ RESPONDER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <netinet/in.h>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}../config/config.h"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ Definizione\ della\ struct\ per\ il\ Responder}}
+\DoxyCodeLine{00008\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keyword}{struct\ }sockaddr\_in\ node;\ \ \ \textcolor{comment}{//\ Informazioni\ di\ rete\ del\ Responder}}
+\DoxyCodeLine{00010\ \ \ \ \ uint64\_t\ spi;}
+\DoxyCodeLine{00011\ \}\ \mbox{\hyperlink{structResponder}{Responder}};}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keywordtype}{int}\ responder\_init(\mbox{\hyperlink{structResponder}{Responder}}*\ responder,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structNode}{Node}}*\ conf);}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -35,6 +35,14 @@ crittografia quantum-resistant. E' presente anche un tool che esegue un
 banchmarking delle prestazioni [oqsprofile](https://github.com/open-quantum-safe/profiling?tab=readme-ov-file)
 
 
+Nell'RFC c'è scritto che l'implementazione minimal può parlare solamente con un implementazione full di IKEv2 la quale agisce da responder. Non è possibile fare in modo che due implementazioni minime parlino tra di loro (ha senso perchè nel caso dei satelliti si fa che il pc a terra è il responder e i vari satelliti stupidi gli initiator)
+
+Versione pensata per quei nodi che hanno contrain a livello di memoria, potenza e calcolo.
+Per quella applicazioni in cui il nodo è dormiente e si sveglia per mandare dei dati e rimane sveglio in attesa di un ACK e poi ritorna a dormire.
+
+La connessione non viene mantenuta mentre dorme ma ne viene creata una nuova ad ogni wake up.
+
+
 
 
 ## Realtime

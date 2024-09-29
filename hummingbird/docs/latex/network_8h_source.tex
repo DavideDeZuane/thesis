@@ -1,0 +1,37 @@
+\doxysection{network.\+h}
+\hypertarget{network_8h_source}{}\label{network_8h_source}\index{src/ike/network.h@{src/ike/network.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ NETWORK\_H\ }}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ NETWORK\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <stddef.h>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00008\ \ \ \ \ FIELD\_UINT16,}
+\DoxyCodeLine{00009\ \ \ \ \ FIELD\_UINT32,}
+\DoxyCodeLine{00010\ \ \ \ \ FIELD\_UINT64}
+\DoxyCodeLine{00011\ \}\ field\_type\_t;}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ offset;}
+\DoxyCodeLine{00015\ \ \ \ \ field\_type\_t\ type;}
+\DoxyCodeLine{00016\ \}\ \mbox{\hyperlink{structfield__descriptor__t}{field\_descriptor\_t}};}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ IKE\_HEADER\ =\ 1,}
+\DoxyCodeLine{00020\ \ \ \ \ GENERIC\_PAYLOAD\_HEADER,}
+\DoxyCodeLine{00021\ \ \ \ \ PROPOSAL,}
+\DoxyCodeLine{00022\ \ \ \ \ TRANSFORM,}
+\DoxyCodeLine{00023\ \}\ data\_struct\_type\_t;}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00031\ \textcolor{keywordtype}{void}\ convert\_to\_big\_endian(\textcolor{keywordtype}{void}\ *data,\ data\_struct\_type\_t\ type);}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#define\ convert\_to\_little\_endian\ convert\_to\_big\_endian}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00044\ \textcolor{keywordtype}{void}\ prepend\_to\_packet(uint8\_t\ **packet,\ \textcolor{keywordtype}{size\_t}\ *packet\_len,\ \textcolor{keywordtype}{void}\ *data,\ \textcolor{keywordtype}{int}\ data\_len,\ data\_struct\_type\_t\ type);}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

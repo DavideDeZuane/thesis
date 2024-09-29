@@ -1,0 +1,64 @@
+\doxysection{payload.\+h}
+\hypertarget{payload_8h_source}{}\label{payload_8h_source}\index{src/ike/payload.h@{src/ike/payload.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ PAYLOAD\_BUILDER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ PAYLOAD\_BUILDER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <endian.h>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}../config/config.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}constant.h"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ MAX\_KEY\_EXCHANGE\_DATA\_LEN\ 256}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ GENERIC\_PAYLOAD\_HEADER\_DIM\ sizeof(payload\_header\_t)}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00013\ \ \ \ \ uint8\_t\ \ next\_payload;\ \ }
+\DoxyCodeLine{00014\ \ \ \ \ uint8\_t\ \ critical\ :1;\ \ }
+\DoxyCodeLine{00015\ \ \ \ \ uint8\_t\ \ reserved\ :7;}
+\DoxyCodeLine{00016\ \ \ \ \ uint16\_t\ length;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00017\ \}\ \mbox{\hyperlink{struct____attribute____}{\_\_attribute\_\_}}((packed))\ payload\_header\_t;}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00020\ \ \ \ \ uint16\_t\ type;}
+\DoxyCodeLine{00021\ \ \ \ \ uint16\_t\ value;}
+\DoxyCodeLine{00022\ \}\ \mbox{\hyperlink{struct____attribute____}{\_\_attribute\_\_}}((packed))\ Attribute;}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00025\ \ \ \ \ uint8\_t\ more;}
+\DoxyCodeLine{00026\ \ \ \ \ uint8\_t\ reserved\_1;}
+\DoxyCodeLine{00027\ \ \ \ \ uint16\_t\ length;}
+\DoxyCodeLine{00028\ \ \ \ \ uint8\_t\ type;}
+\DoxyCodeLine{00029\ \ \ \ \ uint8\_t\ reserved\_2;}
+\DoxyCodeLine{00030\ \ \ \ \ uint16\_t\ id;}
+\DoxyCodeLine{00031\ \}\ \mbox{\hyperlink{struct____attribute____}{\_\_attribute\_\_}}((packed))\ Transform;}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00034\ \ \ \ \ uint8\_t\ last\_or\_more;}
+\DoxyCodeLine{00035\ \ \ \ \ uint8\_t\ reserved;}
+\DoxyCodeLine{00036\ \ \ \ \ uint16\_t\ length;\ \textcolor{comment}{//dato\ che\ il\ payload\ può\ avere\ dimensioni\ variabili\ a\ seconda\ di\ quante\ proposte\ facciamo}}
+\DoxyCodeLine{00037\ \ \ \ \ uint8\_t\ number;\ \textcolor{comment}{//identifica\ la\ proposta\ che\ viene\ fatta,\ va\ inizializzata\ una\ e\ le\ proposte\ successive\ devono\ incrementare\ il\ numero\ }}
+\DoxyCodeLine{00038\ \ \ \ \ uint8\_t\ protocol\_id;}
+\DoxyCodeLine{00039\ \ \ \ \ uint8\_t\ spi\_size;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ SPI\ Size\ (1\ byte)}}
+\DoxyCodeLine{00040\ \ \ \ \ uint8\_t\ num\_transforms;\ \ \ \ \ \ \ \ \textcolor{comment}{//\ Numero\ di\ trasformazioni\ (1\ byte)}}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{comment}{//uint8\_t\ *spi;\ \ \ \ }}
+\DoxyCodeLine{00042\ \ \ \ \ Transform\ encr;}
+\DoxyCodeLine{00043\ \ \ \ \ Attribute\ attr;}
+\DoxyCodeLine{00044\ \ \ \ \ Transform\ integ;}
+\DoxyCodeLine{00045\ \ \ \ \ Transform\ dh\_group;}
+\DoxyCodeLine{00046\ \ \ \ \ Transform\ prf;}
+\DoxyCodeLine{00047\ \}\ \mbox{\hyperlink{struct____attribute____}{\_\_attribute\_\_}}((packed))\ Proposal;}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00050\ \ \ \ \ uint16\_t\ dh\_group;}
+\DoxyCodeLine{00051\ \ \ \ \ uint16\_t\ reserved;}
+\DoxyCodeLine{00052\ \ \ \ \ uint8\_t\ ke\_data[MAX\_KEY\_EXCHANGE\_DATA\_LEN];\ \textcolor{comment}{//contiene\ la\ chiave\ pubblica\ generata}}
+\DoxyCodeLine{00053\ \}\ \mbox{\hyperlink{struct____attribute____}{\_\_attribute\_\_}}((packed))\ KeyExchange;}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{keywordtype}{void}\ create\_proposal(Proposal\ *proposal,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structSuite}{Suite}}*\ suite);}
+\DoxyCodeLine{00056\ \textcolor{keywordtype}{void}\ print\_proposal(Proposal*\ proposal);}
+\DoxyCodeLine{00057\ \textcolor{keywordtype}{void}\ create\_generic\_payload(payload\_header\_t*\ header,\ next\_payload\_t\ next\_payload,\ uint16\_t\ length);}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,50 @@
+\doxysection{config.\+h}
+\hypertarget{config_8h_source}{}\label{config_8h_source}\index{src/config/config.h@{src/config/config.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ CONFIG\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ CONFIG\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ MAX\_IP\_LEN\ 45\ }}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ MAX\_HOSTNAME\_LEN\ 256}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ MAX\_ALGORITHM\_NAME\_LEN\ 64}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ MAX\_TYPE\_LEN\ 5}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ NUM\_ALGORITHMS\ 4}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{comment}{//con\ Node\ si\ intende\ nodo\ di\ rete}}
+\DoxyCodeLine{00013\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{char}\ ip[MAX\_IP\_LEN];}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{char}\ hostname[MAX\_HOSTNAME\_LEN];}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{int}\ port;}
+\DoxyCodeLine{00017\ \}\ \mbox{\hyperlink{structNode}{Node}};}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00020\ \ \ \ \ uint16\_t\ id;}
+\DoxyCodeLine{00021\ \ \ \ \ uint8\_t\ type;}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{char}\ name[MAX\_ALGORITHM\_NAME\_LEN];}
+\DoxyCodeLine{00023\ \}\ \mbox{\hyperlink{structAlgorithm}{Algorithm}};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{structAlgorithm}{Algorithm}}\ encryption;}
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{structAlgorithm}{Algorithm}}\ integrity;}
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{structAlgorithm}{Algorithm}}\ pseudorandom;}
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{structAlgorithm}{Algorithm}}\ dh\_group;}
+\DoxyCodeLine{00030\ \}\ \mbox{\hyperlink{structSuite}{Suite}};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{structNode}{Node}}\ responder;}
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{structNode}{Node}}\ initiator;}
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{structSuite}{Suite}}\ cipher\_suite;}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{int}\ nat\_traversal\_port;}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{int}\ version;}
+\DoxyCodeLine{00038\ \}\ \mbox{\hyperlink{structConfig}{Config}};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{keywordtype}{void}\ load\_config(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *filename);}
+\DoxyCodeLine{00041\ \textcolor{keywordtype}{void}\ load(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *filename);}
+\DoxyCodeLine{00042\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structConfig}{Config}}*\ get\_config();}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ CONFIG\_H}}
+
+\end{DoxyCode}

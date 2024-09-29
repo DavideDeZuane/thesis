@@ -1,0 +1,43 @@
+\chapter{C}
+\hypertarget{md_src_2note}{}\label{md_src_2note}\index{C@{C}}
+\label{md_src_2note_autotoc_md0}%
+\Hypertarget{md_src_2note_autotoc_md0}%
+\hypertarget{md_src_2note_autotoc_md1}{}\doxysubsection{\texorpdfstring{Documentazione}{Documentazione}}\label{md_src_2note_autotoc_md1}
+Per generare la documentazione utilizzare {\ttfamily doxygen}.
+
+Nel file header il commento deve essere fatto su come è definita l\textquotesingle{}interfaccia pubblica, si concnetra su cosa fa la funzione. Nel file sorgente (.c) dovresti fornire commenti che spiegano i dettagli dell\textquotesingle{}implementazione, quindi si concentra su come lo fa\hypertarget{md_src_2note_autotoc_md2}{}\doxysubsection{\texorpdfstring{Struct}{Struct}}\label{md_src_2note_autotoc_md2}
+Nel definire una struct in casi in cui rappresentano un header di un pacchetto è molto importante fare attenzione alla dimensione di tali struttura. Questo perchè il compilatore per tali strutture utilizza il padding a dimensioni di multipli dei dati per garantire l\textquotesingle{}allineamento della struttura e quindi avere un accesso alla memoria più veloce.
+
+Esempio nel mio caso la struct ritornava come dimensione 32 byte, quando in verità la sua dimensione era di 28 causando errore nel parsing di questo, per evitare che ciò accadda occore aggiungere l\textquotesingle{}attributo specificato nel codice che segue.
+
+\begin{quote}
+L\textquotesingle{}allineamento tramite padding è utilizzato per garantire un accesso in memoria ottimizzato \end{quote}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{typedef\ struct\ \{}
+\DoxyCodeLine{\ \ \ \ uint64\_t\ initiator\_spi;\ \ \ }
+\DoxyCodeLine{\ \ \ \ uint64\_t\ responder\_spi;\ \ }
+\DoxyCodeLine{\ \ \ \ uint8\_t\ next\_payload;\ }
+\DoxyCodeLine{\ \ \ \ uint8\_t\ version;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \ \ uint8\_t\ exchange\_type;\ }
+\DoxyCodeLine{\ \ \ \ uint8\_t\ flags;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \ \ uint32\_t\ message\_id;\ \ }
+\DoxyCodeLine{\ \ \ \ uint32\_t\ length;\ \ \ \ \ }
+\DoxyCodeLine{\}\ \_\_attribute\_\_((packed))\ ike\_header\_t}
+
+\end{DoxyCode}
+\hypertarget{md_src_2note_autotoc_md3}{}\doxysubsubsection{\texorpdfstring{Bit fields}{Bit fields}}\label{md_src_2note_autotoc_md3}
+// Campo di dimensione 1 bit questi sono i bit field permettono di gestire campi di una struttura con una dimensioni specifica in bit\hypertarget{md_src_2note_autotoc_md4}{}\doxysubsection{\texorpdfstring{Puntatori}{Puntatori}}\label{md_src_2note_autotoc_md4}
+\begin{DoxyVerb}//printf("%s\n", cfg->initiator.ip); //non possiamo accedere direttamente ai membri della struttura ma dobbiamo dereferenziare il puntatore e accedere (cosa che fa l'operatore ->)
+//il punto va utilizzato quando abbiamo l'istanza direttamente e non un puntatore
+//mentre la creazione del fd stabilisce quale è il punto di comunicazione cioè la sua esistenza 
+//il binding permette di configurare dove deve ascoltare il punto di comunicazion
+
+//definendo const in questo modo stiamo dicendo che il puntatore che ritorna e i dati che referenzia sono immutabili
+\end{DoxyVerb}
+ const Config\texorpdfstring{$\ast$}{*} get\+\_\+config(void) \{ return \&config; \}\hypertarget{md_src_2note_autotoc_md5}{}\doxysection{\texorpdfstring{IKE}{IKE}}\label{md_src_2note_autotoc_md5}
+\begin{DoxyVerb}        //nel caso dell'ike_sa_init il next payload è SA ovvero quello della Security Association per settare i parametri
+        //dopodichè come next payload di quello abbiamo quello del KE (ovvero Key exchang)
+        //dopo di quello i nonce
+\end{DoxyVerb}
+ 
