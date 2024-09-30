@@ -26,6 +26,9 @@ Introduciamo quelli che sono gli strumenti fondamentali per la crittografia.
 
 \subsection{Hash Function}
 
+Definizione matematica della one-way function e suo utilizzo
+Descrivere quelle che sono le funzioni hash per scopi crittografici.
+
 \subsection{Schemi crittografici}
 Uno schema di cifratura è un insieme di algoritmi e funzioni che definisce come trasformare un messaggio in chiaro (plaintext) in un messaggio cifrato (ciphertext) e viceversa, al fine di garantire la confidenzialità e la sicurezza delle comunicazioni.
 Formalmente possiamo rappresentarlo come una quintupla: 
@@ -146,44 +149,55 @@ I livelli sono definiti in \textit{Tabella \ref{tab:security-levels}}.
 
 \section{Applicazioni}
 
-Le principali applicazioni crittografiche utilizzate oggi in contesti reali includono SSL/TLS, PGP, IPsec e tante altre. 
-Tali applicazioni si basano su crittosistemi che combinano algoritmi di cifratura, autenticazione e gestione delle chiavi per garantire la riservatezza e l'integrità dei dati scambiati.
-
-
 Nel contesto delle comunicazioni digitali, la crittografia gioca un ruolo fondamentale per garantire la sicurezza dei dati scambiati tra entità remote. 
+I crittosistemi, ovvero applicazioni crittografica, combinano algoritmi di cifratura, autenticazione e gestione delle chiavi per garantire la riservetezza e l'integrità dei dati scambiati. 
 Uno dei principali modelli di riferimento per la trasmissione di dati su Internet è il modello TCP/IP, che suddivide il processo di comunicazione in diversi livelli, ciascuno con funzioni specifiche.
 
-
-Così come per le comunicaizoni di tutti i giorni, anche per quelle che avvengono attravers Internet vogliamo rispettare quelli che sono i requisiti di
-sicurezza informatica ovvero garantire:
-
-\begin{itemize}
-    \item Confidenzialità 
-    \item Integrità
-    \item Autenticazione
-\end{itemize}
-
-Le comunicazioni seguono il modello ISO/OSI per questo possiamo applicarla a diversi livelli
-Come viene applicata la crittografia nelle comunicazioni, quindi i vari metodi con cui la sicurezza è applicata ai vari livelli dello stack network.
-Si parla di comunicazioni sicure ma a livello pratico queste come vengono realizzate, esiste una suitte di protocolli che consente di ottenerle.
+% MODELLO TCP/IP
 
 
+Dato che tutto il modello TCP/IP converge sul protcollo IP è più sensato andare a fare sicurezza qui.
 
-\subsection{IPsec}
-
-Facciamo un focus sulla sicurezza a livello IP, quindi introduciamo la suite di protocolli IPsec
+Il fatto che andadno a lavorare sul livello più basso della pila non occorre andare a modificare le applicazioni, ma queste poggiano sopra uno strato sicuro che è agnostico a quello che si trova sopra.
+(Non occorre andare a modificare ciascuna applicazione singolarmente).
+Facciamo un focus sulla sicurezza a livello IP, quindi introduciamo la suite di protocolli IPsec, i cui componenti sono mostrati in \textit{Fig. \ref{fig:ipsec-suite}}
 Le comunicazioni sicure si costruiscono sopra un concetto fondamentale noto come Security Association (SA). 
 Le comunicazioni sono protette attraverso l'utilizzo di tre tecniche crittografiche:
 
+\begin{figure}[!ht] 
+    \centering 
+        \begin{tikzpicture}[scale=0.8]
+            \draw [ fill={rgb,255:red,192;green,191; blue,188} ] (5.5,13.25) rectangle (11.5,7.75); 
+            \draw [ fill={rgb,255:red,246;green,245; blue,244} ] (6.25,10) rectangle node {ESP} (10.75,8.25); 
+            \draw [ fill={rgb,255:red,192; green,191; blue,188} ] (12,13.25) rectangle (18.75,5.75); 
+            \draw [ fill={rgb,255:red,246; green,245; blue,244} ] (6.25,12) rectangle node {AH} (10.75,10.25); 
+            \node at (8.5,12.75) {\textbf{IPsec Core Protocols}}; 
+            \node at (15.25,12.75) {\textbf{IPsec Support}}; 
+            \draw [ fill={rgb,255:red,246; green,245; blue,244} ] (12.75,12) rectangle node { Internet Key Exchange} (18,10.25); 
+            \draw [ fill={rgb,255:red,246; green,245; blue,244} ] (12.75,10) rectangle node { Security Assosiation} (18,8.25); 
+            \draw [ fill={rgb,255:red,246; green,245; blue,244} ] (12.75,8) rectangle node { Algorithm} (18,6.25); 
+        \end{tikzpicture}
+\label{fig:ipsec-suite} 
+\caption{IPsec Protolocol Suite}
+\end{figure}
+
+I protocolli fondamentali della suite sono:
+
 \begin{itemize}
-    \item Autenticazione
-    \item Integrità
-    \item Cifratura
+    \item \textbf{AH}: Authentication Header, serve per avere integrità e autenticazione
+    \item \textbf{ESP}: Encapsulating Security Payload, permette di rispettare tutti i requisiti di sicurezza
+\end{itemize}
+
+I concetti chiave, ausiliari al funzionamento di IPsec sono:
+
+\begin{itemize}
+    \item \textbf{SA}: Security Association, è un insieme di parametri che definisce come i dati devono essere protetti durante la comunicazione tra due entità su una rete. Ogni SA contiene le informazioni necessarie per stabilire e mantenere una connessione sicura.
+    \item \textbf{Algoritmi}: gli algoritmi crittografici e di hashing ausiliari per ottenere sicurezza
+    \item \textbf{IKE}: Internet Key Exchange, si tratta di un protocollo utilizzato per negoziare, autenticare e distribuire dinamicamente le chiavi crittografiche utilizzate per proteggere le comunicazioni IPsec
 \end{itemize}
 
 
-La comunicazioni possono rendersi sicure a diversi livelli dello stack network, tuttavia farla a livello IP ha il grande vantaggio di progettere le comunicazioni 
-per tutte le applicazioni, senza andarne a modificare ciascuna suingolarmente. 
+
 
 
 Il protocollo IKEv2, definito nell'\texttt{RFC 7296}, è un protocollo di rete che è responsabile della negoziazione di chiavi crittografiche e dei parametri di sicurezza tra due dispositivi, solitamente chiamati peer.
