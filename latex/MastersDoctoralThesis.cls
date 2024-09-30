@@ -183,8 +183,8 @@
 %	REQUIRED PACKAGES
 %----------------------------------------------------------------------------------------
 
-\RequirePackage{babel} % Required for automatically changing names of document elements to languages besides english
-
+\RequirePackage[provide=*]{babel}
+\babelprovide[import]{italian}
 \RequirePackage{scrbase} % Required for handling language-dependent names of sections/document elements
 
 \RequirePackage{scrhack} % Loads fixes for various packages
@@ -321,7 +321,7 @@ KOMA-script documentation for details.}]{fancyhdr}
 %----------------------------------------------------------------------------------------
 
 \newcommand{\abbrevname}{List of Abbreviations}
-\providecaptionname{english,british,american}{\abbrevname}{List of Abbreviations}
+\providecaptionname{english,british,american,italian}{\abbrevname}{List of Abbreviations}
 \providecaptionname{ngerman,german,austrian,naustrian}{\abbrevname}{Abk\"urzungsverzeichnis}
 \NewDocumentEnvironment{abbreviations}{ m }{%
 	\ifbool{nolistspace}{\begingroup\singlespacing}{}

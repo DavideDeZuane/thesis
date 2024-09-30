@@ -13,14 +13,180 @@
     (#1) -- (#2) node [black,midway,xshift=-2cm] {};
 }
 
-\chapter{IKEv2}
-\label{Chapter2} 
+\chapter{Fondamenti di Comunicazioni Sicure}
+\label{Capitolo 2} 
 
-\section{Pre-Quantum}
+In questo capitolo andiamo a trattare quelle che sono le problematiche riguardanti le comunicazioni sicure.
+E' possibile realizzare comunicazioni sicure grazie a quelli che cono i crittosistemi, andiamo a vedere come questi vengono utilizzati nelle reti 
+di computer per garantire la sicurezza delle comunicazioni.
 
-Andiamo a vedere quello che era il funzionamento di IKEv2 nel caso di crittografia classica.
-IkEv2 funziona sul principio di \textit{exchange} ovvero di richiesta e risposta, in Fig. \ref{fig:ike_exchange} sono riportate le varie interazioni tra 
-initiator e responder volte ad instaurare una Security Association.
+\section{Teoria}
+
+Introduciamo quelli che sono gli strumenti fondamentali per la crittografia.
+
+\subsection{Hash Function}
+
+\subsection{Schemi crittografici}
+Uno schema di cifratura è un insieme di algoritmi e funzioni che definisce come trasformare un messaggio in chiaro (plaintext) in un messaggio cifrato (ciphertext) e viceversa, al fine di garantire la confidenzialità e la sicurezza delle comunicazioni.
+Formalmente possiamo rappresentarlo come una quintupla: 
+
+\begin{center}
+    \((\mathcal{P}, \mathcal{C}, \mathcal{K}, E, D)\)
+\end{center}
+
+\begin{itemize}
+    \item \(\mathcal{P}\): Insieme dei messaggi in chiaro (plaintext).
+    \item \(\mathcal{C}\): Insieme dei messaggi cifrati (ciphertext).
+    \item \(\mathcal{K}\): Insieme delle chiavi utilizzate per la cifratura e decifratura,\textit{key space}.
+    \item \(E: \mathcal{K} \times \mathcal{P} \to \mathcal{C}\): Funzione di cifratura.
+    \item \(D: \mathcal{K} \times \mathcal{C} \to \mathcal{P}\): Funzione di decifratura.
+\end{itemize}
+
+\noindent
+Deve esistere una relazione inversa tra le operazioni di cifratura e decifratura:
+\begin{equation}
+D(k, E(k, m)) = m \quad \forall m \in \mathcal{P}, \, k \in \mathcal{K}
+\end{equation}
+
+\noindent
+Questa definizione di schema di cifratura è generale, tuttavia in base alla definizione e all'uso delle chiavi, è possibile distinguere tra schemi di cifratura simmetrica e asimmetrica.
+
+\subsubsection{Simmetrici}
+
+In uno schema simmetrico si utilizza la stessa chiave sia per le operazioni di cifratura che di decifratura. 
+Significa che le due parti coinvolte nella comunicazione, ovvero che si vogliono scambiare un messaggio devono possedere la stessa chiave segreta (PSK).
+
+Alcuni esempi di crittosistemi simmetrici sono DES, AES,...
+
+
+\subsubsection{Asimmetrici}
+
+In uno schema di cifratura asimmetrica, vengono utilizzate due chiavi distinte: una chiave pubblica e una chiave privata.
+
+Lo spazio delle chiavi \(\mathcal{K}\) è costituito da una coppia di chiavi \((k_{\text{pub}}, k_{\text{priv}})\), dove:
+
+\begin{itemize}
+    \item \(k_{\text{pub}}\) è la chiave pubblica (usata per cifrare) 
+    \item \(k_{\text{priv}}\) è la chiave privata (usata per decifrare)    
+\end{itemize}
+
+\noindent
+Le due chiavi sono matematicamente legate, ma è computazionalmente difficile ottenere la chiave privata a partire da quella pubblica (questa è la base della sicurezza).
+Quindi le due funzioni si riscrivono come:
+
+\begin{equation}
+    E: \mathcal{K}_{\text{pub}} \times \mathcal{P} \to \mathcal{C}
+\end{equation}
+\begin{equation}
+    D: \mathcal{K}_{\text{priv}} \times \mathcal{C} \to \mathcal{P}
+\end{equation}
+
+
+\begin{figure}[htbp]
+    \centering
+    \begin{tikzpicture}[node distance=1.5cm]
+        \node (entity1) [draw=green, rectangle] {Alice};
+        \drawkey{-0.8, -0.8}{black}{$K_{pri}$};
+        \drawkey{-1.6, -0.8}{black}{$K_{pub}$};
+        \node (entity2) [draw=blue, rectangle, right=of entity1, xshift=3cm] {Bob};
+        \draw (entity1) -- ++(0,-5) coordinate (vertical1);
+        \draw (entity2) -- ++(0,-5);
+        \draw[-stealth] (entity1) ++(0,-1) -- (entity2 |-,-1) node[midway, above, text=black, font=\footnotesize] {$K_{pub}$};
+        \draw[stealth-] (entity2) ++(0,-2) -- (entity1 |-,-2) node[midway, above, text=black, font=\footnotesize] {$E(K_{pub},m)$};
+    \end{tikzpicture}
+    \label{}
+    \caption{}
+\end{figure}
+
+Successivamente andremo nel dettaglio di quelli che sono i principali utilizzi dei crittosistemi asimmetrici.
+
+
+\subsubsection*{Scambio di Chiavi}
+\subsubsection*{Cifratura Asimmetrica}
+\subsubsection*{Firma Digitale}
+
+Alcuni esempi di quelli classici sono: RSA, Diffie-Hellman,..
+
+\subsection{Confronto}
+
+Vediamo le principali differenze tra i due 
+
+Distribuzione delle chiavi KDC e PKI.
+
+\subsection{Sicurezza}
+
+Il \textbf{security level} è una misura della forza che una primitiva crittografica raggiunge rispetto ad attacchi.
+Solitamente viene espresso come un numero di “bit di sicurezza”, dove $n$-bit di sicurezza significa che l'attaccante dovrebbe eseguire $2*n$ operazioni per romperlo.
+
+Per i cifrari simmetrici, il \textit{livello di sicurezza} è pari alla dimensione del key-space. Mentre la sicurezza degli algoritmi asimmetrici si basa su problemi matematici che sono efficienti da calcolare in una direzione, ma inefficienti da invertire da parte dell'attaccante.
+Tuttavia, gli attacchi contro gli attuali sistemi a chiave pubblica sono sempre più veloci della ricerca a forza bruta dello spazio delle chiavi.
+
+Il NIST (National Institute of Standards and Technology) ha introdotto livelli di sicurezza per gli algoritmi di cifratura asimmetrica e post-quantistica come parte della sua iniziativa per standardizzare algoritmi che resistano anche ai computer quantistici.
+I livelli sono definiti in \textit{Tabella \ref{tab:security-levels}}.
+
+% NIST Security Level Table
+\renewcommand{\arraystretch}{1.3} 
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{>{\centering\arraybackslash}m{3cm}p{10cm}}
+        \hline
+        \textbf{Security Level} & \textbf{Descrizione} \\
+        \hline
+        \textbf{Livello 1} & Sicurezza equivalente alla cifratura simmetrica con chiavi da 128 bit, come AES-128.\\
+        \textbf{Livello 2} & Sicurezza equivalente ad attacchi contro SHA-256, con complessità circa pari a 128 bit. Leggermente più sicuro del livello 1. \\
+        \textbf{Livello 3} & Sicurezza equivalente alla cifratura simmetrica con chiavi da 192 bit, come AES-192. \\
+        \textbf{Livello 4} & Sicurezza equivalente ad attacchi contro SHA-384. Leggermente più sicuro del Livello 3. \\
+        \textbf{Livello 5} & Sicurezza equivalente alla cifratura simmetrica con chiavi da 256 bit, come AES-256. \\
+        \hline
+    \end{tabular}
+    \caption{Security Levels definiti dal NIST}
+    \label{tab:security-levels}
+\end{table}
+
+
+\section{Applicazioni}
+
+Le principali applicazioni crittografiche utilizzate oggi in contesti reali includono SSL/TLS, PGP, IPsec e tante altre. 
+Tali applicazioni si basano su crittosistemi che combinano algoritmi di cifratura, autenticazione e gestione delle chiavi per garantire la riservatezza e l'integrità dei dati scambiati.
+
+
+Nel contesto delle comunicazioni digitali, la crittografia gioca un ruolo fondamentale per garantire la sicurezza dei dati scambiati tra entità remote. 
+Uno dei principali modelli di riferimento per la trasmissione di dati su Internet è il modello TCP/IP, che suddivide il processo di comunicazione in diversi livelli, ciascuno con funzioni specifiche.
+
+
+Così come per le comunicaizoni di tutti i giorni, anche per quelle che avvengono attravers Internet vogliamo rispettare quelli che sono i requisiti di
+sicurezza informatica ovvero garantire:
+
+\begin{itemize}
+    \item Confidenzialità 
+    \item Integrità
+    \item Autenticazione
+\end{itemize}
+
+Le comunicazioni seguono il modello ISO/OSI per questo possiamo applicarla a diversi livelli
+Come viene applicata la crittografia nelle comunicazioni, quindi i vari metodi con cui la sicurezza è applicata ai vari livelli dello stack network.
+Si parla di comunicazioni sicure ma a livello pratico queste come vengono realizzate, esiste una suitte di protocolli che consente di ottenerle.
+
+
+
+\subsection{IPsec}
+
+Facciamo un focus sulla sicurezza a livello IP, quindi introduciamo la suite di protocolli IPsec
+Le comunicazioni sicure si costruiscono sopra un concetto fondamentale noto come Security Association (SA). 
+Le comunicazioni sono protette attraverso l'utilizzo di tre tecniche crittografiche:
+
+\begin{itemize}
+    \item Autenticazione
+    \item Integrità
+    \item Cifratura
+\end{itemize}
+
+
+La comunicazioni possono rendersi sicure a diversi livelli dello stack network, tuttavia farla a livello IP ha il grande vantaggio di progettere le comunicazioni 
+per tutte le applicazioni, senza andarne a modificare ciascuna suingolarmente. 
+
+
+Il protocollo IKEv2, definito nell'\texttt{RFC 7296}, è un protocollo di rete che è responsabile della negoziazione di chiavi crittografiche e dei parametri di sicurezza tra due dispositivi, solitamente chiamati peer.
 
 \begin{figure}[htbp]
     \centering
@@ -54,9 +220,10 @@ initiator e responder volte ad instaurare una Security Association.
         \drawcurlybrace{0,-3.5}{0, -4.5}{};
     \end{tikzpicture}
     \label{fig:ike_exchange}
-    \caption{Rappresentazioni delle fasi di IKEv2}
+    \caption{Fasi di Negoziazione del Protocollo IKEv2}
 \end{figure}
 
+Lo schema generale di funzionamento del protocollo al termine del quale i due hanno stabilito una SA è riportato in \textit{Fig. \ref{fig:ike_exchange}}.
 
 \subsection{\textbf{IKE\_SA\_INIT}}
 

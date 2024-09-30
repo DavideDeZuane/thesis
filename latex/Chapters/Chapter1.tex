@@ -2,7 +2,11 @@
 
 \chapter{Introduction} 
 
-\label{Chapter1}  
+\label{introduction}  
+
+Introduzione al problema e al contensto in cui ci troviamo e le crtiticità presenti
+
+Contributo apportato
 
 %----------------------------------------------------------------------------------------
 
@@ -15,8 +19,6 @@
 
 %----------------------------------------------------------------------------------------
 
-\section{Intorduzione}
-
 Fare un'introduzione al problema e dire quale è stato il contributo.\\
 Suddividere il contributo in:
 
@@ -25,19 +27,14 @@ Suddividere il contributo in:
 	\item la parte di implementazione
 \end{itemize}
 
-Quando è stato annunciato che il quantum-computer avrebbe rotto algoritmi come RSA, ECDSA e DES Internet aveva ormai decretato la fine della crittografia.
-Tuttavia c'è una sostanziale differenza tra rompere qualche crittosistema a rompere la crittografia, infatti esistono importanti classi di sistemi crittografici
-oltre a quelli precedentemente citati. Tra questi abbiamo:
 
-\begin{itemize}
-	\item Hash-based cryptography
-	\item Code-based cryptography
-	\item Lattice-based cryptography
-\end{itemize}
+\section{Post-Quantum}
 
+Il postquantum può rompere gli schemi di crittografia classici tuttavia ì sono nati quelli nuovi.
+
+\section{Problematiche}
 Tuttavia il quantum computing porta ad aumentare la dimensione della chiave, in questo modo si perde di efficienza. Inoltre ha particolare effetto sui sistemi a chiave
 pubblica, mentre su quelli basati su chiave segreta o funzioni di hash non sono molto vulnerabili a questo.
-
 Le sfide della post-quantum cryptography sono le seguenti:
 
 \begin{itemize}
@@ -47,21 +44,6 @@ Le sfide della post-quantum cryptography sono le seguenti:
 
 Ovvero occorre preparare il mondo per una transizione alla crittografia post-quantum
 
-\subsection{Efficency}
-
-Quanto deve essere la chiave per garantire lo stesso livello di sicurezza. Questa è necesssaria per i server in Internet che devono gestire centinaia di clienti ogni secondo.
-Google con il suo motore di ricerca già esegue il redirect su http per non rallnetare
-
-\subsection{Confidence}
-
-La community deve avere confidenza nei sistemi e affinchè ciò sia possbibile è richiesto tempo affincheè i crittoanalisti cerchino degli attacchi per questi sistemi. 
-Per esempio non esiste alcun problema studiato bene come il  Diffie-Hellman e la gente ha totale confidenza nei suoi confronti (da quando è stato introdotto non è mai stato rotto).
-
-
-\subsection{Usability}
-
-
-
 Dire quelle che sono le problematiche del post quantum
 Esempi di problematiche:
 \begin{itemize}
@@ -70,44 +52,7 @@ Esempi di problematiche:
 	certificati molto più grandi, chiavi pubbliche piu grandi)
 \end{itemize}
 
-%----------------------------------------------------------------------------------------
-
-\section{Solution}
-
-Dare una panoramica delle attuali soluzioni tappabuchi che sono state
-realizzate. Andare per stack network, per esempio TLS PQ, IKEv2 PQ
-
-Dire quelle che sono le possibili soluzioni, in particolare perchè si è scelto
-di utilizzare IKEv2 Post quantum
-
-Parlare della libreria openquantumsafe
-
-\subsection{TLS-PQ}
-
-Dire che non è la cosa giusta da utilizzare in quanto non sono presenti RFC che
-abbiano ben definito come realizzarla. Inoltre sono presenti online numerose
-implementazioni custom di quest'ultima che tuttavia fanno uso sia di POst
-quantum crittograpy che Quantum Key Distribution
-
-\subsection{IKEv2-PQ}
-
-Parlare nel dettaglio della sua architettura e altro nel secondo capitolo
-
-Spiegare che ci concentreremo su questa per quanto riguarda le comunicazioni
-sicure poichè è presente un RFC, c'èuna comunity ampia che si occupa di questo
-problema
-
-
-Test strongswan tempistiche, dimnesioni post quantum
-Come peggiorano le prestazioni nel caso post quantum 
-
-(Confronto tra i due casi)
-
-Interessante vedere anche cosa cambia se utilizziamo scheduler real time
-
-- Spinqs+ no perchè è una merda
-- Guardare tutti gli algoritmi tranne quelli del 4° Round del NIST, l'unico da
-provare è bike (HQC no)
+Queste hanno conseguenze importanti sui protocolli che ne fanno uso a causa dell'aumento di dimensioni dellee chiavi.
 
 
 Gli schemi sono divisi in 
@@ -116,16 +61,4 @@ Gli schemi sono divisi in
 - l3:aes192
 - l5:aes256
 
-Mentre per quanto riguarda i certificati vedre sia falcon che dilithium
-(Falcon in teoria dovrebbe essere più lento a causa di operazioni float)
-Sia in termini di dimensioni che di tempi
 
-
-
-Provare solo quello che è L1 (livello di sicurezza 
-
-
-\subsection{Liboqs}
-
-Dire che in generale per la transizione al post quantum fanno tutti utilizzo di
-questa libreria
