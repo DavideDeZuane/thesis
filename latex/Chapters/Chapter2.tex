@@ -15,15 +15,20 @@
 
 \chapter{Fondamenti di Comunicazioni Sicure}
 \label{Capitolo 2} 
-
-In questo capitolo andiamo a trattare quelle che sono le problematiche riguardanti le comunicazioni sicure.
-E' possibile realizzare comunicazioni sicure grazie a quelli che cono i crittosistemi, andiamo a vedere come questi vengono utilizzati nelle reti 
-di computer per garantire la sicurezza delle comunicazioni.
-
+\textit{In questo capitolo esamineremo le problematiche relative alla
+    sicurezza nelle comunicazioni. Inizieremo con un'analisi degli
+    strumenti matematici fondamentali che sono alla base della protezione dei dati,
+    esplorando le tecniche crittografiche e i loro principi teorici. Successivamente,
+    ci concentreremo su come queste tecniche vengono effettivamente applicate per
+    garantire la sicurezza nelle comunicazioni sulle reti di computer.
+    }
 \section{Teoria}
 
-La comunità scientifica e la storia della crittografia, in questo sezione diamo una panoramica e una descrizione matematica di quelli che sono gli strumenti 
-che permettono di rendere le comunicazione sicure. In particolare andiamo a vedere su quali fondamenta questi basano la loro sicurezza.
+Dalla crittografia classica, come il cifrario di
+Cesare, fino alle tecniche più sofisticate del
+ventesimo secolo, come i sistemi di cifratura a chiave pubblica, la storia della
+crittografia è caratterizzata da una continua evoluzione e innovazione.
+Le fondamenta sui cui si basa non sono cambiate, andiamo a vedere strumenti matematici che ne fanno parte.
 
 \subsection{Hash Function}
 
@@ -39,36 +44,39 @@ lunghezza fissa, noto come digest.
     \item $\{0,1\}^n$: rappresenta l'insieme delle stringhe binarie di lunghezza fissa $n$.
 \end{itemize}
 
+% Grafico per la funzione di Hash
+\begin{comment}
 \begin{figure}[h!]
     \centering
     \begin{tikzpicture}[scale=1.5, every node/.style={scale=1}]
-        
-        % Input message 
-        \node[draw, minimum width=3cm, minimum height=1cm, align=center] (input) {Messaggio \\ $m \in \{0,1\}^*$};
-        % Hash function box 
-        %\filldraw[draw=black, fill=blue!30, rotate=270] (4,0) -- (6,0) -- (5.5,1) -- (4.5,1) -- cycle; 
-        \node[draw, minimum width=3cm, minimum height=1cm, align=center, right=2cm of input] (hash) {Funzione di Hash \\ $H$};
-        % Digest (output) 
-        \node[draw, minimum width=3cm, minimum height=1cm, align=center, right=2cm of hash] (output) {Digest \\  $H(m) \in \{0,1\}^n$};
-        % Arrows 
-        \draw[->, thick] (input) -- (hash) node[midway, above] {Input};
-        \draw[->, thick] (hash) -- (output) node[midway, above] {Output};
-        
-        % Labels for security properties 
+    
+    % Input message 
+    \node[draw, minimum width=3cm, minimum height=1cm, align=center] (input) {Messaggio \\ $m \in \{0,1\}^*$};
+    % Hash function box 
+    %\filldraw[draw=black, fill=blue!30, rotate=270] (4,0) -- (6,0) -- (5.5,1) -- (4.5,1) -- cycle; 
+    \node[draw, minimum width=3cm, minimum height=1cm, align=center, right=2cm of input] (hash) {Funzione di Hash \\ $H$};
+    % Digest (output) 
+    \node[draw, minimum width=3cm, minimum height=1cm, align=center, right=2cm of hash] (output) {Digest \\  $H(m) \in \{0,1\}^n$};
+    % Arrows 
+    \draw[->, thick] (input) -- (hash) node[midway, above] {Input};
+    \draw[->, thick] (hash) -- (output) node[midway, above] {Output};
+    
+    % Labels for security properties 
     \end{tikzpicture}
 \end{figure}
+\end{comment}
 
 \vspace{0.2cm}
 \noindent
-Le proprietà principali che sono richieste ad una funzione di questo dipo sono: 
+Le funzioni di hash crittografiche sono strumenti fondamentali nel campo della
+sicurezza informatica, progettate per garantire l'integrità e l'autenticità dei
+dati. Per questo motivo, a questo tipo di funzioni sono richieste le seguenti proprietà: 
 \begin{itemize}
-    \item devono essere progettate in modo tale che sia computazionalmente impraticabile invertire il processo detta anche \textbf{proprietà alle collisioni}, 
-    \item una leggere variazione dell'input deve produrre un hash completamente diverso detta anche \textbf{proprietà di diffusione}.
-\end{itemize}
-
-Le funzioni di hash crittografiche sono utilizzate in molti contesti, tra cui: verifica di integrità, firma digitale e autenticazione.
-Le funzioni di hash sono utilizzate per creare codici di autenticazione dei
-messaggi (MAC) per garantire l'integrità e l'autenticità.
+    \item \textbf{Resistenza alle collisioni}: devono essere progettate in modo tale che sia \\computazionalmente impraticabile invertire il processo, ovvero,  dato il digest è dificile risalire 
+    al messaggio che lo ha prodotto.
+    \item \textbf{Proprietà di diffusione}: una leggere variazione dell'input deve produrre un hash completamente diverso, questa è fondamentale per garantire che gli attaccanti non possano prevedere o
+    manipolare il valore di hash a seguito di modifiche all'input.
+\end{itemize}    
 
 \subsection{Schemi crittografici}
 Uno schema di cifratura è un insieme di algoritmi e funzioni che definisce come trasformare un messaggio in chiaro (plaintext) in un messaggio cifrato (ciphertext) e viceversa, al fine di garantire la confidenzialità e la sicurezza delle comunicazioni.
@@ -81,7 +89,7 @@ Formalmente possiamo rappresentarlo come una quintupla:
 \begin{itemize}
     \item \(\mathcal{P}\): Insieme dei messaggi in chiaro (plaintext).
     \item \(\mathcal{C}\): Insieme dei messaggi cifrati (ciphertext).
-    \item \(\mathcal{K}\): Insieme delle chiavi utilizzate per la cifratura e decifratura,\textit{key space}.
+    \item \(\mathcal{K}\): Insieme delle chiavi utilizzate per la cifratura e decifratura, \textit{key space}.
     \item \(E: \mathcal{K} \times \mathcal{P} \to \mathcal{C}\): Funzione di cifratura.
     \item \(D: \mathcal{K} \times \mathcal{C} \to \mathcal{P}\): Funzione di decifratura.
 \end{itemize}
@@ -91,6 +99,13 @@ Deve esistere una relazione inversa tra le operazioni di cifratura e decifratura
 \begin{equation}
 D(k, E(k, m)) = m \quad \forall m \in \mathcal{P}, \, k \in \mathcal{K}
 \end{equation}
+\noindent
+Lo schema in \textit{Fig. \ref{fig:schema}}, mostra il funzionamento generale di uno schema crittografico. 
+Tuttavia andando a caratterizzare le chiavi utilizzate nelle operazioni di cifratura e decifratura possiamo dare una prima classificazione:
+\begin{itemize}
+    \item se $K_1 = K_2$ allora si parla di un schema di crittografia \textit{simmetrico}.
+    \item se $K_1 \neq K_2$ allora si parla di schema di crittografia \textit{asimmetrico}.
+\end{itemize}
 
 \begin{figure}[h!]
     \centering
@@ -117,82 +132,105 @@ D(k, E(k, m)) = m \quad \forall m \in \mathcal{P}, \, k \in \mathcal{K}
     \drawkey{0,-2.1}{black}{$K_1$};
     \drawkey{6.8,-2.1}{black}{$K_2$};
     \end{tikzpicture}
-    \label{fig:schema}
     \caption{Funzionamento di uno schema crittografico}
+    \label{fig:schema}
 \end{figure}
-
-\noindent
-Lo schemo è descirtto in \textit{Fig. \ref{fig:schema}}, ed ha una defizione generale. Però se:
-\begin{itemize}
-    \item $K_1 = K_2$ allora si parla di un schema di crittografia simmetrico.
-    \item $K_1 \neq K_2$ allora si parla di schema di crittografia asimmetrico.
-\end{itemize}
 
 \subsubsection{Simmetrici}
 
-Come descritto poco fa, in uno schema simmetrico si utilizza la stessa chiave sia per le operazioni di cifratura che di decifratura. 
-Significa che le due parti coinvolte nella comunicazione, devono possedere la stessa chiave segreta (PSK).\\
-Gli utilizzi principali prevedono la cifratura dei dati, dato che è molto veloce, e in combinazione con funzioni di hash consente di ottenere codici HMAC
+Come descritto precedentemente, in uno schema simmetrico si utilizza la stessa
+chiave sia per le operazioni di cifratura che di decifratura. Ciò implica che le
+due parti coinvolte nella comunicazione debbano possedere la medesima chiave
+segreta, nota anche come chiave pre-condivisa (PSK - Pre-Shared Key). \\Questa
+caratteristica fondamentale rende gli schemi di crittografia simmetrica\\
+particolarmente veloci ed efficienti, esempi ne sono AES e DES.
 
-Alcuni esempi di crittosistemi simmetrici sono DES, AES,...
+\newpage
+
+\noindent
+Le loro caratteristiche li rendono ideali per:
+
+\begin{itemize}
+    \item \textit{Cifratura} di Dati: proteggere file e database memorizzati
+    su disco, garantendo che le informazioni sensibili rimangano riservate anche
+    in caso di accesso non autorizzato. Sia proteggere i dati mentre vengono trasmessi su reti.
+    \item \textit{HMAC} (Hash-based Message Authentication Code): combinati
+    con funzioni di hash, gli algoritmi simmetrici possono generare codici HMAC,
+    che forniscono autenticità e integrità ai messaggi. Fondamentale per
+    garantire che i dati non vengano manomessi durante la trasmissione.
+\end{itemize}
+
 
 
 
 \subsubsection{Asimmetrici}
 
-In uno schema di cifratura asimmetrica, detto anche a \textbf{chiave pubblica}, vengono utilizzate due chiavi distinte: una chiave pubblica e una chiave privata.
-Lo spazio delle chiavi \(\mathcal{K}\) è costituito da una coppia di chiavi \((k_{\text{pub}}, k_{\text{priv}})\), dove:
+In uno schema di cifratura asimmetrica, detto anche a \textbf{chiave pubblica}, lo spazio delle chiavi \(\mathcal{K}\) è costituito da una coppia di chiavi \((k_{\text{pub}}, k_{\text{priv}})\), dove:
 
 \begin{itemize}
-    \item \(k_{\text{pub}}\) è la chiave pubblica (usata per cifrare) 
-    \item \(k_{\text{priv}}\) è la chiave privata (usata per decifrare)    
+    \item La chiave pubblica \(k_{\text{pub}}\) viene condivisa liberamente e utilizzata da chiunque per cifrare
+    messaggi destinati al proprietario della chiave.
+    \item La chiave privata \(k_{\text{priv}}\) è mantenuta segreta dal
+    proprietario e viene utilizzata per decifrare i messaggi cifrati con la
+    corrispondente chiave pubblica.
 \end{itemize}
 
 \noindent
-Le due chiavi sono matematicamente legate, ma è computazionalmente difficile ottenere la chiave privata a partire da quella pubblica (questa è la base della sicurezza).
 Quindi le due funzioni si riscrivono come:
-
 \begin{equation}
     E: \mathcal{K}_{\text{pub}} \times \mathcal{P} \to \mathcal{C}
 \end{equation}
 \begin{equation}
     D: \mathcal{K}_{\text{priv}} \times \mathcal{C} \to \mathcal{P}
 \end{equation}
+\noindent
+Le due chiavi sono matematicamente legate, ma è computazionalmente difficile \\ ottenere la chiave privata a partire da quella pubblica. Il funzionamento 
+si basa sul concetto di \textbf{trapdoor} che rende possibile una funzione (come la cifratura o la decifratura) semplice per chi conosce un segreto (la chiave privata) ma estremamente difficile per chi non lo conosce.
+\\
 
-Oltre alla classica cifratura, questa tipologia di schemi consente di realizzare due funzioni importanti, quello \textbf{firma digitale} e di \textbf{scambio di chiave}
-
-Descrivere cosa è una firma, in particolare quella nel caso digitale e come viene utilizzata in combinazione con le funzione di hash per fare hash and sign\\
-
-Oltre a questo poi parlare dello scambio di chiave ovvero l'utilizzo di crittografia asimmetrica per derivare un segreto condiviso tra le due parti.
-
-
+\noindent
+Uno dei principali utilizzi della crittografia asimmetrica è il \textbf{Key-Exchange}, il quale consente di scambiarsi un'informazione segreta su un canale pubblico. La procedura
+più conosciuta è quella proposta da \textit{Diffie-Hellman} ed è mostrata in \textit{Fig. \ref{fig:dh}}
 
 \begin{figure}[htbp]
     \centering
     \begin{tikzpicture}[node distance=1.5cm]
         \node (entity1) [draw=green, rectangle] {Alice};
+
         \drawkey{-0.8, -0.8}{black}{$K_{pri}$};
         \drawkey{-1.6, -0.8}{black}{$K_{pub}$};
         \node (entity2) [draw=blue, rectangle, right=of entity1, xshift=3cm] {Bob};
-        \draw (entity1) -- ++(0,-5) coordinate (vertical1);
-        \draw (entity2) -- ++(0,-5);
+        \draw (entity1) -- ++(0,-4) coordinate (vertical1);
+        \draw (entity2) -- ++(0,-4);
         \draw[-stealth] (entity1) ++(0,-1) -- (entity2 |-,-1) node[midway, above, text=black, font=\footnotesize] {$K_{pub}$};
         \draw[stealth-] (entity2) ++(0,-2) -- (entity1 |-,-2) node[midway, above, text=black, font=\footnotesize] {$E(K_{pub},m)$};
     \end{tikzpicture}
-    \label{}
-    \caption{}
+    \caption{Scambio di Chiave Difie-Hellman}
+    \label{fig:dh}
 \end{figure}
 
+\noindent
+Le \textbf{firme digitali}, sono un meccanismo chiave per garantire l'autenticità e l'integrità dei messaggi. In questo caso si fornisce sia il messaggio
+che un digest del messaggio firmato, in questo modo chi lo riceve può utilizzare la chiave pubblica per verificare che l'hash firmato equivalga a quello calcolato.
+Questa pratica si utilizza per garantire integrità e autenticità.
+\newpage
 \subsection{Confronto}
 
+\subsubsection*{Key Distribution}
+
 L'assunto che si è fatto in entrambi le tipologie di schema è che l'altra parte della comunicazione avesse ottenuto in qualche modo la chiave. Tuttavia la distribuzione
-delle chiavi è un problema importante per il crittosistema ed ognuno ha le proprie caratteristiche. \\
+delle chiavi è un problema importante per il crittosistema. \\
 
 \noindent
-Se consideriamo le chiavi simmetriche abbiamo che all'aumentare degli host che vogliamo far comunicare ho bisogno di $n(n-1)/2$ chiavi, dove $n$ è il numero di terminali. Questo approccio è più robusto 
-ma come possiamo vedere in \textit{Fig. \ref{fig:chiavi-simmetriche}} il problema porta ad un'esplosione combinatoria. Per questo motivo un approccio che limita questo 
-fenomeno è quello del Key Distribution Center (KDC), che tuttavia rappresenta un'approccio centralizzato.
-\begin{figure}
+Le distribuzione delle chiavi per crittosistemi simmetrici deve avvenire tramite un canale segreto, per questo motivo si utilizzano le seguenti modalità:
+\begin{itemize}
+    \item \textit{Manuale}: vengono installate manualmente coppie di chiavi per ogni nodo che si vuol far comunicare, se si vogliono far comunicare $n$ nodi 
+    sono necessarie $n(n-1)/2$ chiavi. L'approccio è robusto ma impraticabile per reti di grandi dimensioni come mostrato in \textit{Fig. \ref{fig:chiavi-simmetriche}}.
+    \item \textit{Key Distribution Center (KDC)}: da un'approccio decentralizzato si passa ad uno \\centralizzato, in cui è presente un server che fa da intermediario
+    fidato per la distribuzione delle chiavi.
+\end{itemize}
+
+\begin{figure}[h!]
     \centering
     \begin{tikzpicture}[font=\sffamily,pics/cgram/.style={code={ \foreach \XX
         [count=\YY starting from 0] in {1,...,#1}
@@ -209,33 +247,50 @@ fenomeno è quello del Key Distribution Center (KDC), che tuttavia rappresenta u
         black","blue!70!white","purple!80!white"} \def\LstAngles{180,150,135,128,150}
         \path (-5,0) pic {cgram=2} (0,0.5) pic {cgram=4} (5,0.5) pic {cgram=6}; 
     \end{tikzpicture}
+    \caption{Esplosione combinatoria}
     \label{fig:chiavi-simmetriche}
-    \caption{Distribuzione delle chiavi simmetriche}
+\end{figure}
+\noindent
+Per loro natura le chiavi pubbliche sono liberamente distribuite, non è dunque \\necessario un canale segreto. 
+Tuttavia in questo caso si ha il problema dell'autenticità, ovvero che la chiave provenga realmente dalla fonte dichiarata. 
+Per questo nasce la \textit{Public Key Infrastructure (PKI)}, che tramite l'utilizzo dei certificati X.509 consente la\\ distribuzione sicura di chiavi pubbliche.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.35]{Figures/pki.jpg}
+    \caption{Public Key Infrastructure}
+    \label{fig:pki}
 \end{figure}
 
-Se invece andiao a considerare i crittosistemi a chiave pubblica abbiamo che questi si possono distribuire tramite certificati di chiave pubblica.
-Questi tuttavia hanno bisogno di un'infrastruttura che li sorregge, questa è la PKI (Public Key Infrastructure).
-Descrivere quelli che sono i componenti dell'infrastruttura e lo standard per la definzione dei certificati.
+\noindent
+Questo approccio consente una gestione scalabile delle chiavi.
+
+\subsubsection*{Attacchi Quantum}
+
+Gli schemi asimmetrici sono vulnerabili alla minaccia del quantum computer
+Parlare degli algoritmi di Shor e ....
+
+
 
 \subsection{Sicurezza}
 
 Il \textbf{security level} è una misura della forza che una primitiva crittografica raggiunge rispetto ad attacchi.
-Solitamente viene espresso come un numero di “bit di sicurezza”, dove $n$-bit di sicurezza significa che l'attaccante dovrebbe eseguire $2*n$ operazioni per romperlo.
+Solitamente viene espresso come un numero di “bit di sicurezza”, dove $n$-bit di sicurezza significa che l'attaccante dovrebbe eseguire $2^n$ operazioni per romperlo.
+\begin{itemize}
+    \item Per i cifrari simmetrici il livello di sicurezza è pari alla dimensione del key-space. Equivale ad un attacco a forza bruta.
+    \item La sicurezza dei cifrari simmetrici si basa su problemi matematici noti. Tuttavia, gli attacchi contro gli attuali sistemi a chiave pubblica sono sempre più veloci della ricerca a forza bruta dello spazio delle chiavi.
+\end{itemize}
 
-Per i cifrari simmetrici, il \textit{livello di sicurezza} è pari alla dimensione del key-space. Mentre la sicurezza degli algoritmi asimmetrici si basa su problemi matematici che sono efficienti da calcolare in una direzione, ma inefficienti da invertire da parte dell'attaccante.
-Tuttavia, gli attacchi contro gli attuali sistemi a chiave pubblica sono sempre più veloci della ricerca a forza bruta dello spazio delle chiavi.
-
-Il NIST (National Institute of Standards and Technology) ha introdotto livelli di sicurezza per gli algoritmi di cifratura asimmetrica e post-quantistica come parte della sua iniziativa per standardizzare algoritmi che resistano anche ai computer quantistici.
-I livelli sono definiti in \textit{Tabella \ref{tab:security-levels}}.
+\noindent
+Il NIST (National Institute of Standards and Technology) ha introdotto livelli di sicurezza, definiti in \textit{Tabella \ref{tab:security-levels}} per gli algoritmi di cifratura asimmetrica e post-quantistica come parte della sua iniziativa per standardizzare algoritmi che resistano anche ai computer quantistici.
 
 % NIST Security Level Table
-\renewcommand{\arraystretch}{1.3} 
 \begin{table}[ht]
     \centering
     \begin{tabular}{>{\centering\arraybackslash}m{3cm}p{10cm}}
-        \hline
+        \toprule
         \textbf{Security Level} & \textbf{Descrizione} \\
-        \hline
+        \midrule
         \textbf{Livello 1} & Sicurezza equivalente alla cifratura simmetrica con chiavi da 128 bit, come AES-128.\\
         \textbf{Livello 2} & Sicurezza equivalente ad attacchi contro SHA-256, con complessità circa pari a 128 bit. Leggermente più sicuro del livello 1. \\
         \textbf{Livello 3} & Sicurezza equivalente alla cifratura simmetrica con chiavi da 192 bit, come AES-192. \\
@@ -250,29 +305,68 @@ I livelli sono definiti in \textit{Tabella \ref{tab:security-levels}}.
 \newpage
 \section{Applicazioni}
 
-Per loro natura le reti sono un mezzo di comunicazione non sicuro, essendo di tipo broadcast.
-Nel contesto delle comunicazioni digitali, la crittografia gioca un ruolo fondamentale per garantire la sicurezza dei dati scambiati tra entità remote. 
-I crittosistemi, ovvero applicazioni crittografica, combinano algoritmi di cifratura, autenticazione e gestione delle chiavi per garantire la riservetezza e l'integrità dei dati scambiati. 
-Uno dei principali modelli di riferimento per la trasmissione di dati su Internet è il modello TCP/IP, che suddivide il processo di comunicazione in diversi livelli, ciascuno con funzioni specifiche.
+Le reti, per loro natura, rappresentano un mezzo di comunicazione
+intrinsecamente insicuro, soprattutto quando operano in modalità broadcast. In
+questo contesto, la crittografia riveste un ruolo cruciale nel garantire la
+sicurezza dei dati scambiati tra entità remote. I crittosistemi, ossia le
+applicazioni crittografiche, integrano algoritmi di cifratura, autenticazione e
+gestione delle chiavi per fare in modo che vengano rispettati i requisiti di sicurezza 
+per le informazioni trasmesse.\\ 
+
+\noindent
+Il modello di riferimento per la comunicazione su Internet è il modello \textbf{TCP/IP}, il quale  suddivide il processo di trasmissione dei dati
+in vari livelli, ciascuno con delle funzioni specifiche che non si sovrappongono con quelle degli altri livelli. Come mostrato in \textit{Figura \ref{fig:tcpip}},
+è possibile applicare la sicurezza ai vari livelli della pila e di lato sono riportati i protocolli che vengono utilizzati. 
+
+\begin{itemize}
+    \item SSH (Secure Shell): Protegge l'accesso remoto e il trasferimento
+    di file, fornendo autenticazione e cifratura.
+    \item TLS (Transport Layer Security): permette di instaurare una
+    connessione TCP sicura. Viene utilizzato per cifrare e autenticare i dati tra
+    client e server.
+    \item IPsec (Internet Protocol Security): Protegge i pacchetti IP
+    scambiati tra due nodi, fornendo autenticazione, integrità e cifratura.
+\end{itemize}
+
 
 % MODELLO TCP/IP
 \begin{figure}[h!]
     \centering
     \includegraphics[scale=0.3]{Figures/security_tcp.png}
-    \label{fig:tcpip}
     \caption{Modello TCP/IP con Protocolli di Sicurezza}
+    \label{fig:tcpip}
 \end{figure}
 
-Come mstrato in \textit{Fig. \ref{fig:tcpip}} possiamo fare sicurezza ai vari livelli della pila, ognuno con le proprie caratteristiche.
-Tuttavia fare sicurezza a L3 ha il significativo vantaggio che tutti gli strati superiori convergono su di lui e dunque non è necessario andare a modifcare le singole applicazioni.
-IPsec è una suite di protocolli i cui principali componenti, come mostrato in \textit{Fig. \ref{fig:ipsec-suite}}, sono: 
+\noindent
+Ogni protocollo avrà le proprie caratteristiche, tuttavia fare sicurezza a L3 dello stack TCP/IP offre un vantaggio significativo:
+poiché tutti gli strati superiori dipendono da esso per la trasmissione dei dati,
+non è necessario apportare modifiche ai singoli protocolli o applicazioni che
+si basano su di esso. Questo consente di implementare soluzioni di sicurezza
+centralizzate e trasparenti, senza dover intervenire su ciascun servizio o
+applicazione a livello più alto.
+
+
+
+\section{IPsec}
+
+IPsec (Internet Protocol Security) è un insieme di protocolli standard, rappresentati in \textit{Figura \ref{fig:ipsec-suite}}, utilizzati
+in modo tale da fornire meccanismi per l'autenticazione, la cifratura e l'integrità dei dati trasmessi tra due o più
+dispositivi, proteggendo così le comunicazioni IP da intercettazioni e manomissioni.
+
+\subsection{Architettura}
+
+Come definito dall'\texttt{RFC 1825}, l'architettura di IPsec è composta dai seguenti componenti:
 
 \begin{itemize}
-    \item \textbf{AH}: Authentication Header, serve per avere integrità e autenticazione
-    \item \textbf{ESP}: Encapsulating Security Payload, permette di rispettare tutti i requisiti di sicurezza
-    \item \textbf{SA}: Security Association, è un insieme di parametri che definisce come i dati devono essere protetti durante la comunicazione tra due entità su una rete. Ogni SA contiene le informazioni necessarie per stabilire e mantenere una connessione sicura.
-    \item \textbf{Algoritmi}: gli algoritmi crittografici e di hashing ausiliari per ottenere sicurezza
-    \item \textbf{IKE}: Internet Key Exchange, si tratta di un protocollo utilizzato per negoziare, autenticare e distribuire dinamicamente le chiavi crittografiche utilizzate per proteggere le comunicazioni IPsec
+    \item \textbf{AH (Authentication Header)}: si tratta di un protocollo di sicurezza che fornisce autenticazione e integrità dei dati,
+    garantendo che i pacchetti non vengano modificati durante la trasmissione. Non offre cifratura, quindi i dati rimangono in chiaro. 
+    \item \textbf{ESP (Encapsulating Security Payload)}: protocolo che fornisce cifratura per garantire la riservatezza dei dati,
+    oltre a integrità e autenticazione opzionale. ESP è il protocollo più utilizzato
+    per garantire sia sicurezza che riservatezza.
+    
+    \item \textbf{SA (Security Association)}: un insieme di parametri che definisce come i dati devono essere protetti durante la comunicazione tra due entità su una rete. Ogni SA contiene le informazioni necessarie per stabilire e mantenere una connessione sicura.
+    \item \textbf{IKE (Internet Key Exchange)}: protocollo che consente di negoziare, autenticare e distribuire dinamicamente le chiavi crittografiche che vengono poi impiegate dai protocolli di sicurezza per proteggere le comunicazioni.
+    \item \textbf{Algoritmi}: gli algoritmi crittografici e di hashing utilizzati per ottenere sicurezza.
 \end{itemize}
 
 \begin{figure}[!ht] 
@@ -290,41 +384,76 @@ IPsec è una suite di protocolli i cui principali componenti, come mostrato in \
             \draw [ fill={rgb,255:red,246; green,245; blue,244} ] (12.75,8) rectangle node { Algorithm} (18,6.25); 
         \end{tikzpicture}
     }
-\label{fig:ipsec-suite} 
-\caption{IPsec Protolocol Suite}
+    \caption{IPsec Protolocol Suite}
+    \label{fig:ipsec-suite} 
 \end{figure}
+    
+
 \subsection{Security Association}
 
-Citare l'RFC di riferimento ovvero il 1825
-
-IP di suo è un protocollo state-less, il compito di IPsec è renderlo un protocollo in rado di mantenere un'insieme di informazioni di stato 
-tra due entità coinvolte. Queste informazioni, tra cui abbiamo chiavi e altro materiale crittografcio, consentono un'associazione unilaterale 
-tra sorgente e destinazione nota come SA. 
-
-
-Una SA è un canale simplex
-E' molto importante quando il terminale comunica tramite IPsec non solamente con un altro ma con diversi, e oguno avrà i propri parametri
-la SA rappresenta il metodo per gestirlo.
-Nel set di parametri crittografici contenuti in una SA abbiamo:
-
+IP è un protocollo \textit{stateless}, ovvero non mantiene informazioni o stato relativo alle connessioni o ai pacchetti che gestisce.
+Tuttavia affinchè IPsec possa garantire la sicurezza è necessario che mantenga il contesto di ogni connessione, le principali motivazioni sono:
 \begin{itemize}
-    \item contatore dei pacchetti trasmessi
-    \item le informazioni relative a ESP e AH
-    \item il tempo di vita della SA
-    \item chiavi crittografiche sia per autenticazione che cifratura
+    \item \textit{Replay Protection}: per evitare attacchi di tipo reply, IPsec tiene  traccia
+    dei numeri di sequenza dei pacchetti, un'inforamzione di stato che va mantenuta per ogni connessioni
+    e che IP non fa nativamente.
+    \item \textit{Connessioni Multiple}: in uno scenario di rete complesso, un singolo dispositivo potrebbe avere più connessioni sicure in corso simultaneamenamente, ognuna
+    delle quali ha i propri parametri di sicurezza. IPsec deve tenere traccia di queste informazioni per sapere come trattare i pacchetti in entrata e uscita in base alla connessione a cui appartengono.
+    \item \textit{Protezione}: i protocolli di sicurezza AH e ESP richiedono di conoscere le chiavi crittografiche corrette e gli algoritmi utilizzati per cifrare e decifrare i pacchetti.
 \end{itemize}
 
-Un canale di comunicazione bidirezionale instaurato tra due entità IPsec consiste di due SA unidirezionali di verso opposto.
+\noindent 
+IP diventa in grado di mantenere un'insieme di informazioni di stato grazie al concetto di \textit{Security Association} (SA).
+Più precisamente si tratta di un'insieme di parametri che servono per associare a ciascun canale uno stato condiviso tra le entità coinvolte nello comunicazione,
+tra questi abbiamo:
 
+\begin{itemize}
+    \item \textit{Security Parameter Index} (SPI): un'identificatore della SA.
+    \item \textit{Destination Address}: serve all'host per determinare quale SA utilizzare. 
+    \item \textit{Lifetime}: il tempo di vita della SA, si obbliga a refresh periodici.
+    \item \textit{Protocol Identifier}: determina il tipo di protezione da applicare ai pacchetti, dunque anche chiavi e algoritmi associati.
+    \item Altri parametri opzionali, per una lista completa fare riferimento all'RFC.
+\end{itemize}
 
-Le comunicazioni sicure si costruiscono sopra un concetto fondamentale noto come Security Association (SA). 
+\noindent
+La SA è caratterizzata dall'essere un canale \textit{simplex}, dunque al fine di stabilire un canale di comunicazione bidirezionale IPsec tra due entità occorrono due SA unidirezionali di verso opposto.
+La \textit{Figura \ref{fig:sa_bidirezionale}} mostra il tunnerl virtuale in esecuzione tra i due host.
+%aggiungere al lato di un host la configurazione dell'SA
+\begin{figure}[h!]
+    \centering
+    \begin{tikzpicture}
+        \node (router_a) [router] {Host A};
+        \node (router_b) [router, right of=router_a, xshift=5cm] {Host B};
+        \draw (router_a) ++(0.8,0) ellipse (0.2cm and 0.2cm);
+        \draw [-] (0.8,0.2) -- (5.25,0.2) node[midway, above]{\inlinecode{SA\_AB}};
+        \draw [-] (0.8,-0.2) -- (5.25,-0.2) node[midway, below]{\inlinecode{SA\_BA}};
+        \draw (router_b) ++(-0.8,0) ellipse (0.2cm and 0.2cm);   
+    \end{tikzpicture}
+    \vspace{0.4cm}
+    \caption{Security Association bidirezionali}
+    \label{fig:sa_bidirezionale}
+\end{figure}
 
-IPsec prevede tecniche di gestione delle chiavi sia manuali che automatiche, le ultime nascono per fornire una gestione scalabile delle chiavi.
+\noindent
 
 \subsection{IKE}
 
+In un contesto come quello delle reti potremmo avere che lo stesso nodo ha connessini IPsec multiple, 
+le SA consentono di distinguere e identificare in modo univoco la configurazioni di sicurezza da applicare alla comunicazione.\\
+Tuttavia queste SA come si configurano?.
+IPsec prevede tecniche di negoziazione delle SA di tipo:
 
-Il protocollo IKEv2, definito nell'\texttt{RFC 7296}, è un protocollo di rete che è responsabile della negoziazione di chiavi crittografiche e dei parametri di sicurezza tra due dispositivi, solitamente chiamati peer.
+\begin{itemize}
+    \item \textit{Manuale}: occorre configurire manualmente le chiavi e le
+    impostazioni di sicurezza per ciascun dispositivo o punto finale di
+    comunicazione.
+    \item \textit{Automatico}: si utilizzanoprotocolli per stabilire
+    automaticamente le chiavi di crittografia e le politiche di sicurezza senza
+    intervento umano diretto.
+\end{itemize}
+\noindent
+L'utilizzo di tecniche di negoziazione automatica offre un approccio sicuro, flessibile e scalabile alla gestione delle Security Association, un esempio di questo è IKE definito nell'\texttt{RFC 7296}.
+Questo protocollo definisce una serie di scambi, mostrati in \textit{Figura \ref{fig:ike_exchange}}, al termine del quale i due peer avranno negioziati i parametri di sicurezza e le chiavi crittografiche per una SA.
 
 \begin{figure}[htbp]
     \centering
@@ -335,11 +464,11 @@ Il protocollo IKEv2, definito nell'\texttt{RFC 7296}, è un protocollo di rete c
         \draw (entity1) -- ++(0,-6.7) coordinate (vertical1);
         \draw (entity2) -- ++(0,-6.7);
         % IKE_INIT_SA
-        \draw[-stealth] (entity1) ++(0,-1) -- (entity2 |-,-1) node[midway, above, text=red, font=\footnotesize] {$SA_{i1}, KE_i, N_i$};
-        \draw[stealth-] (entity1) ++(0,-2) -- (entity2 |-,-2) node[midway, above, text=blue, font=\footnotesize] {$SA_{r1},KE_r,N_r$};
+        \draw[-stealth] (entity1) ++(0,-1) -- (entity2 |-,-1) node[midway, above, text=red, font=\footnotesize] {Request};
+        \draw[stealth-] (entity1) ++(0,-2) -- (entity2 |-,-2) node[midway, above, text=blue, font=\footnotesize] {Response};
         % IKE_AUTH
-        \draw[-stealth] (entity1) ++(0,-3.5) -- (entity2 |-,-3.5) node[midway, above, text=red, font=\footnotesize] {$SK\{ID_i, CERT, \{AUTH\}^s_{pk}\}$};
-        \draw[stealth-] (entity1) ++(0,-4.5) -- (entity2 |-,-4.5) node[midway, above, text=blue, font=\footnotesize] {$SK\{ID_r, CERT, \{AUTH\}^s_{pk}\}$};
+        \draw[-stealth] (entity1) ++(0,-3.5) -- (entity2 |-,-3.5) node[midway, above, text=red, font=\footnotesize] {Request};
+        \draw[stealth-] (entity1) ++(0,-4.5) -- (entity2 |-,-4.5) node[midway, above, text=blue, font=\footnotesize] {Response};
         % CHILD_SA 
         \node at (-1.7,-6) {\inlinecode{CHILD\_SA}};
         \node at (-2,-1.5) {\inlinecode{IKE\_SA\_INIT}};
@@ -357,11 +486,10 @@ Il protocollo IKEv2, definito nell'\texttt{RFC 7296}, è un protocollo di rete c
         \drawcurlybrace{0,-1}{0, -2}{};
         \drawcurlybrace{0,-3.5}{0, -4.5}{};
     \end{tikzpicture}
-    \label{fig:ike_exchange}
     \caption{Fasi di Negoziazione del Protocollo IKEv2}
+    \label{fig:ike_exchange}
 \end{figure}
 
-Lo schema generale di funzionamento del protocollo al termine del quale i due hanno stabilito una SA è riportato in \textit{Fig. \ref{fig:ike_exchange}}.
 
 \subsection{\textbf{IKE\_SA\_INIT}}
 

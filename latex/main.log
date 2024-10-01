@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Arch Linux) (preloaded format=pdflatex 2024.9.29)  1 OCT 2024 11:52
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Arch Linux) (preloaded format=pdflatex 2024.9.29)  1 OCT 2024 22:02
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -753,7 +753,9 @@ File: pgflibrarypatterns.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ))
 \CheckerSize=\dimen293
 \LineSpacing=\dimen294
-) (/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.meta.code.tex
+) (/usr/share/texmf-dist/tex/latex/comment/comment.sty
+\CommentStream=\write5
+ Excluding comment 'comment') (/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.meta.code.tex
 File: pgflibraryarrows.meta.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgfarrowinset=\dimen295
 \pgfarrowlength=\dimen296
@@ -763,7 +765,31 @@ File: pgflibraryarrows.meta.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \c@pft=\count457
  (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypositioning.code.tex
 File: tikzlibrarypositioning.code.tex 2023-01-15 v3.1.10 (3.1.10)
-) (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarymatrix.code.tex
+) (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarybackgrounds.code.tex
+File: tikzlibrarybackgrounds.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@layerbox@background=\box80
+\pgf@layerboxsaved@background=\box81
+) (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarycalc.code.tex
+File: tikzlibrarycalc.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshadings.code.tex
+File: tikzlibraryshadings.code.tex 2023-01-15 v3.1.10 (3.1.10)
+ (/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryshadings.code.tex
+File: pgflibraryshadings.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)) (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.arrows.code.tex
+File: tikzlibraryshapes.arrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+ (/usr/share/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.arrows.code.tex
+File: pgflibraryshapes.arrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)) (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.symbols.code.tex
+File: tikzlibraryshapes.symbols.code.tex 2023-01-15 v3.1.10 (3.1.10)
+ (/usr/share/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.symbols.code.tex
+File: pgflibraryshapes.symbols.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)) (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshadows.code.tex
+File: tikzlibraryshadows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+ (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryfadings.code.tex
+File: tikzlibraryfadings.code.tex 2023-01-15 v3.1.10 (3.1.10)
+ (/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryfadings.code.tex
+File: pgflibraryfadings.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))) (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarymatrix.code.tex
 File: tikzlibrarymatrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ) (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.pathreplacing.code.tex (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.code.tex (/usr/share/texmf-dist/tex/generic/pgf/modules/pgfmoduledecorations.code.tex
 \pgfdecoratedcompleteddistance=\dimen299
@@ -775,7 +801,7 @@ File: tikzlibrarymatrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgfdecorationsegmentamplitude=\dimen304
 \pgfdecorationsegmentlength=\dimen305
 )
-\tikz@lib@dec@box=\box80
+\tikz@lib@dec@box=\box82
 ) (/usr/share/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.pathreplacing.code.tex)) (/usr/share/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2024-01-20 v7.01h Hypertext links for LaTeX
  (/usr/share/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
@@ -846,7 +872,7 @@ package with kernel methods
 )
 Package scrhack Info: hyperref hack deactivated because of
 (scrhack)             detection of hyperref version, that doesn't
-(scrhack)             need that hack, on input line 76.
+(scrhack)             need that hack, on input line 78.
 Package hyperref Info: Driver (autodetected): hpdftex.
  (/usr/share/texmf-dist/tex/latex/hyperref/hpdftex.def
 File: hpdftex.def 2024-01-20 v7.01h Hyperref driver for pdfTeX
@@ -865,42 +891,42 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 28
 )
 \Hy@SectionHShift=\skip79
 )
-Package hyperref Info: Option `bookmarksopen' set `true' on input line 76.
-Package hyperref Info: Option `hypertexnames' set `false' on input line 76.
-Package hyperref Info: Option `colorlinks' set `true' on input line 76.
-Package hyperref Info: Option `unicode' set `true' on input line 76.
-Package hyperref Info: Option `breaklinks' set `true' on input line 76.
+Package hyperref Info: Option `bookmarksopen' set `true' on input line 78.
+Package hyperref Info: Option `hypertexnames' set `false' on input line 78.
+Package hyperref Info: Option `colorlinks' set `true' on input line 78.
+Package hyperref Info: Option `unicode' set `true' on input line 78.
+Package hyperref Info: Option `breaklinks' set `true' on input line 78.
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
-LaTeX Font Info:    Trying to load font information for T1+ppl on input line 76.
+LaTeX Font Info:    Trying to load font information for T1+ppl on input line 78.
  (/usr/share/texmf-dist/tex/latex/psnfss/t1ppl.fd
 File: t1ppl.fd 2001/06/04 font definitions for T1/ppl.
 ) (./main.aux (./Chapters/Chapter1.aux) (./Chapters/Chapter2.aux) (./Appendices/AppendixA.aux))
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 76.
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 76.
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 76.
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 76.
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 76.
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 76.
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 76.
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 76.
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 76.
-LaTeX Font Info:    ... okay on input line 76.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
  (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count470
 \scratchdimen=\dimen310
-\scratchbox=\box81
+\scratchbox=\box83
 \nofMPsegments=\count471
 \nofMParguments=\count472
 \everyMPshowfont=\toks38
@@ -955,13 +981,13 @@ Package caption Info: End \AtBeginDocument code.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package scrbase Info: activating nil \abbrevname on input line 76.
+Package scrbase Info: activating nil \abbrevname on input line 78.
 \big@size=\dimen312
 Package biblatex Info: Trying to load language 'nil'...
 Package biblatex Info: ... file 'nil.lbx' not found.
 
 Package biblatex Warning: Language 'nil' not supported.
-(biblatex)                Using dummy definitions on input line 76.
+(biblatex)                Using dummy definitions on input line 78.
 
 Package biblatex Info: Input encoding 'utf8' detected.
 Package biblatex Info: Automatic encoding selection.
@@ -974,20 +1000,20 @@ Package biblatex Info: Data encoding 'utf8' specified.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
 (./main.bbl)
-Package biblatex Info: Reference section=0 on input line 76.
-Package biblatex Info: Reference segment=0 on input line 76.
+Package biblatex Info: Reference section=0 on input line 78.
+Package biblatex Info: Reference segment=0 on input line 78.
 \c@lstlisting=\count476
-Package hyperref Info: Link coloring ON on input line 76.
+Package hyperref Info: Link coloring ON on input line 78.
  (./main.out) (./main.out)
-\@outlinefile=\write5
-\openout5 = `main.out'.
+\@outlinefile=\write6
+\openout6 = `main.out'.
 
 
 1: section
-<Figures/unvimplogo.png, id=121, 1027.84pt x 1027.84pt>
+<Figures/unvimplogo.png, id=153, 1027.84pt x 1027.84pt>
 File: Figures/unvimplogo.png Graphic file (type png)
 <use Figures/unvimplogo.png>
-Package pdftex.def Info: Figures/unvimplogo.png  used on input line 100.
+Package pdftex.def Info: Figures/unvimplogo.png  used on input line 102.
 (pdftex.def)             Requested size: 154.16934pt x 154.16934pt.
 [1
 
@@ -996,25 +1022,25 @@ Package pdftex.def Info: Figures/unvimplogo.png  used on input line 100.
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc} <./Figures/unvimplogo.png>]
 
 Package csquotes Warning: No style for language 'nil'.
-(csquotes)                Using fallback style on input line 147.
+(csquotes)                Using fallback style on input line 149.
 
-LaTeX Font Info:    Trying to load font information for OT1+ppl on input line 156.
+LaTeX Font Info:    Trying to load font information for OT1+ppl on input line 158.
 (/usr/share/texmf-dist/tex/latex/psnfss/ot1ppl.fd
 File: ot1ppl.fd 2001/06/04 font definitions for OT1/ppl.
 )
-LaTeX Font Info:    Trying to load font information for OML+zplm on input line 156.
+LaTeX Font Info:    Trying to load font information for OML+zplm on input line 158.
  (/usr/share/texmf-dist/tex/latex/psnfss/omlzplm.fd
 File: omlzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OML/zplm.
 )
-LaTeX Font Info:    Trying to load font information for OMS+zplm on input line 156.
+LaTeX Font Info:    Trying to load font information for OMS+zplm on input line 158.
  (/usr/share/texmf-dist/tex/latex/psnfss/omszplm.fd
 File: omszplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMS/zplm.
 )
-LaTeX Font Info:    Trying to load font information for OMX+zplm on input line 156.
+LaTeX Font Info:    Trying to load font information for OMX+zplm on input line 158.
  (/usr/share/texmf-dist/tex/latex/psnfss/omxzplm.fd
 File: omxzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMX/zplm.
 )
-LaTeX Font Info:    Trying to load font information for OT1+zplm on input line 156.
+LaTeX Font Info:    Trying to load font information for OT1+zplm on input line 158.
  (/usr/share/texmf-dist/tex/latex/psnfss/ot1zplm.fd
 File: ot1zplm.fd 2002/09/08 Fontinst v1.914 font definitions for OT1/zplm.
 ) [2]
@@ -1034,28 +1060,28 @@ File: ot1zplm.fd 2002/09/08 Fontinst v1.914 font definitions for OT1/zplm.
 [5] [6
 
 ] (./main.toc
-LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 22.
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 24.
  (/usr/share/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 ))
-\tf@toc=\write6
-\openout6 = `main.toc'.
+\tf@toc=\write7
+\openout7 = `main.toc'.
 
 
 1: section
 [7{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}] [8
 
 ] (./main.lof)
-\tf@lof=\write7
-\openout7 = `main.lof'.
+\tf@lof=\write8
+\openout8 = `main.lof'.
 
 
 1: section
 [9] [10
 
 ] (./main.lot)
-\tf@lot=\write8
-\openout8 = `main.lot'.
+\tf@lot=\write9
+\openout9 = `main.lot'.
 
 
 1: section
@@ -1111,204 +1137,216 @@ Overfull \hbox (7.23674pt too wide) in paragraph at lines 51--53
 ]
 Chapter 2.
 
-Overfull \hbox (22.87308pt too wide) in paragraph at lines 25--27
-\T1/ppl/m/n/10.95 panoramica e una descrizione matematica di quelli che sono gli strumenti che permettono
+Overfull \hbox (15.12994pt too wide) in paragraph at lines 24--25
+\T1/ppl/m/it/10.95 protezione dei dati, esplorando le tecniche crittografiche e i loro principi teorici. Successivamente,
  []
 
 
-Overfull \hbox (19.52321pt too wide) in paragraph at lines 25--27
-\T1/ppl/m/n/10.95 di rendere le comunicazione sicure. In particolare andiamo a vedere su quali fondamenta
+Overfull \hbox (6.83183pt too wide) in paragraph at lines 27--32
+\T1/ppl/m/n/10.95 crittografia è caratterizzata da una continua evoluzione e innovazione. Le fondamenta
  []
 
 
-Overfull \hbox (4.44693pt too wide) in paragraph at lines 38--39
+Overfull \hbox (4.44693pt too wide) in paragraph at lines 43--44
 []$\OMS/zplm/m/n/10.95 f\OT1/ppl/m/n/10.95 0, 1\OMS/zplm/m/n/10.95 g[]$\T1/ppl/m/n/10.95 : rappresenta l'insieme di tutte le stringhe binarie di lunghezza arbitraria. 
  []
 
-
-Overfull \hbox (8.76991pt too wide) in paragraph at lines 65--66
-[]\T1/ppl/m/n/10.95 devono essere progettate in modo tale che sia computazionalmente impraticabile
- []
-
-
-Overfull \hbox (8.12395pt too wide) in paragraph at lines 66--67
-[]\T1/ppl/m/n/10.95 una leggere variazione dell'input deve produrre un hash completamente diverso
+Excluding 'comment' comment.
+Overfull \hbox (20.01561pt too wide) in paragraph at lines 77--79
+\T1/ppl/m/n/10.95 hash completamente diverso, questa è fondamentale per garantire che gli attaccanti
  []
 
 1: section
-[3]
-
-Package caption Warning: \label without proper reference on input line 120.
-See the caption package documentation for explanation.
-
-
-LaTeX Warning: Reference `fig:schema' on page 4 undefined on input line 125.
-
-[4]
-Overfull \hbox (16.14992pt too wide) in paragraph at lines 151--154
-\T1/ppl/m/n/10.95 Le due chiavi sono matematicamente legate, ma è computazionalmente difficile ottenere
+[3] [4]
+Overfull \hbox (0.20686pt too wide) in paragraph at lines 185--190
+\T1/ppl/m/n/10.95 decifratura) semplice per chi conosce un segreto (la chiave privata) ma estremamente
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 164--165
+Underfull \hbox (badness 10000) in paragraph at lines 185--190
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 188--190
-
- []
-
-
-Package caption Warning: \label without proper reference on input line 212.
-See the caption package documentation for explanation.
-
-
-LaTeX Warning: Reference `fig:chiavi-simmetriche' on page 5 undefined on input line 193.
-
-LaTeX Font Info:    Trying to load font information for T1+cmss on input line 210.
-(/usr/share/texmf-dist/tex/latex/base/t1cmss.fd
-File: t1cmss.fd 2023/04/13 v2.5m Standard LaTeX font definitions
-)
-Overfull \hbox (41.4651pt too wide) in paragraph at lines 216--219
-\T1/ppl/m/n/10.95 hanno bisogno di un'infrastruttura che li sorregge, questa è la PKI (Public Key Infrastructure).
- []
-
-
-Overfull \hbox (20.88007pt too wide) in paragraph at lines 216--219
-\T1/ppl/m/n/10.95 Descrivere quelli che sono i componenti dell'infrastruttura e lo standard per la definzione
+Overfull \hbox (3.55743pt too wide) in paragraph at lines 212--216
+\T1/ppl/m/n/10.95 che l'hash firmato equivalga a quello calcolato. Questa pratica si utilizza per garantire
  []
 
 [5]
-Overfull \hbox (4.06139pt too wide) in paragraph at lines 222--224
+Underfull \hbox (badness 10000) in paragraph at lines 221--223
+
+ []
+
+LaTeX Font Info:    Trying to load font information for T1+cmss on input line 248.
+(/usr/share/texmf-dist/tex/latex/base/t1cmss.fd
+File: t1cmss.fd 2023/04/13 v2.5m Standard LaTeX font definitions
+)
+Overfull \hbox (3.28354pt too wide) in paragraph at lines 253--257
+\T1/ppl/m/n/10.95 necessario un canale segreto. Tuttavia in questo caso si ha il problema dell'autenticità,
+ []
+
+<Figures/pki.jpg, id=342, 763.85374pt x 478.78876pt>
+File: Figures/pki.jpg Graphic file (type jpg)
+<use Figures/pki.jpg>
+Package pdftex.def Info: Figures/pki.jpg  used on input line 260.
+(pdftex.def)             Requested size: 267.35281pt x 167.57857pt.
+[6 <./Figures/pki.jpg>]
+Overfull \hbox (4.06139pt too wide) in paragraph at lines 277--279
 \T1/ppl/m/n/10.95 rispetto ad attacchi. Solitamente viene espresso come un numero di ^^Pbit di sicurezza^^Q,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 242--243
+Overfull \hbox (3.28416pt too wide) in paragraph at lines 281--282
+[]\T1/ppl/m/n/10.95 La sicurezza dei cifrari simmetrici si basa su problemi matematici noti. Tuttavia,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 297--298
 []|\T1/ppl/m/n/10.95 Sicurezza equivalente ad attacchi contro SHA-384.
  []
 
-[6]
-<Figures/security_tcp.png, id=310, 801.99625pt x 411.5375pt>
+[7]
+Underfull \hbox (badness 10000) in paragraph at lines 308--315
+
+ []
+
+
+Overfull \hbox (2.16681pt too wide) in paragraph at lines 322--324
+[]\T1/ppl/m/n/10.95 SSH (Secure Shell): Protegge l'accesso remoto e il trasferimento di file, fornendo
+ []
+
+<Figures/security_tcp.png, id=357, 801.99625pt x 411.5375pt>
 File: Figures/security_tcp.png Graphic file (type png)
 <use Figures/security_tcp.png>
-Package pdftex.def Info: Figures/security_tcp.png  used on input line 261.
+Package pdftex.def Info: Figures/security_tcp.png  used on input line 335.
 (pdftex.def)             Requested size: 240.60072pt x 123.4622pt.
 
-
-Package caption Warning: \label without proper reference on input line 262.
-See the caption package documentation for explanation.
-
-
-LaTeX Warning: Reference `fig:tcpip' on page 7 undefined on input line 266.
-
-
-Package caption Warning: \label without proper reference on input line 293.
-See the caption package documentation for explanation.
-
-
-LaTeX Warning: Reference `fig:ipsec-suite' on page 7 undefined on input line 268.
-
-
-Overfull \hbox (1.36737pt too wide) in paragraph at lines 266--269
-\T1/ppl/m/n/10.95 con le proprie caratteristiche. Tuttavia fare sicurezza a L3 ha il significativo vantaggio
+Overfull \hbox (19.2159pt too wide) in paragraph at lines 358--359
+\T1/ppl/m/n/10.95 Come definito dall'\T1/cmtt/m/n/10.95 RFC 1825\T1/ppl/m/n/10.95 , l'architettura di IPsec è composta dai seguenti componenti: 
  []
 
 
-Overfull \hbox (3.82019pt too wide) in paragraph at lines 274--275
-[]\T1/ppl/b/n/10.95 Algoritmi\T1/ppl/m/n/10.95 : gli algoritmi crittografici e di hashing ausiliari per ottenere sicurezza 
+Overfull \hbox (2.59442pt too wide) in paragraph at lines 361--363
+[]\T1/ppl/b/n/10.95 AH (Authentication Header)\T1/ppl/m/n/10.95 : si tratta di un protocollo di sicurezza che fornisce
  []
 
 
-Overfull \hbox (5.84583pt too wide) in paragraph at lines 300--303
-\T1/ppl/m/n/10.95 Queste informazioni, tra cui abbiamo chiavi e altro materiale crittografcio, consentono
+Overfull \hbox (1.06172pt too wide) in paragraph at lines 361--363
+\T1/ppl/m/n/10.95 modificati durante la trasmissione. Non offre cifratura, quindi i dati rimangono
  []
 
-[7 <./Figures/security_tcp.png>]
-Overfull \hbox (21.29613pt too wide) in paragraph at lines 327--328
-\T1/ppl/m/n/10.95 della negoziazione di chiavi crittografiche e dei parametri di sicurezza tra due dispositivi,
+[8 <./Figures/security_tcp.png>]
+Overfull \hbox (2.09056pt too wide) in paragraph at lines 368--369
+[]\T1/ppl/b/n/10.95 IKE (Internet Key Exchange)\T1/ppl/m/n/10.95 : protocollo che consente di negoziare, autenticare
  []
 
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
 
-Package caption Warning: \label without proper reference on input line 360.
-See the caption package documentation for explanation.
+Overfull \hbox (10.20384pt too wide) in paragraph at lines 369--370
+[]\T1/ppl/b/n/10.95 Algoritmi\T1/ppl/m/n/10.95 : gli algoritmi crittografici e di hashing utilizzati per ottenere sicurezza. 
+ []
 
 
-LaTeX Warning: Reference `fig:ike_exchange' on page 8 undefined on input line 364.
+Overfull \hbox (1.65205pt too wide) in paragraph at lines 397--400
+[]\T1/ppl/m/it/10.95 Replay Protection\T1/ppl/m/n/10.95 : per evitare attacchi di tipo reply, IPsec tiene traccia dei numeri
+ []
 
-[8]
-Overfull \hbox (1.64162pt too wide) in paragraph at lines 411--413
-\T1/ppl/m/n/10.95 direzione. Ciò è indicato mediante la notazione $\OML/zplm/m/it/10.95 SK\OMS/zplm/m/n/10.95 f\OT1/ppl/m/n/10.95 ...\OMS/zplm/m/n/10.95 g$ \T1/ppl/m/n/10.95 La modalità di autenticazione
+
+Overfull \hbox (7.66322pt too wide) in paragraph at lines 405--409
+\T1/ppl/m/n/10.95 IP diventa in grado di mantenere un'insieme di informazioni di stato grazie al concetto
  []
 
 [9]
-Overfull \hbox (38.7835pt too wide) in paragraph at lines 422--424
+Overfull \hbox (29.94624pt too wide) in paragraph at lines 418--436
+\T1/ppl/m/n/10.95 canale di comunicazione bidirezionale IPsec tra due entità occorrono due SA unidirezionali
+ []
+
+
+Overfull \hbox (3.31688pt too wide) in paragraph at lines 441--445
+\T1/ppl/m/n/10.95 In un contesto come quello delle reti potremmo avere che lo stesso nodo ha connessini
+ []
+
+
+Overfull \hbox (12.73393pt too wide) in paragraph at lines 447--450
+[]\T1/ppl/m/it/10.95 Manuale\T1/ppl/m/n/10.95 : occorre configurire manualmente le chiavi e le impostazioni di sicurezza
+ []
+
+
+Overfull \hbox (6.5021pt too wide) in paragraph at lines 454--457
+\T1/ppl/m/n/10.95 e scalabile alla gestione delle Security Association, un esempio di questo è IKE definito
+ []
+
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+[10]
+Overfull \hbox (1.64162pt too wide) in paragraph at lines 539--541
+\T1/ppl/m/n/10.95 direzione. Ciò è indicato mediante la notazione $\OML/zplm/m/it/10.95 SK\OMS/zplm/m/n/10.95 f\OT1/ppl/m/n/10.95 ...\OMS/zplm/m/n/10.95 g$ \T1/ppl/m/n/10.95 La modalità di autenticazione
+ []
+
+[11]
+Overfull \hbox (38.7835pt too wide) in paragraph at lines 550--552
 \T1/ppl/m/n/10.95 può arrivare anche a diversi Kbyte di dimensione. In questi casi si verifica la frammentazione
  []
 
 
-Overfull \hbox (49.87538pt too wide) in paragraph at lines 448--453
+Overfull \hbox (49.87538pt too wide) in paragraph at lines 576--581
 \T1/ppl/m/n/10.95 pacchetti e di conseguenza bloccano le comunicazioni IKE. Questo è riportato schematicamente
  []
 
 
-Overfull \hbox (2.95534pt too wide) in paragraph at lines 454--456
+Overfull \hbox (2.95534pt too wide) in paragraph at lines 582--584
 \T1/ppl/m/n/10.95 cui la frammentazione dei messaggi è gestita direttamente da parte di chi implementa
  []
 
 LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <12> not available
-(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 457.
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 585.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\colorbox' on input line 457.
+(hyperref)                removing `\colorbox' on input line 585.
 
 
-Overfull \hbox (7.64264pt too wide) in paragraph at lines 459--462
+Overfull \hbox (7.64264pt too wide) in paragraph at lines 587--590
 \T1/ppl/m/n/10.95 dei dati da trasferire ecceda la dimensione massima che causerebbe la frammentazione
  []
 
-[10]
-Overfull \hbox (6.34424pt too wide) in paragraph at lines 484--485
+
+Overfull \hbox (6.34424pt too wide) in paragraph at lines 612--613
 []\T1/ppl/m/n/10.95 Per questo viene aggiunto questo scambio che viene utilizzato per trasferire grandi
  []
 
-
-Overfull \hbox (14.05795pt too wide) in paragraph at lines 486--489
+[12]
+Overfull \hbox (14.05795pt too wide) in paragraph at lines 614--617
 \T1/ppl/m/n/10.95 QC-resistant, tuttavia in generale può essere utilizzzato per trasferire qualsiasi tipologia
  []
 
 
-Overfull \hbox (16.42783pt too wide) in paragraph at lines 486--489
+Overfull \hbox (16.42783pt too wide) in paragraph at lines 614--617
 \T1/ppl/m/n/10.95 scambio si scambiano altre chiavi allora le coppie $\OMS/zplm/m/n/10.95 f\OML/zplm/m/it/10.95 SK[]\OT1/ppl/m/n/10.95 , \OML/zplm/m/it/10.95 SK[]\OMS/zplm/m/n/10.95 g$ \T1/ppl/m/n/10.95 vengono aggiornate. 
  []
 
 
-Overfull \hbox (8.51591pt too wide) in paragraph at lines 501--502
+Overfull \hbox (8.51591pt too wide) in paragraph at lines 629--630
 []\T1/ppl/m/n/10.95 flag [][][][][][]: il peer dice di supportare la frammentazione
  []
 
 
-Overfull \hbox (0.9347pt too wide) in paragraph at lines 510--515
+Overfull \hbox (0.9347pt too wide) in paragraph at lines 638--643
 \T1/ppl/m/n/10.95 dell [][][][][][] il flag [][][][][][] (che sta per Intermediate Exchange Support).
  []
 
 
-Overfull \hbox (6.94122pt too wide) in paragraph at lines 510--515
+Overfull \hbox (6.94122pt too wide) in paragraph at lines 638--643
 \T1/ppl/m/n/10.95 Se anche il responder lo supporta lo includerà nel messaggio di risposta dello scambio. 
  []
 
 
-Overfull \hbox (3.9293pt too wide) in paragraph at lines 526--527
+Overfull \hbox (3.9293pt too wide) in paragraph at lines 654--655
 \T1/ppl/m/n/10.95 Un solo KEM con Kyber L1 usando come suite AES_GCM has vabene come certificato
  []
 
-) [11]
+) [13]
 \openout2 = `Appendices/AppendixA.aux'.
 
- (./Appendices/AppendixA.tex [12
+ (./Appendices/AppendixA.tex [14
 
 
 
@@ -1345,43 +1383,39 @@ Overfull \hbox (5.30916pt too wide) in paragraph at lines 52--53
  []
 
 1: section
-[13]
+[15]
 Overfull \hbox (5.94412pt too wide) in paragraph at lines 61--63
 \T1/ppl/m/n/10.95 Il Security Association Payload denotato con $\OML/zplm/m/it/10.95 SA$ \T1/ppl/m/n/10.95 è utlilizzatoper negoziare gli attributi
  []
 
-) [14]
+) [16]
 
-LaTeX Warning: Empty bibliography on input line 264.
+LaTeX Warning: Empty bibliography on input line 266.
 
 (./main.aux (./Chapters/Chapter1.aux) (./Chapters/Chapter2.aux) (./Appendices/AppendixA.aux))
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2020/03/25>
  ***********
-
-
-LaTeX Warning: There were undefined references.
-
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 0064E7541BD116FBE6494096DFF41560;3393.
+(rerunfilecheck)             Checksum: D7904C17C39955DD89FEC8D66A0AEA69;3591.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 41686 strings out of 476076
- 907543 string characters out of 5793775
- 1953187 words of memory out of 5000000
- 63093 multiletter control sequences out of 15000+600000
- 622657 words of font info for 143 fonts, out of 8000000 for 9000
+ 42608 strings out of 476076
+ 932582 string characters out of 5793775
+ 1951187 words of memory out of 5000000
+ 63972 multiletter control sequences out of 15000+600000
+ 622400 words of font info for 142 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 100i,21n,101p,1886b,1128s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 100i,21n,101p,1886b,1124s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/mathpazo/fplmri.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfss1095.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb></usr/share/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/palatino/uplbi8a.pfb></usr/share/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on main.pdf (32 pages, 340634 bytes).
+Output written on main.pdf (34 pages, 389407 bytes).
 PDF statistics:
- 435 PDF objects out of 1000 (max. 8388607)
- 365 compressed objects within 4 object streams
- 87 named destinations out of 1000 (max. 500000)
- 283 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 495 PDF objects out of 1000 (max. 8388607)
+ 401 compressed objects within 5 object streams
+ 94 named destinations out of 1000 (max. 500000)
+ 424 words of extra memory for PDF output out of 10000 (max. 10000000)
 
