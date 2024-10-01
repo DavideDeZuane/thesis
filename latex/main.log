@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Arch Linux) (preloaded format=pdflatex 2024.9.29)  1 OCT 2024 11:08
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Arch Linux) (preloaded format=pdflatex 2024.9.29)  1 OCT 2024 11:52
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1221,83 +1221,87 @@ Overfull \hbox (3.82019pt too wide) in paragraph at lines 274--275
  []
 
 
-Overfull \hbox (21.29613pt too wide) in paragraph at lines 305--306
+Overfull \hbox (5.84583pt too wide) in paragraph at lines 300--303
+\T1/ppl/m/n/10.95 Queste informazioni, tra cui abbiamo chiavi e altro materiale crittografcio, consentono
+ []
+
+[7 <./Figures/security_tcp.png>]
+Overfull \hbox (21.29613pt too wide) in paragraph at lines 327--328
 \T1/ppl/m/n/10.95 della negoziazione di chiavi crittografiche e dei parametri di sicurezza tra due dispositivi,
  []
 
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
-[7 <./Figures/security_tcp.png>]
 
-Package caption Warning: \label without proper reference on input line 338.
+Package caption Warning: \label without proper reference on input line 360.
 See the caption package documentation for explanation.
 
 
-LaTeX Warning: Reference `fig:ike_exchange' on page 8 undefined on input line 342.
+LaTeX Warning: Reference `fig:ike_exchange' on page 8 undefined on input line 364.
 
 [8]
-Overfull \hbox (1.64162pt too wide) in paragraph at lines 389--391
+Overfull \hbox (1.64162pt too wide) in paragraph at lines 411--413
 \T1/ppl/m/n/10.95 direzione. Ciò è indicato mediante la notazione $\OML/zplm/m/it/10.95 SK\OMS/zplm/m/n/10.95 f\OT1/ppl/m/n/10.95 ...\OMS/zplm/m/n/10.95 g$ \T1/ppl/m/n/10.95 La modalità di autenticazione
  []
 
-
-Overfull \hbox (38.7835pt too wide) in paragraph at lines 400--402
+[9]
+Overfull \hbox (38.7835pt too wide) in paragraph at lines 422--424
 \T1/ppl/m/n/10.95 può arrivare anche a diversi Kbyte di dimensione. In questi casi si verifica la frammentazione
  []
 
 
-Overfull \hbox (49.87538pt too wide) in paragraph at lines 426--431
+Overfull \hbox (49.87538pt too wide) in paragraph at lines 448--453
 \T1/ppl/m/n/10.95 pacchetti e di conseguenza bloccano le comunicazioni IKE. Questo è riportato schematicamente
  []
 
-[9]
-Overfull \hbox (2.95534pt too wide) in paragraph at lines 432--434
+
+Overfull \hbox (2.95534pt too wide) in paragraph at lines 454--456
 \T1/ppl/m/n/10.95 cui la frammentazione dei messaggi è gestita direttamente da parte di chi implementa
  []
 
 LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <12> not available
-(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 435.
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 457.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\colorbox' on input line 435.
+(hyperref)                removing `\colorbox' on input line 457.
 
 
-Overfull \hbox (7.64264pt too wide) in paragraph at lines 437--440
+Overfull \hbox (7.64264pt too wide) in paragraph at lines 459--462
 \T1/ppl/m/n/10.95 dei dati da trasferire ecceda la dimensione massima che causerebbe la frammentazione
  []
 
-
-Overfull \hbox (6.34424pt too wide) in paragraph at lines 462--463
+[10]
+Overfull \hbox (6.34424pt too wide) in paragraph at lines 484--485
 []\T1/ppl/m/n/10.95 Per questo viene aggiunto questo scambio che viene utilizzato per trasferire grandi
  []
 
 
-Overfull \hbox (14.05795pt too wide) in paragraph at lines 464--467
+Overfull \hbox (14.05795pt too wide) in paragraph at lines 486--489
 \T1/ppl/m/n/10.95 QC-resistant, tuttavia in generale può essere utilizzzato per trasferire qualsiasi tipologia
  []
 
 
-Overfull \hbox (16.42783pt too wide) in paragraph at lines 464--467
+Overfull \hbox (16.42783pt too wide) in paragraph at lines 486--489
 \T1/ppl/m/n/10.95 scambio si scambiano altre chiavi allora le coppie $\OMS/zplm/m/n/10.95 f\OML/zplm/m/it/10.95 SK[]\OT1/ppl/m/n/10.95 , \OML/zplm/m/it/10.95 SK[]\OMS/zplm/m/n/10.95 g$ \T1/ppl/m/n/10.95 vengono aggiornate. 
  []
 
 
-Overfull \hbox (8.51591pt too wide) in paragraph at lines 479--480
+Overfull \hbox (8.51591pt too wide) in paragraph at lines 501--502
 []\T1/ppl/m/n/10.95 flag [][][][][][]: il peer dice di supportare la frammentazione
  []
 
-[10]
-Overfull \hbox (0.9347pt too wide) in paragraph at lines 488--493
+
+Overfull \hbox (0.9347pt too wide) in paragraph at lines 510--515
 \T1/ppl/m/n/10.95 dell [][][][][][] il flag [][][][][][] (che sta per Intermediate Exchange Support).
  []
 
 
-Overfull \hbox (6.94122pt too wide) in paragraph at lines 488--493
+Overfull \hbox (6.94122pt too wide) in paragraph at lines 510--515
 \T1/ppl/m/n/10.95 Se anche il responder lo supporta lo includerà nel messaggio di risposta dello scambio. 
  []
 
 
-Overfull \hbox (3.9293pt too wide) in paragraph at lines 504--505
+Overfull \hbox (3.9293pt too wide) in paragraph at lines 526--527
 \T1/ppl/m/n/10.95 Un solo KEM con Kyber L1 usando come suite AES_GCM has vabene come certificato
  []
 
@@ -1374,7 +1378,7 @@ Here is how much of TeX's memory you used:
  14 hyphenation exceptions out of 8191
  100i,21n,101p,1886b,1128s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/mathpazo/fplmri.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfss1095.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb></usr/share/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/palatino/uplbi8a.pfb></usr/share/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on main.pdf (32 pages, 339900 bytes).
+Output written on main.pdf (32 pages, 340634 bytes).
 PDF statistics:
  435 PDF objects out of 1000 (max. 8388607)
  365 compressed objects within 4 object streams

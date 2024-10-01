@@ -295,9 +295,31 @@ IPsec è una suite di protocolli i cui principali componenti, come mostrato in \
 \end{figure}
 \subsection{Security Association}
 
+Citare l'RFC di riferimento ovvero il 1825
+
+IP di suo è un protocollo state-less, il compito di IPsec è renderlo un protocollo in rado di mantenere un'insieme di informazioni di stato 
+tra due entità coinvolte. Queste informazioni, tra cui abbiamo chiavi e altro materiale crittografcio, consentono un'associazione unilaterale 
+tra sorgente e destinazione nota come SA. 
+
+
+Una SA è un canale simplex
+E' molto importante quando il terminale comunica tramite IPsec non solamente con un altro ma con diversi, e oguno avrà i propri parametri
+la SA rappresenta il metodo per gestirlo.
+Nel set di parametri crittografici contenuti in una SA abbiamo:
+
+\begin{itemize}
+    \item contatore dei pacchetti trasmessi
+    \item le informazioni relative a ESP e AH
+    \item il tempo di vita della SA
+    \item chiavi crittografiche sia per autenticazione che cifratura
+\end{itemize}
+
+Un canale di comunicazione bidirezionale instaurato tra due entità IPsec consiste di due SA unidirezionali di verso opposto.
+
+
 Le comunicazioni sicure si costruiscono sopra un concetto fondamentale noto come Security Association (SA). 
 
-
+IPsec prevede tecniche di gestione delle chiavi sia manuali che automatiche, le ultime nascono per fornire una gestione scalabile delle chiavi.
 
 \subsection{IKE}
 
