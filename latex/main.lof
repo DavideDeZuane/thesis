@@ -1,14 +1,14 @@
 \babel@toc {nil}{}\relax 
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Funzionamento di uno schema crittografico}}{4}{figure.caption.21}%
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Scambio di Chiave Difie-Hellman}}{5}{figure.caption.26}%
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Esplosione combinatoria}}{6}{figure.caption.29}%
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Public Key Infrastructure}}{6}{figure.caption.30}%
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Modello TCP/IP con Protocolli di Sicurezza}}{8}{figure.caption.35}%
-\contentsline {figure}{\numberline {2.6}{\ignorespaces IPsec Protolocol Suite}}{9}{figure.caption.38}%
-\contentsline {figure}{\numberline {2.7}{\ignorespaces Security Association bidirezionali}}{10}{figure.caption.40}%
-\contentsline {figure}{\numberline {2.8}{\ignorespaces Fasi di Negoziazione del Protocollo IKEv2}}{11}{figure.caption.42}%
-\contentsline {figure}{\numberline {2.9}{\ignorespaces Drop Pacchetti}}{12}{figure.caption.49}%
-\contentsline {figure}{\numberline {2.10}{\ignorespaces Scambio nuovo}}{13}{figure.caption.51}%
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Funzionamento di uno schema crittografico}}{7}{figure.caption.22}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Scambio di Chiave Difie-Hellman}}{9}{figure.caption.27}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Esplosione combinatoria}}{10}{figure.caption.30}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Public Key Infrastructure}}{11}{figure.caption.31}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Stack TCP/IP}}{13}{figure.caption.36}%
+\contentsline {figure}{\numberline {2.6}{\ignorespaces IPsec Protolocol Suite}}{14}{figure.caption.39}%
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Security Association bidirezionali}}{15}{figure.caption.41}%
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Fasi di Negoziazione del Protocollo IKEv2}}{17}{figure.caption.44}%
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Drop Pacchetti}}{18}{figure.caption.51}%
+\contentsline {figure}{\numberline {2.10}{\ignorespaces Scambio nuovo}}{19}{figure.caption.53}%
 \addvspace {10\p@ }

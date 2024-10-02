@@ -328,14 +328,34 @@ in vari livelli, ciascuno con delle funzioni specifiche che non si sovrappongono
     scambiati tra due nodi, fornendo autenticazione, integrità e cifratura.
 \end{itemize}
 
+\begin{figure}[h!]
+    \centering 
+    \begin{tikzpicture} \matrix[matrix of nodes, nodes={anchor=center, minimum height=1cm}, 
+        column 1/.style={nodes={draw, minimum width=5cm}}, 
+        column 2/.style={nodes={align=left, text width=3cm}},
+        row sep=-\pgflinewidth, column sep=5mm] (Layers) { 
+            Application Layer & SSH, PGP \\
+            Transport Layer & TLS        \\ 
+            Network Layer & IPsec        \\ 
+            Data Link Layer  & L2TP      \\ 
+            Physical Layer & Hopping     \\ }; \foreach \i in {1,...,5}
+    \draw[->] ([xshift=-5mm]Layers-\i-1.east)--(Layers-\i-2.west);
+    \end{tikzpicture} 
+    \caption{Stack TCP/IP} 
+    \label{fig:tcp stack} 
+    
+\end{figure}
 
 % MODELLO TCP/IP
-\begin{figure}[h!]
+\begin{comment}
+    
+    \begin{figure}[h!]
     \centering
     \includegraphics[scale=0.3]{Figures/security_tcp.png}
     \caption{Modello TCP/IP con Protocolli di Sicurezza}
     \label{fig:tcpip}
 \end{figure}
+\end{comment}
 
 \noindent
 Ogni protocollo avrà le proprie caratteristiche, tuttavia fare sicurezza a L3 dello stack TCP/IP offre un vantaggio significativo:
@@ -436,7 +456,7 @@ La \textit{Figura \ref{fig:sa_bidirezionale}} mostra il tunnerl virtuale in esec
 
 \noindent
 
-\subsection{IKE}
+\subsection{Negoziazione SA}
 
 In un contesto come quello delle reti potremmo avere che lo stesso nodo ha connessini IPsec multiple, 
 le SA consentono di distinguere e identificare in modo univoco la configurazioni di sicurezza da applicare alla comunicazione.\\
@@ -452,7 +472,11 @@ IPsec prevede tecniche di negoziazione delle SA di tipo:
     intervento umano diretto.
 \end{itemize}
 \noindent
-L'utilizzo di tecniche di negoziazione automatica offre un approccio sicuro, flessibile e scalabile alla gestione delle Security Association, un esempio di questo è IKE definito nell'\texttt{RFC 7296}.
+L'utilizzo di tecniche di negoziazione automatica offre un approccio sicuro, flessibile e scalabile alla gestione delle Security Association, un esempio di questo è IKE.
+Andiamo a vedere nel dettaglio IKE nella prossima sezione.
+
+\newpage
+\section{IKE}
 Questo protocollo definisce una serie di scambi, mostrati in \textit{Figura \ref{fig:ike_exchange}}, al termine del quale i due peer avranno negioziati i parametri di sicurezza e le chiavi crittografiche per una SA.
 
 \begin{figure}[htbp]

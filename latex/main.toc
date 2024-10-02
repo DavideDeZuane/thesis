@@ -2,30 +2,29 @@
 \contentsline {chapter}{Abstract}{iii}{section*.2}%
 \contentsline {chapter}{Acknowledgements}{v}{section*.3}%
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.12}%
-\contentsline {section}{\numberline {1.1}Post-Quantum}{1}{section.13}%
-\contentsline {section}{\numberline {1.2}Problematiche}{1}{section.14}%
-\contentsline {chapter}{\numberline {2}Fondamenti di Comunicazioni Sicure}{3}{chapter.15}%
-\contentsline {section}{\numberline {2.1}Teoria}{3}{section.16}%
-\contentsline {subsection}{\numberline {2.1.1}Hash Function}{3}{subsection.17}%
-\contentsline {subsection}{\numberline {2.1.2}Schemi crittografici}{4}{subsection.19}%
-\contentsline {subsubsection}{Simmetrici}{4}{section*.22}%
-\contentsline {subsubsection}{Asimmetrici}{5}{section*.23}%
-\contentsline {subsection}{\numberline {2.1.3}Confronto}{6}{subsection.27}%
-\contentsline {subsection}{\numberline {2.1.4}Sicurezza}{7}{subsection.32}%
-\contentsline {section}{\numberline {2.2}Applicazioni}{8}{section.34}%
-\contentsline {section}{\numberline {2.3}IPsec}{8}{section.36}%
-\contentsline {subsection}{\numberline {2.3.1}Architettura}{9}{subsection.37}%
-\contentsline {subsection}{\numberline {2.3.2}Security Association}{9}{subsection.39}%
-\contentsline {subsection}{\numberline {2.3.3}IKE}{10}{subsection.41}%
-\contentsline {subsection}{\numberline {2.3.4}\textbf {IKE\_SA\_INIT}}{11}{subsection.43}%
-\contentsline {subsection}{\numberline {2.3.5}IKE\_AUTH}{11}{subsection.45}%
-\contentsline {subsection}{\numberline {2.3.6}CHILD\_SA}{12}{subsection.47}%
-\contentsline {section}{\numberline {2.4}Problemi}{12}{section.48}%
-\contentsline {subsection}{\numberline {2.4.1}\colorbox {gray!10}{\texttt {IKE\_INTERMEDIATE}}}{12}{subsection.50}%
-\contentsline {section}{\numberline {2.5}Post-Quantum}{13}{section.52}%
-\contentsline {chapter}{\numberline {A}IKEv2 Notation}{15}{appendix.53}%
-\contentsline {subsection}{\numberline {A.0.1}Authentication}{15}{subsection.54}%
-\contentsline {section}{\numberline {A.1}Key Derivation}{15}{section.55}%
-\contentsline {subsection}{\numberline {A.1.1}IKE SA}{15}{subsection.56}%
-\contentsline {subsection}{\numberline {A.1.2}IPsec SA}{16}{subsection.58}%
-\contentsline {section}{\numberline {A.2}Security Association Payload}{16}{section.59}%
+\contentsline {chapter}{\numberline {2}Fondamenti di Comunicazioni Sicure}{5}{chapter.16}%
+\contentsline {section}{\numberline {2.1}Teoria}{5}{section.17}%
+\contentsline {subsection}{\numberline {2.1.1}Hash Function}{5}{subsection.18}%
+\contentsline {subsection}{\numberline {2.1.2}Schemi crittografici}{6}{subsection.20}%
+\contentsline {subsubsection}{Simmetrici}{7}{section*.23}%
+\contentsline {subsubsection}{Asimmetrici}{8}{section*.24}%
+\contentsline {subsection}{\numberline {2.1.3}Confronto}{10}{subsection.28}%
+\contentsline {subsection}{\numberline {2.1.4}Sicurezza}{11}{subsection.33}%
+\contentsline {section}{\numberline {2.2}Applicazioni}{12}{section.35}%
+\contentsline {section}{\numberline {2.3}IPsec}{13}{section.37}%
+\contentsline {subsection}{\numberline {2.3.1}Architettura}{13}{subsection.38}%
+\contentsline {subsection}{\numberline {2.3.2}Security Association}{14}{subsection.40}%
+\contentsline {subsection}{\numberline {2.3.3}Negoziazione SA}{15}{subsection.42}%
+\contentsline {section}{\numberline {2.4}IKE}{17}{section.43}%
+\contentsline {subsection}{\numberline {2.4.1}\textbf {IKE\_SA\_INIT}}{17}{subsection.45}%
+\contentsline {subsection}{\numberline {2.4.2}IKE\_AUTH}{18}{subsection.47}%
+\contentsline {subsection}{\numberline {2.4.3}CHILD\_SA}{18}{subsection.49}%
+\contentsline {section}{\numberline {2.5}Problemi}{18}{section.50}%
+\contentsline {subsection}{\numberline {2.5.1}\colorbox {gray!10}{\texttt {IKE\_INTERMEDIATE}}}{19}{subsection.52}%
+\contentsline {section}{\numberline {2.6}Post-Quantum}{20}{section.54}%
+\contentsline {chapter}{\numberline {A}IKEv2 Notation}{21}{appendix.55}%
+\contentsline {subsection}{\numberline {A.0.1}Authentication}{21}{subsection.56}%
+\contentsline {section}{\numberline {A.1}Key Derivation}{21}{section.57}%
+\contentsline {subsection}{\numberline {A.1.1}IKE SA}{21}{subsection.58}%
+\contentsline {subsection}{\numberline {A.1.2}IPsec SA}{22}{subsection.60}%
+\contentsline {section}{\numberline {A.2}Security Association Payload}{22}{section.61}%

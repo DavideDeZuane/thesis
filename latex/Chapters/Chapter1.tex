@@ -4,9 +4,94 @@
 
 \label{introduction}  
 
-Introduzione al problema e al contensto in cui ci troviamo e le crtiticità presenti
+Introduzione al quantum computer e spiegare il nome, ovvero perchè si basa sui principi fisici.
+Confronto con il computer classico utilizzato per calcolare la classe di complessità di un problema
 
-Contributo apportato
+L'attuale crittorafia a chiave pubblica è minacciata da due algoritmi pioneri in questo campo ovvero quello di Grover e Shor
+Negli utilimi anni la minaccia del quantum computing, in particolare la loro potenza di calcolo
+insieme agli algoritmi di Grover e shor ha 
+ribaltato quelle che sono le carte in tavola, dato che consentono di risolvere in tempo
+polinomiale i problemi su cui si basano gli schemi crittografici più diffusi 
+tra cui il problema del logaritmi discreto alla base di DH e la fattorizzazione di numeri 
+primi alla base di RSA.
+
+Questo ha spinto a introdurre nuovi schemi di firma basati su problemi matematici più complessi, 
+tra questi abbiamo i lattice-based, hash-based, ecc..
+Recentemente tra quelli proposti ne sono stati standardizzati diversi, tra questi abbiamo:
+kyber, dilithium, classim mceliece 
+
+\section*{Criticità}
+
+\begin{itemize}
+	\item Tradeoff tra aumento della complessità con dimensioni chiave e velocità delle operazioni
+	\item Requisiti della rete e in generale delle applicazioni
+	\item Implementazioni 
+	\item Affidabilità e dunque transizione da uno all'alto.
+\end{itemize}
+
+
+Ora il fatto che questi problemi si siano dimostrati computazionalmente onerosi non li rende 
+ottimali anche per l'utilizzo pratico su tutte quelle che sono le infrastrutture di rete esistenti.
+
+Questo perchè per contrastare l'incredibile potenza di calocolo del quantum computer occorre 
+rendere il problema più complesso che in generale potrebbe portare e dimensioni delle chiavi molto 
+grandi oppure ad operazioni di keygen, codifica e decoddifica molto lonte.
+
+Dunque l'algoritmo dal punto di vista matematico soddisfa quelli che sono i requisiti 
+tuttavia non è detta che soddisfi quelli che sono i requisiti che lo rendano adatto ad
+essere applicato a contesti reali come quello dlele reti di computer.
+
+Oltre ad un problema computazionale abbiamo anche un problema di fiducia dei cofronti di questi algoritmi, 
+ovvero dato che sono stati appena introdotti l'implementazione potrebbe peccare da qualche punto di vista
+Inoltre fare una transizione così drastica risulta molto problematico.
+
+
+
+
+
+
+Io la metterei si dal punto di vista della ricerca ma anche dal punto di vista implementativo, ovvero 
+non basta definire solamente nuovi schemi che dal punto di vista teorico possono essere sicuri 
+ma questi devono poi trovare un'utilizzo pratico.
+
+L'utilizzo pratico va in contro a diverse problematiche in particolare ha requisiti più stringenti 
+che al momento della definizione matematiche dello schema non vengono presi in considerazione.
+Si hanno constraint sia di usabilità che di fiducia nei loro confronti
+poichè l'approccio standard è quello di aumentare le dimensioni delle chiavi in modo tale da contrapporti all'aumento di
+capacità computazionale del quantum computer
+
+Nel caso reale l'autemto di dimensione ha effetti significativi sulle prestazioni della rete
+dato che possono portare a problematiche di frammentazione. E va considerata anche la latenza dovuta alle operazioni 
+di cifratura e altre cose
+
+
+
+\section*{Contributo Apportato}
+
+L'obiettivo di questo lavoro è andare a vedere quali sono gli effetti di applicare primitive di questo 
+tipo nei protocolli maggiormenti diffusi per la sicurezza delle comunicazioni.
+In particolare considerando il caso specifico di comunicazioni satellitari, che hanno 
+constraint importanti sul numero di pacchetti da scambiare e di conseguenza sulla dimesione di quest'utilimi
+
+Una volta determinati quelli che sono gli effetti, siamo passati a verificare se il protocollo utilizzato 
+rispetto alla sua applicazione, fosse quello ideale. 
+In particolare dalle conclusioni del benchmarcking siamo arrivati ad una prima implementazione, molto spartana,
+di quella che è una versione minimale di IKE.
+
+
+
+\section*{Organizazione della Tesi}
+
+Il proseguo della tesi sarà strutturato nel seguente modo:
+
+\begin{itemize}
+	\item Capitolo 2:  si danno le fondamenta matematica delle sicurezza nelle comunicazioni 
+	sicure e di come queste vengono applicte nelle comunicazioni digitali. In particolare
+	prendiamo in esame il caso di IPsec e di un suo protocollo ausiliario utilizzato per negoziarne 
+	i parametri di sicurezza.
+	\item Capitolo 3: descrizione di quello che è lo scenario applicativo che si prende in considerazione 
+	
+\end{itemize}
 
 %----------------------------------------------------------------------------------------
 
@@ -18,47 +103,3 @@ Contributo apportato
 \newcommand{\option}[1]{\texttt{\itshape#1}}
 
 %----------------------------------------------------------------------------------------
-
-Fare un'introduzione al problema e dire quale è stato il contributo.\\
-Suddividere il contributo in:
-
-\begin{itemize}
-	\item La parte di benchmarking, in cui andiamo a definire tutte quelle che sono le problematiche relative al post quantum 
-	\item la parte di implementazione
-\end{itemize}
-
-
-\section{Post-Quantum}
-
-Il postquantum può rompere gli schemi di crittografia classici tuttavia ì sono nati quelli nuovi.
-
-\section{Problematiche}
-Tuttavia il quantum computing porta ad aumentare la dimensione della chiave, in questo modo si perde di efficienza. Inoltre ha particolare effetto sui sistemi a chiave
-pubblica, mentre su quelli basati su chiave segreta o funzioni di hash non sono molto vulnerabili a questo.
-Le sfide della post-quantum cryptography sono le seguenti:
-
-\begin{itemize}
-	\item Occorre migliorare l'efficienza 
-	\item Occorre migliorarne l'usabilità
-\end{itemize}
-
-Ovvero occorre preparare il mondo per una transizione alla crittografia post-quantum
-
-Dire quelle che sono le problematiche del post quantum
-Esempi di problematiche:
-\begin{itemize}
-\item non esiste il diffie hellman post quantum
-\item i messaggi diventano molto più lunghi (problemi per frammentazione,
-	certificati molto più grandi, chiavi pubbliche piu grandi)
-\end{itemize}
-
-Queste hanno conseguenze importanti sui protocolli che ne fanno uso a causa dell'aumento di dimensioni dellee chiavi.
-
-
-Gli schemi sono divisi in 
-
-- l1:aes128
-- l3:aes192
-- l5:aes256
-
-
