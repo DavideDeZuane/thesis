@@ -32,13 +32,6 @@ void prepend_to_packet(uint8_t **packet, size_t *packet_len, void *data, int dat
     memcpy(*packet, data, data_len);
     convert_to_little_endian(data, type);
     *packet_len += data_len;
-    printf("Dati aggiunti al pacchetto: ");
-
-    uint8_t *buf = (uint8_t *) data;
-    for (size_t i = 0; i < data_len; i++) {
-        printf("0x%02x ", buf[i]);
-    }
-    printf("\n");
 }
 
 void convert_transform(Transform* transform) {

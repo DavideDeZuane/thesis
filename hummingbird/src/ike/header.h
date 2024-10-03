@@ -43,5 +43,6 @@ void set_next_payload(ike_header_builder_t *builder, NextPayload next_payload);
 ike_header_t build_header(ike_header_builder_t *builder);
 
 void create_header(ike_header_builder_t *builder, Initiator *initiator, ExchangeType exchange);
+void parse_header(ike_header_t *header, uint8_t* buffer, size_t* buffer_len);
 
 #endif // HEADER_BUILDER_H

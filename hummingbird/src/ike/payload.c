@@ -75,8 +75,6 @@ void generate_packet(unsigned char **packet, size_t *packet_len, ike_header_t *h
     prepend_to_packet(packet, packet_len, header, IKE_HEADER_DIM, IKE_HEADER);
 }
 
-
-
 //qui mi serve la funzione che prende il buffer e me lo popola con tutte le informazioni per fare la richiesta
 void generate_request(uint8_t **packet, size_t *packet_len, ExchangeType exchange){
     //quindi devo andare a popolare i vari container quindi definire header e payload
@@ -98,7 +96,6 @@ void init_proposal(Proposal* proposal, const Suite* suite, ExchangeType exchange
         
     }
 }
-
 
 void create_payload_header(PayloadHeader* header, NextPayload next_payload, uint16_t length){
     //fare controllo sui puntatori

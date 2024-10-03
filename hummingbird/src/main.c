@@ -17,6 +17,8 @@
 //librerie per dh
 #include <openssl/evp.h>
 #include <openssl/dh.h>
+#include <openssl/err.h>
+#include <openssl/provider.h>
 #include <openssl/core_names.h>
 #include <sys/socket.h>
 #include <sys/types.h>
@@ -24,6 +26,8 @@
 #define CONFIG_FILE "config.json"
 #define BUFFER_SIZE 1024
 #define PAYLOAD_SIZE 64 
+
+
 typedef struct LookupEntry {
     uint8_t type;          // Tipo di payload
     uint8_t* data;        // Dati del payload
@@ -31,11 +35,15 @@ typedef struct LookupEntry {
     struct LookupEntry* next; // Puntatore al prossimo elemento
 } LookupEntry;
 
+void handleErrors() {
+    ERR_print_errors_fp(stderr);
+    abort();
+}
+
 
 void print_buffer(uint8_t* buffer, size_t buffer_len){
     for (size_t i = 0; i < buffer_len ; i++) { printf("%02X ", buffer[i]); }
 }
-
 
 // Funzione per creare una nuova entry nella lookup table
 LookupEntry* create_lookup_entry(uint8_t type, uint8_t* data, uint16_t length) {
@@ -87,26 +95,23 @@ LookupEntry* find_entry(LookupEntry* head, uint8_t type) {
 void parse_payload(uint8_t* buffer, size_t buffer_len, NextPayload current,  LookupEntry** lookup_table){
     if (current == 0) {
         printf("Fine dei payload: next payload è 0.\n");
+        free(buffer);
         return;
     }
     uint8_t next_payload = buffer[0];
     uint16_t length = ntohs(*(uint16_t*)&buffer[2]);
-    printf("Payload attuale: %d \n\n", current);
     size_t payload_len = length - GENERIC_PAYLOAD_HEADER_DIM;
     uint8_t* payload_data = malloc(payload_len);
     memcpy(payload_data, &buffer[GENERIC_PAYLOAD_HEADER_DIM], payload_len);
     add_to_lookup(lookup_table, current, payload_data, payload_len);
-    print_buffer(buffer, length);
     free(payload_data);
-
 
     if (next_payload != 0) {
         size_t next_buffer_size = buffer_len - length;
         parse_payload(buffer +length, next_buffer_size,next_payload, lookup_table);
     }
-    //parse_payload(buffer + length, buffer_len-length, next_payload);
-
 }
+
 void print_bn(const char *label, const BIGNUM *bn) {
     char *bn_str = BN_bn2hex(bn);  // Convertiamo il BIGNUM in stringa esadecimale
     if (bn_str != NULL) {
@@ -128,7 +133,37 @@ void print_bytes(const void* obj, size_t size) {
     printf("\n");
 }
 
+unsigned char* derive_secret(EVP_PKEY *host_key, EVP_PKEY *peer_pub_key)
+{
+    OSSL_LIB_CTX *libctx = OSSL_LIB_CTX_new(); // Crea un nuovo contesto di libreria
+    OSSL_PROVIDER_load(libctx, "legacy");
+    OSSL_PROVIDER_load(libctx, "default");
+    unsigned int pad = 1;
+    OSSL_PARAM params[2];
+    unsigned char *secret = NULL;
+    size_t secret_len = 16;
+    EVP_PKEY_CTX *dctx = EVP_PKEY_CTX_new_from_pkey(libctx, host_key, NULL);
+    if (EVP_PKEY_derive_init(dctx) <= 0) {
+        handleErrors();
+    }
+    /*
+    if (EVP_PKEY_base_id(peer_pub_key) != EVP_PKEY_DH) {
+        printf( "La chiave remota non è una chiave DH!\n");
+    }   
+    */
+    EVP_PKEY_derive_set_peer(dctx, peer_pub_key); 
+    /* Get the size by passing NULL as the buffer */
+    EVP_PKEY_derive(dctx, NULL, &secret_len);
+    secret = OPENSSL_zalloc(secret_len);
+    EVP_PKEY_derive(dctx, secret, &secret_len);
+    OPENSSL_clear_free(secret, secret_len);
+    EVP_PKEY_CTX_free(dctx);
+    return secret;
+}
+
+
 int main(void) {
+    OPENSSL_init_crypto(0, NULL);
     struct sched_param sched_params;
     sched_params.sched_priority = 50;
     if (sched_setscheduler(0, SCHED_RR, &sched_params) == -1) { return EXIT_FAILURE;} 
@@ -136,14 +171,12 @@ int main(void) {
 
     load("config.json");
     const Config* conf = get_config();
-    
     Initiator initiator;
     initiator_init(&initiator, &conf->initiator);
     Responder responder;
     responder_init(&responder, &conf->responder);
     Proposal proposal = {0};
     create_proposal(&proposal, &conf->cipher_suite);
-
     KeyExchange ke = {0};
     ke.dh_group = htobe16(14);
     ke.reserved = 0;
@@ -151,7 +184,7 @@ int main(void) {
     //aggiungere il metodo che genera la chiave pubblica dh
     //per prima cosa occorre generare la chivave privata utilizzando il metodo EVP_PKEY-DHX
     OSSL_PARAM params[2];
-    EVP_PKEY *pkey = NULL;
+    EVP_PKEY *pkey_local = NULL;
     EVP_PKEY_CTX *pctx = EVP_PKEY_CTX_new_from_name(NULL, "DH", NULL);
     //questa struttura permette di specificare dei parametri come il gruppo da utilizzare, la lunghezza della chiave
     params[0] = OSSL_PARAM_construct_utf8_string("group", "modp_2048", 0);
@@ -161,18 +194,21 @@ int main(void) {
     //si passano al contesto i parametri specificati
     EVP_PKEY_CTX_set_params(pctx, params);
     //questa genera effetticamente la cihave e la mette all'interno di pkey
-    EVP_PKEY_generate(pctx, &pkey);
+    EVP_PKEY_generate(pctx, &pkey_local);
     BIGNUM *pub_key = NULL, *priv_key = NULL;
-    // Otteniamo la chiave pubblica (pub_key) dal pkey
-    EVP_PKEY_get_bn_param(pkey, OSSL_PKEY_PARAM_PUB_KEY, &pub_key);
+    // Otteniamo la chiave pubblica (pub_key) e chiave privata
+    EVP_PKEY_get_bn_param(pkey_local, OSSL_PKEY_PARAM_PUB_KEY, &pub_key);
+    EVP_PKEY_get_bn_param(pkey_local, OSSL_PKEY_PARAM_PRIV_KEY, &priv_key);
     size_t ke_data = BN_num_bytes(pub_key);
+    // la conversione per la chiave pubblica è necessaria perchè dobbiamo inviarla come stream di byte
     BN_bn2bin(pub_key, ke.ke_data);
-
+    uint8_t private[256] = {0};
+    BN_bn2bin(pub_key, private);
+    //la chiave privata non è necessario convertirla dato che possia
+    EVP_PKEY_CTX_free(pctx);
 
     size_t nonce_len = 240;  
     uint8_t nonce[240];
-
-    // Genera il nonce casuale
     generate_nonce(nonce, nonce_len);
 
     PayloadHeader ni_header = {0};
@@ -183,7 +219,6 @@ int main(void) {
     create_header(builder, &initiator, EXCHANGE_IKE_SA_INIT);
     ike_header_t header = build_header(builder);
     destroy_builder(builder);
-
     
     size_t packet_len = 0;
     uint8_t *packet = calloc(packet_len,  sizeof(uint8_t));
@@ -193,23 +228,22 @@ int main(void) {
     update_payload(PAYLOAD_TYPE_SA, &sa_header, &proposal, sizeof(Proposal));
     generate_packet(&packet, &packet_len, &header);
 
-
     sendto(initiator.socketfd, packet, packet_len, 0, (struct sockaddr*)&responder.node, sizeof(responder.node));
-    
+
     printf("############################################################################################################################################\n");
     printf("PACCHETTO FINALE\n");
     printf("############################################################################################################################################\n");
     print_buffer(packet, packet_len);
-    //for (size_t i = 0; i < packet_len ; i++) { printf("%02X ", packet[i]); }
+    free(packet);
 
-    size_t response_len = 500;
-    uint8_t *response = calloc(response_len, sizeof(uint8_t));
+    //mettere questa come variabile di dimensione massima
+    size_t max_response_len = 500;
+    uint8_t *response = calloc(max_response_len, sizeof(uint8_t));
     struct sockaddr_in cliaddr;
     socklen_t len = sizeof(cliaddr);
 
 
     printf("In ascolto su porta %d...\n", htons(initiator.node.sin_port));
-
     // la recevfrom consente di specificare parametri extra inoltre come vaore di ritorno da la dimesione della risposta
     // dunque il buffer lo istanziamo a dimensione massimo poi quanto abbiamo ottenuto la dimensione effettiva che non è nota a priori
     // lo ridimensioniamo in modo tale da evitare spreco di memoria
@@ -219,74 +253,33 @@ int main(void) {
     }
     //fare il confronto tra i valori di ricezione del pacchetto con quelli specificati nel file di configurazione 
     // se non corrispondono scartiamo il pacchetto e facciamo report
-
     response = realloc(response, n);
-    printf("Dimensione della risposta %zd\n", n);
     response[n] = '\0';  // Aggiungi terminatore di stringa
+    size_t response_len = (size_t) n;
+    printf("Dimensione della risposta %zd\n", n);
     printf("Messaggio ricevuto da %s:%d\n", inet_ntoa(cliaddr.sin_addr), ntohs(cliaddr.sin_port));
 
-    print_buffer(response, n);
-
-    //trasformarlo in una funzione parse_response_header tanto i campi sono fissi non c'è altro modo
+    // fare una funzione che si chiama parse response che fa il parsing dell'header e poi quello del payload
     ike_header_t hdr = {0};
-    hdr.initiator_spi = be64toh(*(uint64_t*)&response[0]);  // SPI Initiator (8 byte)
-    hdr.responder_spi = be64toh(*(uint64_t*)&response[8]);  // SPI Responder (8 byte)
-    hdr.next_payload = response[16];
-    hdr.version = response[17];                             // Versione (1 byte)
-    hdr.exchange_type = response[18];                        // Tipo di messaggio (1 byte)
-    hdr.flags = response[19];                        // Tipo di messaggio (1 byte)
-    hdr.message_id = ntohl(*(uint32_t*)&response[20]);   
-    hdr.length = ntohl(*(uint32_t*)&response[24]);         // Lunghezza del messaggio (2 byte)
-
-    // Fare il file di log per vedere le varie cose che vengono effettuate 
-    printf("SPI Initiator: 0x%016lx\n", hdr.initiator_spi);
-    printf("SPI Responder: 0x%016lx\n", hdr.responder_spi);
-    printf("Next Payload: %d\n", hdr.next_payload);
-    printf("Version: %d\n", hdr.version);
-    printf("Flags: %d\n", hdr.flags);
-    printf("Message Type: %d\n", hdr.exchange_type);
-    printf("Identifier: 0x%x\n", hdr.message_id);
-    printf("Length: %d\n", hdr.length);
-
-    //a questo punto a partire dalla dimensione del buffer devo iniziare a fare il parsing dei next payload per determinare quanto deve essere la 
-    //lettura dei vari payload
-    // fare una funzione che prende il buffer ed estra il payload
-    size_t payload_len = response_len - IKE_HEADER_DIM;
-    uint8_t* payload = malloc(payload_len);
-    memcpy(payload, response + IKE_HEADER_DIM, payload_len);
-    free(response);
-    print_buffer(payload, payload_len);
-
-    // a questo punto posso andare a fare il parsing dei next payload quindi
-
-    PayloadHeader first = {0};
-
-    first.next_payload = payload[0];
-    first.length = ntohs(*(uint16_t*)&payload[2]); //facciamo un cast del puntatore al 3 byte, invece che essere un puntatore ad un campo a 8 bit diventa un puntatore ad un campo di 16 bit, quindi lo consideriamo come un valore unico
-
-    printf("Generic Payload header: %d \n", first.next_payload);
-    printf("Generic Payload length: %u \n", first.length);
-
-    // il parsing della proposal per il momento non mi interessa poichè se mi ha risposto vuol dire che gli vabene
-    // andiamo a prendere direttamente il materiale per il key exchange
-    // ad ogni payload che parso ridimensiono il buffer 
-    //invece che allocare ogni volta un buffer di dimensione minore fare un buffer pool
-    // oppure andare ad incrementare il buffer sulla base del campo lunghezza contenuto nel next payload
-    LookupEntry* lookup_table = NULL; // Inizializza la lookup table
-    parse_payload(payload, payload_len, hdr.next_payload, &lookup_table);
-
-
-    // Stampa la lookup table
+    LookupEntry* lookup_table = NULL; 
+    parse_header(&hdr, response, &response_len);
+    parse_payload((response + IKE_HEADER_DIM), (response_len - IKE_HEADER_DIM), hdr.next_payload, &lookup_table);
     print_lookup_table(lookup_table);
 
-    LookupEntry* found_payload = find_entry(lookup_table, 34);
-    if (found_payload) {
-        printf("Payload Type: %u, Length: %u, Data: ", found_payload->type, found_payload->length);
-        print_buffer(found_payload->data, found_payload->length);
-    } else {
-        printf("Payload di tipo non trovato.\n");
-    }
+    LookupEntry* pub_key_peer_bytes = find_entry(lookup_table, 34);
+    //print_bytes(pub_key_peer_bytes->data, pub_key_peer_bytes->length); 
+    EVP_PKEY* peer = EVP_PKEY_new(); //crea un contenitore vuoto per la chiave, questo può contenere sia chivi pubbliche che chiavi private che entrambe
+    // il +- 4 sono dovuti ai 4 byte di informazioni sul payload del ke
+    EVP_PKEY_set1_encoded_public_key(peer, pub_key_peer_bytes->data+4, (size_t) pub_key_peer_bytes->length-4);
+    
+    EVP_PKEY* local = EVP_PKEY_new(); //crea un contenitore vuoto per la chiave, questo può contenere sia chivi pubbliche che chiavi private che entrambe
+    EVP_PKEY_set1_encoded_public_key(peer, private, 256);
 
-   
+    unsigned char* secret = derive_secret(pkey_local, peer);
+    print_buffer(secret, 16);
+
+    free(peer);
+    free(lookup_table);
+
     return 0;
 }

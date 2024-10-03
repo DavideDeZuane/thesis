@@ -52,3 +52,25 @@ void create_header(ike_header_builder_t *builder, Initiator *initiator, Exchange
         }
     }
 }
+
+void parse_header(ike_header_t *hdr, uint8_t* buffer, size_t* buffer_len){
+    hdr->initiator_spi = be64toh(*(uint64_t*)&buffer[0]); 
+    hdr->responder_spi = be64toh(*(uint64_t*)&buffer[8]);  
+    hdr->next_payload = buffer[16];
+    hdr->version = buffer[17];                  
+    hdr->exchange_type = buffer[18];             
+    hdr->flags = buffer[19];                      
+    hdr->message_id = ntohl(*(uint32_t*)&buffer[20]);   
+    hdr->length = ntohl(*(uint32_t*)&buffer[24]);  
+
+    /*
+        printf("SPI Initiator: 0x%016lx\n", hdr.initiator_spi);
+    printf("SPI Responder: 0x%016lx\n", hdr.responder_spi);
+    printf("Next Payload: %d\n", hdr.next_payload);
+    printf("Version: %d\n", hdr.version);
+    printf("Flags: %d\n", hdr.flags);
+    printf("Message Type: %d\n", hdr.exchange_type);
+    printf("Identifier: 0x%x\n", hdr.message_id);
+    printf("Length: %d\n", hdr.length);
+    */
+}
