@@ -28,6 +28,30 @@ headsepline, % Uncomment to get a line under the header
 \usepackage{moeptikz}
 \usepackage{tikz}
 \usepackage{comment}
+\usepackage{alltt} 
+\usepackage{fancyvrb}
+\usepackage{listings} 
+\usepackage{xcolor} 
+\usepackage{todonotes} 
+
+\lstset{
+language=C, 
+basicstyle=\small\ttfamily, 
+keywordstyle=\color{blue},
+keywordstyle=[2]\color{magenta}
+keywordstyle=[3]\color{green!50!black} 
+stringstyle=\color{red}, 
+commentstyle=\color{green!50!black}, % Colore dei commenti 
+numbers=left, 
+numberstyle=\tiny, % Stile della numerazione
+stepnumber=1, % Passo della numerazione 
+numbersep=5pt, % Distanza della
+tabsize=2, % Dimensione
+breaklines=true, % Interruzione automatica delle linee 
+morekeywords={include,define}, % Aggiungi le direttive al keyword list
+morekeywords=[2]{print},
+morekeywords=[3]{return, int, void} 
+}
 
 \usetikzlibrary{arrows.meta} 
 \newcounter{pft}
@@ -243,7 +267,7 @@ $\omega$ & angular frequency & \si{\radian} \\
 \include{Chapters/Chapter1}
 \include{Chapters/Chapter2} 
 %\include{Chapters/Chapter3}
-%\include{Chapters/Chapter4} 
+\include{Chapters/Chapter4} 
 %\include{Chapters/Chapter5} 
 
 %----------------------------------------------------------------------------------------
