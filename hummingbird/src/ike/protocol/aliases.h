@@ -44,7 +44,7 @@ typedef enum {
     NEXT_PAYLOAD_CERTREQ = 38,
     NEXT_PAYLOAD_AUTH    = 39,
     NEXT_PAYLOAD_Ni      = 40,
-    NEXT_PAYLOAD_Nr      = 40,
+    NEXT_PAYLOAD_NONCE   = 40,
     NEXT_PAYLOAD_NOTIFIY = 41,
     NEXT_PAYLOAD_DELETE  = 42,
     NEXT_PAYLOAD_TSi     = 44,
