@@ -22,33 +22,47 @@ Questo cambio di paradigma insieme al quantum computer hanno portato diversi ent
     \centering
     \begin{tikzpicture}
         % Definizione dei colori per le orbite
-        \definecolor{leo}{RGB}{255,100,100}
-        \definecolor{geo}{RGB}{100,100,255}
+        \definecolor{leo}{gray}{0.2}    % Grigio scuro
+        \definecolor{geo}{gray}{0.1}% Grigio molto scuro
+        \definecolor{terra}{HTML}{008F39}
         \node at (-4.8, 0) [color=geo]{GEO};
         \node at (3.5, 0) [color=leo]{LEO};
+        \node at (0, 0) {Terra};
         
-        % Cerchio più esterno: l'orbita GEO
         \draw[thick, dashed, geo] (0,0) circle (4.2cm);
         \draw[thick, dashed, leo] (0,0) circle (3cm);
-        \filldraw[fill=green!30,] (0,0) circle (2.2cm);
-        \node at (0, 0) {Terra};
+        \filldraw[fill=mare,] (0,0) circle (2.2cm);
+
+        \node[cloud, cloud puffs=15.7, cloud ignores aspect, minimum width=1.5cm, minimum height=0.5cm, align=center, fill=white, draw] (cloud) at (-2, 0) {};
+        \node[cloud, cloud puffs=15.7, cloud ignores aspect, minimum width=1.5cm, minimum height=0.5cm, align=center, fill=white, draw] (cloud) at (2, -0.5) {};
+
+
+        \draw[fill=terra!90, draw=black] 
+        (-0.5, 0.8) .. controls (-0.4, 1.2) and (0.0, 1.5) .. (0.4, 1.1) -- 
+        (0.6, 1.3) .. controls (0.9, 1.5) and (1.2, 1.1) .. (1.0, 0.5) -- 
+        (0.8, 0.2) .. controls (0.5, 0.1) and (0.3, 0.2) .. (0.0, 0.3) -- 
+        (-0.3, 0.5) .. controls (-0.5, 0.7) and (-0.7, 0.4) .. (-0.9, 0.4) -- 
+        (-1.0, 0.5) .. controls (-1.2, 0.7) and (-1.3, 0.5) .. (-1.2, 0.3) -- 
+        (-1.0, 0.2) .. controls (-0.5, 0.1) and (-0.4, 0.4) .. (-0.5, 0.8) -- cycle;
+
     \end{tikzpicture}
     \caption{Orbite dei satelliti}
     \label{fig:orbite}
 \end{figure}
 
-\subsection{Sfide}
+\subsection{Limitazioni}
 
 L'ambiente spaziale, caratterizzato da radiazioni intense, temperature estreme e lunghi periodi senza manutenzione, pone sfide significative in termini di progettazione e operatività dell'hardware e del software.
 Tra i principali vincoli per l'hardware satellitare troviamo:
 
 \begin{itemize}
-    \item \textit{Resistenza alle radiazioni}:
+    \item \textit{Resistenza alle radiazioni}: i componenti elettronici devono essere progettati per resistere all'esposizione costante alle radiazioni spaziali
     \item \textit{Basso consumo energetico}: l'energia disponibile per le operazioni computazionali è limitata, quindi si usano processori a basso consumo e ad alta efficienza energetica, sacrificando potenza di calcolo.
-    \item \textit{Elaborazione in tempo reale}:
-    \item \textit{Compattezza}: lo spazio a disposizione è poco 
+    \item \textit{Elaborazione in tempo reale}: per alcune tipologie di servizi è necessario che il processamento avvenga in tempo reale.
+    \item \textit{Compattezza}: a causa dello spazio limitato a bordo di un satellite, i componenti hardware devono essere progettati in modo estremamente compatto.
 \end{itemize}
 
+\noindent
 L'hardware limitato ha un impatto diretto sullo sviluppo del software per i satelliti. 
 Rispetto al un contesto terrestre, dove le risorse computazionali sono abbondanti, il software per i satelliti deve essere ottimizzato per funzionare su processori con bassa potenza di calcolo, limitato parallelismo e memoria ridotta. 
 Le principali sfide per gli sviluppatori sono:
@@ -59,27 +73,33 @@ Le principali sfide per gli sviluppatori sono:
     \item \textit{Affidabilità assoluta}: il software deve essere robusto, sicuro e testato ampiamente in modo tale che possibile errori non abbiano conseguenza catastrofiche.
 \end{itemize}
 
-Particolare focus va fatto sono le implementazinoni dei protocolli crittografici che si utilizzano per rendere sicure le comunicazioni.
-Tuttavia gli algoritmi post quantum, in linea teorica introducono tempi di processamento e dimensioni significative rispetto a quelli classici (carico computazionale elevato).
-In questo contesto, diventa essenziale bilanciare sicurezza e prestazioni. Gli algoritmi di crittografia devono essere implementati in modo tale da non compromettere l'efficienza operativa del satellite, riducendo al minimo l'impatto sulle risorse computazionali e di memoria
+\noindent
+Particolare attenzione va posta sulle implementazinoni crittografiche, dato che in questo contesto è essenziale riuscire a bilanciare sicurezza e prestazioni
+Occorre ridurre al minimo l'impatto sulle risorse in modo tale che gli algoritmi di crittografia non possano compromettere l'efficienza operativa del satellite.
+
+\subsection{Stato Attuale}
+
+LEON3: Un processore open-source basato sull'architettura SPARC, progettato dall'Agenzia Spaziale Europea (ESA). È utilizzato in numerose missioni satellitari europee.
+ESA Power Interface Standard (ECSS-E-ST-20C): Definisce le modalità con cui l'alimentazione elettrica viene distribuita all'interno dei satelliti, assicurando efficienza e affidabilità anche con limitate risorse energetiche.
+Per la compattezza invece: Cubesat Standard (1U, 2U, 3U, etc.): Molti satelliti moderni, soprattutto per missioni commerciali o di ricerca, seguono il formato Cubesat, che definisce dimensioni compatte modulari (10x10x10 cm per 1U) per ridurre i costi e semplificare il lancio e la costruzione dei satelliti.
+
+Per quanto riguarda il software in particolare quello che interessa a noi è RTEMS (Real-Time Executive for Multiprocessor Systems): È un sistema operativo open-source e real-time progettato per funzionare in ambienti estremamente vincolati, come i satelliti. RTEMS è utilizzato in molte missioni spaziali per la sua capacità di gestire operazioni critiche in tempo reale. Basato su GNU/Linux
+
+
+Triple Modular Redundancy (TMR): Molti sistemi critici spaziali utilizzano la ridondanza tripla modulare, eseguendo lo stesso calcolo su tre processori indipendenti e confrontando i risultati per correggere eventuali errori dovuti a radiazioni o guasti.
 
 %-----------------------------------
 %	SECTION 2
 %-----------------------------------
 \section{Come procediamo}
 
-Andiamo a vedere quale è l'impronta in termini comptutazionali delle attuali implementazioni degli algoritmi 
-post quantum standardizzati dal NIST, in particolare considerando l'implementazione fornita da open quantum safe (oqs)
+Come detto con il post-quantum tutto diventa più pesante e più lento, in generale.
+Andiamo a caratterizzare quella che è l'impronta computazionale degli algoritmi nel caso desktop rispetto a quella di quelli classici per 
+vederne le differenze, se queste sono molto evidenti già nel caso simulato allora non ha neanche senso andarle a considerare in un'ambiente
+ancora più limitato.
 
-E quelle che sono le problematiche che introduce il quantum
-
-In particolare consideriamo la sua integrazione con il protocollo IKE, formita da strongswan dato che siamo in contesto 
-satellitare è sensato posizionarsi alla base dello stack.
-
-Andiamo perciò a considerare un'ambiente simulato per confrontare le prestazioni di algoritmi classici rispetto a quelli quantum.
-Dato che se la differenza è significativa già in un'ambiente desktop non soggetto a particolari constraint come 
-farà ad esserlo nel caso di scenari in cui ci sono numerosi constraint
-
+Considerereremo nelle nostre prove quelli che sono i finalisti del processo di standardizzazione del NIST, in particolare la loro implementazione
+forniata da \textbf{open quantum safe} (oqs). Vedremo il loro utilizzo nell'implementazione del protocollo IKEv2, Strongswan.
 
 \section{Benchmarking}
 Come abbiamo effettuato il benchmarking
