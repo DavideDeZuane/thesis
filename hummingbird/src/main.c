@@ -43,6 +43,7 @@ void handleErrors() {
 
 void print_buffer(uint8_t* buffer, size_t buffer_len){
     for (size_t i = 0; i < buffer_len ; i++) { printf("%02X ", buffer[i]); }
+    printf("\n");
 }
 
 // Funzione per creare una nuova entry nella lookup table
@@ -141,23 +142,21 @@ unsigned char* derive_secret(EVP_PKEY *host_key, EVP_PKEY *peer_pub_key)
     unsigned int pad = 1;
     OSSL_PARAM params[2];
     unsigned char *secret = NULL;
-    size_t secret_len = 16;
+    size_t secret_len = 0;
     EVP_PKEY_CTX *dctx = EVP_PKEY_CTX_new_from_pkey(libctx, host_key, NULL);
     if (EVP_PKEY_derive_init(dctx) <= 0) {
         handleErrors();
     }
-    /*
+    
     if (EVP_PKEY_base_id(peer_pub_key) != EVP_PKEY_DH) {
         printf( "La chiave remota non è una chiave DH!\n");
     }   
-    */
+   
     EVP_PKEY_derive_set_peer(dctx, peer_pub_key); 
     /* Get the size by passing NULL as the buffer */
     EVP_PKEY_derive(dctx, NULL, &secret_len);
     secret = OPENSSL_zalloc(secret_len);
     EVP_PKEY_derive(dctx, secret, &secret_len);
-    OPENSSL_clear_free(secret, secret_len);
-    EVP_PKEY_CTX_free(dctx);
     return secret;
 }
 
@@ -203,7 +202,7 @@ int main(void) {
     // la conversione per la chiave pubblica è necessaria perchè dobbiamo inviarla come stream di byte
     BN_bn2bin(pub_key, ke.ke_data);
     uint8_t private[256] = {0};
-    BN_bn2bin(pub_key, private);
+    BN_bn2bin(priv_key, private);
     //la chiave privata non è necessario convertirla dato che possia
     EVP_PKEY_CTX_free(pctx);
 
@@ -269,15 +268,33 @@ int main(void) {
     LookupEntry* pub_key_peer_bytes = find_entry(lookup_table, 34);
     //print_bytes(pub_key_peer_bytes->data, pub_key_peer_bytes->length); 
     EVP_PKEY* peer = EVP_PKEY_new(); //crea un contenitore vuoto per la chiave, questo può contenere sia chivi pubbliche che chiavi private che entrambe
+    EVP_PKEY_copy_parameters(peer, pkey_local);
     // il +- 4 sono dovuti ai 4 byte di informazioni sul payload del ke
-    EVP_PKEY_set1_encoded_public_key(peer, pub_key_peer_bytes->data+4, (size_t) pub_key_peer_bytes->length-4);
+
+    unsigned char tmp[256] = {0};
+    for(int i=0; i < 256; i++){
+        tmp[i] = pub_key_peer_bytes->data[i+4];
+    }
+
+    if (EVP_PKEY_set1_encoded_public_key(peer, tmp, 256) <= 0)
+        handleErrors();
     
-    EVP_PKEY* local = EVP_PKEY_new(); //crea un contenitore vuoto per la chiave, questo può contenere sia chivi pubbliche che chiavi private che entrambe
-    EVP_PKEY_set1_encoded_public_key(peer, private, 256);
+    //EVP_PKEY* local = EVP_PKEY_new(); //crea un contenitore vuoto per la chiave, questo può contenere sia chivi pubbliche che chiavi private che entrambe
+    //EVP_PKEY_set1_encoded_public_key(peer, private, 256);
 
     unsigned char* secret = derive_secret(pkey_local, peer);
     print_buffer(secret, 16);
-
+    
+    printf("############################################################################################################################################\n");
+    printf("CHIAVI\n");
+    printf("############################################################################################################################################\n");
+    printf("Chiave Privata locale: \n");
+    print_buffer(private, 256);
+    printf("Chiave Pubblica locale: \n");
+    print_buffer(ke.ke_data, 256);
+    printf("Chiave Pubblica remota: \n");
+    print_buffer(pub_key_peer_bytes->data+4, 256);
+    
     free(peer);
     free(lookup_table);
 

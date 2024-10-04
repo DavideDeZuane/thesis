@@ -1,6 +1,11 @@
 
 ## Idee
 
+    // il parsing della proposal per il momento non mi interessa poichè se mi ha risposto vuol dire che gli vabene
+    // andiamo a prendere direttamente il materiale per il key exchange
+    // ad ogni payload che parso ridimensiono il buffer 
+    //invece che allocare ogni volta un buffer di dimensione minore fare un buffer pool
+    // oppure andare ad incrementare il buffer sulla base del campo lunghezza contenuto nel next payload
 Low-latency
 
 
