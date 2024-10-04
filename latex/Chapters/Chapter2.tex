@@ -196,18 +196,34 @@ si basa sul concetto di \textbf{trapdoor} che rende possibile una funzione (come
 Uno dei principali utilizzi della crittografia asimmetrica è il \textbf{Key-Exchange}, il quale consente di scambiarsi un'informazione segreta su un canale pubblico. La procedura
 più conosciuta è quella proposta da \textit{Diffie-Hellman} ed è mostrata in \textit{Fig. \ref{fig:dh}}
 
-\begin{figure}[htbp]
+\begin{figure}[h!]
     \centering
-    \begin{tikzpicture}[node distance=1.5cm]
-        \node (entity1) [draw=green, rectangle] {Alice};
-
-        \drawkey{-0.8, -0.8}{black}{$K_{pri}$};
-        \drawkey{-1.6, -0.8}{black}{$K_{pub}$};
-        \node (entity2) [draw=blue, rectangle, right=of entity1, xshift=3cm] {Bob};
-        \draw (entity1) -- ++(0,-4) coordinate (vertical1);
-        \draw (entity2) -- ++(0,-4);
-        \draw[-stealth] (entity1) ++(0,-1) -- (entity2 |-,-1) node[midway, above, text=black, font=\footnotesize] {$K_{pub}$};
-        \draw[stealth-] (entity2) ++(0,-2) -- (entity1 |-,-2) node[midway, above, text=black, font=\footnotesize] {$E(K_{pub},m)$};
+    \begin{tikzpicture}
+        % Public parameter:
+        \node[draw=none,fill=none,align=center] (public) at (0,1) {Public parameter: g, p};
+        
+        % Alice
+        \node[draw] (Alice) at (-2,0) {Alice}; 
+        \draw[thick] (Alice) -- ++(0, -4);
+          
+        % Calculations of Alice
+        \node[draw=none,fill=none,anchor=east] (asecret) at ($(Alice) + (0,-1)$) {$a \in_{R} \{2,\dots,p-2\}$};
+        \node[draw=none,fill=none,anchor=east] (Apublic) at ($(Alice) + (0,-2)$) {$A = g^{a} \bmod{p}$};
+        \node[draw=none,fill=none,anchor=east] (akey) at ($(Alice) + (0,-4)$) {$K = (B)^{a} = g^{ba}$};
+          
+        % Bob
+        \node[draw] (Bob) at (2,0) {Bob}; 
+        \draw[thick] (Bob) -- ++(0, -4);
+         
+        % Calculations of Bob
+        \node[draw=none,fill=none,anchor=west] (bsecret) at ($(Bob) + (0,-1)$) {$b \in_{R} \{2,\dots,p-2\}$};
+        \node[draw=none,fill=none,anchor=west] (Bpublic) at ($(Bob) + (0,-2)$) {$B = g^{b} \bmod{p}$};
+        \node[draw=none,fill=none,anchor=west] (bkey) at ($(Bob) + (0,-4)$) {$K = (A)^{b} = g^{ab}$};
+         
+        % Messages
+        \draw[->,thick] ($(Alice)+(0,-2)$) -- ($(Bob)+(0,-2.5)$) node [pos=0.5,above,font=\footnotesize] {A};
+        \draw[->,thick] ($(Bob)+(0,-3)$) -- ($(Alice)+(0,-3.5)$) node [pos=0.5,above,font=\footnotesize] {B};
+          
     \end{tikzpicture}
     \caption{Scambio di Chiave Difie-Hellman}
     \label{fig:dh}

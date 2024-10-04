@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Arch Linux) (preloaded format=pdflatex 2024.5.30)  4 OCT 2024 16:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Arch Linux) (preloaded format=pdflatex 2024.5.30)  4 OCT 2024 17:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1587,36 +1587,39 @@ Overfull \hbox (0.9305pt too wide) in paragraph at lines 195--198
  Diffie-Hellman \T1/ppl/m/n/12 ed è mostrata
  []
 
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
 [8] [9]
-Underfull \hbox (badness 10000) in paragraph at lines 225--227
+Underfull \hbox (badness 10000) in paragraph at lines 241--243
 
  []
 
 
-Overfull \hbox (7.75728pt too wide) in paragraph at lines 228--230
+Overfull \hbox (7.75728pt too wide) in paragraph at lines 244--246
 \T1/ppl/m/n/12 Le distribuzione delle chiavi per crittosistemi simmetrici deve 
 avvenire tramite
  []
 
 
-Overfull \hbox (11.127pt too wide) in paragraph at lines 231--233
+Overfull \hbox (11.127pt too wide) in paragraph at lines 247--249
 \T1/ppl/m/n/12 sono necessarie $\OML/zplm/m/it/12 n\OT1/zplm/m/n/12 (\OML/zplm/
 m/it/12 n \OMS/zplm/m/n/12 ^^@ \OT1/ppl/m/n/12 1\OT1/zplm/m/n/12 )/\OT1/ppl/m/n
 /12 2$ \T1/ppl/m/n/12 chiavi. L'approccio è robusto ma impraticabile
  []
 
 LaTeX Font Info:    Trying to load font information for T1+cmss on input line 2
-52.
+68.
 (/usr/share/texmf-dist/tex/latex/base/t1cmss.fd
 File: t1cmss.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 )
-Overfull \hbox (2.8737pt too wide) in paragraph at lines 257--261
+Overfull \hbox (2.8737pt too wide) in paragraph at lines 273--277
 \T1/ppl/m/n/12 Per loro natura le chiavi pubbliche sono liberamente distribuite
 , non è dunque 
  []
 
 
-Overfull \hbox (42.34166pt too wide) in paragraph at lines 257--261
+Overfull \hbox (42.34166pt too wide) in paragraph at lines 273--277
 \T1/ppl/m/n/12 necessario un canale segreto. Tuttavia in questo caso si ha il p
 roblema dell'autenticità,
  []
@@ -1624,45 +1627,45 @@ roblema dell'autenticità,
 <Figures/pki.jpg, id=441, 763.85374pt x 478.78876pt>
 File: Figures/pki.jpg Graphic file (type jpg)
 <use Figures/pki.jpg>
-Package pdftex.def Info: Figures/pki.jpg  used on input line 264.
+Package pdftex.def Info: Figures/pki.jpg  used on input line 280.
 (pdftex.def)             Requested size: 267.35281pt x 167.57857pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Overfull \hbox (23.46642pt too wide) in paragraph at lines 281--283
+Overfull \hbox (23.46642pt too wide) in paragraph at lines 297--299
 \T1/ppl/m/n/12 Il \T1/ppl/b/n/12 security level \T1/ppl/m/n/12 è una misura del
 la forza che una primitiva crittografica raggiunge
  []
 
 
-Overfull \hbox (3.2465pt too wide) in paragraph at lines 281--283
+Overfull \hbox (3.2465pt too wide) in paragraph at lines 297--299
 \T1/ppl/m/n/12 sicurezza^^Q, dove $\OML/zplm/m/it/12 n$\T1/ppl/m/n/12 -bit di s
 icurezza significa che l'attaccante dovrebbe eseguire
  []
 
 [10] [11 <./Figures/pki.jpg>]
-Overfull \hbox (31.19434pt too wide) in paragraph at lines 312--319
+Overfull \hbox (31.19434pt too wide) in paragraph at lines 328--335
 \T1/ppl/m/n/12 Le reti, per loro natura, rappresentano un mezzo di comunicazion
 e intrinsecamente
  []
 
 
-Overfull \hbox (12.75049pt too wide) in paragraph at lines 312--319
+Overfull \hbox (12.75049pt too wide) in paragraph at lines 328--335
 \T1/ppl/m/n/12 insicuro, soprattutto quando operano in modalità broadcast. In q
 uesto contesto,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 312--319
+Underfull \hbox (badness 10000) in paragraph at lines 328--335
 
  []
 
 
-LaTeX Warning: Reference `fig:tcpip' on page 12 undefined on input line 322.
+LaTeX Warning: Reference `fig:tcpip' on page 12 undefined on input line 338.
 
 
-Overfull \hbox (6.37827pt too wide) in paragraph at lines 320--324
+Overfull \hbox (6.37827pt too wide) in paragraph at lines 336--340
 \T1/ppl/m/n/12 Il modello di riferimento per la comunicazione su Internet è il 
 modello \T1/ppl/b/n/12 TCP/IP\T1/ppl/m/n/12 ,
  []
@@ -1671,79 +1674,79 @@ modello \T1/ppl/b/n/12 TCP/IP\T1/ppl/m/n/12 ,
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 Excluding 'comment' comment. [12]
-Overfull \hbox (27.8098pt too wide) in paragraph at lines 376--379
+Overfull \hbox (27.8098pt too wide) in paragraph at lines 392--395
 \T1/ppl/m/n/12 IPsec (Internet Protocol Security) è un insieme di protocolli st
 andard, rappresentati
  []
 
 
-Overfull \hbox (6.96625pt too wide) in paragraph at lines 376--379
+Overfull \hbox (6.96625pt too wide) in paragraph at lines 392--395
 \T1/ppl/m/n/12 in \T1/ppl/m/it/12 Figura [][]2.6[][]\T1/ppl/m/n/12 , utilizzati
  in modo tale da fornire meccanismi per l'autenticazione,
  []
 
 
-Overfull \hbox (9.2937pt too wide) in paragraph at lines 376--379
+Overfull \hbox (9.2937pt too wide) in paragraph at lines 392--395
 \T1/ppl/m/n/12 la cifratura e l'integrità dei dati trasmessi tra due o più disp
 ositivi, proteggendo
  []
 
 [13]
-Overfull \hbox (22.43256pt too wide) in paragraph at lines 392--393
+Overfull \hbox (22.43256pt too wide) in paragraph at lines 408--409
 \T1/ppl/m/n/12 autenticare e distribuire dinamicamente le chiavi crittografiche
  che vengono
  []
 
 
-Overfull \hbox (9.449pt too wide) in paragraph at lines 392--393
+Overfull \hbox (9.449pt too wide) in paragraph at lines 408--409
 \T1/ppl/m/n/12 poi impiegate dai protocolli di sicurezza per proteggere le comu
 nicazioni. 
  []
 
 
-Overfull \hbox (12.63066pt too wide) in paragraph at lines 418--420
+Overfull \hbox (12.63066pt too wide) in paragraph at lines 434--436
 \T1/ppl/m/n/12 garantire la sicurezza è necessario che mantenga il contesto di 
 ogni connessione,
  []
 
 
-Overfull \hbox (31.02444pt too wide) in paragraph at lines 424--426
+Overfull \hbox (31.02444pt too wide) in paragraph at lines 440--442
 []\T1/ppl/m/it/12 Connessioni Multiple\T1/ppl/m/n/12 : in uno scenario di rete 
 complesso, un singolo dispositivo
  []
 
 [14]
-Overfull \hbox (4.34966pt too wide) in paragraph at lines 429--433
+Overfull \hbox (4.34966pt too wide) in paragraph at lines 445--449
 \T1/ppl/m/n/12 al concetto di \T1/ppl/m/it/12 Security Association \T1/ppl/m/n/
 12 (SA). Più precisamente si tratta di un'insieme
  []
 
 
-Overfull \hbox (9.54474pt too wide) in paragraph at lines 438--439
+Overfull \hbox (9.54474pt too wide) in paragraph at lines 454--455
 []\T1/ppl/m/it/12 Protocol Identifier\T1/ppl/m/n/12 : determina il tipo di prot
 ezione da applicare ai pacchetti,
  []
 
 
-Overfull \hbox (7.7208pt too wide) in paragraph at lines 439--440
+Overfull \hbox (7.7208pt too wide) in paragraph at lines 455--456
 []\T1/ppl/m/n/12 Altri parametri opzionali, per una lista completa fare riferim
 ento all'RFC. 
  []
 
 
-Overfull \hbox (2.08293pt too wide) in paragraph at lines 465--469
+Overfull \hbox (2.08293pt too wide) in paragraph at lines 481--485
 \T1/ppl/m/n/12 modo univoco la configurazioni di sicurezza da applicare alla co
 municazione. 
  []
 
 
-Overfull \hbox (18.22154pt too wide) in paragraph at lines 465--469
+Overfull \hbox (18.22154pt too wide) in paragraph at lines 481--485
 \T1/ppl/m/n/12 Tuttavia queste SA come si configurano?. IPsec prevede tecniche 
 di negoziazione
  []
 
 
-Overfull \hbox (8.51242pt too wide) in paragraph at lines 474--477
+Overfull \hbox (8.51242pt too wide) in paragraph at lines 490--493
 []\T1/ppl/m/it/12 Automatico\T1/ppl/m/n/12 : si utilizzanoprotocolli per stabil
 ire automaticamente le chiavi
  []
@@ -1752,102 +1755,102 @@ ire automaticamente le chiavi
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 
-Overfull \hbox (2.1064pt too wide) in paragraph at lines 531--540
+Overfull \hbox (2.1064pt too wide) in paragraph at lines 547--556
  [][] 
  []
 
 
-Overfull \hbox (5.75327pt too wide) in paragraph at lines 542--545
+Overfull \hbox (5.75327pt too wide) in paragraph at lines 558--561
 \T1/ppl/m/n/12 Al termine di questo scambio i due peer ottengono il \T1/ppl/m/i
 t/12 DH Shared Secret \T1/ppl/m/n/12 (indicato
  []
 
 [17]
-Overfull \hbox (0.81104pt too wide) in paragraph at lines 556--565
+Overfull \hbox (0.81104pt too wide) in paragraph at lines 572--581
  [][] 
  []
 
 
-Overfull \hbox (8.73007pt too wide) in paragraph at lines 575--577
+Overfull \hbox (8.73007pt too wide) in paragraph at lines 591--593
 \T1/ppl/m/n/12 un pacchetto IP, tuttavia abbiamo degli scambi che richiedono un
  trasferimento
  []
 
 
-Overfull \hbox (19.58363pt too wide) in paragraph at lines 578--580
+Overfull \hbox (19.58363pt too wide) in paragraph at lines 594--596
 []\T1/ppl/m/n/12 Per esempio nel caso di autenticazione tramite pubkey nella fa
 se di [][][][][][]
  []
 
 
-Overfull \hbox (1.58995pt too wide) in paragraph at lines 604--609
+Overfull \hbox (1.58995pt too wide) in paragraph at lines 620--625
 \T1/ppl/m/n/12 sulla frammentazione IP, per questo motivo gli ISP operano un fi
 ltro su questa
  []
 
 [18]
-Overfull \hbox (34.62585pt too wide) in paragraph at lines 610--612
+Overfull \hbox (34.62585pt too wide) in paragraph at lines 626--628
 \T1/ppl/m/it/12 Message Fragmentation\T1/ppl/m/n/12 . In cui la frammentazione 
 dei messaggi è gestita direttamente
  []
 
 LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 613.
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 629.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\colorbox' on input line 613.
+(hyperref)                removing `\colorbox' on input line 629.
 
 
-Overfull \hbox (10.015pt too wide) in paragraph at lines 615--618
+Overfull \hbox (10.015pt too wide) in paragraph at lines 631--634
 \T1/ppl/m/n/12 dimensione dei dati da trasferire ecceda la dimensione massima c
 he causerebbe
  []
 
 
-Overfull \hbox (3.11253pt too wide) in paragraph at lines 636--639
+Overfull \hbox (3.11253pt too wide) in paragraph at lines 652--655
 []\T1/ppl/m/n/12 Questo scambio è posizionato qui in quanto nella [][][][][][] 
 per motivi
  []
 
 
-Overfull \hbox (7.1908pt too wide) in paragraph at lines 640--641
+Overfull \hbox (7.1908pt too wide) in paragraph at lines 656--657
 []\T1/ppl/m/n/12 Per questo viene aggiunto questo scambio che viene utilizzato 
 per trasferire
  []
 
 
-Overfull \hbox (23.97821pt too wide) in paragraph at lines 642--645
+Overfull \hbox (23.97821pt too wide) in paragraph at lines 658--661
 []\T1/ppl/m/n/12 L'utilizzo principale di questo scambio è quello di trasferire
  le chiavi pubbliche
  []
 
 
-Overfull \hbox (4.49402pt too wide) in paragraph at lines 642--645
+Overfull \hbox (4.49402pt too wide) in paragraph at lines 658--661
 \T1/ppl/m/n/12 QC-resistant, tuttavia in generale può essere utilizzzato per tr
 asferire qualsiasi
  []
 
 
-Overfull \hbox (28.94408pt too wide) in paragraph at lines 642--645
+Overfull \hbox (28.94408pt too wide) in paragraph at lines 658--661
 \T1/ppl/m/n/12 durante questo scambio si scambiano altre chiavi allora le coppi
 e $\OMS/zplm/m/n/12 f\OML/zplm/m/it/12 SK[]\OT1/ppl/m/n/12 , \OML/zplm/m/it/12 
 SK[]\OMS/zplm/m/n/12 g$
  []
 
 [19]
-Overfull \hbox (17.8707pt too wide) in paragraph at lines 646--648
+Overfull \hbox (17.8707pt too wide) in paragraph at lines 662--664
 []\T1/ppl/m/n/12 Permette di realizzare Multiple Key Exchange Gli scambi di chi
 ave aggiuntivi
  []
 
 
-Overfull \hbox (46.1882pt too wide) in paragraph at lines 657--658
+Overfull \hbox (46.1882pt too wide) in paragraph at lines 673--674
 []\T1/ppl/m/n/12 flag [][][][][][]: il peer dice di supportare la frammentazion
 e
  []
 
 
-Overfull \hbox (18.1743pt too wide) in paragraph at lines 666--671
+Overfull \hbox (18.1743pt too wide) in paragraph at lines 682--687
 \T1/ppl/m/n/12 Exchange Support). Se anche il responder lo supporta lo includer
 à nel messaggio
  []
@@ -2098,11 +2101,11 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 44267 strings out of 476076
- 960544 string characters out of 5793775
+ 44328 strings out of 476076
+ 961571 string characters out of 5793775
  1957187 words of memory out of 5000000
- 65545 multiletter control sequences out of 15000+600000
- 622917 words of font info for 144 fonts, out of 8000000 for 9000
+ 65608 multiletter control sequences out of 15000+600000
+ 622376 words of font info for 142 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  100i,21n,101p,1850b,1197s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/t
@@ -2116,7 +2119,7 @@ alatino/uplb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/palatino/uplbi8a.pfb>
 </usr/share/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texmf-di
 st/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/p
 alatino/uplri8a.pfb>
-Output written on main.pdf (46 pages, 578285 bytes).
+Output written on main.pdf (46 pages, 578510 bytes).
 PDF statistics:
  658 PDF objects out of 1000 (max. 8388607)
  545 compressed objects within 6 object streams
