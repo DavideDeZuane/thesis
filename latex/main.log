@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Arch Linux) (preloaded format=pdflatex 2024.5.30)  4 OCT 2024 16:17
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Arch Linux) (preloaded format=pdflatex 2024.5.30)  4 OCT 2024 16:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1864,9 +1864,9 @@ tture moderne,
  []
 
 
-Overfull \hbox (33.85756pt too wide) in paragraph at lines 14--18
+Overfull \hbox (17.21402pt too wide) in paragraph at lines 14--18
 \T1/ppl/m/n/12 della domanda di connettività globale e l'espansione delle reti 
-di telecomunicazioni,
+di comunicazione,
  []
 
 
@@ -1881,8 +1881,22 @@ Overfull \hbox (2.58372pt too wide) in paragraph at lines 19--20
 ortato
  []
 
+<Figures/satellite.png, id=519, 385.44pt x 385.44pt>
+File: Figures/satellite.png Graphic file (type png)
+<use Figures/satellite.png>
+Package pdftex.def Info: Figures/satellite.png  used on input line 36.
+(pdftex.def)             Requested size: 28.45274pt x 28.448pt.
+File: Figures/satellite.png Graphic file (type png)
+<use Figures/satellite.png>
+Package pdftex.def Info: Figures/satellite.png  used on input line 37.
+(pdftex.def)             Requested size: 28.45274pt x 28.448pt.
+<Figures/europe.png, id=520, 501.875pt x 501.875pt>
+File: Figures/europe.png Graphic file (type png)
+<use Figures/europe.png>
+Package pdftex.def Info: Figures/europe.png  used on input line 38.
+(pdftex.def)             Requested size: 85.35826pt x 85.3559pt.
 
-Overfull \hbox (4.59038pt too wide) in paragraph at lines 56--58
+Overfull \hbox (4.59038pt too wide) in paragraph at lines 50--52
 \T1/ppl/m/n/12 L'ambiente spaziale, caratterizzato da radiazioni intense, tempe
 rature estreme
  []
@@ -1893,116 +1907,104 @@ rature estreme
 
 
 
-]
-Overfull \hbox (8.18794pt too wide) in paragraph at lines 60--61
+ <./Figures/satellite.png> <./Figures/europe.png>]
+Overfull \hbox (8.18794pt too wide) in paragraph at lines 54--55
 []\T1/ppl/m/it/12 Resistenza alle radiazioni\T1/ppl/m/n/12 : i componenti elett
 ronici devono essere progettati
  []
 
 
-Overfull \hbox (38.62003pt too wide) in paragraph at lines 61--62
-[]\T1/ppl/m/it/12 Basso consumo energetico\T1/ppl/m/n/12 : l'energia disponibil
-e per le operazioni computazionali
- []
-
-
-Overfull \hbox (5.03413pt too wide) in paragraph at lines 61--62
-\T1/ppl/m/n/12 è limitata, quindi si usano processori a basso consumo e ad alta
- efficienza
- []
-
-
-Overfull \hbox (18.19614pt too wide) in paragraph at lines 72--73
+Overfull \hbox (18.19614pt too wide) in paragraph at lines 66--67
 []\T1/ppl/m/it/12 Semplicità e ottimizzazione\T1/ppl/m/n/12 : gli algoritmi dev
 ono essere semplici e ottimizzati
  []
 
 
-Overfull \hbox (10.54051pt too wide) in paragraph at lines 73--74
+Overfull \hbox (10.54051pt too wide) in paragraph at lines 67--68
 []\T1/ppl/m/it/12 Parallelismo limitato\T1/ppl/m/n/12 : non è possibile sfrutta
 re un alto grado di parallelismo
  []
 
 
-Overfull \hbox (21.2091pt too wide) in paragraph at lines 73--74
+Overfull \hbox (21.2091pt too wide) in paragraph at lines 67--68
 \T1/ppl/m/n/12 o con limitato parallelismo, aumentando la complessità della pro
 gettazione. 
  []
 
 
-Overfull \hbox (4.32602pt too wide) in paragraph at lines 77--80
+Overfull \hbox (4.32602pt too wide) in paragraph at lines 71--74
 \T1/ppl/m/n/12 Occorre ridurre al minimo l'impatto sulle risorse in modo tale c
 he gli algoritmi
  []
 
 
-Overfull \hbox (8.64658pt too wide) in paragraph at lines 83--86
+Overfull \hbox (8.64658pt too wide) in paragraph at lines 77--80
 \T1/ppl/m/n/12 LEON3: Un processore open-source basato sull'architettura SPARC,
  progettato
  []
 
 
-Overfull \hbox (21.70148pt too wide) in paragraph at lines 83--86
+Overfull \hbox (21.70148pt too wide) in paragraph at lines 77--80
 \T1/ppl/m/n/12 dall'Agenzia Spaziale Europea (ESA). È utilizzato in numerose mi
 ssioni satellitari
  []
 
 
-Overfull \hbox (11.13074pt too wide) in paragraph at lines 83--86
+Overfull \hbox (11.13074pt too wide) in paragraph at lines 77--80
 \T1/ppl/m/n/12 europee. ESA Power Interface Standard (ECSS-E-ST-20C): Definisce
  le modalità
  []
 
 
-Overfull \hbox (36.6046pt too wide) in paragraph at lines 83--86
+Overfull \hbox (36.6046pt too wide) in paragraph at lines 77--80
 \T1/ppl/m/n/12 con cui l'alimentazione elettrica viene distribuita all'interno 
 dei satelliti, assicurando
  []
 
 
-Overfull \hbox (17.82622pt too wide) in paragraph at lines 83--86
+Overfull \hbox (17.82622pt too wide) in paragraph at lines 77--80
 \T1/ppl/m/n/12 efficienza e affidabilità anche con limitate risorse energetiche
 . Per la compattezza
  []
 
 
-Overfull \hbox (8.5502pt too wide) in paragraph at lines 83--86
+Overfull \hbox (8.5502pt too wide) in paragraph at lines 77--80
 \T1/ppl/m/n/12 invece: Cubesat Standard (1U, 2U, 3U, etc.): Molti satelliti mod
 erni, soprattutto
  []
 
 
-Overfull \hbox (9.8345pt too wide) in paragraph at lines 83--86
+Overfull \hbox (9.8345pt too wide) in paragraph at lines 77--80
 \T1/ppl/m/n/12 per missioni commerciali o di ricerca, seguono il formato Cubesa
 t, che definisce
  []
 
 [22]
-Overfull \hbox (47.8495pt too wide) in paragraph at lines 87--88
+Overfull \hbox (47.8495pt too wide) in paragraph at lines 81--82
 \T1/ppl/m/n/12 operativo open-source e real-time progettato per funzionare in a
 mbienti estremamente
  []
 
 
-Overfull \hbox (12.83421pt too wide) in paragraph at lines 87--88
+Overfull \hbox (12.83421pt too wide) in paragraph at lines 81--82
 \T1/ppl/m/n/12 sua capacità di gestire operazioni critiche in tempo reale. Basa
 to su GNU/Linux 
  []
 
 
-Overfull \hbox (4.77895pt too wide) in paragraph at lines 90--91
+Overfull \hbox (4.77895pt too wide) in paragraph at lines 84--85
 []\T1/ppl/m/n/12 Triple Modular Redundancy (TMR): Molti sistemi critici spazial
 i utilizzano
  []
 
 
-Overfull \hbox (3.42686pt too wide) in paragraph at lines 102--104
+Overfull \hbox (3.42686pt too wide) in paragraph at lines 96--98
 \T1/ppl/m/n/12 di standardizzazione del NIST, in particolare la loro implementa
 zione forniata
  []
 
 [23]
-Overfull \hbox (5.13951pt too wide) in paragraph at lines 117--119
+Overfull \hbox (5.13951pt too wide) in paragraph at lines 111--113
 []\T1/ppl/m/n/12 Riguardo a questo non esistono implementazioni, per questo mot
 ivo siamo
  []
@@ -2096,10 +2098,10 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 44260 strings out of 476076
- 960289 string characters out of 5793775
+ 44267 strings out of 476076
+ 960544 string characters out of 5793775
  1957187 words of memory out of 5000000
- 65538 multiletter control sequences out of 15000+600000
+ 65545 multiletter control sequences out of 15000+600000
  622917 words of font info for 144 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  100i,21n,101p,1850b,1197s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -2114,10 +2116,10 @@ alatino/uplb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/palatino/uplbi8a.pfb>
 </usr/share/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texmf-di
 st/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/p
 alatino/uplri8a.pfb>
-Output written on main.pdf (46 pages, 454854 bytes).
+Output written on main.pdf (46 pages, 578285 bytes).
 PDF statistics:
- 654 PDF objects out of 1000 (max. 8388607)
+ 658 PDF objects out of 1000 (max. 8388607)
  545 compressed objects within 6 object streams
  134 named destinations out of 1000 (max. 500000)
- 539 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 549 words of extra memory for PDF output out of 10000 (max. 10000000)
 

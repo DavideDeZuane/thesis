@@ -12,7 +12,7 @@
 \section{Comunicazioni Satelliari}
 
 Le comunicazioni satellitari sono una fondamenta delle infrastrutture moderne, abilitando una vasta gamma di servizi.
-Negli ultimi decenni, con l'aumento della domanda di connettività globale e l'espansione delle reti di telecomunicazioni, i satelliti sono diventati strumenti essenziali per garantire una copertura estesa, specialmente in aree remote dove le infrastrutture terrestri sono limitate o inesistenti.
+Negli ultimi decenni, con l'aumento della domanda di connettività globale e l'espansione delle reti di comunicazione, i satelliti sono diventati strumenti essenziali per garantire una copertura estesa, specialmente in aree remote dove le infrastrutture terrestri sono limitate o inesistenti.
 L'emergere delle costellazioni di satelliti in orbita bassa (LEO - Low Earth Orbit) sta cambiando il paradigma delle comunicazioni satellitari, offrendo vantaggi significativi rispetto ai satelliti geostazionari (GEO). 
 %Mentre i satelliti GEO forniscono una copertura stabile, i satelliti LEO consentono Round Time Trip (RTT) notevolmente ridotti e una maggiore flessibilità, rendendoli ideali per applicazioni ad alta velocità come la trasmissione dati in tempo reale e la connettività Internet globale.
 
@@ -33,17 +33,12 @@ Questo cambio di paradigma insieme al quantum computer hanno portato diversi ent
         \draw[thick, dashed, leo] (0,0) circle (3cm);
         \filldraw[fill=mare,] (0,0) circle (2.2cm);
 
+        \node at (-2.5,2) {\includegraphics[width=1cm]{Figures/satellite.png}}; % Sostituisci 'your_image.png' con il percorso della tua immagine
+        \node at (3.2,3) {\includegraphics[width=1cm, angle=270]{Figures/satellite.png}}; % Sostituisci 'your_image.png' con il percorso della tua immagine
+        \node at (0.2,0.5) {\includegraphics[width=3cm ]{Figures/europe.png}}; % Sostituisci 'your_image.png' con il percorso della tua immagine
+
         \node[cloud, cloud puffs=15.7, cloud ignores aspect, minimum width=1.5cm, minimum height=0.5cm, align=center, fill=white, draw] (cloud) at (-2, 0) {};
         \node[cloud, cloud puffs=15.7, cloud ignores aspect, minimum width=1.5cm, minimum height=0.5cm, align=center, fill=white, draw] (cloud) at (2, -0.5) {};
-
-
-        \draw[fill=terra!90, draw=black] 
-        (-0.5, 0.8) .. controls (-0.4, 1.2) and (0.0, 1.5) .. (0.4, 1.1) -- 
-        (0.6, 1.3) .. controls (0.9, 1.5) and (1.2, 1.1) .. (1.0, 0.5) -- 
-        (0.8, 0.2) .. controls (0.5, 0.1) and (0.3, 0.2) .. (0.0, 0.3) -- 
-        (-0.3, 0.5) .. controls (-0.5, 0.7) and (-0.7, 0.4) .. (-0.9, 0.4) -- 
-        (-1.0, 0.5) .. controls (-1.2, 0.7) and (-1.3, 0.5) .. (-1.2, 0.3) -- 
-        (-1.0, 0.2) .. controls (-0.5, 0.1) and (-0.4, 0.4) .. (-0.5, 0.8) -- cycle;
 
     \end{tikzpicture}
     \caption{Orbite dei satelliti}
@@ -57,7 +52,7 @@ Tra i principali vincoli per l'hardware satellitare troviamo:
 
 \begin{itemize}
     \item \textit{Resistenza alle radiazioni}: i componenti elettronici devono essere progettati per resistere all'esposizione costante alle radiazioni spaziali
-    \item \textit{Basso consumo energetico}: l'energia disponibile per le operazioni computazionali è limitata, quindi si usano processori a basso consumo e ad alta efficienza energetica, sacrificando potenza di calcolo.
+    \item \textit{Basso consumo energetico}: l'energia disponibile per le operazioni\\ computazionali è limitata, quindi si usano processori a basso consumo e ad alta efficienza energetica, sacrificando potenza di calcolo.
     \item \textit{Elaborazione in tempo reale}: per alcune tipologie di servizi è necessario che il processamento avvenga in tempo reale.
     \item \textit{Compattezza}: a causa dello spazio limitato a bordo di un satellite, i componenti hardware devono essere progettati in modo estremamente compatto.
 \end{itemize}
