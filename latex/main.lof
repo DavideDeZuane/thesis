@@ -1,18 +1,17 @@
 \babel@toc {nil}{}\relax 
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Funzionamento di uno schema crittografico}}{7}{figure.caption.22}%
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Scambio di Chiave Difie-Hellman}}{9}{figure.caption.27}%
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Esplosione combinatoria}}{10}{figure.caption.30}%
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Public Key Infrastructure}}{11}{figure.caption.31}%
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Stack TCP/IP}}{13}{figure.caption.36}%
-\contentsline {figure}{\numberline {2.6}{\ignorespaces IPsec Protolocol Suite}}{14}{figure.caption.39}%
-\contentsline {figure}{\numberline {2.7}{\ignorespaces Security Association bidirezionali}}{15}{figure.caption.41}%
-\contentsline {figure}{\numberline {2.8}{\ignorespaces Fasi di Negoziazione del Protocollo IKEv2}}{17}{figure.caption.44}%
-\contentsline {figure}{\numberline {2.9}{\ignorespaces Drop Pacchetti}}{18}{figure.caption.51}%
-\contentsline {figure}{\numberline {2.10}{\ignorespaces Scambio nuovo}}{19}{figure.caption.53}%
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Funzionamento di uno schema crittografico}}{7}{figure.caption.23}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Scambio di Chiave Difie-Hellman}}{8}{figure.caption.29}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Esplosione combinatoria}}{9}{figure.caption.33}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Stack TCP/IP}}{11}{figure.caption.42}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces IPsec Protolocol Suite}}{13}{figure.caption.45}%
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Security Association bidirezionali}}{14}{figure.caption.48}%
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Fasi di Negoziazione del Protocollo IKEv2}}{15}{figure.caption.51}%
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Drop Pacchetti}}{17}{figure.caption.58}%
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Scambio nuovo}}{18}{figure.caption.59}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Orbite dei satelliti}}{21}{figure.caption.57}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Orbite dei satelliti}}{22}{figure.caption.64}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Formato IKE Header}}{26}{figure.caption.72}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Formato IKE Header}}{26}{figure.caption.81}%
 \addvspace {10\p@ }

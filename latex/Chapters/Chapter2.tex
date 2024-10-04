@@ -40,8 +40,8 @@ lunghezza fissa, noto come digest.
 \end{equation}
 
 \begin{itemize}
-    \item $\{0,1\}^*$: rappresenta l'insieme di tutte le stringhe binarie di lunghezza arbitraria.
-    \item $\{0,1\}^n$: rappresenta l'insieme delle stringhe binarie di lunghezza fissa $n$.
+    \item $\{0,1\}^*$: l'insieme di tutte le stringhe binarie di lunghezza arbitraria.
+    \item $\{0,1\}^n$: l'insieme delle stringhe binarie di lunghezza fissa $n$.
 \end{itemize}
 
 % Grafico per la funzione di Hash
@@ -72,15 +72,13 @@ Le funzioni di hash crittografiche sono strumenti fondamentali nel campo della
 sicurezza informatica, progettate per garantire l'integrità e l'autenticità dei
 dati. Per questo motivo, a questo tipo di funzioni sono richieste le seguenti proprietà: 
 \begin{itemize}
-    \item \textbf{Resistenza alle collisioni}: devono essere progettate in modo tale che sia \\computazionalmente impraticabile invertire il processo, ovvero,  dato il digest è dificile risalire 
+    \item \textbf{Resistenza alle collisioni}: devono essere progettate in modo tale che sia computazionalmente impraticabile invertire il processo, ovvero,  dato il digest è dificile risalire 
     al messaggio che lo ha prodotto.
     \item \textbf{Proprietà di diffusione}: una leggere variazione dell'input deve produrre un hash completamente diverso, questa è fondamentale per garantire che gli attaccanti non possano prevedere o
     manipolare il valore di hash a seguito di modifiche all'input.
 \end{itemize}    
 
-\begin{center}
-    Aggiungere grafico sulle one way funcion
-\end{center}
+\todo{aggiungere grafico sulle one way function}
 
 \subsection{Schemi crittografici}
 Uno schema di cifratura è un insieme di algoritmi e funzioni che definisce come trasformare un messaggio in chiaro (plaintext) in un messaggio cifrato (ciphertext) e viceversa, al fine di garantire la confidenzialità e la sicurezza delle comunicazioni.
@@ -140,7 +138,9 @@ Tuttavia andando a caratterizzare le chiavi utilizzate nelle operazioni di cifra
     \label{fig:schema}
 \end{figure}
 
-\subsubsection{Simmetrici}
+\todo{Colorare con colori giusti lo schema}
+
+\subsubsection*{Simmetrici}
 
 Come descritto precedentemente, in uno schema simmetrico si utilizza la stessa
 chiave sia per le operazioni di cifratura che di decifratura. Ciò implica che le
@@ -149,7 +149,6 @@ segreta, nota anche come chiave pre-condivisa (PSK - Pre-Shared Key). \\Questa
 caratteristica fondamentale rende gli schemi di crittografia simmetrica\\
 particolarmente veloci ed efficienti, esempi ne sono AES e DES.
 
-\newpage
 
 \noindent
 Le loro caratteristiche li rendono ideali per:
@@ -167,7 +166,7 @@ Le loro caratteristiche li rendono ideali per:
 
 
 
-\subsubsection{Asimmetrici}
+\subsubsection*{Asimmetrici}
 
 In uno schema di cifratura asimmetrica, detto anche a \textbf{chiave pubblica}, lo spazio delle chiavi \(\mathcal{K}\) è costituito da una coppia di chiavi \((k_{\text{pub}}, k_{\text{priv}})\), dove:
 
@@ -228,13 +227,15 @@ più conosciuta è quella proposta da \textit{Diffie-Hellman} ed è mostrata in 
     \caption{Scambio di Chiave Difie-Hellman}
     \label{fig:dh}
 \end{figure}
+\todo{aggiungere una spiegazione più approfondita sui KE}
 
 \noindent
 Le \textbf{firme digitali}, sono un meccanismo chiave per garantire l'autenticità e l'integrità dei messaggi. In questo caso si fornisce sia il messaggio
 che un digest del messaggio firmato, in questo modo chi lo riceve può utilizzare la chiave pubblica per verificare che l'hash firmato equivalga a quello calcolato.
 Questa pratica si utilizza per garantire integrità e autenticità.
-\newpage
-\subsection{Confronto}
+
+\todo{aggiungere una spiegazione più approfondita sulle firme digitali}
+
 
 \subsubsection*{Key Distribution}
 
@@ -245,8 +246,8 @@ delle chiavi è un problema importante per il crittosistema. \\
 Le distribuzione delle chiavi per crittosistemi simmetrici deve avvenire tramite un canale segreto, per questo motivo si utilizzano le seguenti modalità:
 \begin{itemize}
     \item \textit{Manuale}: vengono installate manualmente coppie di chiavi per ogni nodo che si vuol far comunicare, se si vogliono far comunicare $n$ nodi 
-    sono necessarie $n(n-1)/2$ chiavi. L'approccio è robusto ma impraticabile per reti di grandi dimensioni come mostrato in \textit{Fig. \ref{fig:chiavi-simmetriche}}.
-    \item \textit{Key Distribution Center (KDC)}: da un'approccio decentralizzato si passa ad uno \\centralizzato, in cui è presente un server che fa da intermediario
+    sono necessarie $n(n-1)/2$ chiavi. Questo approccio è robusto, essendo decentralizzato,  ma risulta impraticabile per reti di grandi dimensioni come mostrato in \textit{Fig. \ref{fig:chiavi-simmetriche}}.
+    \item \textit{Key Distribution Center (KDC)}: da un'approccio decentralizzato si passa ad uno centralizzato, in cui è presente un server che fa da intermediario
     fidato per la distribuzione delle chiavi.
 \end{itemize}
 
@@ -263,24 +264,29 @@ Le distribuzione delle chiavi per crittosistemi simmetrici deve avvenire tramite
         coordinate[pos=0.1] (aux0) coordinate[pos=0.9] (aux1); \fill[black] (aux0)
         to[bend left=2] (aux1) to[bend left=2] (aux0); \draw[{Stealth[fill=\mycolorB,
         length=7pt,inset=2pt]}-{Stealth[fill=\mycolorA,length=7pt,inset=2pt]}]
-        (c-#1-\XX) -- (c-#1-\YY); }}}}] \def\LstCols{"red","orange","yellow","green!70!
-        black","blue!70!white","purple!80!white"} \def\LstAngles{180,150,135,128,150}
+        (c-#1-\XX) -- (c-#1-\YY); }}}}] 
+        \def\LstCols{"red","orange","yellow","green!70!black","blue!70!white","purple!80!white"} 
+        \def\LstAngles{180,150,135,128,150}
         \path (-5,0) pic {cgram=2} (0,0.5) pic {cgram=4} (5,0.5) pic {cgram=6}; 
     \end{tikzpicture}
     \caption{Esplosione combinatoria}
     \label{fig:chiavi-simmetriche}
 \end{figure}
+\todo{cambaire i colori ai nodi}
 \noindent
-Per loro natura le chiavi pubbliche sono liberamente distribuite, non è dunque \\necessario un canale segreto. 
-Tuttavia in questo caso si ha il problema dell'autenticità, ovvero che la chiave provenga realmente dalla fonte dichiarata. 
-Per questo nasce la \textit{Public Key Infrastructure (PKI)}, che tramite l'utilizzo dei certificati X.509 consente la\\ distribuzione sicura di chiavi pubbliche.
-
-\begin{figure}[h!]
+Per loro natura le chiavi pubbliche sono liberamente distribuite, non è dunque necessario un canale segreto. 
+Il problema che si hanno con questa tipologia di chiavi è quello dell'autenticità, ovvero che la chiave provenga realmente dalla fonte dichiarata. 
+Questa tipologia di schemi infatti per loro natura è vulnerabile ad attacchi MITM.
+Per questo nasce la \textit{Public Key Infrastructure (PKI)}, che tramite l'utilizzo dei certificati X.509 consente la distribuzione sicura di chiavi pubbliche.
+\todo{aggiungere immagine della PKI}
+\begin{comment}
+    \begin{figure}[h!]
     \centering
     \includegraphics[scale=0.35]{Figures/pki.jpg}
     \caption{Public Key Infrastructure}
     \label{fig:pki}
 \end{figure}
+\end{comment}
 
 \noindent
 Questo approccio consente una gestione scalabile delle chiavi.
@@ -293,6 +299,8 @@ Parlare degli algoritmi di Shor e ....
 
 
 \subsection{Sicurezza}
+
+\todo{chiedere a Paolo come scrivere bene questa parte }
 
 Il \textbf{security level} è una misura della forza che una primitiva crittografica raggiunge rispetto ad attacchi.
 Solitamente viene espresso come un numero di “bit di sicurezza”, dove $n$-bit di sicurezza significa che l'attaccante dovrebbe eseguire $2^n$ operazioni per romperlo.
@@ -335,7 +343,7 @@ per le informazioni trasmesse.\\
 
 \noindent
 Il modello di riferimento per la comunicazione su Internet è il modello \textbf{TCP/IP}, il quale  suddivide il processo di trasmissione dei dati
-in vari livelli, ciascuno con delle funzioni specifiche che non si sovrappongono con quelle degli altri livelli. Come mostrato in \textit{Figura \ref{fig:tcpip}},
+in vari livelli, ciascuno con delle funzioni specifiche che non si sovrappongono con quelle degli altri livelli. Come mostrato in \textit{Figura \ref{fig:tcp stack}},
 è possibile applicare la sicurezza ai vari livelli della pila e di lato sono riportati i protocolli che vengono utilizzati. 
 
 \begin{itemize}
@@ -347,6 +355,7 @@ in vari livelli, ciascuno con delle funzioni specifiche che non si sovrappongono
     \item IPsec (Internet Protocol Security): Protegge i pacchetti IP
     scambiati tra due nodi, fornendo autenticazione, integrità e cifratura.
 \end{itemize}
+\todo{finire di spiegare anche gli altri protocolli di sicurezza e colorare la pila }
 
 \begin{figure}[h!]
     \centering 
@@ -458,7 +467,8 @@ tra questi abbiamo:
 \noindent
 La SA è caratterizzata dall'essere un canale \textit{simplex}, dunque al fine di stabilire un canale di comunicazione bidirezionale IPsec tra due entità occorrono due SA unidirezionali di verso opposto.
 La \textit{Figura \ref{fig:sa_bidirezionale}} mostra il tunnerl virtuale in esecuzione tra i due host.
-%aggiungere al lato di un host la configurazione dell'SA
+
+\todo{aggiungere al lato di un host la configurazione dell'SA}
 \begin{figure}[h!]
     \centering
     \begin{tikzpicture}
@@ -518,8 +528,8 @@ Questo protocollo definisce una serie di scambi, mostrati in \textit{Figura \ref
         \node at (-2,-1.5) {\inlinecode{IKE\_SA\_INIT}};
         \node at (-1.7,-4) {\inlinecode{IKE\_AUTH}};
         \draw (entity1) ++(0.2,-6) ellipse (0.2cm and 0.2cm);
-        \draw [-] (0.2,-6.2) -- (6.65,-6.2);
-        \draw [-] (0.2,-5.8) -- (6.65,-5.8) node[midway, above, font=\footnotesize]{$SK_d, N_i, N_r$};
+        \draw [-] (0.2,-6.2) -- (6.8,-6.2);
+        \draw [-] (0.2,-5.8) -- (6.8,-5.8) node[midway, above, font=\footnotesize]{IPsec SA};
         \draw (entity2) ++(-0.2,-6) ellipse (0.2cm and 0.2cm);
         % Key for encryption and authtenticatoin
         \drawkey{-1, -2.3}{red}{$SK_{ei}$};
@@ -585,7 +595,7 @@ La modalità di autenticazione può essere: PSK, EAP oppure mediante chiave pubb
 
 \subsection{CHILD\_SA}
 
-
+\newpage
 \section{Problemi}
 
 IKEv2 utilizza come porotocollo a livello trasporto UDP per per inoltrare i propri messaggi. La maggior parte dei messaggi che i peer si scambiano hanno dimensioni relativamente piccole e
@@ -626,7 +636,6 @@ Ance se in teoria uno dei requisiti del CGNAT definito dagli RFC è proprio cons
 Per risolvere questa problematica e dunque consentire il passaggio dei messaggi attraverso i dispositivi di rete che non consentono il passaggio degli IP fragment attraverso 
 di loro nell' RFC 7283 viene introdotta la IKEv2 \textit{Message Fragmentation}. In cui la frammentazione dei messaggi è gestita direttamente da parte di chi implementa IKEv2
 
-\subsection{\inlinecode{IKE\_INTERMEDIATE}}
 
 Per evitare che nel trasferimento di grandi dati ciò avvenga viene introdotto uno scambio aggiuntivo. Questo scambio è introdotto per quei casi in cui la dimensione dei dati
 da trasferire ecceda la dimensione massima che causerebbe la frammentazione IP. Questo scambio va fatto dopo la \inlinecode{IKE\_INIT\_SA} e prima della \inlinecode{IKE\_AUTH} in questo
@@ -692,11 +701,3 @@ Considerazioni, L'IKE fragmentation viene introdotta a causa del NAT tuttavia ne
 il NAT soprattutto perchè introduce ritardi dovuti alla traduzione degli indirizzi
 
 
-
-\section{Post-Quantum}
-
-Un solo KEM con Kyber L1 usando come suite AES\_GCM has vabene come certificato dilithium L1
-
-Nel KEM quanti cifrano?
-
-Cioè l'initiator manda il certificato e poi il responder cifra 

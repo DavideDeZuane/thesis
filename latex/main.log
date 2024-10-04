@@ -1,9 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Arch Linux) (preloaded format=pdflatex 2024.5.30)  4 OCT 2024 17:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Arch Linux) (preloaded format=pdflatex 2024.9.29)  4 OCT 2024 22:22
 entering extended mode
  restricted \write18 enabled.
+ file:line:error style messages enabled.
  %&-line parsing enabled.
-**main.tex
-(./main.tex
+**/home/davide/workspace/thesis/latex/main.tex
+(/home/davide/workspace/thesis/latex/main.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
 (./MastersDoctoralThesis.cls
@@ -11,19 +12,15 @@ Document Class: MastersDoctoralThesis 2017/08/27 v1.6 LaTeXTemplates.com
 (/usr/share/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
 \etb@tempcnta=\count188
-)
-(/usr/share/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
-(/usr/share/texmf-dist/tex/latex/l3kernel/expl3.sty
+) (/usr/share/texmf-dist/tex/latex/l3packages/xparse/xparse.sty (/usr/share/texmf-dist/tex/latex/l3kernel/expl3.sty
 Package: expl3 2024-02-20 L3 programming layer (loader) 
-
-(/usr/share/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+ (/usr/share/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-02-20 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count189
 \l__pdf_internal_box=\box51
 ))
 Package: xparse 2024-02-18 L3 Experimental document command parser
-)
-(/usr/share/texmf-dist/tex/latex/base/book.cls
+) (/usr/share/texmf-dist/tex/latex/base/book.cls
 Document Class: book 2023/05/17 v1.4n Standard LaTeX document class
 (/usr/share/texmf-dist/tex/latex/base/bk12.clo
 File: bk12.clo 2023/05/17 v1.4n Standard LaTeX file (size option)
@@ -40,71 +37,51 @@ File: bk12.clo 2023/05/17 v1.4n Standard LaTeX file (size option)
 \abovecaptionskip=\skip48
 \belowcaptionskip=\skip49
 \bibindent=\dimen140
-)
-(/usr/share/texmf-dist/tex/generic/babel/babel.sty
+) (/usr/share/texmf-dist/tex/generic/babel/babel.sty
 Package: babel 2024/02/07 v24.2 The Babel package
 \babel@savecnt=\count199
 \U@D=\dimen141
 \l@unhyphenated=\language5
-
-(/usr/share/texmf-dist/tex/generic/babel/txtbabel.def)
+ (/usr/share/texmf-dist/tex/generic/babel/txtbabel.def)
 \bbl@readstream=\read2
 \bbl@dirlevel=\count266
 Package babel Info: You haven't specified a language as a class or package
 (babel)             option. I'll load 'nil'. Reported on input line 4258.
-
-(/usr/share/texmf-dist/tex/generic/babel/nil.ldf
+ (/usr/share/texmf-dist/tex/generic/babel/nil.ldf
 Language: nil 2024/02/07 v24.2 Nil language
 \l@nil=\language6
-))
-(/usr/share/texmf-dist/tex/generic/babel/locale/it/babel-italian.tex)
+)) (/usr/share/texmf-dist/tex/generic/babel/locale/it/babel-italian.tex)
 Package babel Info: Importing data for italian
 (babel)             from babel-it.ini. Reported on input line 187.
 Package babel Info: Hyphen rules for 'italian' set to \l@nil
 (babel)             (\language6). Reported on input line 187.
-
-(/usr/share/texmf-dist/tex/latex/koma-script/scrbase.sty
-Package: scrbase 2023/07/07 v3.41 KOMA-Script package (KOMA-Script-independent 
-basics and keyval usage)
-
-(/usr/share/texmf-dist/tex/latex/koma-script/scrlfile.sty
+ (/usr/share/texmf-dist/tex/latex/koma-script/scrbase.sty
+Package: scrbase 2023/07/07 v3.41 KOMA-Script package (KOMA-Script-independent basics and keyval usage)
+ (/usr/share/texmf-dist/tex/latex/koma-script/scrlfile.sty
 Package: scrlfile 2023/07/07 v3.41 KOMA-Script package (file load hooks)
-
-(/usr/share/texmf-dist/tex/latex/koma-script/scrlfile-hook.sty
+ (/usr/share/texmf-dist/tex/latex/koma-script/scrlfile-hook.sty
 Package: scrlfile-hook 2023/07/07 v3.41 KOMA-Script package (using LaTeX hooks)
-
-
-(/usr/share/texmf-dist/tex/latex/koma-script/scrlogo.sty
+ (/usr/share/texmf-dist/tex/latex/koma-script/scrlogo.sty
 Package: scrlogo 2023/07/07 v3.41 KOMA-Script package (logo)
-)))
-(/usr/share/texmf-dist/tex/latex/graphics/keyval.sty
+))) (/usr/share/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
 \KV@toks@=\toks17
 )
 Applying: [2021/05/01] Usage of raw or classic option list on input line 252.
-Already applied: [0000/00/00] Usage of raw or classic option list on input line
- 368.
-)
-(/usr/share/texmf-dist/tex/latex/koma-script/scrhack.sty
+Already applied: [0000/00/00] Usage of raw or classic option list on input line 368.
+) (/usr/share/texmf-dist/tex/latex/koma-script/scrhack.sty
 Package: scrhack 2023/07/07 v3.41 KOMA-Script package (hacking other packages)
-
-(/usr/share/texmf-dist/tex/latex/koma-script/scrkbase.sty
-Package: scrkbase 2023/07/07 v3.41 KOMA-Script package (KOMA-Script-dependent b
-asics and keyval usage)
-)
-(/usr/share/texmf-dist/tex/latex/xpatch/xpatch.sty
+ (/usr/share/texmf-dist/tex/latex/koma-script/scrkbase.sty
+Package: scrkbase 2023/07/07 v3.41 KOMA-Script package (KOMA-Script-dependent basics and keyval usage)
+) (/usr/share/texmf-dist/tex/latex/xpatch/xpatch.sty
 Package: xpatch 2020/03/25 v0.3a Extending etoolbox patching commands
-))
-(/usr/share/texmf-dist/tex/latex/setspace/setspace.sty
+)) (/usr/share/texmf-dist/tex/latex/setspace/setspace.sty
 Package: setspace 2022/12/04 v6.7b set line spacing
 )
 Package scrhack Info: loading setspace hack on input line 193.
-
-(/usr/share/texmf-dist/tex/latex/koma-script/setspace.hak
-File: setspace.hak 2023/07/07 v3.41 KOMA-Script scrhack part (hacking package s
-etspace)
-)
-(/usr/share/texmf-dist/tex/latex/tools/longtable.sty
+ (/usr/share/texmf-dist/tex/latex/koma-script/setspace.hak
+File: setspace.hak 2023/07/07 v3.41 KOMA-Script scrhack part (hacking package setspace)
+) (/usr/share/texmf-dist/tex/latex/tools/longtable.sty
 Package: longtable 2023-11-01 v4.19 Multi-page Table package (DPC)
 \LTleft=\skip50
 \LTright=\skip51
@@ -122,8 +99,7 @@ Package: longtable 2023-11-01 v4.19 Multi-page Table package (DPC)
 \c@LT@tables=\count270
 \c@LT@chunks=\count271
 \LT@p@ftn=\toks18
-)
-(/usr/share/texmf-dist/tex/latex/siunitx/siunitx.sty
+) (/usr/share/texmf-dist/tex/latex/siunitx/siunitx.sty
 Package: siunitx 2024-02-15 v3.3.12 A comprehensive (SI) units package
 \l__siunitx_number_uncert_offset_int=\count272
 \l__siunitx_number_exponent_fixed_int=\count273
@@ -139,32 +115,23 @@ Package: siunitx 2024-02-15 v3.3.12 A comprehensive (SI) units package
 \l__siunitx_angle_marker_box=\box57
 \l__siunitx_angle_unit_box=\box58
 \l__siunitx_compound_count_int=\count282
-
-(/usr/share/texmf-dist/tex/latex/translations/translations.sty
-Package: translations 2022/02/05 v1.12 internationalization of LaTeX2e packages
- (CN)
-
-(/usr/share/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
-Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
-)
-
-(/usr/share/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+ (/usr/share/texmf-dist/tex/latex/translations/translations.sty
+Package: translations 2022/02/05 v1.12 internationalization of LaTeX2e packages (CN)
+ (/usr/share/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO)
+ (/usr/share/texmf-dist/tex/generic/infwarerr/infwarerr.sty
 Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
-)
-(/usr/share/texmf-dist/tex/generic/iftex/iftex.sty
+) (/usr/share/texmf-dist/tex/generic/iftex/iftex.sty
 Package: iftex 2022/02/03 v1.0f TeX engine tests
-)
-(/usr/share/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+) (/usr/share/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
 Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
 )
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
-))
-(/usr/share/texmf-dist/tex/latex/amsmath/amstext.sty
+)) (/usr/share/texmf-dist/tex/latex/amsmath/amstext.sty
 Package: amstext 2021/08/26 v2.01 AMS text
-
-(/usr/share/texmf-dist/tex/latex/amsmath/amsgen.sty
+ (/usr/share/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks19
 \ex@=\dimen144
@@ -182,8 +149,7 @@ File: amsgen.sty 1999/11/30 v2.0 generic functions
 \l__siunitx_unit_tmp_int=\count283
 \l__siunitx_unit_position_int=\count284
 \l__siunitx_unit_total_int=\count285
-
-(/usr/share/texmf-dist/tex/latex/tools/array.sty
+ (/usr/share/texmf-dist/tex/latex/tools/array.sty
 Package: array 2023/10/16 v2.5g Tabular extension package (FMi)
 \col@sep=\dimen149
 \ar@mcellbox=\box65
@@ -192,28 +158,22 @@ Package: array 2023/10/16 v2.5g Tabular extension package (FMi)
 \extratabsurround=\skip54
 \backup@length=\skip55
 \ar@cellbox=\box66
-))
-(/usr/share/texmf-dist/tex/latex/graphics/graphicx.sty
+)) (/usr/share/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
-
-(/usr/share/texmf-dist/tex/latex/graphics/graphics.sty
+ (/usr/share/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
-
-(/usr/share/texmf-dist/tex/latex/graphics/trig.sty
+ (/usr/share/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
-)
-(/usr/share/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+) (/usr/share/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 107.
-
-(/usr/share/texmf-dist/tex/latex/graphics-def/pdftex.def
+ (/usr/share/texmf-dist/tex/latex/graphics-def/pdftex.def
 File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen151
 \Gin@req@width=\dimen152
-)
-(/usr/share/texmf-dist/tex/latex/booktabs/booktabs.sty
+) (/usr/share/texmf-dist/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \heavyrulewidth=\dimen153
 \lightrulewidth=\dimen154
@@ -232,11 +192,9 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \@thisruleclass=\count288
 \@lastruleclass=\count289
 \@thisrulewidth=\dimen165
-)
-(/usr/share/texmf-dist/tex/latex/caption/caption.sty
+) (/usr/share/texmf-dist/tex/latex/caption/caption.sty
 Package: caption 2023/08/05 v3.6o Customizing captions (AR)
-
-(/usr/share/texmf-dist/tex/latex/caption/caption3.sty
+ (/usr/share/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
 \caption@tempdima=\dimen166
 \captionmargin=\dimen167
@@ -251,19 +209,15 @@ Package caption Info: Standard document class detected.
 \c@caption@flags=\count290
 \c@continuedfloat=\count291
 Package caption Info: longtable package is loaded.
-
-(/usr/share/texmf-dist/tex/latex/caption/ltcaption.sty
+ (/usr/share/texmf-dist/tex/latex/caption/ltcaption.sty
 Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
-))
-(/usr/share/texmf-dist/tex/latex/xcolor/xcolor.sty
+)) (/usr/share/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2023/11/15 v3.01 LaTeX color extensions (UK)
-
-(/usr/share/texmf-dist/tex/latex/graphics-cfg/color.cfg
+ (/usr/share/texmf-dist/tex/latex/graphics-cfg/color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: pdftex.def on input line 274.
-
-(/usr/share/texmf-dist/tex/latex/graphics/mathcolor.ltx)
+ (/usr/share/texmf-dist/tex/latex/graphics/mathcolor.ltx)
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1350.
 Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1354.
 Package xcolor Info: Model `RGB' extended on input line 1366.
@@ -273,11 +227,9 @@ Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1370.
 Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1371.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1372.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1373.
-)
-(/usr/share/texmf-dist/tex/latex/geometry/geometry.sty
+) (/usr/share/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
-
-(/usr/share/texmf-dist/tex/generic/iftex/ifvtex.sty
+ (/usr/share/texmf-dist/tex/generic/iftex/ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 )
 \Gm@cnth=\count292
@@ -292,17 +244,12 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 \Gm@layouthoffset=\dimen180
 \Gm@layoutvoffset=\dimen181
 \Gm@dimlist=\toks21
-)
-(/usr/share/texmf-dist/tex/latex/koma-script/scrlayer-scrpage.sty
-Package: scrlayer-scrpage 2023/07/07 v3.41 KOMA-Script package (end user interf
-ace for scrlayer)
-
-(/usr/share/texmf-dist/tex/latex/koma-script/scrlayer.sty
-Package: scrlayer 2023/07/07 v3.41 KOMA-Script package (defining layers and pag
-e styles)
+) (/usr/share/texmf-dist/tex/latex/koma-script/scrlayer-scrpage.sty
+Package: scrlayer-scrpage 2023/07/07 v3.41 KOMA-Script package (end user interface for scrlayer)
+ (/usr/share/texmf-dist/tex/latex/koma-script/scrlayer.sty
+Package: scrlayer 2023/07/07 v3.41 KOMA-Script package (defining layers and page styles)
 \footheight=\skip56
-Package scrlayer Info: patching LaTeX kernel macro \pagestyle on input line 218
-3.
+Package scrlayer Info: patching LaTeX kernel macro \pagestyle on input line 2183.
 )
 Package scrbase Info: Unknown processing state.
 (scrbase)             Processing option `markcase=used'
@@ -318,34 +265,25 @@ Package scrbase Info: Unknown processing state.
 Package: inputenc 2021/02/14 v1.3d Input encoding file
 \inpenc@prehook=\toks22
 \inpenc@posthook=\toks23
-)
-(/usr/share/texmf-dist/tex/latex/base/fontenc.sty
+) (/usr/share/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
-)
-(/usr/share/texmf-dist/tex/latex/psnfss/mathpazo.sty
+) (/usr/share/texmf-dist/tex/latex/psnfss/mathpazo.sty
 Package: mathpazo 2020/03/25 PSNFSS-v9.3 Palatino w/ Pazo Math (D.Puga, WaS) 
 \symupright=\mathgroup4
-)
-(/usr/share/texmf-dist/tex/latex/biblatex/biblatex.sty
+) (/usr/share/texmf-dist/tex/latex/biblatex/biblatex.sty
 Package: biblatex 2023/03/05 v3.19 programmable bibliographies (PK/MW)
-
-(/usr/share/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+ (/usr/share/texmf-dist/tex/latex/kvoptions/kvoptions.sty
 Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
-
-(/usr/share/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
+ (/usr/share/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
 Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
-))
-(/usr/share/texmf-dist/tex/latex/logreq/logreq.sty
+)) (/usr/share/texmf-dist/tex/latex/logreq/logreq.sty
 Package: logreq 2010/08/04 v1.0 xml request logger
 \lrq@indent=\count295
-
-(/usr/share/texmf-dist/tex/latex/logreq/logreq.def
+ (/usr/share/texmf-dist/tex/latex/logreq/logreq.def
 File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
-))
-(/usr/share/texmf-dist/tex/latex/base/ifthen.sty
+)) (/usr/share/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
-)
-(/usr/share/texmf-dist/tex/latex/url/url.sty
+) (/usr/share/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip16
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
@@ -408,8 +346,7 @@ Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 \c@mincompwidth=\count341
 Package biblatex Info: Trying to load biblatex default data model...
 Package biblatex Info: ... file 'blx-dm.def' found.
-
-(/usr/share/texmf-dist/tex/latex/biblatex/blx-dm.def
+ (/usr/share/texmf-dist/tex/latex/biblatex/blx-dm.def
 File: blx-dm.def 2023/03/05 v3.19 biblatex localization (PK/MW)
 )
 Package biblatex Info: Trying to load biblatex style data model...
@@ -500,14 +437,12 @@ Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
 \localshorteditorwidth=\skip78
 Package biblatex Info: Trying to load compatibility code...
 Package biblatex Info: ... file 'blx-compat.def' found.
-
-(/usr/share/texmf-dist/tex/latex/biblatex/blx-compat.def
+ (/usr/share/texmf-dist/tex/latex/biblatex/blx-compat.def
 File: blx-compat.def 2023/03/05 v3.19 biblatex compatibility (PK/MW)
 )
 Package biblatex Info: Trying to load BibTeX backend compatibility...
 Package biblatex Info: ... file 'blx-bibtex.def' found.
-
-(/usr/share/texmf-dist/tex/latex/biblatex/blx-bibtex.def
+ (/usr/share/texmf-dist/tex/latex/biblatex/blx-bibtex.def
 File: blx-bibtex.def 2023/03/05 v3.19 biblatex compatibility (PK/MW)
 
 
@@ -535,29 +470,24 @@ File: biblatex.def 2023/03/05 v3.19 biblatex compatibility (PK/MW)
 )
 Package biblatex Info: Trying to load natbib compatibility...
 Package biblatex Info: ... file 'blx-natbib.def' found.
-
-(/usr/share/texmf-dist/tex/latex/biblatex/blx-natbib.def
+ (/usr/share/texmf-dist/tex/latex/biblatex/blx-natbib.def
 File: blx-natbib.def 2023/03/05 v3.19 biblatex compatibility (PK/MW)
-Package biblatex Info: Delimiter 'nameyeardelim' in context '' already defined,
- overwriting.
+Package biblatex Info: Delimiter 'nameyeardelim' in context '' already defined, overwriting.
 )
 Package biblatex Info: Trying to load bibliography style 'authoryear'...
 Package biblatex Info: ... file 'authoryear.bbx' found.
-
-(/usr/share/texmf-dist/tex/latex/biblatex/bbx/authoryear.bbx
+ (/usr/share/texmf-dist/tex/latex/biblatex/bbx/authoryear.bbx
 File: authoryear.bbx 2023/03/05 v3.19 biblatex bibliography style (PK/MW)
 Package biblatex Info: Trying to load bibliography style 'standard'...
 Package biblatex Info: ... file 'standard.bbx' found.
-
-(/usr/share/texmf-dist/tex/latex/biblatex/bbx/standard.bbx
+ (/usr/share/texmf-dist/tex/latex/biblatex/bbx/standard.bbx
 File: standard.bbx 2023/03/05 v3.19 biblatex bibliography style (PK/MW)
 \c@bbx:relatedcount=\count419
 \c@bbx:relatedtotal=\count420
 ))
 Package biblatex Info: Trying to load citation style 'authoryear'...
 Package biblatex Info: ... file 'authoryear.cbx' found.
-
-(/usr/share/texmf-dist/tex/latex/biblatex/cbx/authoryear.cbx
+ (/usr/share/texmf-dist/tex/latex/biblatex/cbx/authoryear.cbx
 File: authoryear.cbx 2023/03/05 v3.19 biblatex citation style (PK/MW)
 Package biblatex Info: Redefining '\cite'.
 Package biblatex Info: Redefining '\parencite'.
@@ -569,8 +499,7 @@ Package biblatex Info: Redefining '\textcites'.
 )
 Package biblatex Info: Trying to load configuration file...
 Package biblatex Info: ... file 'biblatex.cfg' found.
-
-(/usr/share/texmf-dist/tex/latex/biblatex/biblatex.cfg
+ (/usr/share/texmf-dist/tex/latex/biblatex/biblatex.cfg
 File: biblatex.cfg 
 )
 Package biblatex Info: Input encoding 'utf8' detected.
@@ -579,11 +508,9 @@ Package biblatex Info: ... and expl3
 (biblatex)             2024-02-20 L3 programming layer (loader) 
 (biblatex)             is new enough (at least 2020/04/06),
 (biblatex)             setting 'casechanger=expl3'.
-
-(/usr/share/texmf-dist/tex/latex/biblatex/blx-case-expl3.sty
+ (/usr/share/texmf-dist/tex/latex/biblatex/blx-case-expl3.sty
 Package: blx-case-expl3 2023/03/05 v3.19 expl3 case changing code for biblatex
-))
-(/usr/share/texmf-dist/tex/latex/csquotes/csquotes.sty
+)) (/usr/share/texmf-dist/tex/latex/csquotes/csquotes.sty
 Package: csquotes 2022-09-14 v5.2n context-sensitive quotations (JAW)
 \csq@reset=\count421
 \csq@gtype=\count422
@@ -592,19 +519,16 @@ Package: csquotes 2022-09-14 v5.2n context-sensitive quotations (JAW)
 \csq@maxlvl=\count425
 \csq@tshold=\count426
 \csq@ltx@everypar=\toks24
-
-(/usr/share/texmf-dist/tex/latex/csquotes/csquotes.def
+ (/usr/share/texmf-dist/tex/latex/csquotes/csquotes.def
 File: csquotes.def 2022-09-14 v5.2n csquotes generic definitions (JAW)
 )
 Package csquotes Info: Trying to load configuration file 'csquotes.cfg'...
 Package csquotes Info: ... configuration file loaded successfully.
-
-(/usr/share/texmf-dist/tex/latex/csquotes/csquotes.cfg
+ (/usr/share/texmf-dist/tex/latex/csquotes/csquotes.cfg
 File: csquotes.cfg 
 )
 Package csquotes Info: Enabling multilingual quotes.
-)
-(/usr/share/texmf-dist/tex/latex/listings/listings.sty
+) (/usr/share/texmf-dist/tex/latex/listings/listings.sty
 \lst@mode=\count427
 \lst@gtempboxa=\box67
 \lst@token=\toks25
@@ -617,24 +541,19 @@ Package csquotes Info: Enabling multilingual quotes.
 \lst@newlines=\count431
 \lst@lineno=\count432
 \lst@maxwidth=\dimen185
-
-(/usr/share/texmf-dist/tex/latex/listings/lstpatch.sty
+ (/usr/share/texmf-dist/tex/latex/listings/lstpatch.sty
 File: lstpatch.sty 2024/02/21 1.10 (Carsten Heinz)
-)
-(/usr/share/texmf-dist/tex/latex/listings/lstmisc.sty
+) (/usr/share/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2024/02/21 1.10 (Carsten Heinz)
 \c@lstnumber=\count433
 \lst@skipnumbers=\count434
 \lst@framebox=\box68
-)
-(/usr/share/texmf-dist/tex/latex/listings/listings.cfg
+) (/usr/share/texmf-dist/tex/latex/listings/listings.cfg
 File: listings.cfg 2024/02/21 1.10 listings configuration
 ))
 Package scrhack Info: loading listings hack on input line 28.
-
-(/usr/share/texmf-dist/tex/latex/koma-script/listings.hak
-File: listings.hak 2023/07/07 v3.41 KOMA-Script scrhack part (hacking package l
-istings)
+ (/usr/share/texmf-dist/tex/latex/koma-script/listings.hak
+File: listings.hak 2023/07/07 v3.41 KOMA-Script scrhack part (hacking package listings)
 
 
 Package scrhack Warning: unknown \lstlistoflistings definition found!
@@ -644,34 +563,22 @@ Package scrhack Warning: unknown \lstlistoflistings definition found!
 Package: listings 2024/02/21 1.10 (Carsten Heinz)
  (./moeptikz.sty
 Package: moeptikz 2016/04/06 moepTikZ
- (/usr/share/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
-(/usr/share/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
-(/usr/share/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
-(/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
+ (/usr/share/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty (/usr/share/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty (/usr/share/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty (/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
 \pgfutil@everybye=\toks26
 \pgfutil@tempdima=\dimen186
 \pgfutil@tempdimb=\dimen187
-)
-(/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+) (/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
 \pgfutil@abb=\box69
-)
-(/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
-(/usr/share/texmf-dist/tex/generic/pgf/pgf.revision.tex)
+) (/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex (/usr/share/texmf-dist/tex/generic/pgf/pgf.revision.tex)
 Package: pgfrcs 2023-01-15 v3.1.10 (3.1.10)
 ))
 Package: pgf 2023-01-15 v3.1.10 (3.1.10)
-
-(/usr/share/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
-(/usr/share/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
-(/usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+ (/usr/share/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty (/usr/share/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty (/usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
 Package: pgfsys 2023-01-15 v3.1.10 (3.1.10)
-
-(/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+ (/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
 \pgfkeys@pathtoks=\toks27
 \pgfkeys@temptoks=\toks28
-
-(/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfkeyslibraryfiltered.code.te
-x
+ (/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfkeyslibraryfiltered.code.tex
 \pgfkeys@tmptoks=\toks29
 ))
 \pgf@x=\dimen188
@@ -698,50 +605,28 @@ x
 File: pgf.cfg 2023-01-15 v3.1.10 (3.1.10)
 )
 Driver file for pgf: pgfsys-pdftex.def
-
-(/usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.def
+ (/usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.def
 File: pgfsys-pdftex.def 2023-01-15 v3.1.10 (3.1.10)
-
-(/usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.def
+ (/usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.def
 File: pgfsys-common-pdf.def 2023-01-15 v3.1.10 (3.1.10)
-)))
-(/usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
+))) (/usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
 File: pgfsyssoftpath.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgfsyssoftpath@smallbuffer@items=\count440
 \pgfsyssoftpath@bigbuffer@items=\count441
-)
-(/usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
+) (/usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
 File: pgfsysprotocol.code.tex 2023-01-15 v3.1.10 (3.1.10)
-))
-(/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+)) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
 Package: pgfcore 2023-01-15 v3.1.10 (3.1.10)
-
-(/usr/share/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
-(/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
-(/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+ (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
 \pgfmath@dimen=\dimen198
 \pgfmath@count=\count442
 \pgfmath@box=\box70
 \pgfmath@toks=\toks33
 \pgfmath@stack@operand=\toks34
 \pgfmath@stack@operation=\toks35
-)
-(/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex)
-(/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex)
-(/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code
-.tex)
-(/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.code.tex)
-(/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison.code.te
-x) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex)
-(/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code.tex)
-(/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex)
-(/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithmetics
-.code.tex) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex)
-(/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
+) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code.tex) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.code.tex) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison.code.tex) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code.tex) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithmetics.code.tex) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
 \c@pgfmathroundto@lastzeros=\count443
-))
-(/usr/share/texmf-dist/tex/generic/pgf/math/pgfint.code.tex)
-(/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
+)) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfint.code.tex) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
 File: pgfcorepoints.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgf@picminx=\dimen199
 \pgf@picmaxx=\dimen256
@@ -757,8 +642,7 @@ File: pgfcorepoints.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgf@yy=\dimen266
 \pgf@zx=\dimen267
 \pgf@zy=\dimen268
-)
-(/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.code.tex
+) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.code.tex
 File: pgfcorepathconstruct.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgf@path@lastx=\dimen269
 \pgf@path@lasty=\dimen270
@@ -766,93 +650,67 @@ File: pgfcorepathconstruct.code.tex 2023-01-15 v3.1.10 (3.1.10)
 File: pgfcorepathusage.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgf@shorten@end@additional=\dimen271
 \pgf@shorten@start@additional=\dimen272
-)
-(/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
+) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
 File: pgfcorescopes.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgfpic=\box71
 \pgf@hbox=\box72
 \pgf@layerbox@main=\box73
 \pgf@picture@serial@count=\count444
-)
-(/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex
+) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex
 File: pgfcoregraphicstate.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgflinewidth=\dimen273
-)
-(/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformations.code.t
-ex
+) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformations.code.tex
 File: pgfcoretransformations.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgf@pt@x=\dimen274
 \pgf@pt@y=\dimen275
 \pgf@pt@temp=\dimen276
 ) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
 File: pgfcorequick.code.tex 2023-01-15 v3.1.10 (3.1.10)
-)
-(/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.tex
+) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.tex
 File: pgfcoreobjects.code.tex 2023-01-15 v3.1.10 (3.1.10)
-)
-(/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing.code.te
-x
+) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing.code.tex
 File: pgfcorepathprocessing.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex
 File: pgfcorearrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgfarrowsep=\dimen277
-)
-(/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
+) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
 File: pgfcoreshade.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgf@max=\dimen278
 \pgf@sys@shading@range@num=\count445
 \pgf@shadingcount=\count446
-)
-(/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
+) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
 File: pgfcoreimage.code.tex 2023-01-15 v3.1.10 (3.1.10)
-)
-(/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex
+) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex
 File: pgfcoreexternal.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgfexternal@startupbox=\box74
-)
-(/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex
+) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex
 File: pgfcorelayers.code.tex 2023-01-15 v3.1.10 (3.1.10)
-)
-(/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.code.tex
+) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.code.tex
 File: pgfcoretransparency.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.tex
 File: pgfcorepatterns.code.tex 2023-01-15 v3.1.10 (3.1.10)
-)
-(/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.tex
+) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.tex
 File: pgfcorerdf.code.tex 2023-01-15 v3.1.10 (3.1.10)
-)))
-(/usr/share/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
+))) (/usr/share/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
 File: pgfmoduleshapes.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgfnodeparttextbox=\box75
-)
-(/usr/share/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
+) (/usr/share/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
 File: pgfmoduleplot.code.tex 2023-01-15 v3.1.10 (3.1.10)
-)
-(/usr/share/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty
+) (/usr/share/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty
 Package: pgfcomp-version-0-65 2023-01-15 v3.1.10 (3.1.10)
 \pgf@nodesepstart=\dimen279
 \pgf@nodesepend=\dimen280
-)
-(/usr/share/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty
+) (/usr/share/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty
 Package: pgfcomp-version-1-18 2023-01-15 v3.1.10 (3.1.10)
-))
-(/usr/share/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
-(/usr/share/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
-(/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex))
-(/usr/share/texmf-dist/tex/latex/pgf/math/pgfmath.sty
-(/usr/share/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex))
-(/usr/share/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+)) (/usr/share/texmf-dist/tex/latex/pgf/utilities/pgffor.sty (/usr/share/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty (/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)) (/usr/share/texmf-dist/tex/latex/pgf/math/pgfmath.sty (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)) (/usr/share/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
 Package: pgffor 2023-01-15 v3.1.10 (3.1.10)
 \pgffor@iter=\dimen281
 \pgffor@skip=\dimen282
 \pgffor@stack=\toks36
 \pgffor@toks=\toks37
-))
-(/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
+)) (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
 Package: tikz 2023-01-15 v3.1.10 (3.1.10)
-
-(/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.code.te
-x
+ (/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex
 File: pgflibraryplothandlers.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgf@plot@mark@count=\count447
 \pgfplotmarksize=\dimen283
@@ -880,35 +738,26 @@ File: pgfmodulematrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgf@matrix@numberofcolumns=\count454
 )
 \tikz@expandcount=\count455
-
-(/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
-topaths.code.tex
+ (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex
 File: tikzlibrarytopaths.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ))) (/usr/share/texmf-dist/tex/latex/makeshape/makeshape.sty
 Package: makeshape 2013/01/25 2.1 Making custom shapes for PGF/TikZ
-
-(/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryintersections.code.t
-ex (/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryfpu.code.tex)
+ (/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryintersections.code.tex (/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryfpu.code.tex)
 \pgf@intersect@solutions=\count456
 )
 \crct@dim=\dimen292
-)
-(/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
-patterns.code.tex
+) (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypatterns.code.tex
 File: tikzlibrarypatterns.code.tex 2023-01-15 v3.1.10 (3.1.10)
-
-(/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibrarypatterns.code.tex
+ (/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibrarypatterns.code.tex
 File: pgflibrarypatterns.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ))
 \CheckerSize=\dimen293
 \LineSpacing=\dimen294
 ) (/usr/share/texmf-dist/tex/latex/comment/comment.sty
 \CommentStream=\write5
-
-Excluding comment 'comment') (/usr/share/texmf-dist/tex/latex/base/alltt.sty
+ Excluding comment 'comment') (/usr/share/texmf-dist/tex/latex/base/alltt.sty
 Package: alltt 2021/01/29 v2.0g defines alltt environment
-)
-(/usr/share/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
+) (/usr/share/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
 Package: fancyvrb 2024/01/20 4.5c verbatim text (tvz,hv)
 \FV@CodeLineNo=\count457
 \FV@InFile=\read5
@@ -916,24 +765,18 @@ Package: fancyvrb 2024/01/20 4.5c verbatim text (tvz,hv)
 \c@FancyVerbLine=\count458
 \FV@StepNumber=\count459
 \FV@OutFile=\write6
-)
-(/usr/share/texmf-dist/tex/latex/todonotes/todonotes.sty
+) (/usr/share/texmf-dist/tex/latex/todonotes/todonotes.sty
 Package: todonotes 2024/01/05 v1.1.7 Todonotes source and documentation.
 Package: todonotes 2024/01/05
-
-(/usr/share/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+ (/usr/share/texmf-dist/tex/latex/xkeyval/xkeyval.sty
 Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
-
-(/usr/share/texmf-dist/tex/generic/xkeyval/xkeyval.tex
-(/usr/share/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+ (/usr/share/texmf-dist/tex/generic/xkeyval/xkeyval.tex (/usr/share/texmf-dist/tex/generic/xkeyval/xkvutils.tex
 \XKV@toks=\toks38
 \XKV@tempa@toks=\toks39
 )
 \XKV@depth=\count460
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
-))
-(/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
-positioning.code.tex
+)) (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypositioning.code.tex
 File: tikzlibrarypositioning.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ) (/usr/share/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2023/07/08 v4.3 Infix arithmetic (KKT,FJ)
@@ -949,110 +792,74 @@ LaTeX Info: Redefining \addtolength on input line 81.
 \calc@Cskip=\skip81
 )
 \c@@todonotes@numberoftodonotes=\count464
-)
-(/usr/share/texmf-dist/tex/latex/listings/lstlang1.sty
+) (/usr/share/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2024/02/21 1.10 listings language file
-)
-(/usr/share/texmf-dist/tex/latex/listings/lstmisc.sty
+) (/usr/share/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2024/02/21 1.10 (Carsten Heinz)
 )
 \c@pft=\count465
-
-(/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.meta.code.tex
-File: pgflibraryarrows.meta.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfarrowinset=\dimen297
-\pgfarrowlength=\dimen298
-\pgfarrowwidth=\dimen299
-\pgfarrowlinewidth=\dimen300
-)
-(/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
-backgrounds.code.tex
-File: tikzlibrarybackgrounds.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@layerbox@background=\box81
-\pgf@layerboxsaved@background=\box82
-)
-(/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
-calc.code.tex
-File: tikzlibrarycalc.code.tex 2023-01-15 v3.1.10 (3.1.10)
-)
-(/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
-shadings.code.tex
-File: tikzlibraryshadings.code.tex 2023-01-15 v3.1.10 (3.1.10)
-
-(/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryshadings.code.tex
-File: pgflibraryshadings.code.tex 2023-01-15 v3.1.10 (3.1.10)
-))
-(/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
-shapes.arrows.code.tex
-File: tikzlibraryshapes.arrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
-
-(/usr/share/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.arrows
-.code.tex
-File: pgflibraryshapes.arrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
-))
-(/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
-shapes.symbols.code.tex
-File: tikzlibraryshapes.symbols.code.tex 2023-01-15 v3.1.10 (3.1.10)
-
-(/usr/share/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.symbol
-s.code.tex
-File: pgflibraryshapes.symbols.code.tex 2023-01-15 v3.1.10 (3.1.10)
-))
-(/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
-shadows.code.tex
-File: tikzlibraryshadows.code.tex 2023-01-15 v3.1.10 (3.1.10)
-
-(/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
-fadings.code.tex
-File: tikzlibraryfadings.code.tex 2023-01-15 v3.1.10 (3.1.10)
-
-(/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryfadings.code.tex
-File: pgflibraryfadings.code.tex 2023-01-15 v3.1.10 (3.1.10)
-)))
-(/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
-matrix.code.tex
-File: tikzlibrarymatrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
-)
-(/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
-decorations.pathreplacing.code.tex
-(/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
-decorations.code.tex
-(/usr/share/texmf-dist/tex/generic/pgf/modules/pgfmoduledecorations.code.tex
-\pgfdecoratedcompleteddistance=\dimen301
-\pgfdecoratedremainingdistance=\dimen302
-\pgfdecoratedinputsegmentcompleteddistance=\dimen303
-\pgfdecoratedinputsegmentremainingdistance=\dimen304
-\pgf@decorate@distancetomove=\dimen305
+ (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.text.code.tex (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.code.tex (/usr/share/texmf-dist/tex/generic/pgf/modules/pgfmoduledecorations.code.tex
+\pgfdecoratedcompleteddistance=\dimen297
+\pgfdecoratedremainingdistance=\dimen298
+\pgfdecoratedinputsegmentcompleteddistance=\dimen299
+\pgfdecoratedinputsegmentremainingdistance=\dimen300
+\pgf@decorate@distancetomove=\dimen301
 \pgf@decorate@repeatstate=\count466
-\pgfdecorationsegmentamplitude=\dimen306
-\pgfdecorationsegmentlength=\dimen307
+\pgfdecorationsegmentamplitude=\dimen302
+\pgfdecorationsegmentlength=\dimen303
 )
-\tikz@lib@dec@box=\box83
+\tikz@lib@dec@box=\box81
+) (/usr/share/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.text.code.tex
+\pgf@lib@dec@text@box=\box82
 )
-(/usr/share/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorati
-ons.pathreplacing.code.tex))
-(/usr/share/texmf-dist/tex/latex/hyperref/hyperref.sty
+\tikz@lib@dec@te@box=\box83
+) (/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.meta.code.tex
+File: pgflibraryarrows.meta.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfarrowinset=\dimen304
+\pgfarrowlength=\dimen305
+\pgfarrowwidth=\dimen306
+\pgfarrowlinewidth=\dimen307
+) (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarybackgrounds.code.tex
+File: tikzlibrarybackgrounds.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@layerbox@background=\box84
+\pgf@layerboxsaved@background=\box85
+) (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarycalc.code.tex
+File: tikzlibrarycalc.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshadings.code.tex
+File: tikzlibraryshadings.code.tex 2023-01-15 v3.1.10 (3.1.10)
+ (/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryshadings.code.tex
+File: pgflibraryshadings.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)) (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.arrows.code.tex
+File: tikzlibraryshapes.arrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+ (/usr/share/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.arrows.code.tex
+File: pgflibraryshapes.arrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)) (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.symbols.code.tex
+File: tikzlibraryshapes.symbols.code.tex 2023-01-15 v3.1.10 (3.1.10)
+ (/usr/share/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.symbols.code.tex
+File: pgflibraryshapes.symbols.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)) (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshadows.code.tex
+File: tikzlibraryshadows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+ (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryfadings.code.tex
+File: tikzlibraryfadings.code.tex 2023-01-15 v3.1.10 (3.1.10)
+ (/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryfadings.code.tex
+File: pgflibraryfadings.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))) (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarymatrix.code.tex
+File: tikzlibrarymatrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.pathreplacing.code.tex (/usr/share/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.pathreplacing.code.tex)) (/usr/share/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2024-01-20 v7.01h Hypertext links for LaTeX
-
-(/usr/share/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+ (/usr/share/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
 Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
-)
-(/usr/share/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+) (/usr/share/texmf-dist/tex/generic/pdfescape/pdfescape.sty
 Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
-)
-(/usr/share/texmf-dist/tex/latex/hycolor/hycolor.sty
+) (/usr/share/texmf-dist/tex/latex/hycolor/hycolor.sty
 Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
-)
-(/usr/share/texmf-dist/tex/latex/auxhook/auxhook.sty
+) (/usr/share/texmf-dist/tex/latex/auxhook/auxhook.sty
 Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
-)
-(/usr/share/texmf-dist/tex/latex/hyperref/nameref.sty
+) (/usr/share/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2023-11-26 v2.56 Cross-referencing by name of section
-
-(/usr/share/texmf-dist/tex/latex/refcount/refcount.sty
+ (/usr/share/texmf-dist/tex/latex/refcount/refcount.sty
 Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
-)
-(/usr/share/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+) (/usr/share/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count467
@@ -1060,18 +867,15 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 \@linkdim=\dimen308
 \Hy@linkcounter=\count468
 \Hy@pagecounter=\count469
-
-(/usr/share/texmf-dist/tex/latex/hyperref/pd1enc.def
+ (/usr/share/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2024-01-20 v7.01h Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
-)
-(/usr/share/texmf-dist/tex/generic/intcalc/intcalc.sty
+) (/usr/share/texmf-dist/tex/generic/intcalc/intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
 \Hy@SavedSpaceFactor=\count470
-
-(/usr/share/texmf-dist/tex/latex/hyperref/puenc.def
+ (/usr/share/texmf-dist/tex/latex/hyperref/puenc.def
 File: puenc.def 2024-01-20 v7.01h Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
 ... no UTF-8 mapping file for font encoding PU
@@ -1086,13 +890,10 @@ Package hyperref Info: Bookmarks ON on input line 4446.
 \c@Hy@tempcnt=\count471
 LaTeX Info: Redefining \url on input line 4784.
 \XeTeXLinkMargin=\dimen309
-
-(/usr/share/texmf-dist/tex/generic/bitset/bitset.sty
+ (/usr/share/texmf-dist/tex/generic/bitset/bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
-
-(/usr/share/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
-Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
-)
+ (/usr/share/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
 ))
 \Fld@menulength=\count472
 \Field@Width=\dimen310
@@ -1104,8 +905,7 @@ Package hyperref Info: backreferencing OFF on input line 6078.
 Package hyperref Info: Link coloring OFF on input line 6083.
 Package hyperref Info: Link coloring with OCG OFF on input line 6088.
 Package hyperref Info: PDF/A mode OFF on input line 6093.
-
-(/usr/share/texmf-dist/tex/latex/base/atbegshi-ltx.sty
+ (/usr/share/texmf-dist/tex/latex/base/atbegshi-ltx.sty
 Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
 package with kernel methods
 )
@@ -1115,72 +915,61 @@ package with kernel methods
 )
 Package scrhack Info: hyperref hack deactivated because of
 (scrhack)             detection of hyperref version, that doesn't
-(scrhack)             need that hack, on input line 103.
+(scrhack)             need that hack, on input line 104.
 Package hyperref Info: Driver (autodetected): hpdftex.
-
-(/usr/share/texmf-dist/tex/latex/hyperref/hpdftex.def
+ (/usr/share/texmf-dist/tex/latex/hyperref/hpdftex.def
 File: hpdftex.def 2024-01-20 v7.01h Hyperref driver for pdfTeX
-
-(/usr/share/texmf-dist/tex/latex/base/atveryend-ltx.sty
-Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend pac
-kage
+ (/usr/share/texmf-dist/tex/latex/base/atveryend-ltx.sty
+Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend package
 with kernel methods
 )
 \Fld@listcount=\count476
 \c@bookmark@seq@number=\count477
-
-(/usr/share/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+ (/usr/share/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
 Package: rerunfilecheck 2022-07-10 v1.10 Rerun checks for auxiliary files (HO)
-
-(/usr/share/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+ (/usr/share/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
 Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 )
-Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
-85.
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 285.
 )
 \Hy@SectionHShift=\skip82
 )
-Package hyperref Info: Option `bookmarksopen' set `true' on input line 103.
-Package hyperref Info: Option `hypertexnames' set `false' on input line 103.
-Package hyperref Info: Option `colorlinks' set `true' on input line 103.
-Package hyperref Info: Option `unicode' set `true' on input line 103.
-Package hyperref Info: Option `breaklinks' set `true' on input line 103.
+Package hyperref Info: Option `bookmarksopen' set `true' on input line 104.
+Package hyperref Info: Option `hypertexnames' set `false' on input line 104.
+Package hyperref Info: Option `colorlinks' set `true' on input line 104.
+Package hyperref Info: Option `unicode' set `true' on input line 104.
+Package hyperref Info: Option `breaklinks' set `true' on input line 104.
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
-LaTeX Font Info:    Trying to load font information for T1+ppl on input line 10
-3.
-
-(/usr/share/texmf-dist/tex/latex/psnfss/t1ppl.fd
+LaTeX Font Info:    Trying to load font information for T1+ppl on input line 104.
+ (/usr/share/texmf-dist/tex/latex/psnfss/t1ppl.fd
 File: t1ppl.fd 2001/06/04 font definitions for T1/ppl.
-) (./main.aux
-(./Chapters/Chapter1.aux) (./Chapters/Chapter2.aux) (./Chapters/Chapter3.aux)
-(./Chapters/Chapter4.aux) (./Appendices/AppendixA.aux))
+) (./main.aux (./Chapters/Chapter1.aux) (./Chapters/Chapter2.aux) (./Chapters/Chapter3.aux) (./Chapters/Chapter4.aux) (./Appendices/AppendixA.aux))
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 103.
-LaTeX Font Info:    ... okay on input line 103.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 103.
-LaTeX Font Info:    ... okay on input line 103.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 103.
-LaTeX Font Info:    ... okay on input line 103.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 103.
-LaTeX Font Info:    ... okay on input line 103.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 103.
-LaTeX Font Info:    ... okay on input line 103.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 103.
-LaTeX Font Info:    ... okay on input line 103.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 103.
-LaTeX Font Info:    ... okay on input line 103.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 103.
-LaTeX Font Info:    ... okay on input line 103.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 103.
-LaTeX Font Info:    ... okay on input line 103.
-
-(/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+ (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count478
 \scratchdimen=\dimen312
-\scratchbox=\box84
+\scratchbox=\box86
 \nofMPsegments=\count479
 \nofMParguments=\count480
 \everyMPshowfont=\toks40
@@ -1191,12 +980,9 @@ LaTeX Font Info:    ... okay on input line 103.
 \everyMPtoPDFconversion=\toks41
 ) (/usr/share/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
-Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
-85.
-
-(/usr/share/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
-File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
-e
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
+ (/usr/share/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
@@ -1238,13 +1024,13 @@ Package caption Info: End \AtBeginDocument code.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package scrbase Info: activating nil \abbrevname on input line 103.
+Package scrbase Info: activating nil \abbrevname on input line 104.
 \big@size=\dimen314
 Package biblatex Info: Trying to load language 'nil'...
 Package biblatex Info: ... file 'nil.lbx' not found.
 
 Package biblatex Warning: Language 'nil' not supported.
-(biblatex)                Using dummy definitions on input line 103.
+(biblatex)                Using dummy definitions on input line 104.
 
 Package biblatex Info: Input encoding 'utf8' detected.
 Package biblatex Info: Automatic encoding selection.
@@ -1257,58 +1043,48 @@ Package biblatex Info: Data encoding 'utf8' specified.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
 (./main.bbl)
-Package biblatex Info: Reference section=0 on input line 103.
-Package biblatex Info: Reference segment=0 on input line 103.
+Package biblatex Info: Reference section=0 on input line 104.
+Package biblatex Info: Reference segment=0 on input line 104.
 \c@lstlisting=\count484
-Package hyperref Info: Link coloring ON on input line 103.
+Package hyperref Info: Link coloring ON on input line 104.
  (./main.out) (./main.out)
 \@outlinefile=\write7
 \openout7 = `main.out'.
 
 
 1: section
-<Figures/unvimplogo.png, id=213, 1027.84pt x 1027.84pt>
+<Figures/unvimplogo.png, id=193, 1027.84pt x 1027.84pt>
 File: Figures/unvimplogo.png Graphic file (type png)
 <use Figures/unvimplogo.png>
-Package pdftex.def Info: Figures/unvimplogo.png  used on input line 127.
+Package pdftex.def Info: Figures/unvimplogo.png  used on input line 128.
 (pdftex.def)             Requested size: 154.16934pt x 154.16934pt.
 [1
 
 
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf-dist/fonts
-/enc/dvips/base/8r.enc} <./Figures/unvimplogo.png>]
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc} <./Figures/unvimplogo.png>]
 
 Package csquotes Warning: No style for language 'nil'.
-(csquotes)                Using fallback style on input line 174.
+(csquotes)                Using fallback style on input line 175.
 
-LaTeX Font Info:    Trying to load font information for OT1+ppl on input line 1
-83.
+LaTeX Font Info:    Trying to load font information for OT1+ppl on input line 184.
 (/usr/share/texmf-dist/tex/latex/psnfss/ot1ppl.fd
 File: ot1ppl.fd 2001/06/04 font definitions for OT1/ppl.
 )
-LaTeX Font Info:    Trying to load font information for OML+zplm on input line 
-183.
-
-(/usr/share/texmf-dist/tex/latex/psnfss/omlzplm.fd
+LaTeX Font Info:    Trying to load font information for OML+zplm on input line 184.
+ (/usr/share/texmf-dist/tex/latex/psnfss/omlzplm.fd
 File: omlzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OML/zplm.
 )
-LaTeX Font Info:    Trying to load font information for OMS+zplm on input line 
-183.
-
-(/usr/share/texmf-dist/tex/latex/psnfss/omszplm.fd
+LaTeX Font Info:    Trying to load font information for OMS+zplm on input line 184.
+ (/usr/share/texmf-dist/tex/latex/psnfss/omszplm.fd
 File: omszplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMS/zplm.
 )
-LaTeX Font Info:    Trying to load font information for OMX+zplm on input line 
-183.
-
-(/usr/share/texmf-dist/tex/latex/psnfss/omxzplm.fd
+LaTeX Font Info:    Trying to load font information for OMX+zplm on input line 184.
+ (/usr/share/texmf-dist/tex/latex/psnfss/omxzplm.fd
 File: omxzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMX/zplm.
 )
-LaTeX Font Info:    Trying to load font information for OT1+zplm on input line 
-183.
-
-(/usr/share/texmf-dist/tex/latex/psnfss/ot1zplm.fd
+LaTeX Font Info:    Trying to load font information for OT1+zplm on input line 184.
+ (/usr/share/texmf-dist/tex/latex/psnfss/ot1zplm.fd
 File: ot1zplm.fd 2002/09/08 Fontinst v1.914 font definitions for OT1/zplm.
 ) [2]
 --------------------
@@ -1324,27 +1100,20 @@ File: ot1zplm.fd 2002/09/08 Fontinst v1.914 font definitions for OT1/zplm.
  Acknowledgements
 --------------------
 
-Overfull \hbox (3.43843pt too wide) in paragraph at lines 193--194
-\T1/ppl/m/n/12 The acknowledgments and the people to thank go here, don't forge
-t to include
+Overfull \hbox (3.43843pt too wide) in paragraph at lines 194--195
+\T1/ppl/m/n/12 The acknowledgments and the people to thank go here, don't forget to include
  []
 
 1: section
 [5] [6
 
 ] (./main.toc
-LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 2
-3.
- (/usr/share/texmf-dist/tex/latex/base/t1cmtt.fd
-File: t1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
-)
 1: section
-[7{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}])
+[7])
 \tf@toc=\write8
 \openout8 = `main.toc'.
 
- [8]
-(./main.lof)
+ [8] (./main.lof)
 \tf@lof=\write9
 \openout9 = `main.lof'.
 
@@ -1385,42 +1154,35 @@ File: t1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 Chapter 1.
 
 Overfull \hbox (4.46686pt too wide) in paragraph at lines 10--17
-[]\T1/ppl/m/n/12 L'attuale crittorafia a chiave pubblica è minacciata da due al
-goritmi pioneri
+[]\T1/ppl/m/n/12 L'attuale crittorafia a chiave pubblica è minacciata da due algoritmi pioneri
  []
 
 
 Overfull \hbox (1.11028pt too wide) in paragraph at lines 10--17
-\T1/ppl/m/n/12 in questo campo ovvero quello di Grover e Shor Negli utilimi ann
-i la minaccia
+\T1/ppl/m/n/12 in questo campo ovvero quello di Grover e Shor Negli utilimi anni la minaccia
  []
 
-LaTeX Font Info:    Trying to load font information for TS1+ppl on input line 2
-6.
+LaTeX Font Info:    Trying to load font information for TS1+ppl on input line 26.
 (/usr/share/texmf-dist/tex/latex/psnfss/ts1ppl.fd
 File: ts1ppl.fd 2001/06/04 font definitions for TS1/ppl.
 )
 Overfull \hbox (0.54549pt too wide) in paragraph at lines 26--27
-[]\T1/ppl/m/n/12 Tradeoff tra aumento della complessità con dimensioni chiave e
- velocità
+[]\T1/ppl/m/n/12 Tradeoff tra aumento della complessità con dimensioni chiave e velocità
  []
 
 
 Overfull \hbox (8.99106pt too wide) in paragraph at lines 36--39
-[]\T1/ppl/m/n/12 Questo perchè per contrastare l'incredibile potenza di calocol
-o del quantum
+[]\T1/ppl/m/n/12 Questo perchè per contrastare l'incredibile potenza di calocolo del quantum
  []
 
 
 Overfull \hbox (1.44612pt too wide) in paragraph at lines 36--39
-\T1/ppl/m/n/12 computer occorre rendere il problema più complesso che in genera
-le potrebbe
+\T1/ppl/m/n/12 computer occorre rendere il problema più complesso che in generale potrebbe
  []
 
 
 Overfull \hbox (10.36235pt too wide) in paragraph at lines 36--39
-\T1/ppl/m/n/12 portare e dimensioni delle chiavi molto grandi oppure ad operazi
-oni di keygen,
+\T1/ppl/m/n/12 portare e dimensioni delle chiavi molto grandi oppure ad operazioni di keygen,
  []
 
 1: section
@@ -1429,44 +1191,37 @@ oni di keygen,
 
 ]
 Overfull \hbox (11.47766pt too wide) in paragraph at lines 44--47
-\T1/ppl/m/n/12 introdotti l'implementazione potrebbe peccare da qualche punto d
-i vista Inoltre
+\T1/ppl/m/n/12 introdotti l'implementazione potrebbe peccare da qualche punto di vista Inoltre
  []
 
 
 Overfull \hbox (19.48201pt too wide) in paragraph at lines 57--62
-\T1/ppl/m/n/12 di aumentare le dimensioni delle chiavi in modo tale da contrapp
-orti all'aumento
+\T1/ppl/m/n/12 di aumentare le dimensioni delle chiavi in modo tale da contrapporti all'aumento
  []
 
 
 Overfull \hbox (17.33069pt too wide) in paragraph at lines 63--66
-[]\T1/ppl/m/n/12 Nel caso reale l'autemto di dimensione ha effetti significativ
-i sulle prestazioni
+[]\T1/ppl/m/n/12 Nel caso reale l'autemto di dimensione ha effetti significativi sulle prestazioni
  []
 
 
 Overfull \hbox (2.85028pt too wide) in paragraph at lines 71--75
-\T1/ppl/m/n/12 L'obiettivo di questo lavoro è andare a vedere quali sono gli ef
-fetti di applicare
+\T1/ppl/m/n/12 L'obiettivo di questo lavoro è andare a vedere quali sono gli effetti di applicare
  []
 
 
 Overfull \hbox (29.51413pt too wide) in paragraph at lines 71--75
-\T1/ppl/m/n/12 delle comunicazioni. In particolare considerando il caso specifi
-co di comunicazioni
+\T1/ppl/m/n/12 delle comunicazioni. In particolare considerando il caso specifico di comunicazioni
  []
 
 
 Overfull \hbox (15.66606pt too wide) in paragraph at lines 71--75
-\T1/ppl/m/n/12 satellitari, che hanno constraint importanti sul numero di pacch
-etti da scambiare
+\T1/ppl/m/n/12 satellitari, che hanno constraint importanti sul numero di pacchetti da scambiare
  []
 
 [2]
 Overfull \hbox (26.72876pt too wide) in paragraph at lines 88--92
-\T1/ppl/m/n/12 comunicazioni sicure e di come queste vengono applicte nelle com
-unicazioni
+\T1/ppl/m/n/12 comunicazioni sicure e di come queste vengono applicte nelle comunicazioni
  []
 
 ) [3]
@@ -1481,535 +1236,403 @@ unicazioni
 Chapter 2.
 
 Overfull \hbox (29.10385pt too wide) in paragraph at lines 24--25
-\T1/ppl/m/it/12 In questo capitolo esamineremo le problematiche relative alla s
-icurezza nelle comunicazioni.
+\T1/ppl/m/it/12 In questo capitolo esamineremo le problematiche relative alla sicurezza nelle comunicazioni.
  []
 
 
 Overfull \hbox (35.46605pt too wide) in paragraph at lines 27--32
-\T1/ppl/m/n/12 la storia della crittografia è caratterizzata da una continua ev
-oluzione e innovazione.
+\T1/ppl/m/n/12 la storia della crittografia è caratterizzata da una continua evoluzione e innovazione.
  []
 
 
 Overfull \hbox (1.6873pt too wide) in paragraph at lines 27--32
-\T1/ppl/m/n/12 Le fondamenta sui cui si basa non sono cambiate, andiamo a veder
-e strumenti
+\T1/ppl/m/n/12 Le fondamenta sui cui si basa non sono cambiate, andiamo a vedere strumenti
  []
 
 
 Overfull \hbox (11.23795pt too wide) in paragraph at lines 35--37
-\T1/ppl/m/n/12 input un messaggio di lunghezza arbitraria e restituisce un outp
-ut di lunghezza
+\T1/ppl/m/n/12 input un messaggio di lunghezza arbitraria e restituisce un output di lunghezza
  []
 
 Excluding 'comment' comment.
 Overfull \hbox (2.94594pt too wide) in paragraph at lines 70--74
-\T1/ppl/m/n/12 dei dati. Per questo motivo, a questo tipo di funzioni sono rich
-ieste le seguenti
+\T1/ppl/m/n/12 dei dati. Per questo motivo, a questo tipo di funzioni sono richieste le seguenti
  []
 
 1: section
 [5]
+Overfull \hbox (3.881pt too wide) in paragraph at lines 75--77
+\T1/ppl/m/n/12 sia computazionalmente impraticabile invertire il processo, ovvero, dato
+ []
+
+
 Overfull \hbox (7.08575pt too wide) in paragraph at lines 77--79
-[]\T1/ppl/b/n/12 Proprietà di diffusione\T1/ppl/m/n/12 : una leggere variazione
- dell'input deve produrre
+[]\T1/ppl/b/n/12 Proprietà di diffusione\T1/ppl/m/n/12 : una leggere variazione dell'input deve produrre
+ []
+
+Package hyperref Info: bookmark level for unknown todo defaults to 0 on input line 81.
+
+Overfull \hbox (23.27412pt too wide) in paragraph at lines 84--86
+\T1/ppl/m/n/12 delle comunicazioni. Formalmente possiamo rappresentarlo come una quintupla: 
  []
 
 
-Overfull \hbox (23.27412pt too wide) in paragraph at lines 86--88
-\T1/ppl/m/n/12 delle comunicazioni. Formalmente possiamo rappresentarlo come un
-a quintupla: 
+Overfull \hbox (26.94574pt too wide) in paragraph at lines 103--107
+\T1/ppl/m/n/12 crittografico. Tuttavia andando a caratterizzare le chiavi utilizzate nelle operazioni
  []
 
 
-Overfull \hbox (26.94574pt too wide) in paragraph at lines 105--109
-\T1/ppl/m/n/12 crittografico. Tuttavia andando a caratterizzare le chiavi utili
-zzate nelle operazioni
- []
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[6]
+
 Overfull \hbox (9.6064pt too wide) in paragraph at lines 145--151
-\T1/ppl/m/n/12 che le due parti coinvolte nella comunicazione debbano possedere
- la medesima
+\T1/ppl/m/n/12 che le due parti coinvolte nella comunicazione debbano possedere la medesima
  []
 
 
 Overfull \hbox (0.29437pt too wide) in paragraph at lines 145--151
-\T1/ppl/m/n/12 chiave segreta, nota anche come chiave pre-condivisa (PSK - Pre-
-Shared Key). 
+\T1/ppl/m/n/12 chiave segreta, nota anche come chiave pre-condivisa (PSK - Pre-Shared Key). 
  []
 
 
 Overfull \hbox (2.3103pt too wide) in paragraph at lines 145--151
-\T1/ppl/m/n/12 Questa caratteristica fondamentale rende gli schemi di crittogra
-fia simmetrica 
+\T1/ppl/m/n/12 Questa caratteristica fondamentale rende gli schemi di crittografia simmetrica 
+ []
+
+[6]
+Overfull \hbox (28.66136pt too wide) in paragraph at lines 157--160
+[]\T1/ppl/m/it/12 Cifratura \T1/ppl/m/n/12 di Dati: proteggere file e database memorizzati su disco, garantendo
+ []
+
+
+Overfull \hbox (6.54558pt too wide) in paragraph at lines 157--160
+\T1/ppl/m/n/12 che le informazioni sensibili rimangano riservate anche in caso di accesso
+ []
+
+
+Overfull \hbox (23.86076pt too wide) in paragraph at lines 160--164
+[]\T1/ppl/m/it/12 HMAC \T1/ppl/m/n/12 (Hash-based Message Authentication Code): combinati con funzioni
+ []
+
+
+Overfull \hbox (11.40506pt too wide) in paragraph at lines 160--164
+\T1/ppl/m/n/12 forniscono autenticità e integrità ai messaggi. Fondamentale per garantire
  []
 
 [7]
-Overfull \hbox (28.66136pt too wide) in paragraph at lines 158--161
-[]\T1/ppl/m/it/12 Cifratura \T1/ppl/m/n/12 di Dati: proteggere file e database 
-memorizzati su disco, garantendo
+Overfull \hbox (11.03441pt too wide) in paragraph at lines 188--193
+\T1/ppl/m/n/12 Le due chiavi sono matematicamente legate, ma è computazionalmente difficile 
  []
 
 
-Overfull \hbox (6.54558pt too wide) in paragraph at lines 158--161
-\T1/ppl/m/n/12 che le informazioni sensibili rimangano riservate anche in caso 
-di accesso
- []
-
-
-Overfull \hbox (23.86076pt too wide) in paragraph at lines 161--165
-[]\T1/ppl/m/it/12 HMAC \T1/ppl/m/n/12 (Hash-based Message Authentication Code):
- combinati con funzioni
- []
-
-
-Overfull \hbox (11.40506pt too wide) in paragraph at lines 161--165
-\T1/ppl/m/n/12 forniscono autenticità e integrità ai messaggi. Fondamentale per
- garantire
- []
-
-
-Overfull \hbox (11.03441pt too wide) in paragraph at lines 189--194
-\T1/ppl/m/n/12 Le due chiavi sono matematicamente legate, ma è computazionalmen
-te difficile 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 189--194
+Underfull \hbox (badness 10000) in paragraph at lines 188--193
 
  []
 
 
-Overfull \hbox (0.9305pt too wide) in paragraph at lines 195--198
-\T1/ppl/m/n/12 La procedura più conosciuta è quella proposta da \T1/ppl/m/it/12
- Diffie-Hellman \T1/ppl/m/n/12 ed è mostrata
+Overfull \hbox (0.9305pt too wide) in paragraph at lines 194--197
+\T1/ppl/m/n/12 La procedura più conosciuta è quella proposta da \T1/ppl/m/it/12 Diffie-Hellman \T1/ppl/m/n/12 ed è mostrata
  []
 
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[8] [9]
-Underfull \hbox (badness 10000) in paragraph at lines 241--243
+Underfull \hbox (badness 10000) in paragraph at lines 242--244
 
  []
 
 
-Overfull \hbox (7.75728pt too wide) in paragraph at lines 244--246
-\T1/ppl/m/n/12 Le distribuzione delle chiavi per crittosistemi simmetrici deve 
-avvenire tramite
+Overfull \hbox (7.75728pt too wide) in paragraph at lines 245--247
+\T1/ppl/m/n/12 Le distribuzione delle chiavi per crittosistemi simmetrici deve avvenire tramite
  []
 
-
-Overfull \hbox (11.127pt too wide) in paragraph at lines 247--249
-\T1/ppl/m/n/12 sono necessarie $\OML/zplm/m/it/12 n\OT1/zplm/m/n/12 (\OML/zplm/
-m/it/12 n \OMS/zplm/m/n/12 ^^@ \OT1/ppl/m/n/12 1\OT1/zplm/m/n/12 )/\OT1/ppl/m/n
-/12 2$ \T1/ppl/m/n/12 chiavi. L'approccio è robusto ma impraticabile
- []
-
-LaTeX Font Info:    Trying to load font information for T1+cmss on input line 2
-68.
-(/usr/share/texmf-dist/tex/latex/base/t1cmss.fd
+[8]
+LaTeX Font Info:    Trying to load font information for T1+cmss on input line 270.
+ (/usr/share/texmf-dist/tex/latex/base/t1cmss.fd
 File: t1cmss.fd 2023/04/13 v2.5m Standard LaTeX font definitions
+) Excluding 'comment' comment.
+Overfull \hbox (2.8737pt too wide) in paragraph at lines 276--290
+\T1/ppl/m/n/12 Per loro natura le chiavi pubbliche sono liberamente distribuite, non è dunque
+ []
+
+
+Overfull \hbox (5.76581pt too wide) in paragraph at lines 276--290
+\T1/ppl/m/it/12 (PKI)\T1/ppl/m/n/12 , che tramite l'utilizzo dei certificati X.509 consente la distribuzione sicura
+ []
+
+
+Overfull \hbox (5.23854pt too wide) in paragraph at lines 305--307
+\T1/ppl/m/n/12 di ^^Pbit di sicurezza^^Q, dove $\OML/zplm/m/it/12 n$\T1/ppl/m/n/12 -bit di sicurezza significa che l'attaccante dovrebbe
+ []
+
+[9{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}] [10]
+Overfull \hbox (31.19434pt too wide) in paragraph at lines 336--343
+\T1/ppl/m/n/12 Le reti, per loro natura, rappresentano un mezzo di comunicazione intrinsecamente
+ []
+
+
+Overfull \hbox (12.75049pt too wide) in paragraph at lines 336--343
+\T1/ppl/m/n/12 insicuro, soprattutto quando operano in modalità broadcast. In questo contesto,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 336--343
+
+ []
+
+
+Overfull \hbox (6.37827pt too wide) in paragraph at lines 344--348
+\T1/ppl/m/n/12 Il modello di riferimento per la comunicazione su Internet è il modello \T1/ppl/b/n/12 TCP/IP\T1/ppl/m/n/12 ,
+ []
+
+Excluding 'comment' comment. [11]
+Overfull \hbox (27.8098pt too wide) in paragraph at lines 401--404
+\T1/ppl/m/n/12 IPsec (Internet Protocol Security) è un insieme di protocolli standard, rappresentati
+ []
+
+
+Overfull \hbox (6.96625pt too wide) in paragraph at lines 401--404
+\T1/ppl/m/n/12 in \T1/ppl/m/it/12 Figura [][]2.5[][]\T1/ppl/m/n/12 , utilizzati in modo tale da fornire meccanismi per l'autenticazione,
+ []
+
+
+Overfull \hbox (9.2937pt too wide) in paragraph at lines 401--404
+\T1/ppl/m/n/12 la cifratura e l'integrità dei dati trasmessi tra due o più dispositivi, proteggendo
+ []
+
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 407.
+(/usr/share/texmf-dist/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 )
-Overfull \hbox (2.8737pt too wide) in paragraph at lines 273--277
-\T1/ppl/m/n/12 Per loro natura le chiavi pubbliche sono liberamente distribuite
-, non è dunque 
+Overfull \hbox (22.43256pt too wide) in paragraph at lines 417--418
+\T1/ppl/m/n/12 autenticare e distribuire dinamicamente le chiavi crittografiche che vengono
  []
 
 
-Overfull \hbox (42.34166pt too wide) in paragraph at lines 273--277
-\T1/ppl/m/n/12 necessario un canale segreto. Tuttavia in questo caso si ha il p
-roblema dell'autenticità,
- []
-
-<Figures/pki.jpg, id=441, 763.85374pt x 478.78876pt>
-File: Figures/pki.jpg Graphic file (type jpg)
-<use Figures/pki.jpg>
-Package pdftex.def Info: Figures/pki.jpg  used on input line 280.
-(pdftex.def)             Requested size: 267.35281pt x 167.57857pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-Overfull \hbox (23.46642pt too wide) in paragraph at lines 297--299
-\T1/ppl/m/n/12 Il \T1/ppl/b/n/12 security level \T1/ppl/m/n/12 è una misura del
-la forza che una primitiva crittografica raggiunge
+Overfull \hbox (9.449pt too wide) in paragraph at lines 417--418
+\T1/ppl/m/n/12 poi impiegate dai protocolli di sicurezza per proteggere le comunicazioni. 
  []
 
 
-Overfull \hbox (3.2465pt too wide) in paragraph at lines 297--299
-\T1/ppl/m/n/12 sicurezza^^Q, dove $\OML/zplm/m/it/12 n$\T1/ppl/m/n/12 -bit di s
-icurezza significa che l'attaccante dovrebbe eseguire
+Overfull \hbox (12.63066pt too wide) in paragraph at lines 443--445
+\T1/ppl/m/n/12 garantire la sicurezza è necessario che mantenga il contesto di ogni connessione,
  []
 
-[10] [11 <./Figures/pki.jpg>]
-Overfull \hbox (31.19434pt too wide) in paragraph at lines 328--335
-\T1/ppl/m/n/12 Le reti, per loro natura, rappresentano un mezzo di comunicazion
-e intrinsecamente
- []
-
-
-Overfull \hbox (12.75049pt too wide) in paragraph at lines 328--335
-\T1/ppl/m/n/12 insicuro, soprattutto quando operano in modalità broadcast. In q
-uesto contesto,
+[12]
+Overfull \hbox (31.02444pt too wide) in paragraph at lines 449--451
+[]\T1/ppl/m/it/12 Connessioni Multiple\T1/ppl/m/n/12 : in uno scenario di rete complesso, un singolo dispositivo
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 328--335
-
+Overfull \hbox (4.34966pt too wide) in paragraph at lines 454--458
+\T1/ppl/m/n/12 al concetto di \T1/ppl/m/it/12 Security Association \T1/ppl/m/n/12 (SA). Più precisamente si tratta di un'insieme
  []
 
 
-LaTeX Warning: Reference `fig:tcpip' on page 12 undefined on input line 338.
-
-
-Overfull \hbox (6.37827pt too wide) in paragraph at lines 336--340
-\T1/ppl/m/n/12 Il modello di riferimento per la comunicazione su Internet è il 
-modello \T1/ppl/b/n/12 TCP/IP\T1/ppl/m/n/12 ,
- []
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-Excluding 'comment' comment. [12]
-Overfull \hbox (27.8098pt too wide) in paragraph at lines 392--395
-\T1/ppl/m/n/12 IPsec (Internet Protocol Security) è un insieme di protocolli st
-andard, rappresentati
- []
-
-
-Overfull \hbox (6.96625pt too wide) in paragraph at lines 392--395
-\T1/ppl/m/n/12 in \T1/ppl/m/it/12 Figura [][]2.6[][]\T1/ppl/m/n/12 , utilizzati
- in modo tale da fornire meccanismi per l'autenticazione,
- []
-
-
-Overfull \hbox (9.2937pt too wide) in paragraph at lines 392--395
-\T1/ppl/m/n/12 la cifratura e l'integrità dei dati trasmessi tra due o più disp
-ositivi, proteggendo
+Overfull \hbox (9.54474pt too wide) in paragraph at lines 463--464
+[]\T1/ppl/m/it/12 Protocol Identifier\T1/ppl/m/n/12 : determina il tipo di protezione da applicare ai pacchetti,
  []
 
 [13]
-Overfull \hbox (22.43256pt too wide) in paragraph at lines 408--409
-\T1/ppl/m/n/12 autenticare e distribuire dinamicamente le chiavi crittografiche
- che vengono
+Overfull \hbox (7.7208pt too wide) in paragraph at lines 464--465
+[]\T1/ppl/m/n/12 Altri parametri opzionali, per una lista completa fare riferimento all'RFC. 
  []
 
 
-Overfull \hbox (9.449pt too wide) in paragraph at lines 408--409
-\T1/ppl/m/n/12 poi impiegate dai protocolli di sicurezza per proteggere le comu
-nicazioni. 
+Overfull \hbox (2.08293pt too wide) in paragraph at lines 491--495
+\T1/ppl/m/n/12 modo univoco la configurazioni di sicurezza da applicare alla comunicazione. 
  []
 
 
-Overfull \hbox (12.63066pt too wide) in paragraph at lines 434--436
-\T1/ppl/m/n/12 garantire la sicurezza è necessario che mantenga il contesto di 
-ogni connessione,
+Overfull \hbox (18.22154pt too wide) in paragraph at lines 491--495
+\T1/ppl/m/n/12 Tuttavia queste SA come si configurano?. IPsec prevede tecniche di negoziazione
  []
 
 
-Overfull \hbox (31.02444pt too wide) in paragraph at lines 440--442
-[]\T1/ppl/m/it/12 Connessioni Multiple\T1/ppl/m/n/12 : in uno scenario di rete 
-complesso, un singolo dispositivo
+Overfull \hbox (8.51242pt too wide) in paragraph at lines 500--503
+[]\T1/ppl/m/it/12 Automatico\T1/ppl/m/n/12 : si utilizzanoprotocolli per stabilire automaticamente le chiavi
  []
 
 [14]
-Overfull \hbox (4.34966pt too wide) in paragraph at lines 445--449
-\T1/ppl/m/n/12 al concetto di \T1/ppl/m/it/12 Security Association \T1/ppl/m/n/
-12 (SA). Più precisamente si tratta di un'insieme
- []
-
-
-Overfull \hbox (9.54474pt too wide) in paragraph at lines 454--455
-[]\T1/ppl/m/it/12 Protocol Identifier\T1/ppl/m/n/12 : determina il tipo di prot
-ezione da applicare ai pacchetti,
- []
-
-
-Overfull \hbox (7.7208pt too wide) in paragraph at lines 455--456
-[]\T1/ppl/m/n/12 Altri parametri opzionali, per una lista completa fare riferim
-ento all'RFC. 
- []
-
-
-Overfull \hbox (2.08293pt too wide) in paragraph at lines 481--485
-\T1/ppl/m/n/12 modo univoco la configurazioni di sicurezza da applicare alla co
-municazione. 
- []
-
-
-Overfull \hbox (18.22154pt too wide) in paragraph at lines 481--485
-\T1/ppl/m/n/12 Tuttavia queste SA come si configurano?. IPsec prevede tecniche 
-di negoziazione
- []
-
-
-Overfull \hbox (8.51242pt too wide) in paragraph at lines 490--493
-[]\T1/ppl/m/it/12 Automatico\T1/ppl/m/n/12 : si utilizzanoprotocolli per stabil
-ire automaticamente le chiavi
- []
-
-[15] [16]
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 
-Overfull \hbox (2.1064pt too wide) in paragraph at lines 547--556
+Overfull \hbox (2.1064pt too wide) in paragraph at lines 557--566
  [][] 
  []
 
 
-Overfull \hbox (5.75327pt too wide) in paragraph at lines 558--561
-\T1/ppl/m/n/12 Al termine di questo scambio i due peer ottengono il \T1/ppl/m/i
-t/12 DH Shared Secret \T1/ppl/m/n/12 (indicato
+Overfull \hbox (5.75327pt too wide) in paragraph at lines 568--571
+\T1/ppl/m/n/12 Al termine di questo scambio i due peer ottengono il \T1/ppl/m/it/12 DH Shared Secret \T1/ppl/m/n/12 (indicato
+ []
+
+[15]
+Overfull \hbox (0.81104pt too wide) in paragraph at lines 582--591
+ [][] 
+ []
+
+[16]
+Overfull \hbox (8.73007pt too wide) in paragraph at lines 601--603
+\T1/ppl/m/n/12 un pacchetto IP, tuttavia abbiamo degli scambi che richiedono un trasferimento
+ []
+
+
+Overfull \hbox (19.58363pt too wide) in paragraph at lines 604--606
+[]\T1/ppl/m/n/12 Per esempio nel caso di autenticazione tramite pubkey nella fase di [][][][][][]
+ []
+
+
+Overfull \hbox (1.58995pt too wide) in paragraph at lines 630--635
+\T1/ppl/m/n/12 sulla frammentazione IP, per questo motivo gli ISP operano un filtro su questa
+ []
+
+
+Overfull \hbox (34.62585pt too wide) in paragraph at lines 636--638
+\T1/ppl/m/it/12 Message Fragmentation\T1/ppl/m/n/12 . In cui la frammentazione dei messaggi è gestita direttamente
+ []
+
+
+Overfull \hbox (7.99504pt too wide) in paragraph at lines 640--643
+[]\T1/ppl/m/n/12 Per evitare che nel trasferimento di grandi dati ciò avvenga viene introdotto
+ []
+
+
+Overfull \hbox (10.015pt too wide) in paragraph at lines 640--643
+\T1/ppl/m/n/12 dimensione dei dati da trasferire ecceda la dimensione massima che causerebbe
+ []
+
+
+Overfull \hbox (3.11253pt too wide) in paragraph at lines 661--664
+[]\T1/ppl/m/n/12 Questo scambio è posizionato qui in quanto nella [][][][][][] per motivi
  []
 
 [17]
-Overfull \hbox (0.81104pt too wide) in paragraph at lines 572--581
- [][] 
+Overfull \hbox (7.1908pt too wide) in paragraph at lines 665--666
+[]\T1/ppl/m/n/12 Per questo viene aggiunto questo scambio che viene utilizzato per trasferire
  []
 
 
-Overfull \hbox (8.73007pt too wide) in paragraph at lines 591--593
-\T1/ppl/m/n/12 un pacchetto IP, tuttavia abbiamo degli scambi che richiedono un
- trasferimento
+Overfull \hbox (23.97821pt too wide) in paragraph at lines 667--670
+[]\T1/ppl/m/n/12 L'utilizzo principale di questo scambio è quello di trasferire le chiavi pubbliche
  []
 
 
-Overfull \hbox (19.58363pt too wide) in paragraph at lines 594--596
-[]\T1/ppl/m/n/12 Per esempio nel caso di autenticazione tramite pubkey nella fa
-se di [][][][][][]
+Overfull \hbox (4.49402pt too wide) in paragraph at lines 667--670
+\T1/ppl/m/n/12 QC-resistant, tuttavia in generale può essere utilizzzato per trasferire qualsiasi
  []
 
 
-Overfull \hbox (1.58995pt too wide) in paragraph at lines 620--625
-\T1/ppl/m/n/12 sulla frammentazione IP, per questo motivo gli ISP operano un fi
-ltro su questa
- []
-
-[18]
-Overfull \hbox (34.62585pt too wide) in paragraph at lines 626--628
-\T1/ppl/m/it/12 Message Fragmentation\T1/ppl/m/n/12 . In cui la frammentazione 
-dei messaggi è gestita direttamente
- []
-
-LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 629.
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\colorbox' on input line 629.
-
-
-Overfull \hbox (10.015pt too wide) in paragraph at lines 631--634
-\T1/ppl/m/n/12 dimensione dei dati da trasferire ecceda la dimensione massima c
-he causerebbe
+Overfull \hbox (28.94408pt too wide) in paragraph at lines 667--670
+\T1/ppl/m/n/12 durante questo scambio si scambiano altre chiavi allora le coppie $\OMS/zplm/m/n/12 f\OML/zplm/m/it/12 SK[]\OT1/ppl/m/n/12 , \OML/zplm/m/it/12 SK[]\OMS/zplm/m/n/12 g$
  []
 
 
-Overfull \hbox (3.11253pt too wide) in paragraph at lines 652--655
-[]\T1/ppl/m/n/12 Questo scambio è posizionato qui in quanto nella [][][][][][] 
-per motivi
+Overfull \hbox (17.8707pt too wide) in paragraph at lines 671--673
+[]\T1/ppl/m/n/12 Permette di realizzare Multiple Key Exchange Gli scambi di chiave aggiuntivi
  []
 
 
-Overfull \hbox (7.1908pt too wide) in paragraph at lines 656--657
-[]\T1/ppl/m/n/12 Per questo viene aggiunto questo scambio che viene utilizzato 
-per trasferire
+Overfull \hbox (46.1882pt too wide) in paragraph at lines 682--683
+[]\T1/ppl/m/n/12 flag [][][][][][]: il peer dice di supportare la frammentazione
  []
 
 
-Overfull \hbox (23.97821pt too wide) in paragraph at lines 658--661
-[]\T1/ppl/m/n/12 L'utilizzo principale di questo scambio è quello di trasferire
- le chiavi pubbliche
+Overfull \hbox (18.1743pt too wide) in paragraph at lines 691--696
+\T1/ppl/m/n/12 Exchange Support). Se anche il responder lo supporta lo includerà nel messaggio
  []
 
-
-Overfull \hbox (4.49402pt too wide) in paragraph at lines 658--661
-\T1/ppl/m/n/12 QC-resistant, tuttavia in generale può essere utilizzzato per tr
-asferire qualsiasi
- []
-
-
-Overfull \hbox (28.94408pt too wide) in paragraph at lines 658--661
-\T1/ppl/m/n/12 durante questo scambio si scambiano altre chiavi allora le coppi
-e $\OMS/zplm/m/n/12 f\OML/zplm/m/it/12 SK[]\OT1/ppl/m/n/12 , \OML/zplm/m/it/12 
-SK[]\OMS/zplm/m/n/12 g$
- []
-
-[19]
-Overfull \hbox (17.8707pt too wide) in paragraph at lines 662--664
-[]\T1/ppl/m/n/12 Permette di realizzare Multiple Key Exchange Gli scambi di chi
-ave aggiuntivi
- []
-
-
-Overfull \hbox (46.1882pt too wide) in paragraph at lines 673--674
-[]\T1/ppl/m/n/12 flag [][][][][][]: il peer dice di supportare la frammentazion
-e
- []
-
-
-Overfull \hbox (18.1743pt too wide) in paragraph at lines 682--687
-\T1/ppl/m/n/12 Exchange Support). Se anche il responder lo supporta lo includer
-à nel messaggio
- []
-
-) [20]
+[18]) [19]
 \openout2 = `Chapters/Chapter3.aux'.
 
- (./Chapters/Chapter3.tex
+ (./Chapters/Chapter3.tex [20
+
+
+
+
+]
 Chapter 3.
 
-Overfull \hbox (12.1263pt too wide) in paragraph at lines 14--18
-\T1/ppl/m/n/12 Le comunicazioni satellitari sono una fondamenta delle infrastru
-tture moderne,
+Overfull \hbox (12.1263pt too wide) in paragraph at lines 18--24
+\T1/ppl/m/n/12 Le comunicazioni satellitari sono una fondamenta delle infrastrutture moderne,
  []
 
 
-Overfull \hbox (17.21402pt too wide) in paragraph at lines 14--18
-\T1/ppl/m/n/12 della domanda di connettività globale e l'espansione delle reti 
-di comunicazione,
+Overfull \hbox (17.21402pt too wide) in paragraph at lines 18--24
+\T1/ppl/m/n/12 della domanda di connettività globale e l'espansione delle reti di comunicazione,
  []
 
 
-Overfull \hbox (8.50168pt too wide) in paragraph at lines 14--18
-\T1/ppl/m/n/12 i satelliti sono diventati strumenti essenziali per garantire un
-a copertura estesa,
+Overfull \hbox (8.50168pt too wide) in paragraph at lines 18--24
+\T1/ppl/m/n/12 i satelliti sono diventati strumenti essenziali per garantire una copertura estesa.
  []
 
 
-Overfull \hbox (2.58372pt too wide) in paragraph at lines 19--20
-[]\T1/ppl/m/n/12 Questo cambio di paradigma insieme al quantum computer hanno p
-ortato
+Overfull \hbox (19.6272pt too wide) in paragraph at lines 18--24
+\T1/ppl/m/n/12 tra la differenza di distanze è mostrato in \T1/ppl/m/it/12 Figura [][]3.1[][]\T1/ppl/m/n/12 . [][][]Questo cambio di paradigma
  []
 
-<Figures/satellite.png, id=519, 385.44pt x 385.44pt>
+<Figures/satellite.png, id=503, 385.44pt x 385.44pt>
 File: Figures/satellite.png Graphic file (type png)
 <use Figures/satellite.png>
-Package pdftex.def Info: Figures/satellite.png  used on input line 36.
+Package pdftex.def Info: Figures/satellite.png  used on input line 43.
 (pdftex.def)             Requested size: 28.45274pt x 28.448pt.
 File: Figures/satellite.png Graphic file (type png)
 <use Figures/satellite.png>
-Package pdftex.def Info: Figures/satellite.png  used on input line 37.
+Package pdftex.def Info: Figures/satellite.png  used on input line 44.
 (pdftex.def)             Requested size: 28.45274pt x 28.448pt.
-<Figures/europe.png, id=520, 501.875pt x 501.875pt>
+<Figures/europe.png, id=504, 501.875pt x 501.875pt>
 File: Figures/europe.png Graphic file (type png)
 <use Figures/europe.png>
-Package pdftex.def Info: Figures/europe.png  used on input line 38.
+Package pdftex.def Info: Figures/europe.png  used on input line 45.
 (pdftex.def)             Requested size: 85.35826pt x 85.3559pt.
 
-Overfull \hbox (4.59038pt too wide) in paragraph at lines 50--52
-\T1/ppl/m/n/12 L'ambiente spaziale, caratterizzato da radiazioni intense, tempe
-rature estreme
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Overfull \hbox (4.59038pt too wide) in paragraph at lines 57--59
+\T1/ppl/m/n/12 L'ambiente spaziale, caratterizzato da radiazioni intense, temperature estreme
+ []
+
+
+Overfull \hbox (8.18794pt too wide) in paragraph at lines 61--62
+[]\T1/ppl/m/it/12 Resistenza alle radiazioni\T1/ppl/m/n/12 : i componenti elettronici devono essere progettati
  []
 
 1: section
-[21
-
-
-
-
- <./Figures/satellite.png> <./Figures/europe.png>]
-Overfull \hbox (8.18794pt too wide) in paragraph at lines 54--55
-[]\T1/ppl/m/it/12 Resistenza alle radiazioni\T1/ppl/m/n/12 : i componenti elett
-ronici devono essere progettati
+[21]
+Overfull \hbox (18.19614pt too wide) in paragraph at lines 73--74
+[]\T1/ppl/m/it/12 Semplicità e ottimizzazione\T1/ppl/m/n/12 : gli algoritmi devono essere semplici e ottimizzati
  []
 
 
-Overfull \hbox (18.19614pt too wide) in paragraph at lines 66--67
-[]\T1/ppl/m/it/12 Semplicità e ottimizzazione\T1/ppl/m/n/12 : gli algoritmi dev
-ono essere semplici e ottimizzati
+Overfull \hbox (10.54051pt too wide) in paragraph at lines 74--75
+[]\T1/ppl/m/it/12 Parallelismo limitato\T1/ppl/m/n/12 : non è possibile sfruttare un alto grado di parallelismo
  []
 
 
-Overfull \hbox (10.54051pt too wide) in paragraph at lines 67--68
-[]\T1/ppl/m/it/12 Parallelismo limitato\T1/ppl/m/n/12 : non è possibile sfrutta
-re un alto grado di parallelismo
+Overfull \hbox (21.2091pt too wide) in paragraph at lines 74--75
+\T1/ppl/m/n/12 o con limitato parallelismo, aumentando la complessità della progettazione. 
  []
 
 
-Overfull \hbox (21.2091pt too wide) in paragraph at lines 67--68
-\T1/ppl/m/n/12 o con limitato parallelismo, aumentando la complessità della pro
-gettazione. 
+Overfull \hbox (4.32602pt too wide) in paragraph at lines 78--81
+\T1/ppl/m/n/12 Occorre ridurre al minimo l'impatto sulle risorse in modo tale che gli algoritmi
+ []
+
+[22 <./Figures/satellite.png> <./Figures/europe.png>]
+Overfull \hbox (1.27705pt too wide) in paragraph at lines 91--92
+[]\T1/ppl/m/n/12 Triple Modular Redundancy (TMR): nei sistemi critici spaziali si utilizza
  []
 
 
-Overfull \hbox (4.32602pt too wide) in paragraph at lines 71--74
-\T1/ppl/m/n/12 Occorre ridurre al minimo l'impatto sulle risorse in modo tale c
-he gli algoritmi
- []
+LaTeX Warning: Marginpar on page 23 moved.
 
 
-Overfull \hbox (8.64658pt too wide) in paragraph at lines 77--80
-\T1/ppl/m/n/12 LEON3: Un processore open-source basato sull'architettura SPARC,
- progettato
- []
-
-
-Overfull \hbox (21.70148pt too wide) in paragraph at lines 77--80
-\T1/ppl/m/n/12 dall'Agenzia Spaziale Europea (ESA). È utilizzato in numerose mi
-ssioni satellitari
- []
-
-
-Overfull \hbox (11.13074pt too wide) in paragraph at lines 77--80
-\T1/ppl/m/n/12 europee. ESA Power Interface Standard (ECSS-E-ST-20C): Definisce
- le modalità
- []
-
-
-Overfull \hbox (36.6046pt too wide) in paragraph at lines 77--80
-\T1/ppl/m/n/12 con cui l'alimentazione elettrica viene distribuita all'interno 
-dei satelliti, assicurando
- []
-
-
-Overfull \hbox (17.82622pt too wide) in paragraph at lines 77--80
-\T1/ppl/m/n/12 efficienza e affidabilità anche con limitate risorse energetiche
-. Per la compattezza
- []
-
-
-Overfull \hbox (8.5502pt too wide) in paragraph at lines 77--80
-\T1/ppl/m/n/12 invece: Cubesat Standard (1U, 2U, 3U, etc.): Molti satelliti mod
-erni, soprattutto
- []
-
-
-Overfull \hbox (9.8345pt too wide) in paragraph at lines 77--80
-\T1/ppl/m/n/12 per missioni commerciali o di ricerca, seguono il formato Cubesa
-t, che definisce
- []
-
-[22]
-Overfull \hbox (47.8495pt too wide) in paragraph at lines 81--82
-\T1/ppl/m/n/12 operativo open-source e real-time progettato per funzionare in a
-mbienti estremamente
- []
-
-
-Overfull \hbox (12.83421pt too wide) in paragraph at lines 81--82
-\T1/ppl/m/n/12 sua capacità di gestire operazioni critiche in tempo reale. Basa
-to su GNU/Linux 
- []
-
-
-Overfull \hbox (4.77895pt too wide) in paragraph at lines 84--85
-[]\T1/ppl/m/n/12 Triple Modular Redundancy (TMR): Molti sistemi critici spazial
-i utilizzano
- []
-
-
-Overfull \hbox (3.42686pt too wide) in paragraph at lines 96--98
-\T1/ppl/m/n/12 di standardizzazione del NIST, in particolare la loro implementa
-zione forniata
+Overfull \hbox (3.42686pt too wide) in paragraph at lines 107--109
+\T1/ppl/m/n/12 di standardizzazione del NIST, in particolare la loro implementazione forniata
  []
 
 [23]
-Overfull \hbox (5.13951pt too wide) in paragraph at lines 111--113
-[]\T1/ppl/m/n/12 Riguardo a questo non esistono implementazioni, per questo mot
-ivo siamo
+Overfull \hbox (5.13951pt too wide) in paragraph at lines 122--124
+[]\T1/ppl/m/n/12 Riguardo a questo non esistono implementazioni, per questo motivo siamo
  []
 
 ) [24]
@@ -2019,14 +1642,12 @@ ivo siamo
 Chapter 4.
 
 Overfull \hbox (17.11761pt too wide) in paragraph at lines 15--18
-\T1/ppl/m/n/12 Nella parte di progettazione portare quelli che sono i requisiti
- che deve rispettare
+\T1/ppl/m/n/12 Nella parte di progettazione portare quelli che sono i requisiti che deve rispettare
  []
 
 
 Overfull \hbox (6.82031pt too wide) in paragraph at lines 41--42
-[]\T1/ppl/m/n/12 libcrypto: fornisce le implementazione dei principali schemi c
-rittografici,
+[]\T1/ppl/m/n/12 libcrypto: fornisce le implementazione dei principali schemi crittografici,
  []
 
 1: section
@@ -2046,20 +1667,12 @@ Package hyperref Warning: Difference (2) between bookmark levels is greater
 
 
 Overfull \hbox (4.80493pt too wide) in paragraph at lines 19--20
-\T1/ppl/m/n/12 condivisa a cui viene aggiunge della unpredicability tramite del
- padding
+\T1/ppl/m/n/12 condivisa a cui viene aggiunge della unpredicability tramite del padding
  []
 
 
 Overfull \hbox (12.237pt too wide) detected at line 33
-\OMS/zplm/m/n/12 f\OML/zplm/m/it/12 SK[]\OMS/zplm/m/n/12 j\OML/zplm/m/it/12 SK[
-]\OMS/zplm/m/n/12 j\OML/zplm/m/it/12 SK[]\OMS/zplm/m/n/12 j\OML/zplm/m/it/12 SK
-[]\OMS/zplm/m/n/12 j\OML/zplm/m/it/12 SK[]\OMS/zplm/m/n/12 j\OML/zplm/m/it/12 S
-K[]\OMS/zplm/m/n/12 j\OML/zplm/m/it/12 SK[]\OMS/zplm/m/n/12 g \OT1/zplm/m/n/12 
-= \OML/zplm/m/it/12 PRF \OT1/zplm/m/n/12 + (\OML/zplm/m/it/12 SKEYSEED\OT1/ppl/
-m/n/12 , \OML/zplm/m/it/12 N[]\OMS/zplm/m/n/12 j\OML/zplm/m/it/12 N[]\OT1/ppl/m
-/n/12 , \OML/zplm/m/it/12 SPI[]\OT1/ppl/m/n/12 , \OML/zplm/m/it/12 SPI[]\OT1/zp
-lm/m/n/12 )
+\OMS/zplm/m/n/12 f\OML/zplm/m/it/12 SK[]\OMS/zplm/m/n/12 j\OML/zplm/m/it/12 SK[]\OMS/zplm/m/n/12 j\OML/zplm/m/it/12 SK[]\OMS/zplm/m/n/12 j\OML/zplm/m/it/12 SK[]\OMS/zplm/m/n/12 j\OML/zplm/m/it/12 SK[]\OMS/zplm/m/n/12 j\OML/zplm/m/it/12 SK[]\OMS/zplm/m/n/12 j\OML/zplm/m/it/12 SK[]\OMS/zplm/m/n/12 g \OT1/zplm/m/n/12 = \OML/zplm/m/it/12 PRF \OT1/zplm/m/n/12 + (\OML/zplm/m/it/12 SKEYSEED\OT1/ppl/m/n/12 , \OML/zplm/m/it/12 N[]\OMS/zplm/m/n/12 j\OML/zplm/m/it/12 N[]\OT1/ppl/m/n/12 , \OML/zplm/m/it/12 SPI[]\OT1/ppl/m/n/12 , \OML/zplm/m/it/12 SPI[]\OT1/zplm/m/n/12 )
  []
 
 1: section
@@ -2075,54 +1688,37 @@ Overfull \hbox (8.21465pt too wide) in paragraph at lines 37--47
 
 
 Overfull \hbox (13.73444pt too wide) in paragraph at lines 61--63
-\T1/ppl/m/n/12 proposte, le quali devono essere ordinate per preferenza, ogni p
-roposal contiene
+\T1/ppl/m/n/12 proposte, le quali devono essere ordinate per preferenza, ogni proposal contiene
  []
 
 ) [28]
 
-LaTeX Warning: Empty bibliography on input line 291.
+LaTeX Warning: Empty bibliography on input line 292.
 
-(./main.aux (./Chapters/Chapter1.aux) (./Chapters/Chapter2.aux)
-(./Chapters/Chapter3.aux) (./Chapters/Chapter4.aux) (./Appendices/AppendixA.aux
-))
+(./main.aux (./Chapters/Chapter1.aux) (./Chapters/Chapter2.aux) (./Chapters/Chapter3.aux) (./Chapters/Chapter4.aux) (./Appendices/AppendixA.aux))
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2020/03/25>
  ***********
-
-
-LaTeX Warning: There were undefined references.
-
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 3D02541625A97B74C35779F4FF4ECD88;5269.
+(rerunfilecheck)             Checksum: 53AB89A2824532ACA55233DA272BCFB9;4602.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 44328 strings out of 476076
- 961571 string characters out of 5793775
- 1957187 words of memory out of 5000000
- 65608 multiletter control sequences out of 15000+600000
- 622376 words of font info for 142 fonts, out of 8000000 for 9000
+ 44793 strings out of 476076
+ 977097 string characters out of 5793775
+ 1965187 words of memory out of 5000000
+ 66065 multiletter control sequences out of 15000+600000
+ 613148 words of font info for 119 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 100i,21n,101p,1850b,1197s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/font
-s/type1/public/mathpazo/fplmri.pfb></usr/share/texmf-dist/fonts/type1/public/cm
--super/sfss1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sftt1000
-.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb></usr/shar
-e/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb></usr/share/texmf-dist/fo
-nts/type1/public/cm-super/sftt1440.pfb></usr/share/texmf-dist/fonts/type1/urw/p
-alatino/uplb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/palatino/uplbi8a.pfb>
-</usr/share/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texmf-di
-st/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/p
-alatino/uplri8a.pfb>
-Output written on main.pdf (46 pages, 578510 bytes).
+ 100i,21n,101p,1886b,1197s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/mathpazo/fplmri.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfss1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb></usr/share/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/palatino/uplbi8a.pfb></usr/share/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
+Output written on main.pdf (46 pages, 537322 bytes).
 PDF statistics:
- 658 PDF objects out of 1000 (max. 8388607)
- 545 compressed objects within 6 object streams
- 134 named destinations out of 1000 (max. 500000)
- 549 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 643 PDF objects out of 1000 (max. 8388607)
+ 533 compressed objects within 6 object streams
+ 143 named destinations out of 1000 (max. 500000)
+ 504 words of extra memory for PDF output out of 10000 (max. 10000000)
 

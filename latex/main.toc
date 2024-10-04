@@ -5,42 +5,37 @@
 \contentsline {chapter}{\numberline {2}Fondamenti di Comunicazioni Sicure}{5}{chapter.16}%
 \contentsline {section}{\numberline {2.1}Teoria}{5}{section.17}%
 \contentsline {subsection}{\numberline {2.1.1}Hash Function}{5}{subsection.18}%
-\contentsline {subsection}{\numberline {2.1.2}Schemi crittografici}{6}{subsection.20}%
-\contentsline {subsubsection}{Simmetrici}{7}{section*.23}%
-\contentsline {subsubsection}{Asimmetrici}{8}{section*.24}%
-\contentsline {subsection}{\numberline {2.1.3}Confronto}{10}{subsection.28}%
-\contentsline {subsection}{\numberline {2.1.4}Sicurezza}{11}{subsection.33}%
-\contentsline {section}{\numberline {2.2}Applicazioni}{12}{section.35}%
-\contentsline {section}{\numberline {2.3}IPsec}{13}{section.37}%
-\contentsline {subsection}{\numberline {2.3.1}Architettura}{13}{subsection.38}%
-\contentsline {subsection}{\numberline {2.3.2}Security Association}{14}{subsection.40}%
-\contentsline {subsection}{\numberline {2.3.3}Negoziazione SA}{15}{subsection.42}%
-\contentsline {section}{\numberline {2.4}IKE}{17}{section.43}%
-\contentsline {subsection}{\numberline {2.4.1}\textbf {IKE\_SA\_INIT}}{17}{subsection.45}%
-\contentsline {subsection}{\numberline {2.4.2}IKE\_AUTH}{18}{subsection.47}%
-\contentsline {subsection}{\numberline {2.4.3}CHILD\_SA}{18}{subsection.49}%
-\contentsline {section}{\numberline {2.5}Problemi}{18}{section.50}%
-\contentsline {subsection}{\numberline {2.5.1}\colorbox {gray!10}{\texttt {IKE\_INTERMEDIATE}}}{19}{subsection.52}%
-\contentsline {section}{\numberline {2.6}Post-Quantum}{20}{section.54}%
-\contentsline {chapter}{\numberline {3}Scenario}{21}{chapter.55}%
-\contentsline {section}{\numberline {3.1}Comunicazioni Satelliari}{21}{section.56}%
-\contentsline {subsection}{\numberline {3.1.1}Limitazioni}{22}{subsection.58}%
-\contentsline {subsection}{\numberline {3.1.2}Stato Attuale}{23}{subsection.59}%
-\contentsline {section}{\numberline {3.2}Come procediamo}{23}{section.60}%
-\contentsline {section}{\numberline {3.3}Benchmarking}{23}{section.61}%
-\contentsline {section}{\numberline {3.4}Tuttavia}{24}{section.62}%
-\contentsline {chapter}{\numberline {4}Hummingbird}{25}{chapter.63}%
-\contentsline {section}{\numberline {4.1}Progettazione}{25}{section.64}%
-\contentsline {subsection}{\numberline {4.1.1}Requisiti}{25}{subsection.65}%
-\contentsline {subsection}{\numberline {4.1.2}Architettura}{25}{subsection.66}%
-\contentsline {section}{\numberline {4.2}Implementazione}{25}{section.69}%
-\contentsline {subsection}{\numberline {4.2.1}Strumenti}{25}{subsection.70}%
-\contentsline {subsection}{\numberline {4.2.2}Codice}{26}{subsection.71}%
-\contentsline {subsection}{\numberline {4.2.3}Sfide}{26}{subsection.79}%
-\contentsline {section}{\numberline {4.3}Analisi}{26}{section.80}%
-\contentsline {chapter}{\numberline {A}IKEv2 Notation}{27}{appendix.81}%
-\contentsline {subsection}{\numberline {A.0.1}Authentication}{27}{subsection.82}%
-\contentsline {section}{\numberline {A.1}Key Derivation}{27}{section.83}%
-\contentsline {subsection}{\numberline {A.1.1}IKE SA}{27}{subsection.84}%
-\contentsline {subsection}{\numberline {A.1.2}IPsec SA}{28}{subsection.86}%
-\contentsline {section}{\numberline {A.2}Security Association Payload}{28}{section.87}%
+\contentsline {subsection}{\numberline {2.1.2}Schemi crittografici}{6}{subsection.21}%
+\contentsline {subsection}{\numberline {2.1.3}Sicurezza}{9}{subsection.37}%
+\contentsline {section}{\numberline {2.2}Applicazioni}{11}{section.40}%
+\contentsline {section}{\numberline {2.3}IPsec}{12}{section.43}%
+\contentsline {subsection}{\numberline {2.3.1}Architettura}{12}{subsection.44}%
+\contentsline {subsection}{\numberline {2.3.2}Security Association}{13}{subsection.46}%
+\contentsline {subsection}{\numberline {2.3.3}Negoziazione SA}{14}{subsection.49}%
+\contentsline {section}{\numberline {2.4}IKE}{15}{section.50}%
+\contentsline {subsection}{\numberline {2.4.1}\textbf {IKE\_SA\_INIT}}{15}{subsection.52}%
+\contentsline {subsection}{\numberline {2.4.2}IKE\_AUTH}{16}{subsection.54}%
+\contentsline {subsection}{\numberline {2.4.3}CHILD\_SA}{16}{subsection.56}%
+\contentsline {section}{\numberline {2.5}Problemi}{17}{section.57}%
+\contentsline {chapter}{\numberline {3}Scenario}{21}{chapter.60}%
+\contentsline {section}{\numberline {3.1}Comunicazioni Satelliari}{21}{section.62}%
+\contentsline {subsection}{\numberline {3.1.1}Limitazioni}{21}{subsection.65}%
+\contentsline {subsection}{\numberline {3.1.2}Stato Attuale}{23}{subsection.66}%
+\contentsline {subsection}{\numberline {3.1.3}Sfide}{23}{subsection.68}%
+\contentsline {section}{\numberline {3.2}Benchmarking}{24}{section.70}%
+\contentsline {section}{\numberline {3.3}Tuttavia}{24}{section.71}%
+\contentsline {chapter}{\numberline {4}Hummingbird}{25}{chapter.72}%
+\contentsline {section}{\numberline {4.1}Progettazione}{25}{section.73}%
+\contentsline {subsection}{\numberline {4.1.1}Requisiti}{25}{subsection.74}%
+\contentsline {subsection}{\numberline {4.1.2}Architettura}{25}{subsection.75}%
+\contentsline {section}{\numberline {4.2}Implementazione}{25}{section.78}%
+\contentsline {subsection}{\numberline {4.2.1}Strumenti}{25}{subsection.79}%
+\contentsline {subsection}{\numberline {4.2.2}Codice}{26}{subsection.80}%
+\contentsline {subsection}{\numberline {4.2.3}Sfide}{26}{subsection.88}%
+\contentsline {section}{\numberline {4.3}Analisi}{26}{section.89}%
+\contentsline {chapter}{\numberline {A}IKEv2 Notation}{27}{appendix.90}%
+\contentsline {subsection}{\numberline {A.0.1}Authentication}{27}{subsection.91}%
+\contentsline {section}{\numberline {A.1}Key Derivation}{27}{section.92}%
+\contentsline {subsection}{\numberline {A.1.1}IKE SA}{27}{subsection.93}%
+\contentsline {subsection}{\numberline {A.1.2}IPsec SA}{28}{subsection.95}%
+\contentsline {section}{\numberline {A.2}Security Association Payload}{28}{section.96}%

@@ -4,6 +4,9 @@
 
 \label{Chapter3} % Change X to a consecutive number; for referencing this chapter elsewhere, use \ref{ChapterX}
 
+\textit{In questo capitolo facciamo un introduzione su quelloo he è lo scenario che stiamo considerando per il nostro lavoro, ovvero 
+quello delle comunicazioni satellitare e di quali sono le attuali tecnologie utilizzate per realizzarle.}
+\todo{Riformula meglio}
 
 %----------------------------------------------------------------------------------------
 %	SECTION 1
@@ -11,11 +14,12 @@
 
 \section{Comunicazioni Satelliari}
 
-Le comunicazioni satellitari sono una fondamenta delle infrastrutture moderne, abilitando una vasta gamma di servizi.
-Negli ultimi decenni, con l'aumento della domanda di connettività globale e l'espansione delle reti di comunicazione, i satelliti sono diventati strumenti essenziali per garantire una copertura estesa, specialmente in aree remote dove le infrastrutture terrestri sono limitate o inesistenti.
-L'emergere delle costellazioni di satelliti in orbita bassa (LEO - Low Earth Orbit) sta cambiando il paradigma delle comunicazioni satellitari, offrendo vantaggi significativi rispetto ai satelliti geostazionari (GEO). 
-%Mentre i satelliti GEO forniscono una copertura stabile, i satelliti LEO consentono Round Time Trip (RTT) notevolmente ridotti e una maggiore flessibilità, rendendoli ideali per applicazioni ad alta velocità come la trasmissione dati in tempo reale e la connettività Internet globale.
 
+Le comunicazioni satellitari sono una fondamenta delle infrastrutture moderne, abilitando una vasta gamma di servizi.
+Negli ultimi decenni, con l'aumento della domanda di connettività globale e l'espansione delle reti di comunicazione, i satelliti sono diventati strumenti essenziali per garantire una copertura estesa.
+L'emergere delle costellazioni di satelliti in orbita bassa (LEO - Low Earth Orbit) sta cambiando il paradigma delle comunicazioni satellitari, offrendo vantaggi significativi rispetto ai satelliti geostazionari (GEO), un confronto tra la differenza di distanze è mostrato in \textit{Figura \ref{fig:orbite}}. 
+%Mentre i satelliti GEO forniscono una copertura stabile, i satelliti LEO consentono Round Time Trip (RTT) notevolmente ridotti e una maggiore flessibilità, rendendoli ideali per applicazioni ad alta velocità come la trasmissione dati in tempo reale e la connettività Internet globale.
+\todo{Scrivere meglio questa parte finale}
 Questo cambio di paradigma insieme al quantum computer hanno portato diversi enti, tra cui l'Agenzia Spaziale Europea (ESA), ad affrontare nuove sfide.
 
 \begin{figure}[h!]
@@ -32,6 +36,9 @@ Questo cambio di paradigma insieme al quantum computer hanno portato diversi ent
         \draw[thick, dashed, geo] (0,0) circle (4.2cm);
         \draw[thick, dashed, leo] (0,0) circle (3cm);
         \filldraw[fill=mare,] (0,0) circle (2.2cm);
+
+        \path[draw, decoration={text along path, text={$2.000km$}, text align=center}, decorate] (0,0) (180:2.8cm) arc (180:360:2.8cm);
+        \path[draw, decoration={text along path, text={$36.000km$}, text align=center}, decorate] (0,0) (180:4cm) arc (180:360:4cm);
 
         \node at (-2.5,2) {\includegraphics[width=1cm]{Figures/satellite.png}}; % Sostituisci 'your_image.png' con il percorso della tua immagine
         \node at (3.2,3) {\includegraphics[width=1cm, angle=270]{Figures/satellite.png}}; % Sostituisci 'your_image.png' con il percorso della tua immagine
@@ -74,20 +81,24 @@ Occorre ridurre al minimo l'impatto sulle risorse in modo tale che gli algoritmi
 
 \subsection{Stato Attuale}
 
-LEON3: Un processore open-source basato sull'architettura SPARC, progettato dall'Agenzia Spaziale Europea (ESA). È utilizzato in numerose missioni satellitari europee.
-ESA Power Interface Standard (ECSS-E-ST-20C): Definisce le modalità con cui l'alimentazione elettrica viene distribuita all'interno dei satelliti, assicurando efficienza e affidabilità anche con limitate risorse energetiche.
-Per la compattezza invece: Cubesat Standard (1U, 2U, 3U, etc.): Molti satelliti moderni, soprattutto per missioni commerciali o di ricerca, seguono il formato Cubesat, che definisce dimensioni compatte modulari (10x10x10 cm per 1U) per ridurre i costi e semplificare il lancio e la costruzione dei satelliti.
+Per capire quale è la differenza in termini di hardware e software rispetto a quelli a cui siamo abiutati 
+introduciamo quelli che sono gli attuali standard impiegati in questo settore.
 
-Per quanto riguarda il software in particolare quello che interessa a noi è RTEMS (Real-Time Executive for Multiprocessor Systems): È un sistema operativo open-source e real-time progettato per funzionare in ambienti estremamente vincolati, come i satelliti. RTEMS è utilizzato in molte missioni spaziali per la sua capacità di gestire operazioni critiche in tempo reale. Basato su GNU/Linux
-
-
-Triple Modular Redundancy (TMR): Molti sistemi critici spaziali utilizzano la ridondanza tripla modulare, eseguendo lo stesso calcolo su tre processori indipendenti e confrontando i risultati per correggere eventuali errori dovuti a radiazioni o guasti.
+\begin{itemize}
+    \item Tra i processori utilizzati abbiamo \textit{LEON3}, un processore open-source basato sull'architettura SPARC, progettato dall'ESA. 
+    \item ESA Power Interface Standard (ECSS-E-ST-20C): definisce come deve avvenire la distribuituzione dell'alimentazione elettrica all'interno dei satelliti.
+    \item Cubesat Standard: definisce dimensioni compatte modulari (10x10x10 cm per 1U) per ridurre i costi e semplificare il lancio e la costruzione dei satelliti.
+    \item Triple Modular Redundancy (TMR): nei sistemi critici spaziali si utilizza la ridondanza tripla modulare, per garantire l'affidabilità dei risultati tramite sistemi di voting.
+\end{itemize}
+\noindent
+Il sistema operativo utilizzato in queste applicazioni è RTEMS (Real-Time Executive for Multiprocessor Systems) che le caratteristiche di essere open-source, real-time e basato su GNU/Linux.
+\todo{se si trova riportare qualche riferimento}
 
 %-----------------------------------
 %	SECTION 2
 %-----------------------------------
-\section{Come procediamo}
-
+\subsection{Sfide}
+\todo{Scrivere bene quelle che sono le problematiche e come intendiamo affrontarle}
 Come detto con il post-quantum tutto diventa più pesante e più lento, in generale.
 Andiamo a caratterizzare quella che è l'impronta computazionale degli algoritmi nel caso desktop rispetto a quella di quelli classici per 
 vederne le differenze, se queste sono molto evidenti già nel caso simulato allora non ha neanche senso andarle a considerare in un'ambiente
