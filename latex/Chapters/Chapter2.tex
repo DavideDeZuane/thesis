@@ -296,7 +296,12 @@ Questo approccio consente una gestione scalabile delle chiavi.
 Gli schemi asimmetrici sono vulnerabili alla minaccia del quantum computer
 Parlare degli algoritmi di Shor e ....
 
+Per rispondere a questa minaccia emergente, si stanno sviluppando algoritmi
+post-quantum (PQC), progettati per resistere agli attacchi di potenti computer
+quantistici.
 
+\todo{Formalizzare per bene questa parte in particolare gli effetti di utilizzo di questi algoritmi di PQC}
+\todo{Per far comprendere le differnze riportare qualche confronto tra per esempio DH, Kyber, HQC, altri}
 
 \subsection{Sicurezza}
 
@@ -333,8 +338,7 @@ Il NIST (National Institute of Standards and Technology) ha introdotto livelli d
 \newpage
 \section{Applicazioni}
 
-Le reti, per loro natura, rappresentano un mezzo di comunicazione
-intrinsecamente insicuro, soprattutto quando operano in modalità broadcast. In
+Le reti sono un  mezzo di comunicazione intrinsecamente insicuro, soprattutto quando operano in modalità broadcast. In
 questo contesto, la crittografia riveste un ruolo cruciale nel garantire la
 sicurezza dei dati scambiati tra entità remote. I crittosistemi, ossia le
 applicazioni crittografiche, integrano algoritmi di cifratura, autenticazione e
@@ -398,7 +402,7 @@ applicazione a livello più alto.
 
 \section{IPsec}
 
-IPsec (Internet Protocol Security) è un insieme di protocolli standard, rappresentati in \textit{Figura \ref{fig:ipsec-suite}}, utilizzati
+IPsec (Internet Protocol Security) è un insieme di protocolli standard, suddivisi tra core e ausiliari in \textit{Figura \ref{fig:ipsec-suite}}, utilizzati
 in modo tale da fornire meccanismi per l'autenticazione, la cifratura e l'integrità dei dati trasmessi tra due o più
 dispositivi, proteggendo così le comunicazioni IP da intercettazioni e manomissioni.
 
@@ -446,7 +450,7 @@ Tuttavia affinchè IPsec possa garantire la sicurezza è necessario che mantenga
     \item \textit{Replay Protection}: per evitare attacchi di tipo reply, IPsec tiene  traccia
     dei numeri di sequenza dei pacchetti, un'inforamzione di stato che va mantenuta per ogni connessioni
     e che IP non fa nativamente.
-    \item \textit{Connessioni Multiple}: in uno scenario di rete complesso, un singolo dispositivo potrebbe avere più connessioni sicure in corso simultaneamenamente, ognuna
+    \item \textit{Connessioni Multiple}: in uno scenario di rete complesso, un singolo dispositivo potrebbe avere più connessioni sicure in corso simultanea\-mente, ognuna
     delle quali ha i propri parametri di sicurezza. IPsec deve tenere traccia di queste informazioni per sapere come trattare i pacchetti in entrata e uscita in base alla connessione a cui appartengono.
     \item \textit{Protezione}: i protocolli di sicurezza AH e ESP richiedono di conoscere le chiavi crittografiche corrette e gli algoritmi utilizzati per cifrare e decifrare i pacchetti.
 \end{itemize}

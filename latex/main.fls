@@ -304,6 +304,14 @@ INPUT /usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlib
 INPUT /usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypositioning.code.tex
 INPUT /usr/share/texmf-dist/tex/latex/tools/calc.sty
 INPUT /usr/share/texmf-dist/tex/latex/tools/calc.sty
+INPUT /usr/share/texmf-dist/tex/latex/microtype/microtype.sty
+INPUT /usr/share/texmf-dist/tex/latex/microtype/microtype.sty
+INPUT /usr/share/texmf-dist/tex/latex/microtype/microtype-pdftex.def
+INPUT /usr/share/texmf-dist/tex/latex/microtype/microtype-pdftex.def
+INPUT /usr/share/texmf-dist/tex/latex/microtype/microtype-pdftex.def
+INPUT /usr/share/texmf-dist/tex/latex/microtype/microtype.cfg
+INPUT /usr/share/texmf-dist/tex/latex/microtype/microtype.cfg
+INPUT /usr/share/texmf-dist/tex/latex/microtype/microtype.cfg
 INPUT /usr/share/texmf-dist/tex/latex/listings/lstlang1.sty
 INPUT /usr/share/texmf-dist/tex/latex/listings/lstlang1.sty
 INPUT /usr/share/texmf-dist/tex/latex/listings/lstlang1.sty
@@ -428,6 +436,9 @@ INPUT ./main.bbl
 INPUT ./main.bbl
 INPUT ./main.bbl
 INPUT main.bbl
+INPUT /usr/share/texmf-dist/tex/latex/microtype/mt-ppl.cfg
+INPUT /usr/share/texmf-dist/tex/latex/microtype/mt-ppl.cfg
+INPUT /usr/share/texmf-dist/tex/latex/microtype/mt-ppl.cfg
 INPUT ./main.out
 INPUT ./main.out
 INPUT main.out

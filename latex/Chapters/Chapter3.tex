@@ -70,7 +70,7 @@ Rispetto al un contesto terrestre, dove le risorse computazionali sono abbondant
 Le principali sfide per gli sviluppatori sono:
 
 \begin{itemize}
-    \item \textit{Semplicità e ottimizzazione}: gli algoritmi devono essere semplici e ottimizzati per funzionare su hardware con risorse limitate.
+    \item \textit{Semplicità e ottimizzazione}: gli algoritmi devono essere semplici e ottimiz\-zati per funzionare su hardware con risorse limitate.
     \item \textit{Parallelismo limitato}: non è possibile sfruttare un alto grado di parallelismo computazionale. Le operazioni devono essere eseguite in modo lineare o con limitato parallelismo, aumentando la complessità della progettazione.
     \item \textit{Affidabilità assoluta}: il software deve essere robusto, sicuro e testato ampiamente in modo tale che possibile errori non abbiano conseguenza catastrofiche.
 \end{itemize}
@@ -99,7 +99,21 @@ Il sistema operativo utilizzato in queste applicazioni è RTEMS (Real-Time Execu
 %-----------------------------------
 \subsection{Sfide}
 \todo{Scrivere bene quelle che sono le problematiche e come intendiamo affrontarle}
-Come detto con il post-quantum tutto diventa più pesante e più lento, in generale.
+\noindent
+Per rendere le comunicazioni satellitari sicure ad attacchi Qauntum occorre adottare algoritmi più complessi.
+Questi utilimi, tuttavia, oltre a richiedere più memoria per la gestione delle chiavi,
+comportano un incremento significativo del carico di calcolo. Le sfide da affrontare sono:
+
+\begin{itemize}
+    \item  Aumento della complessità computazionale: incremento delle dimensioni delle chiavi e la complessità degli algoritmi portano a un aumento del carico
+    computazionale. Questo impone vincoli importanti su sistemi già limitati in termini di potenza computazionale, come i satelliti. 
+    \item Incremento della larghezza di banda necessaria: oltre all'aumento di carico si ha anche magiore utilizzo della larghezza di banda, che in comunicazioni satellitari risuta già limitata.
+    \item Compatibilità retroattiva: compatibilità con i sistemi esistenti. Tramite l'utiizzo di soluzioni ibride, dove algoritmi classici convivono con quelli post-quantum.
+\end{itemize}
+
+\section{Benchmarking}
+
+Per determinare se è possibile applicare algoritmi di PQC nel contesto satellitare occorre caratterizzarne l'impronta computazionale.
 Andiamo a caratterizzare quella che è l'impronta computazionale degli algoritmi nel caso desktop rispetto a quella di quelli classici per 
 vederne le differenze, se queste sono molto evidenti già nel caso simulato allora non ha neanche senso andarle a considerare in un'ambiente
 ancora più limitato.
@@ -107,9 +121,10 @@ ancora più limitato.
 Considerereremo nelle nostre prove quelli che sono i finalisti del processo di standardizzazione del NIST, in particolare la loro implementazione
 forniata da \textbf{open quantum safe} (oqs). Vedremo il loro utilizzo nell'implementazione del protocollo IKEv2, Strongswan.
 
-\section{Benchmarking}
 Come abbiamo effettuato il benchmarking
 Quindi introdurre tutta la parte di scripting e di automatizazione tramite docker
+
+
 
 \section{Tuttavia}
 
