@@ -24,8 +24,7 @@ headsepline, % Uncomment to get a line under the header
 \usepackage[autostyle=true]{csquotes} % Required to generate language-dependent quotes in the bibliography
 \usepackage{xcolor}
 \usepackage{listings}
-%library for networks device
-\usepackage{moeptikz}
+\usepackage{moeptikz} %library for network device
 \usepackage{tikz}
 \usepackage{comment}
 \usepackage{alltt} 
@@ -34,6 +33,9 @@ headsepline, % Uncomment to get a line under the header
 \usepackage{xcolor} 
 \usepackage{todonotes} 
 \usepackage{microtype} %pergestire meglio l'overflow
+\usepackage{array} 
+\usepackage{multirow}
+\usepackage{pgfplots}
 
 \lstset{
 language=C, 
@@ -61,6 +63,7 @@ morekeywords=[3]{return, int, void}
 \usetikzlibrary{arrows.meta} 
 \usetikzlibrary{positioning, arrows.meta}
 \usetikzlibrary{backgrounds,calc,shadings,shapes.arrows,shapes.symbols,shadows}
+\usetikzlibrary{shapes.geometric, arrows}
 \usetikzlibrary{matrix, decorations.pathreplacing}
 % Definizione del comando per l'evidenziazione del codice inline
 \newcommand{\inlinecode}[1]{\colorbox{gray!10}{\texttt{#1}}}
@@ -266,7 +269,7 @@ $\omega$ & angular frequency & \si{\radian} \\
 
 % Include the chapters of the thesis as separate files from the Chapters folder
 % Uncomment the lines as you write the chapters
-
+\renewcommand{\arraystretch}{1.2}
 \include{Chapters/Chapter1}
 \include{Chapters/Chapter2} 
 \include{Chapters/Chapter3}

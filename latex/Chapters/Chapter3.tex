@@ -15,7 +15,7 @@ quello delle comunicazioni satellitare e di quali sono le attuali tecnologie uti
 \section{Comunicazioni Satelliari}
 
 
-Le comunicazioni satellitari sono una fondamenta delle infrastrutture moderne, abilitando una vasta gamma di servizi.
+Le comunicazioni satellitari sono fondamentali per le infrastrutture moderne, poichè abilitano una vasta gamma di servizi.
 Negli ultimi decenni, con l'aumento della domanda di connettività globale e l'espansione delle reti di comunicazione, i satelliti sono diventati strumenti essenziali per garantire una copertura estesa.
 L'emergere delle costellazioni di satelliti in orbita bassa (LEO - Low Earth Orbit) sta cambiando il paradigma delle comunicazioni satellitari, offrendo vantaggi significativi rispetto ai satelliti geostazionari (GEO), un confronto tra la differenza di distanze è mostrato in \textit{Figura \ref{fig:orbite}}. 
 %Mentre i satelliti GEO forniscono una copertura stabile, i satelliti LEO consentono Round Time Trip (RTT) notevolmente ridotti e una maggiore flessibilità, rendendoli ideali per applicazioni ad alta velocità come la trasmissione dati in tempo reale e la connettività Internet globale.
@@ -58,8 +58,8 @@ L'ambiente spaziale, caratterizzato da radiazioni intense, temperature estreme e
 Tra i principali vincoli per l'hardware satellitare troviamo:
 
 \begin{itemize}
-    \item \textit{Resistenza alle radiazioni}: i componenti elettronici devono essere progettati per resistere all'esposizione costante alle radiazioni spaziali
-    \item \textit{Basso consumo energetico}: l'energia disponibile per le operazioni\\ computazionali è limitata, quindi si usano processori a basso consumo e ad alta efficienza energetica, sacrificando potenza di calcolo.
+    \item \textit{Resistenza alle radiazioni}: i componenti elettronici sono progettati per resistere all'esposizione costante alle radiazioni spaziali.
+    \item \textit{Basso consumo energetico}: l'energia disponibile per le operazioni risulta limitata, quindi si usano processori a basso consumo e ad alta efficienza energetica, sacrificando potenza di calcolo.
     \item \textit{Elaborazione in tempo reale}: per alcune tipologie di servizi è necessario che il processamento avvenga in tempo reale.
     \item \textit{Compattezza}: a causa dello spazio limitato a bordo di un satellite, i componenti hardware devono essere progettati in modo estremamente compatto.
 \end{itemize}
@@ -71,7 +71,7 @@ Le principali sfide per gli sviluppatori sono:
 
 \begin{itemize}
     \item \textit{Semplicità e ottimizzazione}: gli algoritmi devono essere semplici e ottimiz\-zati per funzionare su hardware con risorse limitate.
-    \item \textit{Parallelismo limitato}: non è possibile sfruttare un alto grado di parallelismo computazionale. Le operazioni devono essere eseguite in modo lineare o con limitato parallelismo, aumentando la complessità della progettazione.
+    \item \textit{Parallelismo limitato}: le operazioni devono essere eseguite in modo lineare o con limitato parallelismo, aumentando la complessità della progettazione.
     \item \textit{Affidabilità assoluta}: il software deve essere robusto, sicuro e testato ampiamente in modo tale che possibile errori non abbiano conseguenza catastrofiche.
 \end{itemize}
 
@@ -105,7 +105,7 @@ Questi utilimi, tuttavia, oltre a richiedere più memoria per la gestione delle 
 comportano un incremento significativo del carico di calcolo. Le sfide da affrontare sono:
 
 \begin{itemize}
-    \item  Aumento della complessità computazionale: incremento delle dimensioni delle chiavi e la complessità degli algoritmi portano a un aumento del carico
+    \item  Aumento complessità computazionale: l'incremento delle dimensioni delle chiavi e della complessità degli algoritmi portano a un aumento del carico.
     computazionale. Questo impone vincoli importanti su sistemi già limitati in termini di potenza computazionale, come i satelliti. 
     \item Incremento della larghezza di banda necessaria: oltre all'aumento di carico si ha anche magiore utilizzo della larghezza di banda, che in comunicazioni satellitari risuta già limitata.
     \item Compatibilità retroattiva: compatibilità con i sistemi esistenti. Tramite l'utiizzo di soluzioni ibride, dove algoritmi classici convivono con quelli post-quantum.
@@ -113,23 +113,232 @@ comportano un incremento significativo del carico di calcolo. Le sfide da affron
 
 \section{Benchmarking}
 
-Per determinare se è possibile applicare algoritmi di PQC nel contesto satellitare occorre caratterizzarne l'impronta computazionale.
-Andiamo a caratterizzare quella che è l'impronta computazionale degli algoritmi nel caso desktop rispetto a quella di quelli classici per 
+Per determinare se è possibile applicare algoritmi di PQC nel contesto satel\-litare occorre capire quale è il loro impatto sui protocolli di comunicazione.
+Prima lo facciamo nel caso desktop rispetto a quella di quelli classici per 
 vederne le differenze, se queste sono molto evidenti già nel caso simulato allora non ha neanche senso andarle a considerare in un'ambiente
 ancora più limitato.
 
-Considerereremo nelle nostre prove quelli che sono i finalisti del processo di standardizzazione del NIST, in particolare la loro implementazione
-forniata da \textbf{open quantum safe} (oqs). Vedremo il loro utilizzo nell'implementazione del protocollo IKEv2, Strongswan.
+\subsection{Ambiente}
 
-Come abbiamo effettuato il benchmarking
-Quindi introdurre tutta la parte di scripting e di automatizazione tramite docker
+L'ambiente di test, descritto in \textit{Tabella \ref{tab:env}}, è stato progettato in modo da isolare i singoli servizi all'interno di
+container, facilitando l'analisi del carico e delle risorse consumate da ciascuno di questi.
 
 
+\begin{table}[htbp] 
+    \centering 
+    \begin{tabular}{p{4cm} p{8cm}} 
+        \toprule
+        \textbf{Componente} & \textbf{Descrizione} \\ 
+        \midrule
+        \textbf{Hardware} & \\ 
+        CPU & Ryzen 7-5825U (8 core, 3.8 GHz) \\ 
+        RAM & 24 GB DDR4 \\ 
+        Storage & 1024 GB SSD NVMe \\ 
+        \textbf{OS} & \\ 
+        Distribuzione & Arch Linux \\
+        Kernel & Linux 6.10.10-arch1-1 \\ 
+        \textbf{Software} & \\ 
+        Linguaggio & Bash Script \\
+        Strongswan & 6.0.0beta Post-Quantum IKEv2 Daemon \\
+        liboqs & Version 0.9.2 \\
+        Docker & Version 24.0.6 \\ 
+        \hline 
+    \end{tabular} 
+    \caption{Descrizione dell'ambiente di test virtualizzato} 
+    \label{tab:env}
+\end{table}
+
+\noindent
+La libreria \texttt{liboqs} fa parte del progetto open-source \textit{OpenQuantumSafe} (OQS).
+Il quale a rendere disponibile l'infrastruttura crittografica necessaria per proteggere i sistemi informatici
+dall'avvento dei computer quantistici. L'obiet\-tivo del progetto è quello di fornire:
+
+\begin{itemize}
+    \item API standardizzate per supportare lo scambio chiavi e la firma digitale. 
+    \item Modularità, facilitando l'aggiunta di nuovi algoritmi. 
+    \item Prestazioni ottimizzate per diverse architetture hardware.
+\end{itemize}
+
+\noindent
+Si tratta di una raccolta di implementazioni di algoritmi crittografici post-quantum, KEM e SIG, e strumenti per integrarli in protocolli di sicurezza esistenti per sperimentare e testare il loro impatto.
+La versione di Strongswan che andiamo considerare ha integrato al suo interno la libreria e quindi ci consente di vedere 
+gli effetti di quesi algoritmi sul protocollo IKEv2.
+
+
+\subsection{Metodologia}
+
+Per ragioni progettuali e di portabilità del codice, il servizio Strongswan è stato 
+containerizzato tramite l'utilizzo di Docker. Ciò consente di avere due istanze dello stesso
+servizio in esecuzione contemporaneamente che comunicano attaverso un'interfaccia virtuale. 
+La gestione di queste istanze avviene tramite \texttt{docker-compose}, una rappresentazione
+logica è la seguente.
+
+\begin{center}
+    \begin{verbatim}
+            +-------+                         +--------+ 
+            | carol | === Virtual Interf. === |  moon  |
+            +-------+                         +--------+ 
+    \end{verbatim}
+\end{center}
+
+\noindent
+In secondo luogo siamo andati a definire quali sono le configurazioni da confrontare, riportate in 
+\textit{Tabella \ref{tab:cipher_suites}}, ognuna delle quali è caratterizzata da:
+
+\begin{itemize}
+    \item \textbf{Chiper suite}: un'insieme di algoritmi crittografici che determinano la sicurezza di una connessione in un protocollo di rete.
+    Le cipher suite sono generalmente denominate seguendo una convenzione di naming standardizzata che riflette i componenti inclusi nella suite.
+    \begin{center}
+        \texttt{<ENCR>\text{-}<INTEG>\text{-}<KEM>}
+    \end{center}
+
+    \item \textbf{Authentication Method}: dato che stiamo considerando algoritmi post-quantum di firma
+    utilizziamo quella mediante certificati. Quindi per ogni schema di firma andiamo a definire un root certificate
+    ed uno per ogni entità.
+\end{itemize}
+
+\noindent
+Nella nostra analisi, abbiamo scelto tre configurazioni distinte per le cipher
+suite, ognuna progettata per affrontare specifici aspetti delle tecnologie
+critto\-grafiche attuali e future.
+
+\noindent
+La prima configurazione utilizza esclusivamente di \textit{primitive classiche}. 
+Questa scelta rappresenta il benchmark attuale delle tecnologie di crittografia e fornisce una base
+solida per confrontare le altre configurazioni. La seconda
+configurazione è composta da \textit{primitive post-quantum}, e consente di
+analizzare le prestazioni e l'efficacia delle soluzioni crittografiche
+post-quantum nel contesto del protocollo. Infine, abbiamo implementato
+una \textit{onfigurazione Ibrida}, la quale combina elementi delle primitive
+classiche e post-quantum. Questa scelta è progettata per garantire la transizione 
+graduale verso l'utilizzo esclusivo di tecnologie quantistiche.
+
+\begin{comment}
+    
+    \begin{itemize}
+    \item \textit{Configurazione Classica}: questa scelta rappresenta il benchmark attuale delle tecnologie
+    di crittografia e fornisce una base solida per confrontare le altre configurazioni.
+    \item \textit{Configurazione PQ}: questa configurazione permette di
+    analizzare le pres\-tazioni e l'efficacia delle soluzioni crittografiche
+    post-quantum nel conte\-sto del protocollo.
+    \item \textit{Configurazione Ibrida}: questa configurazione è progettata
+    per garantire una transizione verso il solo utilizzo di tecnologie
+    quantistiche. 
+\end{itemize}
+\end{comment}
+
+\renewcommand{\arraystretch}{1.2}
+\todo{gli altri algoritmi tipo hqc, bike,...}
+\begin{table}[h]
+    \centering 
+    \begin{tabular}{cll} 
+        \toprule
+        \textbf{Name} & \textbf{Chiper Suites} & \textbf{Firma Digitale}\\ 
+        \midrule 
+        \texttt{A1} & \texttt{aes128ctr\text{-}sha256\text{-}ecp256} & \texttt{ECDSA}         \\          
+        \texttt{B1} & \texttt{aes128ctr\text{-}sha256\text{-}kyber1} & \texttt{dilithium2}                 \\ 
+        \texttt{C1} & \texttt{aes128ctr\text{-}sha256\text{-}ecp256\text{-}ke1\_kyber1} & \texttt{falcon512} \\ 
+        \hline
+        \texttt{A3} & \texttt{aes192ctr\text{-}sha384\text{-}ecp384}         &  \texttt{ECDSA}        \\ 
+        \texttt{B3} & \texttt{aes192ctr\text{-}sha384\text{-}kyber3}          &  \texttt{dilithium3}      \\ 
+        \texttt{C3} & \texttt{aes192ctr\text{-}sha384\text{-}ecp384\text{-}ke1\_kyber3} & \texttt{falcon1024} \\
+        \hline
+        \texttt{A5} & \texttt{aes256ctr\text{-}sha512\text{-}ecp521}              &  \texttt{ECDSA}    \\ 
+        \texttt{B5} & \texttt{aes256ctr\text{-}sha512\text{-}kyber5}               &  \texttt{dilithium5}   \\ 
+        \texttt{C5} & \texttt{aes256ctr\text{-}sha512\text{-}ecp521\text{-}ke1\_kyber5} & \texttt{falcon1024} \\  
+        \hline
+    \end{tabular}
+    \caption{Cipher Suites suddivise per Livello di Sicurezza} 
+    \label{tab:cipher_suites} 
+\end{table}
+
+\noindent
+
+
+
+\begin{figure}[h!]
+    \centering
+    \begin{tikzpicture}[node distance=2cm]
+        % Definizione dei blocchi 
+        \tikzset{
+            customnode/.style={rectangle, draw, minimum width=3cm, minimum height=1cm, inner sep=5pt},
+            decisionnode/.style={diamond, draw, aspect=2, minimum width=3cm, inner sep=5pt}
+        }
+        \node (start)  [customnode, rounded corners] {Inizio}; 
+	    \node (param1) [customnode, left=of start] {Conn: <nome>}; 
+	    \node (param2) [customnode, right=of start] {Iterazioni: <num>}; 
+        \node (docker) [below of=start, customnode] {Avvio ambiente}; 
+        \node (config) [below of=docker, customnode] {Avvio della Conn};
+        \node (sniff)  [below of=config, customnode] {Sniffing su interfaccia virtuale}; 
+        \node (parsing)  [below of=sniff, customnode] {Parsing pacchetti e tempi}; 
+        \node (condition) [below of=parsing, decisionnode] {Iterazioni=0}; 
+        \node (result)  [below of=condition, customnode] {Stampa dei risultati}; 
+        \node (end) [customnode, rounded corners, below of=result] {Fine};
+        \draw [-, dashed] (param1) -- (start); 
+        \draw [-, dashed] (param2) -- (start); 
+        \draw [->] (start) -- (docker); 
+        \draw [->] (docker) -- (config); 
+        \draw [->] (config) -- (sniff);     
+        \draw [->] (sniff) -- (parsing); 
+        \draw [->] (parsing) -- (condition); 
+        \draw [->] (condition) -- node[right]{Sì} (result);
+        \draw [->] (result) -- (end);
+        \draw [->, rotate=270] (condition.east) -- node[above]{No} ++(0,4)  -| (config.east);
+    \end{tikzpicture}
+    \caption{Diagramma di flusso dello script}
+    \label{fig:flow}
+\end{figure}
+
+\noindent
+A questo punto devo andare a parlare della parte dello script
+
+\begin{comment}
+    Metriche utilizzate (Throughput, Tempo totale di esecuzione)
+    Come ho misurato le performance
+    
+\end{comment}
+
+
+\newpage
+
+\subsection{Risutlati}
+
+Le metriche di maggiore interesse per il nostro studio sono quelle che riguardano, il tempo complessivo per stabilire la SA. 
+Non ci interessa il tempo di elaborazione del singolo algoritmo, poichè queste informazioni sono già fornite in maniera esaustiva
+dalla libreria openquantumsafe e inoltre questi tempi sono trascurabili rispetto all'RTT.
+
+Confrontare nella fase auth l'utilizzo di schemi classici rispetto a quelli quantum
+
+
+E il numero di byte che occorre scambiarsi per generare la SA.
+
+\todo{grafico riassuntivo che riporta il confronto tra le varie configurazioni, uno per i tempi e uno per i pacchetti}
+
+\begin{figure} 
+    \centering 
+    \begin{tikzpicture} 
+        \begin{axis}[ 
+            ybar, % Grafico a
+            symbolic x coords={A, B, C, D}, % Etichette sull'asse x
+            xtick=data, % Etichette dell'asse x corrispondono ai dati 
+            ymin=0, % Valore
+            ylabel={Valori}, % Etichetta dell'asse y 
+            xlabel={Categorie}, 
+            bar width=0.5cm, % Larghezza delle barre 
+            nodes near coords,
+            enlarge x limits=0.15 % Spazio aggiuntivo agli estremi
+        ] 
+        \addplot coordinates {(A,3) (B,7) (C,5) (D,9)}; 
+        \end{axis}
+    \end{tikzpicture} 
+    \caption{Esempio di istogramma con dati fittizi.} 
+\end{figure}
 
 \section{Tuttavia}
 
-Notiamo che non ci sono enormi differenze in termini di tempi ma tuttavia notiamo una notevole differenza
-in termini della dimensione. E in contesto di questo tipo non è auspicabile
+Notiamo che non ci sono enormi differenze in termini di tempi ma è presente un 
+notevole aumento in termini della dimensione in particolare per quanto riguarda l'autenticazione.
+E in contesto di questo tipo non è auspicabile
 
 Cercando di trovare possibili soluzioni, ci siamo imbattuti su quello che è minimal IKE ovvero
 una versione di IKE applicabile in scenari soggetti a constraint di risorse simili a quelli presenti nello spazio.
@@ -142,5 +351,4 @@ Di questo trattiamo nel prossimo capitolo
 %-----------------------------------
 %	SECTION 3
 %-----------------------------------
-
 

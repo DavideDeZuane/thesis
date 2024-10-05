@@ -68,3 +68,49 @@ Dunque può contenere molteplici proposte, le quali devono essere ordinate per p
     \item Diffie-Hellman Group (KE)
     \item PQ KEM 
 \end{itemize}
+
+
+
+\newpage
+
+\begin{lstlisting}
+    services: 
+        moon: 
+            build: ./ 
+            container\_name: moon 
+            cap\_add: 
+                - NET\_ADMIN 
+                - SYS\_ADMIN 
+                - SYS\_MODULE 
+            stdin\_open: true 
+            tty: true 
+            volumes: 
+                - ./moon:/etc/swanctl 
+                - ./strongswan.conf:/etc/strongswan.conf 
+            networks: 
+                internet:
+                    ipv4\_address: 192.168.0.2 
+                intranet: 
+                    ipv4\_address: 10.1.0.2 
+        
+        carol: 
+            build: ./ 
+            container\_name: carol 
+            depends\_on: 
+                - moon 
+            cap\_add: 
+                - NET\_ADMIN 
+                - SYS\_ADMIN 
+                - SYS\_MODULE 
+            stdin\_open: true 
+            tty: true 
+            volumes: 
+                - ./carol:/etc/swanctl 
+                - ./strongswan.conf:/etc/strongswan.conf 
+            networks: 
+                internet:
+                    ipv4\_address: 192.168.0.3
+    
+    networks: internet: ipam: driver: default config: - subnet: 192.168.0.0/24
+    intranet: ipam: driver: default config: - subnet: 10.1.0.0/16
+\end{lstlisting}
