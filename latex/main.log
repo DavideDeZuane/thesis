@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Arch Linux) (preloaded format=pdflatex 2024.9.29)  7 OCT 2024 11:42
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Arch Linux) (preloaded format=pdflatex 2024.9.29)  7 OCT 2024 17:49
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1031,7 +1031,7 @@ package with kernel methods
 )
 Package scrhack Info: hyperref hack deactivated because of
 (scrhack)             detection of hyperref version, that doesn't
-(scrhack)             need that hack, on input line 139.
+(scrhack)             need that hack, on input line 136.
 Package hyperref Info: Driver (autodetected): hpdftex.
  (/usr/share/texmf-dist/tex/latex/hyperref/hpdftex.def
 File: hpdftex.def 2024-01-20 v7.01h Hyperref driver for pdfTeX
@@ -1050,37 +1050,41 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 28
 )
 \Hy@SectionHShift=\skip85
 )
-Package hyperref Info: Option `bookmarksopen' set `true' on input line 139.
-Package hyperref Info: Option `hypertexnames' set `false' on input line 139.
-Package hyperref Info: Option `colorlinks' set `true' on input line 139.
-Package hyperref Info: Option `unicode' set `true' on input line 139.
-Package hyperref Info: Option `breaklinks' set `true' on input line 139.
+Package hyperref Info: Option `bookmarksopen' set `true' on input line 136.
+Package hyperref Info: Option `hypertexnames' set `false' on input line 136.
+Package hyperref Info: Option `colorlinks' set `true' on input line 136.
+Package hyperref Info: Option `unicode' set `true' on input line 136.
+Package hyperref Info: Option `breaklinks' set `true' on input line 136.
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
-LaTeX Font Info:    Trying to load font information for T1+ppl on input line 139.
+LaTeX Font Info:    Trying to load font information for T1+ppl on input line 136.
  (/usr/share/texmf-dist/tex/latex/psnfss/t1ppl.fd
 File: t1ppl.fd 2001/06/04 font definitions for T1/ppl.
-) (./main.aux (./Chapters/Chapter1.aux) (./Chapters/Chapter2.aux) (./Chapters/Chapter3.aux) (./Chapters/Chapter4.aux) (./Appendices/AppendixA.aux))
+) (./main.aux (./Chapters/Chapter1.aux) (./Chapters/Chapter2.aux) (./Chapters/Chapter3.aux
+
+LaTeX Warning: Label `fig:dimensioni_pacchetti' multiply defined.
+
+) (./Chapters/Chapter4.aux) (./Appendices/AppendixA.aux))
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 139.
-LaTeX Font Info:    ... okay on input line 139.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 139.
-LaTeX Font Info:    ... okay on input line 139.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 139.
-LaTeX Font Info:    ... okay on input line 139.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 139.
-LaTeX Font Info:    ... okay on input line 139.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 139.
-LaTeX Font Info:    ... okay on input line 139.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 139.
-LaTeX Font Info:    ... okay on input line 139.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 139.
-LaTeX Font Info:    ... okay on input line 139.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 139.
-LaTeX Font Info:    ... okay on input line 139.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 139.
-LaTeX Font Info:    ... okay on input line 139.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 136.
+LaTeX Font Info:    ... okay on input line 136.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 136.
+LaTeX Font Info:    ... okay on input line 136.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 136.
+LaTeX Font Info:    ... okay on input line 136.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 136.
+LaTeX Font Info:    ... okay on input line 136.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 136.
+LaTeX Font Info:    ... okay on input line 136.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 136.
+LaTeX Font Info:    ... okay on input line 136.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 136.
+LaTeX Font Info:    ... okay on input line 136.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 136.
+LaTeX Font Info:    ... okay on input line 136.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 136.
+LaTeX Font Info:    ... okay on input line 136.
  (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count494
@@ -1140,13 +1144,13 @@ Package caption Info: End \AtBeginDocument code.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package scrbase Info: activating nil \abbrevname on input line 139.
+Package scrbase Info: activating nil \abbrevname on input line 136.
 \big@size=\dimen335
 Package biblatex Info: Trying to load language 'nil'...
 Package biblatex Info: ... file 'nil.lbx' not found.
 
 Package biblatex Warning: Language 'nil' not supported.
-(biblatex)                Using dummy definitions on input line 139.
+(biblatex)                Using dummy definitions on input line 136.
 
 Package biblatex Info: Input encoding 'utf8' detected.
 Package biblatex Info: Automatic encoding selection.
@@ -1159,22 +1163,22 @@ Package biblatex Info: Data encoding 'utf8' specified.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
 (./main.bbl)
-Package biblatex Info: Reference section=0 on input line 139.
-Package biblatex Info: Reference segment=0 on input line 139.
+Package biblatex Info: Reference section=0 on input line 136.
+Package biblatex Info: Reference segment=0 on input line 136.
 \c@lstlisting=\count500
-LaTeX Info: Redefining \microtypecontext on input line 139.
-Package microtype Info: Applying patch `item' on input line 139.
-Package microtype Info: Applying patch `toc' on input line 139.
-Package microtype Info: Applying patch `eqnum' on input line 139.
-Package microtype Info: Applying patch `footnote' on input line 139.
-Package microtype Info: Applying patch `verbatim' on input line 139.
+LaTeX Info: Redefining \microtypecontext on input line 136.
+Package microtype Info: Applying patch `item' on input line 136.
+Package microtype Info: Applying patch `toc' on input line 136.
+Package microtype Info: Applying patch `eqnum' on input line 136.
+Package microtype Info: Applying patch `footnote' on input line 136.
+Package microtype Info: Applying patch `verbatim' on input line 136.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 139.
+LaTeX Info: Redefining \showhyphens on input line 136.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -1183,9 +1187,9 @@ File: mt-ppl.cfg 2005/11/16 v1.6 microtype config. file: Palatino (RS)
 )
 
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable tick labels; missing features). Consider writing \pgfplotsset{compat=1.18} into your preamble.
- on input line 139.
+ on input line 136.
 
-Package hyperref Info: Link coloring ON on input line 139.
+Package hyperref Info: Link coloring ON on input line 136.
 (./main.out) (./main.out)
 \@outlinefile=\write7
 \openout7 = `main.out'.
@@ -1195,30 +1199,30 @@ Package hyperref Info: Link coloring ON on input line 139.
 <Figures/unvimplogo.png, id=213, 1027.84pt x 1027.84pt>
 File: Figures/unvimplogo.png Graphic file (type png)
 <use Figures/unvimplogo.png>
-Package pdftex.def Info: Figures/unvimplogo.png  used on input line 163.
+Package pdftex.def Info: Figures/unvimplogo.png  used on input line 160.
 (pdftex.def)             Requested size: 154.16934pt x 154.16934pt.
 [1
 
 
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc} <./Figures/unvimplogo.png>]
-LaTeX Font Info:    Trying to load font information for OT1+ppl on input line 193.
+LaTeX Font Info:    Trying to load font information for OT1+ppl on input line 190.
  (/usr/share/texmf-dist/tex/latex/psnfss/ot1ppl.fd
 File: ot1ppl.fd 2001/06/04 font definitions for OT1/ppl.
 )
-LaTeX Font Info:    Trying to load font information for OML+zplm on input line 193.
+LaTeX Font Info:    Trying to load font information for OML+zplm on input line 190.
  (/usr/share/texmf-dist/tex/latex/psnfss/omlzplm.fd
 File: omlzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OML/zplm.
 )
-LaTeX Font Info:    Trying to load font information for OMS+zplm on input line 193.
+LaTeX Font Info:    Trying to load font information for OMS+zplm on input line 190.
  (/usr/share/texmf-dist/tex/latex/psnfss/omszplm.fd
 File: omszplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMS/zplm.
 )
-LaTeX Font Info:    Trying to load font information for OMX+zplm on input line 193.
+LaTeX Font Info:    Trying to load font information for OMX+zplm on input line 190.
  (/usr/share/texmf-dist/tex/latex/psnfss/omxzplm.fd
 File: omxzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMX/zplm.
 )
-LaTeX Font Info:    Trying to load font information for OT1+zplm on input line 193.
+LaTeX Font Info:    Trying to load font information for OT1+zplm on input line 190.
  (/usr/share/texmf-dist/tex/latex/psnfss/ot1zplm.fd
 File: ot1zplm.fd 2002/09/08 Fontinst v1.914 font definitions for OT1/zplm.
 )
@@ -1229,7 +1233,7 @@ Package microtype Info: Loading generic protrusion settings for font family
  [2]
 
 Package csquotes Warning: No style for language 'nil'.
-(csquotes)                Using fallback style on input line 210.
+(csquotes)                Using fallback style on input line 207.
 
 [3] [4
 
@@ -1253,7 +1257,16 @@ Package csquotes Warning: No style for language 'nil'.
 \tf@toc=\write8
 \openout8 = `main.toc'.
 
- [10] (./main.lof)
+ [10] (./main.lof
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 17.
+ (/usr/share/texmf-dist/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
+)
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `cmtt' (encoding: T1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+)
 \tf@lof=\write9
 \openout9 = `main.lof'.
 
@@ -1261,7 +1274,7 @@ Package csquotes Warning: No style for language 'nil'.
 1: section
 [11
 
-] [12
+{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}] [12
 
 ] (./main.lot)
 \tf@lot=\write10
@@ -1385,39 +1398,39 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
-Overfull \hbox (8.79105pt too wide) in paragraph at lines 299--302
+Overfull \hbox (8.14473pt too wide) in paragraph at lines 297--299
+[]\T1/ppl/m/n/12 (-20) Gli schemi asimmetrici sono vulnerabili alla minaccia del quantum computer
+ []
+
+
+Overfull \hbox (8.79105pt too wide) in paragraph at lines 300--303
 []\T1/ppl/m/n/12 (-20) Per rispondere a questa minaccia emergente, si stanno sviluppando algoritmi
  []
 
 
 LaTeX Warning: Marginpar on page 9 moved.
 
-[9{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}] [10]
-Underfull \hbox (badness 10000) in paragraph at lines 341--347
+
+LaTeX Warning: Marginpar on page 9 moved.
+
+[9] [10]
+Underfull \hbox (badness 10000) in paragraph at lines 342--348
 
  []
 
-[11]
-LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 411.
- (/usr/share/texmf-dist/tex/latex/base/t1cmtt.fd
-File: t1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
-)
-Package microtype Info: Loading generic protrusion settings for font family
-(microtype)             `cmtt' (encoding: T1).
-(microtype)             For optimal results, create family-specific settings.
-(microtype)             See the microtype manual for details.
-
-Overfull \hbox (3.29047pt too wide) in paragraph at lines 447--449
+Missing character: There is no ; in font nullfont!
+[11] [12]
+Overfull \hbox (3.29047pt too wide) in paragraph at lines 450--452
 \T1/ppl/m/n/12 (-20) garantire la sicurezza è necessario che mantenga il contesto di ogni connessione,
  []
 
-[12]
-Overfull \hbox (0.45348pt too wide) in paragraph at lines 467--468
+
+Overfull \hbox (0.45348pt too wide) in paragraph at lines 470--471
 []\T1/ppl/m/it/12 (-20) Protocol Identifier\T1/ppl/m/n/12 (-20) : determina il tipo di protezione da applicare ai pacchetti,
  []
 
 [13]
-Overfull \hbox (9.85863pt too wide) in paragraph at lines 495--499
+Overfull \hbox (9.85863pt too wide) in paragraph at lines 498--502
 \T1/ppl/m/n/12 (-20) Tuttavia queste SA come si configurano?. IPsec prevede tecniche di negoziazione
  []
 
@@ -1425,42 +1438,42 @@ Overfull \hbox (9.85863pt too wide) in paragraph at lines 495--499
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 
-Overfull \hbox (2.1064pt too wide) in paragraph at lines 561--570
+Overfull \hbox (2.1064pt too wide) in paragraph at lines 564--573
  [][] 
  []
 
 [15]
-Overfull \hbox (0.81104pt too wide) in paragraph at lines 586--595
+Overfull \hbox (0.81104pt too wide) in paragraph at lines 589--598
  [][] 
  []
 
 [16]
-Overfull \hbox (13.07326pt too wide) in paragraph at lines 608--610
+Overfull \hbox (13.07326pt too wide) in paragraph at lines 611--613
 []\T1/ppl/m/n/12 (-20) Per esempio nel caso di autenticazione tramite pubkey nella fase di [][][][][][]
  []
 
 
-Overfull \hbox (0.6pt too wide) in paragraph at lines 644--647
+Overfull \hbox (0.6pt too wide) in paragraph at lines 647--650
 []\T1/ppl/m/n/12 (-20) Per evitare che nel trasferimento di grandi dati ciò avvenga viene introdotto
  []
 
 
-Overfull \hbox (2.18152pt too wide) in paragraph at lines 644--647
+Overfull \hbox (2.18152pt too wide) in paragraph at lines 647--650
 \T1/ppl/m/n/12 (-20) dimensione dei dati da trasferire ecceda la dimensione massima che causerebbe
  []
 
 [17]
-Overfull \hbox (2.39633pt too wide) in paragraph at lines 671--674
+Overfull \hbox (2.39633pt too wide) in paragraph at lines 674--677
 \T1/ppl/m/n/12 (-20) pubbliche QC-resistant, tuttavia in generale può essere utilizzzato per trasferire
  []
 
 
-Overfull \hbox (10.23259pt too wide) in paragraph at lines 675--677
+Overfull \hbox (10.23259pt too wide) in paragraph at lines 678--680
 []\T1/ppl/m/n/12 (-20) Permette di realizzare Multiple Key Exchange Gli scambi di chiave aggiuntivi
  []
 
 
-Overfull \hbox (41.36018pt too wide) in paragraph at lines 686--687
+Overfull \hbox (41.36018pt too wide) in paragraph at lines 689--690
 []\T1/ppl/m/n/12 (-20) flag [][][][][][]: il peer dice di supportare la frammentazione
  []
 
@@ -1474,35 +1487,52 @@ Overfull \hbox (41.36018pt too wide) in paragraph at lines 686--687
 
 ]
 Chapter 3.
-<Figures/satellite.png, id=548, 385.44pt x 385.44pt>
-File: Figures/satellite.png Graphic file (type png)
-<use Figures/satellite.png>
-Package pdftex.def Info: Figures/satellite.png  used on input line 43.
-(pdftex.def)             Requested size: 28.45274pt x 28.448pt.
+<Figures/satellite.png, id=553, 385.44pt x 385.44pt>
 File: Figures/satellite.png Graphic file (type png)
 <use Figures/satellite.png>
 Package pdftex.def Info: Figures/satellite.png  used on input line 44.
 (pdftex.def)             Requested size: 28.45274pt x 28.448pt.
-<Figures/europe.png, id=549, 501.875pt x 501.875pt>
+File: Figures/satellite.png Graphic file (type png)
+<use Figures/satellite.png>
+Package pdftex.def Info: Figures/satellite.png  used on input line 45.
+(pdftex.def)             Requested size: 28.45274pt x 28.448pt.
+<Figures/europe.png, id=554, 501.875pt x 501.875pt>
 File: Figures/europe.png Graphic file (type png)
 <use Figures/europe.png>
-Package pdftex.def Info: Figures/europe.png  used on input line 45.
+Package pdftex.def Info: Figures/europe.png  used on input line 46.
 (pdftex.def)             Requested size: 85.35826pt x 85.3559pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 1: section
-[21] [22 <./Figures/satellite.png> <./Figures/europe.png>] [23] [24] [25] [26]
+[21] [22 <./Figures/satellite.png> <./Figures/europe.png>]
+Overfull \hbox (0.63881pt too wide) in paragraph at lines 89--89
+\T1/ppl/m/n/12 (-20) maggiornemente 
+ []
+
+
+Overfull \hbox (0.63881pt too wide) in paragraph at lines 89--89
+\T1/ppl/m/n/12 (-20) maggiornemente 
+ []
+
+[23] [24] [25] [26]
 
 LaTeX Warning: Marginpar on page 27 moved.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[27] [28]) [29]
+[27] [28]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[29] [30]) [31]
 \openout2 = `Chapters/Chapter4.aux'.
 
- (./Chapters/Chapter4.tex [30
+ (./Chapters/Chapter4.tex [32
 
 
 
@@ -1510,7 +1540,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 ]
 Chapter 4.
 1: section
-[31]) [32]
+[33]) [34]
 \openout2 = `Appendices/AppendixA.aux'.
 
  (./Appendices/AppendixA.tex
@@ -1530,39 +1560,43 @@ Overfull \hbox (8.21465pt too wide) in paragraph at lines 33--43
  []
 
 1: section
-[33
+[35
 
 
 
 
-] [34] [35] [36]) [37]
+] [36] [37] [38]) [39]
 
-LaTeX Warning: Empty bibliography on input line 328.
+LaTeX Warning: Empty bibliography on input line 325.
 
 (./main.aux (./Chapters/Chapter1.aux) (./Chapters/Chapter2.aux) (./Chapters/Chapter3.aux) (./Chapters/Chapter4.aux) (./Appendices/AppendixA.aux))
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2020/03/25>
  ***********
+
+
+LaTeX Warning: There were multiply-defined labels.
+
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 9DE7718E1812E0D68D4A4231205EA5BF;5092.
+(rerunfilecheck)             Checksum: 0C7463C88D925175F8ACA5F55D239EB3;5092.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 60111 strings out of 476076
- 1426223 string characters out of 5793775
- 2233438 words of memory out of 5000000
- 80708 multiletter control sequences out of 15000+600000
- 631051 words of font info for 363 fonts, out of 8000000 for 9000
+ 60176 strings out of 476076
+ 1427534 string characters out of 5793775
+ 2240653 words of memory out of 5000000
+ 80764 multiletter control sequences out of 15000+600000
+ 631210 words of font info for 365 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 100i,21n,101p,1886b,2307s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 100i,21n,101p,1886b,2326s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/mathpazo/fplmri.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfss1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb></usr/share/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/palatino/uplbi8a.pfb></usr/share/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on main.pdf (57 pages, 591947 bytes).
+Output written on main.pdf (59 pages, 596202 bytes).
 PDF statistics:
- 815 PDF objects out of 1000 (max. 8388607)
- 693 compressed objects within 7 object streams
- 231 named destinations out of 1000 (max. 500000)
+ 831 PDF objects out of 1000 (max. 8388607)
+ 706 compressed objects within 8 object streams
+ 237 named destinations out of 1000 (max. 500000)
  118304 words of extra memory for PDF output out of 128383 (max. 10000000)
 

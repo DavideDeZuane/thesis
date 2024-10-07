@@ -293,6 +293,7 @@ Questo approccio consente una gestione scalabile delle chiavi.
 
 \subsubsection*{Attacchi Quantum}
 
+\todo{Dire della suddivisione in crittografia classica e post quantum}
 Gli schemi asimmetrici sono vulnerabili alla minaccia del quantum computer
 Parlare degli algoritmi di Shor e ....
 
@@ -363,15 +364,17 @@ in vari livelli, ciascuno con delle funzioni specifiche che non si sovrappongono
 
 \begin{figure}[h!]
     \centering 
-    \begin{tikzpicture} \matrix[matrix of nodes, nodes={anchor=center, minimum height=1cm}, 
-        column 1/.style={nodes={draw, minimum width=5cm}}, 
-        column 2/.style={nodes={align=left, text width=3cm}},
+    \begin{tikzpicture} 
+	\definecolor{applicationcolor}{RGB}{173,216,230};
+    \matrix[matrix of nodes, nodes={anchor=center, minimum height=1cm}, 
+        column 1/.style={nodes={draw, align=left, minimum width=6cm}}, 
+        column 2/.style={nodes={text width=3cm }},
         row sep=-\pgflinewidth, column sep=5mm] (Layers) { 
-            Application Layer & SSH, PGP \\
-            Transport Layer & TLS        \\ 
-            Network Layer & IPsec        \\ 
-            Data Link Layer  & L2TP      \\ 
-            Physical Layer & Hopping     \\ }; \foreach \i in {1,...,5}
+            \raggedright (L5) Application Layer & SSH, PGP \\
+            (L4) Transport Layer  & TLS        \\ 
+            (L3) Network Layer & IPsec        \\ 
+            (L2) Data Link Layer  & L2TP      \\ 
+            (L1) Physical Layer & Hopping     \\ }; \foreach \i in {1,...,5}
     \draw[->] ([xshift=-5mm]Layers-\i-1.east)--(Layers-\i-2.west);
     \end{tikzpicture} 
     \caption{Stack TCP/IP} 
@@ -410,18 +413,6 @@ dispositivi, proteggendo così le comunicazioni IP da intercettazioni e manomiss
 
 Come definito dall'\texttt{RFC 1825}, l'architettura di IPsec è composta dai seguenti componenti:
 
-\begin{itemize}
-    \item \textbf{AH (Authentication Header)}: si tratta di un protocollo di sicurezza che fornisce autenticazione e integrità dei dati,
-    garantendo che i pacchetti non vengano modificati durante la trasmissione. Non offre cifratura, quindi i dati rimangono in chiaro. 
-    \item \textbf{ESP (Encapsulating Security Payload)}: protocolo che fornisce cifratura per garantire la riservatezza dei dati,
-    oltre a integrità e autenticazione opzionale. ESP è il protocollo più utilizzato
-    per garantire sia sicurezza che riservatezza.
-    
-    \item \textbf{SA (Security Association)}: un insieme di parametri che definisce come i dati devono essere protetti durante la comunicazione tra due entità su una rete. Ogni SA contiene le informazioni necessarie per stabilire e mantenere una connessione sicura.
-    \item \textbf{IKE (Internet Key Exchange)}: protocollo che consente di negoziare, autenticare e distribuire dinamicamente le chiavi crittografiche che vengono poi impiegate dai protocolli di sicurezza per proteggere le comunicazioni.
-    \item \textbf{Algoritmi}: gli algoritmi crittografici e di hashing utilizzati per ottenere sicurezza.
-\end{itemize}
-
 \begin{figure}[!ht] 
     \centering 
     \scalebox{0.78}{
@@ -440,7 +431,19 @@ Come definito dall'\texttt{RFC 1825}, l'architettura di IPsec è composta dai se
     \caption{IPsec Protolocol Suite}
     \label{fig:ipsec-suite} 
 \end{figure}
+
+\begin{itemize}
+    \item \textbf{AH (Authentication Header)}: si tratta di un protocollo di sicurezza che fornisce autenticazione e integrità dei dati,
+    garantendo che i pacchetti non vengano modificati durante la trasmissione. Non offre cifratura, quindi i dati rimangono in chiaro. 
+    \item \textbf{ESP (Encapsulating Security Payload)}: protocolo che fornisce cifratura per garantire la riservatezza dei dati,
+    oltre a integrità e autenticazione opzionale. ESP è il protocollo più utilizzato
+    per garantire sia sicurezza che riservatezza.
     
+    \item \textbf{SA (Security Association)}: un insieme di parametri che definisce come i dati devono essere protetti durante la comunicazione tra due entità su una rete. Ogni SA contiene le informazioni necessarie per stabilire e mantenere una connessione sicura.
+    \item \textbf{IKE (Internet Key Exchange)}: protocollo che consente di negoziare, autenticare e distribuire dinamicamente le chiavi crittografiche che vengono poi impiegate dai protocolli di sicurezza per proteggere le comunicazioni.
+    \item \textbf{Algoritmi}: gli algoritmi crittografici e di hashing utilizzati per ottenere sicurezza.
+\end{itemize}
+
 
 \subsection{Security Association}
 

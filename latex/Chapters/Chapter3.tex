@@ -29,6 +29,7 @@ Questo cambio di paradigma insieme al quantum computer hanno portato diversi ent
         \definecolor{leo}{gray}{0.2}    % Grigio scuro
         \definecolor{geo}{gray}{0.1}% Grigio molto scuro
         \definecolor{terra}{HTML}{008F39}
+        \definecolor{mare}{HTML}{0495ce}
         \node at (-4.8, 0) [color=geo]{GEO};
         \node at (3.5, 0) [color=leo]{LEO};
         \node at (0, 0) {Terra};
@@ -85,6 +86,7 @@ satellite.
 
 \subsection{Stato Attuale}
 
+\todo{struttura maggiornemente questa parte}
 Per capire quale è la differenza in termini di hardware e software rispetto a quelli a cui siamo abiutati 
 introduciamo quelli che sono gli attuali standard impiegati in questo settore.
 
@@ -146,6 +148,9 @@ dall'avvento dei computer quantistici. L'obiet\-tivo del progetto è quello di f
     \item Prestazioni ottimizzate per diverse architetture hardware.
 \end{itemize}
 
+\noindent
+Si tratta di una raccolta di implementazioni di algoritmi crittografici post-quantum, KEM e SIG, e strumenti per integrarli in protocolli di sicurezza esistenti per sperimentare e testare il loro impatto.
+In \textit{Tabelle \ref{tab:env}} è presente una descrizione dettagliata dell'ambiente utilizzato per fare i test.
 
 \begin{table}[htbp] 
     \centering 
@@ -171,11 +176,6 @@ dall'avvento dei computer quantistici. L'obiet\-tivo del progetto è quello di f
     \label{tab:env}
 \end{table}
 
-
-
-\noindent
-Si tratta di una raccolta di implementazioni di algoritmi crittografici post-quantum, KEM e SIG, e strumenti per integrarli in protocolli di sicurezza esistenti per sperimentare e testare il loro impatto.
-In \textit{Tabelle \ref{tab:env}} è presente una descrizione dettagliata dell'ambiente utilizzato per fare i test.
 
 
 \subsection{Metodologia}
@@ -366,44 +366,124 @@ Ora riportiamo i grafici
 
 \todo{grafico riassuntivo che riporta il confronto tra le varie configurazioni, uno per i tempi e uno per i pacchetti}
 
-\begin{figure} 
+\newpage
+
+\begin{table}[h!] 
+    \centering 
+    \begin{tabular}{clcccc} 
+        \toprule
+        \multirow{2}{*}{\textbf{Connessione}} & \multirow{2}{*}{\textbf{Scambio}} & \multicolumn{2}{c}{\textbf{Dati Trasferiti (Byte)}} & \multirow{2}{*}{\textbf{Tempo (ms)}} \\
+        \cline{3-4} & & \textbf{Inviati} & \textbf{Ricevuti} \\
+        \toprule
+        \multirow{3}{*}{A1} & \texttt{INIT} & 326 & 419 & 1.214 \\ 
+                            & \texttt{INTE} & - & - & - \\
+                            & \texttt{AUTH} &  632 & 517 & 0.577 \\ 
+        \hline
+        \multirow{3}{*}{B1} & \texttt{INIT} & 1062 & 1038 & 0.532 \\ 
+                            & \texttt{INTE} & - & - & - \\
+                            & \texttt{AUTH} & 6665 & 6663 & 0.943 \\ 
+        \hline
+        \multirow{3}{*}{C1} & \texttt{INIT} & 342 & 350 & 0.709 \\ 
+                            & \texttt{INTE} & 911 & 879 & 0.912 \\
+                            & \texttt{AUTH} & 2623 & 2591 & 1.000 \\ 
+        \hline
+        \multirow{3}{*}{A3} & \texttt{INIT} & 358 & 366 & 1.482 \\ 
+                            & \texttt{INTE} & - & - & - \\
+                            & \texttt{AUTH} & 638 & 578 & 2.486 \\ 
+        \hline
+        \multirow{3}{*}{B3} & \texttt{INIT} & 1446 & 1358 & 0.867 \\ 
+                            & \texttt{INTE} & - & - & - \\
+                            & \texttt{AUTH} & 9210 & 9180 & 1.262 \\ 
+        \hline
+        \multirow{3}{*}{C3} & \texttt{INIT} & 374 & 382 & 1.642 \\ 
+                            & \texttt{INTE} & 1303 & 1207 & 2.488 \\
+                            & \texttt{AUTH} & 4845 & 4831 & 1.262 \\ 
+        \hline
+        \multirow{3}{*}{A5} & \texttt{INIT} & 349 & 402 & 0.891 \\ 
+                            & \texttt{INTE} & - & - & - \\
+                            & \texttt{AUTH} & 646 & 587 & 1.688 \\ 
+        \hline
+        \multirow{3}{*}{B5} & \texttt{INIT} & 1514 & 1514 & 0.887 \\ 
+                            & \texttt{INTE} & 350 & 358 & 1.672 \\
+                            & \texttt{AUTH} & 12501 & 12471 & 1.266 \\ 
+        \hline
+        \multirow{3}{*}{C5} & \texttt{INIT} & 410 & 418 & 1.108 \\ 
+                            & \texttt{INTE} & 1729 & 1729 & 1.672 \\
+                            & \texttt{AUTH} & 4856 & 4832 & 1.622 \\ 
+        \hline
+    \end{tabular} 
+    \caption{Confronto tra le varie configurazioni} 
+    \label{tab:result}
+        
+\end{table}
+
+
+\begin{figure}[h!] 
     \centering 
     \begin{tikzpicture} 
         \begin{axis}[ 
-            ybar, % Grafico a
-            symbolic x coords={A, B, C, D}, % Etichette sull'asse x
-            xtick=data, % Etichette dell'asse x corrispondono ai dati 
-            ymin=0, % Valore
-            ylabel={Valori}, % Etichetta dell'asse y 
-            xlabel={Categorie}, 
-            bar width=0.5cm, % Larghezza delle barre 
+            width=\textwidth,
+            height=8cm, 
+            ybar,
+            symbolic x coords={Classica, Quantum, Ibrida}, % etichette asse x 
+            xtick=data,
+            xlabel={},
+            ylabel={Dimensione Pacchetti (Byte)}, % Etichetta asse Y 
             nodes near coords,
-            enlarge x limits=0.15 % Spazio aggiuntivo agli estremi
-        ] 
-        \addplot coordinates {(A,3) (B,7) (C,5) (D,9)}; 
-        \end{axis}
+            bar width=25pt, % larghezza delle barre 
+            enlarge x limits={abs=2.3cm}, % spazio tra i gruppi di barre 
+            legend pos=north west, %
+            ymin=0, % limite inferiore asse Y 
+            grid=major,
+            %axis line style=none,
+    ] % Dati per configurazioni classiche 
+            \addplot coordinates {(Classica,745) (Quantum,2100) (Ibrida,2462)};  %coordinate per le configurazioni L1
+            \addlegendentry{L1} % Dati per configurazioni post-quantum
+            \addplot coordinates {(Classica,724) (Quantum,3004) (Ibrida,3266)}; 
+            \addlegendentry{L3} % Dati per configurazioni post-quantum
+            \addplot coordinates {(Classica,751) (Quantum,3736) (Ibrida,4280)}; 
+            \addlegendentry{L5}
+        \end{axis} 
     \end{tikzpicture} 
-    \caption{Esempio di istogramma con dati fittizi.} 
+    \caption{Dimensione dei pacchetti in Byte per \texttt{INIT}}
+    \label{fig:dimensioni_pacchetti} 
+\end{figure}
+
+\begin{figure}[h!] 
+    \centering 
+    \begin{tikzpicture} 
+        \begin{axis}[ 
+            width=\textwidth,
+            height=8cm, 
+            ybar,
+            symbolic x coords={Classica, Quantum, Ibrida}, % etichette asse x 
+            xtick=data,
+            xlabel={},
+            ylabel={Dimensione Pacchetti (Byte)}, % Etichetta asse Y 
+            nodes near coords,
+            bar width=25pt, % larghezza delle barre 
+            enlarge x limits={abs=2.3cm}, % spazio tra i gruppi di barre 
+            legend pos=north west, %
+            ymin=0, % limite inferiore asse Y 
+            grid=major,
+            %axis line style=none,
+    ] % Dati per configurazioni classiche 
+            \addplot coordinates {(Classica,1149) (Quantum,13228) (Ibrida,5214)};  %coordinate per le configurazioni L1
+            \addlegendentry{L1} % Dati per configurazioni post-quantum
+            \addplot coordinates {(Classica,1216) (Quantum,18390) (Ibrida,9676)}; 
+            \addlegendentry{L3} % Dati per configurazioni post-quantum
+            \addplot coordinates {(Classica,1233) (Quantum,24972) (Ibrida,9688)}; 
+            \addlegendentry{L5}
+        \end{axis} 
+    \end{tikzpicture} 
+    \caption{Dimensione dei pacchetti in Byte per \texttt{AUTH}}
+    \label{fig:dimensioni_pacchetti} 
 \end{figure}
 
 
-\newpage
+
+
 \section{Tuttavia}
-
-\begin{comment}
-    
-    Notiamo che non ci sono enormi differenze in termini di tempi ma è presente un 
-    notevole aumento in termini della dimensione in particolare per quanto riguarda l'autenticazione.
-    E in contesto di questo tipo non è auspicabile
-    
-Cercando di trovare possibili soluzioni, ci siamo imbattuti su quello che è minimal IKE ovvero
-una versione di IKE applicabile in scenari soggetti a constraint di risorse simili a quelli presenti nello spazio.
-
-Riguardo a questo non esistono implementazioni, per questo motivo siamo passati a provare a dare un'implementazione di quest'ultimo
-In modo tale che rappresenti un punto di inizio per questo scenario
-
-Di questo trattiamo nel prossimo capitolo
-\end{comment}
 
 Stiamo considerando StrongSwan come protocollo, un software noto per la sua
 flessibilità e per la disponibilità di numerosi plugin. Tuttavia, in un contesto
@@ -424,9 +504,4 @@ simili a quelli che si incontrano nello spazio. Tuttavia, va notato che
 attualmente non esistono implementazioni concrete di Minimal IKE\@. Pertanto,
 abbiamo intrapreso la creazione di una nostra implementazione, con l'obiettivo
 di fornire un punto di partenza per questo tipo di scenario.
-
-
-%-----------------------------------
-%	SECTION 3
-%-----------------------------------
 
