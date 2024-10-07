@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Arch Linux) (preloaded format=pdflatex 2024.9.29)  7 OCT 2024 11:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Arch Linux) (preloaded format=pdflatex 2024.9.29)  7 OCT 2024 11:42
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1202,27 +1202,23 @@ Package pdftex.def Info: Figures/unvimplogo.png  used on input line 163.
 
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc} <./Figures/unvimplogo.png>]
-
-Package csquotes Warning: No style for language 'nil'.
-(csquotes)                Using fallback style on input line 210.
-
-LaTeX Font Info:    Trying to load font information for OT1+ppl on input line 219.
-(/usr/share/texmf-dist/tex/latex/psnfss/ot1ppl.fd
+LaTeX Font Info:    Trying to load font information for OT1+ppl on input line 193.
+ (/usr/share/texmf-dist/tex/latex/psnfss/ot1ppl.fd
 File: ot1ppl.fd 2001/06/04 font definitions for OT1/ppl.
 )
-LaTeX Font Info:    Trying to load font information for OML+zplm on input line 219.
+LaTeX Font Info:    Trying to load font information for OML+zplm on input line 193.
  (/usr/share/texmf-dist/tex/latex/psnfss/omlzplm.fd
 File: omlzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OML/zplm.
 )
-LaTeX Font Info:    Trying to load font information for OMS+zplm on input line 219.
+LaTeX Font Info:    Trying to load font information for OMS+zplm on input line 193.
  (/usr/share/texmf-dist/tex/latex/psnfss/omszplm.fd
 File: omszplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMS/zplm.
 )
-LaTeX Font Info:    Trying to load font information for OMX+zplm on input line 219.
+LaTeX Font Info:    Trying to load font information for OMX+zplm on input line 193.
  (/usr/share/texmf-dist/tex/latex/psnfss/omxzplm.fd
 File: omxzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMX/zplm.
 )
-LaTeX Font Info:    Trying to load font information for OT1+zplm on input line 219.
+LaTeX Font Info:    Trying to load font information for OT1+zplm on input line 193.
  (/usr/share/texmf-dist/tex/latex/psnfss/ot1zplm.fd
 File: ot1zplm.fd 2002/09/08 Fontinst v1.914 font definitions for OT1/zplm.
 )
@@ -1231,46 +1227,47 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
  [2]
+
+Package csquotes Warning: No style for language 'nil'.
+(csquotes)                Using fallback style on input line 210.
+
+[3] [4
+
+]
 --------------------
  Abstract
 --------------------
 1: section
-[3
-
-] [4
+[5] [6
 
 ]
 --------------------
  Acknowledgements
 --------------------
 1: section
-[5] [6
+[7] [8
 
 ] (./main.toc
 1: section
-[7])
+[9])
 \tf@toc=\write8
 \openout8 = `main.toc'.
 
- [8] (./main.lof)
+ [10] (./main.lof)
 \tf@lof=\write9
 \openout9 = `main.lof'.
 
 
 1: section
-[9
+[11
 
-] [10
+] [12
 
 ] (./main.lot)
 \tf@lot=\write10
 \openout10 = `main.lot'.
 
 
-1: section
-[11] [12
-
-]
 1: section
 [13] [14
 
@@ -1279,11 +1276,15 @@ Package microtype Info: Loading generic protrusion settings for font family
 [15] [16
 
 ]
+1: section
+[17] [18
+
+]
 --------------------
  Dedicatory
 --------------------
 1: section
-[17] [18
+[19] [20
 
 ]
 1: section
@@ -1473,7 +1474,7 @@ Overfull \hbox (41.36018pt too wide) in paragraph at lines 686--687
 
 ]
 Chapter 3.
-<Figures/satellite.png, id=540, 385.44pt x 385.44pt>
+<Figures/satellite.png, id=548, 385.44pt x 385.44pt>
 File: Figures/satellite.png Graphic file (type png)
 <use Figures/satellite.png>
 Package pdftex.def Info: Figures/satellite.png  used on input line 43.
@@ -1482,7 +1483,7 @@ File: Figures/satellite.png Graphic file (type png)
 <use Figures/satellite.png>
 Package pdftex.def Info: Figures/satellite.png  used on input line 44.
 (pdftex.def)             Requested size: 28.45274pt x 28.448pt.
-<Figures/europe.png, id=541, 501.875pt x 501.875pt>
+<Figures/europe.png, id=549, 501.875pt x 501.875pt>
 File: Figures/europe.png Graphic file (type png)
 <use Figures/europe.png>
 Package pdftex.def Info: Figures/europe.png  used on input line 45.
@@ -1550,18 +1551,18 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 60106 strings out of 476076
- 1426182 string characters out of 5793775
- 2231085 words of memory out of 5000000
+ 60111 strings out of 476076
+ 1426223 string characters out of 5793775
+ 2233438 words of memory out of 5000000
  80708 multiletter control sequences out of 15000+600000
- 630966 words of font info for 361 fonts, out of 8000000 for 9000
+ 631051 words of font info for 363 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  100i,21n,101p,1886b,2307s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/mathpazo/fplmri.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfss1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb></usr/share/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/palatino/uplbi8a.pfb></usr/share/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on main.pdf (55 pages, 590260 bytes).
+Output written on main.pdf (57 pages, 591947 bytes).
 PDF statistics:
- 807 PDF objects out of 1000 (max. 8388607)
- 687 compressed objects within 7 object streams
- 229 named destinations out of 1000 (max. 500000)
+ 815 PDF objects out of 1000 (max. 8388607)
+ 693 compressed objects within 7 object streams
+ 231 named destinations out of 1000 (max. 500000)
  118304 words of extra memory for PDF output out of 128383 (max. 10000000)
 

@@ -390,10 +390,12 @@ Ora riportiamo i grafici
 \newpage
 \section{Tuttavia}
 
-Notiamo che non ci sono enormi differenze in termini di tempi ma è presente un 
-notevole aumento in termini della dimensione in particolare per quanto riguarda l'autenticazione.
-E in contesto di questo tipo non è auspicabile
-
+\begin{comment}
+    
+    Notiamo che non ci sono enormi differenze in termini di tempi ma è presente un 
+    notevole aumento in termini della dimensione in particolare per quanto riguarda l'autenticazione.
+    E in contesto di questo tipo non è auspicabile
+    
 Cercando di trovare possibili soluzioni, ci siamo imbattuti su quello che è minimal IKE ovvero
 una versione di IKE applicabile in scenari soggetti a constraint di risorse simili a quelli presenti nello spazio.
 
@@ -401,6 +403,28 @@ Riguardo a questo non esistono implementazioni, per questo motivo siamo passati 
 In modo tale che rappresenti un punto di inizio per questo scenario
 
 Di questo trattiamo nel prossimo capitolo
+\end{comment}
+
+Stiamo considerando StrongSwan come protocollo, un software noto per la sua
+flessibilità e per la disponibilità di numerosi plugin. Tuttavia, in un contesto
+limitato come quello dei satelliti, non ha senso portare con sé funzionalità
+superflue. Ad esempio, la proposta di suite di crittografia diventa irrilevante
+se si conosce già quale suite si intende utilizzare; inviare diverse opzioni
+sarebbe superfluo e poco efficiente.
+
+Dai risultati dei nostri test, emerge che non ci sono sostanziali differenze in
+termini di tempi di esecuzione. Tuttavia, è stato registrato un significativo
+aumento delle dimensioni dei pacchetti, in particolare durante le fasi di
+autenticazione, il che risulta problematico in un contesto come quello spaziale,
+dove le risorse sono limitate e l'efficienza è fondamentale.
+
+Per affrontare queste sfide, ci siamo imbattuti nel concetto di Minimal IKE,
+una versione ottimizzata di IKE progettata per scenari con vincoli di risorse
+simili a quelli che si incontrano nello spazio. Tuttavia, va notato che
+attualmente non esistono implementazioni concrete di Minimal IKE\@. Pertanto,
+abbiamo intrapreso la creazione di una nostra implementazione, con l'obiettivo
+di fornire un punto di partenza per questo tipo di scenario.
+
 
 %-----------------------------------
 %	SECTION 3
