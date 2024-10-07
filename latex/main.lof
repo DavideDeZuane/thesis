@@ -7,15 +7,15 @@
 \contentsline {figure}{\numberline {2.4}{\ignorespaces Stack TCP/IP}}{11}{figure.caption.45}%
 \contentsline {figure}{\numberline {2.5}{\ignorespaces IPsec Protolocol Suite}}{12}{figure.caption.48}%
 \contentsline {figure}{\numberline {2.6}{\ignorespaces Security Association bidirezionali}}{14}{figure.caption.51}%
-\contentsline {figure}{\numberline {2.7}{\ignorespaces Fasi di Negoziazione del Protocollo IKEv2}}{15}{figure.caption.54}%
-\contentsline {figure}{\numberline {2.8}{\ignorespaces Drop Pacchetti}}{17}{figure.caption.61}%
-\contentsline {figure}{\numberline {2.9}{\ignorespaces Scambio nuovo}}{18}{figure.caption.62}%
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Fasi di Negoziazione del Protocollo IKEv2}}{15}{figure.caption.55}%
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Drop Pacchetti}}{17}{figure.caption.62}%
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Scambio nuovo}}{18}{figure.caption.63}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Orbite dei satelliti}}{22}{figure.caption.66}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Struttura delle directory}}{27}{figure.caption.82}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Diagramma di flusso dello script}}{28}{figure.caption.83}%
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Dimensione dei pacchetti in Byte per \texttt {INIT}}}{30}{figure.caption.87}%
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Dimensione dei pacchetti in Byte per \texttt {AUTH}}}{30}{figure.caption.88}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Orbite dei satelliti}}{22}{figure.caption.67}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Struttura delle directory}}{27}{figure.caption.83}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Diagramma di flusso dello script}}{28}{figure.caption.84}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Dimensione dei pacchetti in Byte per \texttt {INIT}}}{30}{figure.caption.88}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Dimensione dei pacchetti in Byte per \texttt {AUTH}}}{30}{figure.caption.89}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Formato IKE Header}}{34}{figure.caption.99}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Formato IKE Header}}{32}{figure.caption.100}%
 \addvspace {10\p@ }

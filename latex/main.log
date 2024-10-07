@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Arch Linux) (preloaded format=pdflatex 2024.9.29)  7 OCT 2024 18:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Arch Linux) (preloaded format=pdflatex 2024.9.29)  7 OCT 2024 21:07
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1364,32 +1364,37 @@ Overfull \hbox (13.56697pt too wide) in paragraph at lines 84--86
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Overfull \hbox (1.78539pt too wide) in paragraph at lines 145--151
+Overfull \hbox (1.78539pt too wide) in paragraph at lines 145--152
 \T1/ppl/m/n/12 (-20) che le due parti coinvolte nella comunicazione debbano possedere la medesima
  []
 
+
+Overfull \hbox (2.85599pt too wide) in paragraph at lines 145--152
+\T1/ppl/m/n/12 (-20) particolarmente veloci ed efficienti, esempi ne sono AES (Advanced Encryption
+ []
+
 [6]
-Overfull \hbox (20.67096pt too wide) in paragraph at lines 157--160
+Overfull \hbox (20.67096pt too wide) in paragraph at lines 158--161
 []\T1/ppl/m/it/12 (-20) Cifratura \T1/ppl/m/n/12 (-20) di Dati: proteggere file e database memorizzati su disco, garantendo
  []
 
 
-Overfull \hbox (3.76918pt too wide) in paragraph at lines 160--164
+Overfull \hbox (3.76918pt too wide) in paragraph at lines 161--165
 \T1/ppl/m/n/12 (-20) funzioni di hash, gli algoritmi simmetrici possono generare codici HMAC,
  []
 
 [7]
-Underfull \hbox (badness 10000) in paragraph at lines 188--193
+Underfull \hbox (badness 10000) in paragraph at lines 189--194
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 242--244
+Underfull \hbox (badness 10000) in paragraph at lines 243--245
 
  []
 
 [8]
-LaTeX Font Info:    Trying to load font information for T1+cmss on input line 270.
+LaTeX Font Info:    Trying to load font information for T1+cmss on input line 271.
  (/usr/share/texmf-dist/tex/latex/base/t1cmss.fd
 File: t1cmss.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 )
@@ -1398,12 +1403,12 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
-Overfull \hbox (8.14473pt too wide) in paragraph at lines 297--299
+Overfull \hbox (8.14473pt too wide) in paragraph at lines 298--300
 []\T1/ppl/m/n/12 (-20) Gli schemi asimmetrici sono vulnerabili alla minaccia del quantum computer
  []
 
 
-Overfull \hbox (8.79105pt too wide) in paragraph at lines 300--303
+Overfull \hbox (8.79105pt too wide) in paragraph at lines 301--304
 []\T1/ppl/m/n/12 (-20) Per rispondere a questa minaccia emergente, si stanno sviluppando algoritmi
  []
 
@@ -1414,7 +1419,7 @@ LaTeX Warning: Marginpar on page 9 moved.
 LaTeX Warning: Marginpar on page 9 moved.
 
 [9] [10]
-Underfull \hbox (badness 10000) in paragraph at lines 342--348
+Underfull \hbox (badness 10000) in paragraph at lines 343--349
 
  []
 
@@ -1438,42 +1443,42 @@ Overfull \hbox (9.85863pt too wide) in paragraph at lines 498--502
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 
-Overfull \hbox (2.1064pt too wide) in paragraph at lines 564--573
+Overfull \hbox (2.1064pt too wide) in paragraph at lines 571--580
  [][] 
  []
 
 [15]
-Overfull \hbox (0.81104pt too wide) in paragraph at lines 589--598
+Overfull \hbox (0.81104pt too wide) in paragraph at lines 596--605
  [][] 
  []
 
 [16]
-Overfull \hbox (13.07326pt too wide) in paragraph at lines 611--613
+Overfull \hbox (13.07326pt too wide) in paragraph at lines 618--620
 []\T1/ppl/m/n/12 (-20) Per esempio nel caso di autenticazione tramite pubkey nella fase di [][][][][][]
  []
 
 
-Overfull \hbox (0.6pt too wide) in paragraph at lines 647--650
+Overfull \hbox (0.6pt too wide) in paragraph at lines 654--657
 []\T1/ppl/m/n/12 (-20) Per evitare che nel trasferimento di grandi dati ciò avvenga viene introdotto
  []
 
 
-Overfull \hbox (2.18152pt too wide) in paragraph at lines 647--650
+Overfull \hbox (2.18152pt too wide) in paragraph at lines 654--657
 \T1/ppl/m/n/12 (-20) dimensione dei dati da trasferire ecceda la dimensione massima che causerebbe
  []
 
 [17]
-Overfull \hbox (2.39633pt too wide) in paragraph at lines 674--677
+Overfull \hbox (2.39633pt too wide) in paragraph at lines 681--684
 \T1/ppl/m/n/12 (-20) pubbliche QC-resistant, tuttavia in generale può essere utilizzzato per trasferire
  []
 
 
-Overfull \hbox (10.23259pt too wide) in paragraph at lines 678--680
+Overfull \hbox (10.23259pt too wide) in paragraph at lines 685--687
 []\T1/ppl/m/n/12 (-20) Permette di realizzare Multiple Key Exchange Gli scambi di chiave aggiuntivi
  []
 
 
-Overfull \hbox (41.36018pt too wide) in paragraph at lines 689--690
+Overfull \hbox (41.36018pt too wide) in paragraph at lines 696--697
 []\T1/ppl/m/n/12 (-20) flag [][][][][][]: il peer dice di supportare la frammentazione
  []
 
@@ -1487,7 +1492,7 @@ Overfull \hbox (41.36018pt too wide) in paragraph at lines 689--690
 
 ]
 Chapter 3.
-<Figures/satellite.png, id=553, 385.44pt x 385.44pt>
+<Figures/satellite.png, id=554, 385.44pt x 385.44pt>
 File: Figures/satellite.png Graphic file (type png)
 <use Figures/satellite.png>
 Package pdftex.def Info: Figures/satellite.png  used on input line 44.
@@ -1496,7 +1501,7 @@ File: Figures/satellite.png Graphic file (type png)
 <use Figures/satellite.png>
 Package pdftex.def Info: Figures/satellite.png  used on input line 45.
 (pdftex.def)             Requested size: 28.45274pt x 28.448pt.
-<Figures/europe.png, id=554, 501.875pt x 501.875pt>
+<Figures/europe.png, id=555, 501.875pt x 501.875pt>
 File: Figures/europe.png Graphic file (type png)
 <use Figures/europe.png>
 Package pdftex.def Info: Figures/europe.png  used on input line 46.
@@ -1505,42 +1510,40 @@ Package pdftex.def Info: Figures/europe.png  used on input line 46.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 1: section
-[21] [22 <./Figures/satellite.png> <./Figures/europe.png>]
-Overfull \hbox (0.63881pt too wide) in paragraph at lines 89--89
-\T1/ppl/m/n/12 (-20) maggiornemente 
+[21] [22 <./Figures/satellite.png> <./Figures/europe.png>] [23]
+Overfull \hbox (26.35403pt too wide) in paragraph at lines 137--142
+\T1/ppl/m/n/12 (-20) source \T1/ppl/m/it/12 (-20) OpenQuantumSafe \T1/ppl/m/n/12 (-20) (OQS). Il quale punta a rendere disponibile l'infrastruttura
  []
 
-
-Overfull \hbox (0.63881pt too wide) in paragraph at lines 89--89
-\T1/ppl/m/n/12 (-20) maggiornemente 
- []
-
-[23] [24] [25] [26]
+[24] [25] [26]
 
 LaTeX Warning: Marginpar on page 27 moved.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[27] [28]
+[27]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[29] [30]) [31]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[28]) [29] [30]
 \openout2 = `Chapters/Chapter4.aux'.
 
- (./Chapters/Chapter4.tex [32
-
-
-
-
-]
+ (./Chapters/Chapter4.tex
 Chapter 4.
 1: section
-[33]) [34]
+[31
+
+
+
+
+]) [32]
 \openout2 = `Appendices/AppendixA.aux'.
 
  (./Appendices/AppendixA.tex
@@ -1560,14 +1563,14 @@ Overfull \hbox (8.21465pt too wide) in paragraph at lines 33--43
  []
 
 1: section
-[35
+[33
 
 
 
 
-] [36] [37] [38]) [39]
+] [34] [35] [36]) [37]
 
-LaTeX Warning: Empty bibliography on input line 325.
+LaTeX Warning: Empty bibliography on input line 326.
 
 (./main.aux (./Chapters/Chapter1.aux) (./Chapters/Chapter2.aux) (./Chapters/Chapter3.aux) (./Chapters/Chapter4.aux) (./Appendices/AppendixA.aux))
  ***********
@@ -1579,24 +1582,24 @@ L3 programming layer <2020/03/25>
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 0C7463C88D925175F8ACA5F55D239EB3;5092.
+(rerunfilecheck)             Checksum: ABE94F1E4232E3E213983CE53FE0AE2B;5092.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 60174 strings out of 476076
- 1427505 string characters out of 5793775
- 2239813 words of memory out of 5000000
- 80762 multiletter control sequences out of 15000+600000
- 631210 words of font info for 365 fonts, out of 8000000 for 9000
+ 60187 strings out of 476076
+ 1427750 string characters out of 5793775
+ 2247102 words of memory out of 5000000
+ 80770 multiletter control sequences out of 15000+600000
+ 631524 words of font info for 369 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  100i,21n,101p,1886b,2320s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/mathpazo/fplmri.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfss1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb></usr/share/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/palatino/uplbi8a.pfb></usr/share/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on main.pdf (59 pages, 596158 bytes).
+Output written on main.pdf (57 pages, 595972 bytes).
 PDF statistics:
- 831 PDF objects out of 1000 (max. 8388607)
- 706 compressed objects within 8 object streams
- 237 named destinations out of 1000 (max. 500000)
+ 824 PDF objects out of 1000 (max. 8388607)
+ 701 compressed objects within 8 object streams
+ 236 named destinations out of 1000 (max. 500000)
  118304 words of extra memory for PDF output out of 128383 (max. 10000000)
 

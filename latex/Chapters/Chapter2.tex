@@ -147,7 +147,8 @@ chiave sia per le operazioni di cifratura che di decifratura. Ciò implica che l
 due parti coinvolte nella comunicazione debbano possedere la medesima chiave
 segreta, nota anche come chiave pre-condivisa (PSK - Pre-Shared Key). \\Questa
 caratteristica fondamentale rende gli schemi di crittografia simmetrica\\
-particolarmente veloci ed efficienti, esempi ne sono AES e DES.
+particolarmente veloci ed efficienti, esempi ne sono AES (Advanced Encryption
+Standard) e DES (Data Encryption Standard).
 
 
 \noindent
@@ -352,12 +353,11 @@ in vari livelli, ciascuno con delle funzioni specifiche che non si sovrappongono
 è possibile applicare la sicurezza ai vari livelli della pila e di lato sono riportati i protocolli che vengono utilizzati. 
 
 \begin{itemize}
-    \item SSH (Secure Shell): Protegge l'accesso remoto e il trasferimento
+    \item SSH (Secure Shell): protegge l'accesso remoto e il trasferimento
     di file, fornendo autenticazione e cifratura.
     \item TLS (Transport Layer Security): permette di instaurare una
-    connessione TCP sicura. Viene utilizzato per cifrare e autenticare i dati tra
-    client e server.
-    \item IPsec (Internet Protocol Security): Protegge i pacchetti IP
+    connessione TCP sicura. Viene utilizzato principalemte nell'architettura C/S.
+    \item IPsec (Internet Protocol Security): protegge i pacchetti IP
     scambiati tra due nodi, fornendo autenticazione, integrità e cifratura.
 \end{itemize}
 \todo{finire di spiegare anche gli altri protocolli di sicurezza e colorare la pila }
@@ -450,12 +450,12 @@ Come definito dall'\texttt{RFC 1825}, l'architettura di IPsec è composta dai se
 IP è un protocollo \textit{stateless}, ovvero non mantiene informazioni o stato relativo alle connessioni o ai pacchetti che gestisce.
 Tuttavia affinchè IPsec possa garantire la sicurezza è necessario che mantenga il contesto di ogni connessione, le principali motivazioni sono:
 \begin{itemize}
-    \item \textit{Replay Protection}: per evitare attacchi di tipo reply, IPsec tiene  traccia
+    \item \textit{Replay Protection}: per evitare attacchi di tipo replay, IPsec tiene  traccia
     dei numeri di sequenza dei pacchetti, un'inforamzione di stato che va mantenuta per ogni connessioni
     e che IP non fa nativamente.
     \item \textit{Connessioni Multiple}: in uno scenario di rete complesso, un singolo dispositivo potrebbe avere più connessioni sicure in corso simultanea\-mente, ognuna
     delle quali ha i propri parametri di sicurezza. IPsec deve tenere traccia di queste informazioni per sapere come trattare i pacchetti in entrata e uscita in base alla connessione a cui appartengono.
-    \item \textit{Protezione}: i protocolli di sicurezza AH e ESP richiedono di conoscere le chiavi crittografiche corrette e gli algoritmi utilizzati per cifrare e decifrare i pacchetti.
+    \item \textit{Protezione}: i protocolli di sicurezza AH e ESP richiedono di conoscere le chiavi crittografiche appropriate e gli algoritmi utilizzati per cifrare e decifrare i pacchetti.
 \end{itemize}
 
 \noindent 
@@ -468,12 +468,12 @@ tra questi abbiamo:
     \item \textit{Destination Address}: serve all'host per determinare quale SA utilizzare. 
     \item \textit{Lifetime}: il tempo di vita della SA, si obbliga a refresh periodici.
     \item \textit{Protocol Identifier}: determina il tipo di protezione da applicare ai pacchetti, dunque anche chiavi e algoritmi associati.
-    \item Altri parametri opzionali, per una lista completa fare riferimento all'RFC.
+    \item Altri parametri opzionali, la lista completa è definita nell'\texttt{RFC 1825}.
 \end{itemize}
 
 \noindent
 La SA è caratterizzata dall'essere un canale \textit{simplex}, dunque al fine di stabilire un canale di comunicazione bidirezionale IPsec tra due entità occorrono due SA unidirezionali di verso opposto.
-La \textit{Figura \ref{fig:sa_bidirezionale}} mostra il tunnerl virtuale in esecuzione tra i due host.
+La \textit{Figura \ref{fig:sa_bidirezionale}} mostra il tunnel virtuale in esecuzione tra i due host.
 
 \todo{aggiungere al lato di un host la configurazione dell'SA}
 \begin{figure}[h!]
@@ -504,7 +504,7 @@ IPsec prevede tecniche di negoziazione delle SA di tipo:
     \item \textit{Manuale}: occorre configurire manualmente le chiavi e le
     impostazioni di sicurezza per ciascun dispositivo o punto finale di
     comunicazione.
-    \item \textit{Automatico}: si utilizzanoprotocolli per stabilire
+    \item \textit{Automatico}: si utilizzano protocolli per stabilire
     automaticamente le chiavi di crittografia e le politiche di sicurezza senza
     intervento umano diretto.
 \end{itemize}
@@ -514,6 +514,13 @@ Andiamo a vedere nel dettaglio IKE nella prossima sezione.
 
 \newpage
 \section{IKE}
+
+\todo{guarda il commento}
+\begin{comment}
+    La SA deve essere segreta, conosciuta solo da i due nodi, IKE ha il compito di 
+    far condividere qualcosa id segreto su un canale pubblico.
+\end{comment}
+
 Questo protocollo definisce una serie di scambi, mostrati in \textit{Figura \ref{fig:ike_exchange}}, al termine del quale i due peer avranno negioziati i parametri di sicurezza e le chiavi crittografiche per una SA.
 
 \begin{figure}[htbp]
@@ -605,7 +612,7 @@ La modalità di autenticazione può essere: PSK, EAP oppure mediante chiave pubb
 \newpage
 \section{Problemi}
 
-IKEv2 utilizza come porotocollo a livello trasporto UDP per per inoltrare i propri messaggi. La maggior parte dei messaggi che i peer si scambiano hanno dimensioni relativamente piccole e
+IKEv2 utilizza come protocollo a livello trasporto UDP per inoltrare i propri messaggi. La maggior parte dei messaggi che i peer si scambiano hanno dimensioni relativamente piccole e
 quindi che non eccedono l'\textbf{MTU} di un pacchetto IP, tuttavia abbiamo degli scambi che richiedono un trasferimento di dati abbastanza grandi.
 
 Per esempio nel caso di autenticazione tramite pubkey nella fase di \inlinecode{IKE\_AUTH} è necessario trasferire il proprio certificato che in base allo schema di firma utilizzato

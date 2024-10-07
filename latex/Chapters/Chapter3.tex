@@ -67,7 +67,7 @@ Tra i principali vincoli per l'hardware satellitare troviamo:
 
 \noindent
 L'hardware limitato ha un impatto diretto sullo sviluppo del software per i satelliti. 
-Rispetto al un contesto terrestre, dove le risorse computazionali sono abbondanti, il software per i satelliti deve essere ottimizzato per funzionare su processori con bassa potenza di calcolo e memoria ridotta. 
+Rispetto al contesto terrestre, dove le risorse computazionali sono abbondanti, il software per i satelliti deve essere ottimizzato per funzionare su processori con bassa potenza di calcolo e memoria ridotta. 
 Le principali sfide per gli sviluppatori sono:
 
 \begin{itemize}
@@ -86,8 +86,7 @@ satellite.
 
 \subsection{Stato Attuale}
 
-\todo{struttura maggiornemente questa parte}
-Per capire quale è la differenza in termini di hardware e software rispetto a quelli a cui siamo abiutati 
+Per capire quale è la differenza in termini di hardware e software rispetto a quelli a cui siamo abituati 
 introduciamo quelli che sono gli attuali standard impiegati in questo settore.
 
 \begin{itemize}
@@ -105,13 +104,13 @@ Il sistema operativo utilizzato in queste applicazioni è RTEMS (Real-Time Execu
 %-----------------------------------
 \subsection{Sfide}
 \noindent
-Per rendere le comunicazioni satellitari sicure ad attacchi Qauntum occorre adottare algoritmi più complessi.
-Questi utilimi, tuttavia, oltre a richiedere più memoria per la gestione delle chiavi,
+Per rendere le comunicazioni satellitari sicure ad attacchi quantum occorre adottare algoritmi più complessi.
+Tuttavia, oltre a richiedere più memoria per la gestione delle chiavi,
 comportano un incremento significativo del carico di calcolo. Le sfide da affrontare sono:
 
 \begin{itemize}
-    \item  Aumento complessità computazionale: l'incremento delle dimensioni delle chiavi e della complessità degli algoritmi portano a un aumento del carico computazionale. Aggiungendo ulteriori vincoli su sistemi già limitati. 
-    \item Incremento della larghezza di banda necessaria: oltre all'aumento di carico si ha anche magiore utilizzo della larghezza di banda, che in comunicazioni satellitari risuta già limitata.
+    \item Aumento complessità computazionale: l'incremento delle dimensioni delle chiavi e della complessità degli algoritmi portano a un aumento del carico computazionale. Aggiungendo ulteriori vincoli su sistemi già limitati. 
+    \item Incremento della larghezza di banda necessaria: oltre all'aumento di carico si ha anche maggiore utilizzo della larghezza di banda, che in comunicazioni satellitari risuta già limitata.
     \item Compatibilità retroattiva: occorre adottare soluzioni ibride, in cui
     algo\-ritmi crittografici classici coesistono con quelli post-quantum. Questo a 
     causa dell'eterogeneità delle capacità dei satelliti in orbita.
@@ -119,6 +118,7 @@ comportano un incremento significativo del carico di calcolo. Le sfide da affron
 
 \section{Benchmarking}
 
+\todo{riformula}
 Per valutare l'applicabilità degli algoritmi di PQC
 nel contesto satellitare, è fondamentale comprendere il loro impatto sui
 protocolli di comunicazione. Inizialmente, analizzeremo tali algoritmi in un
@@ -135,11 +135,9 @@ sarà poco sensato considerarli in un ambiente ancora più limitato.
 \end{comment}
 
 Il protocollo che consideriamo è IPsec, con un focus particolare sulla sua
-implementazione in StrongSwan. Questa scelta è motivata dal fatto che StrongSwan
-opera a un livello più basso dello stack TCP/IP, risultando così uno dei
-protocolli più diffusi. L'implementazione delle primitive post-quantum è fornita dalla libreria \texttt{liboqs}. 
+implementazione in StrongSwan. L'implementazione delle primitive post-quantum è fornita dalla libreria \texttt{liboqs}. 
 Questa fa parte del progetto open-source \textit{OpenQuantumSafe} (OQS).
-Il quale a rendere disponibile l'infrastruttura crittografica necessaria per proteggere i sistemi informatici
+Il quale punta a rendere disponibile l'infrastruttura crittografica necessaria per proteggere i sistemi informatici
 dall'avvento dei computer quantistici. L'obiet\-tivo del progetto è quello di fornire:
 
 \begin{itemize}
@@ -182,7 +180,7 @@ In \textit{Tabelle \ref{tab:env}} è presente una descrizione dettagliata dell'a
 
 Per ragioni progettuali e di portabilità del codice, il servizio Strongswan è stato 
 containerizzato tramite l'utilizzo di Docker. Ciò consente di avere due istanze dello stesso
-servizio in esecuzione contemporaneamente che comunicano attaverso un'interfaccia virtuale. 
+servizio in esecuzione in grado di comunicare attaverso un'interfaccia virtuale. 
 
 \begin{center}
     \begin{verbatim}
@@ -197,7 +195,7 @@ In secondo luogo siamo andati a definire quali sono le configurazioni da confron
 \textit{Tabella \ref{tab:cipher_suites}}, ognuna delle quali è caratterizzata da:
 
 \begin{itemize}
-    \item \textbf{Chiper suite}: un'insieme di algoritmi crittografici che determinano la sicurezza di una connessione in un protocollo di rete.
+    \item \textbf{Chiper suite}: un insieme di algoritmi crittografici che determinano la sicurezza di una connessione in un protocollo di rete.
     Le cipher suite sono generalmente denominate seguendo una convenzione di naming standardizzata che riflette i componenti inclusi nella suite.
     \begin{center}
         \texttt{<ENCR>\text{-}<INTEG>\text{-}<KEM>}
@@ -214,15 +212,15 @@ suite, ognuna progettata per affrontare specifici aspetti delle tecnologie
 critto\-grafiche attuali e future.
 
 \noindent
-La prima configurazione utilizza esclusivamente di \textit{primitive classiche}. 
+La prima configurazione utilizza esclusivamente \textit{primitive classiche}. 
 Questa scelta rappresenta il benchmark attuale delle tecnologie di crittografia e fornisce una base
 solida per confrontare le altre configurazioni. La seconda
 configurazione è composta da \textit{primitive post-quantum}, e consente di
 analizzare le prestazioni e l'efficacia delle soluzioni crittografiche
 post-quantum nel contesto del protocollo. Infine, abbiamo implementato
-una \textit{onfigurazione Ibrida}, la quale combina elementi delle primitive
+una \textit{configurazione Ibrida}, la quale combina elementi delle primitive
 classiche e post-quantum. Questa scelta è progettata per garantire la transizione 
-graduale verso l'utilizzo esclusivo di tecnologie quantistiche.
+graduale verso l'utilizzo esclusivo di tecnologie quantum-resistant.
 
 \begin{comment}
     
@@ -356,10 +354,10 @@ in particolare le principali fasi.
 Le metriche di maggiore interesse, per il nostro studio, sono:
 
 \begin{itemize}
-    \item \textit{Tempo Complessivo} per stabilire la SA tra i due, il tempo di elabora\-zione del singolo algoritmo non ci interessa dato che ampiamente descritte
+    \item \textit{Tempo Complessivo} per stabilire la SA tra i due, il tempo di elabora\-zione del singolo algoritmo non ci interessa poichè ampiamente descritte
     dalla libreria openquantumsafe.   
-    \item \textit{Packet Size} che rappresenta la quantità di dati scambiati
-    tra i due nodi necessari per stabilire una Security Association (SA)
+    \item \textit{Packet Size} che rappresenta la quantità di dati necessaria affinchè i due nodi siano in grado 
+    di stabilire una Security Association (SA).
 \end{itemize}
 
 Ora riportiamo i grafici
