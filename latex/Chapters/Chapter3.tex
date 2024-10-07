@@ -4,9 +4,9 @@
 
 \label{Chapter3} % Change X to a consecutive number; for referencing this chapter elsewhere, use \ref{ChapterX}
 
-\textit{In questo capitolo facciamo un introduzione su quelloo he è lo scenario che stiamo considerando per il nostro lavoro, ovvero 
-quello delle comunicazioni satellitare e di quali sono le attuali tecnologie utilizzate per realizzarle.}
-\todo{Riformula meglio}
+\textit{In questo capitolo facciamo un introduzione su quello che è lo scenario che stiamo considerando per il nostro lavoro: 
+quello delle comunicazioni satellitare. Vediamo nel dettaglio quali sfide introduce, le tecnologie utilizzate 
+e come affrontare le possibile problematiche a causa di applicare la PQC.}
 
 %----------------------------------------------------------------------------------------
 %	SECTION 1
@@ -17,7 +17,7 @@ quello delle comunicazioni satellitare e di quali sono le attuali tecnologie uti
 
 Le comunicazioni satellitari sono fondamentali per le infrastrutture moderne, poichè abilitano una vasta gamma di servizi.
 Negli ultimi decenni, con l'aumento della domanda di connettività globale e l'espansione delle reti di comunicazione, i satelliti sono diventati strumenti essenziali per garantire una copertura estesa.
-L'emergere delle costellazioni di satelliti in orbita bassa (LEO - Low Earth Orbit) sta cambiando il paradigma delle comunicazioni satellitari, offrendo vantaggi significativi rispetto ai satelliti geostazionari (GEO), un confronto tra la differenza di distanze è mostrato in \textit{Figura \ref{fig:orbite}}. 
+L'emergere delle costellazioni di satelliti in orbita bassa (LEO - Low Earth Orbit) sta cambiando il paradigma delle comunicazioni satellitari, offrendo vantaggi significativi rispetto ai satelliti geostazionari (GEO), un confronto tra le due orbite è mostrato in \textit{Figura \ref{fig:orbite}}. 
 %Mentre i satelliti GEO forniscono una copertura stabile, i satelliti LEO consentono Round Time Trip (RTT) notevolmente ridotti e una maggiore flessibilità, rendendoli ideali per applicazioni ad alta velocità come la trasmissione dati in tempo reale e la connettività Internet globale.
 \todo{Scrivere meglio questa parte finale}
 Questo cambio di paradigma insieme al quantum computer hanno portato diversi enti, tra cui l'Agenzia Spaziale Europea (ESA), ad affrontare nuove sfide.
@@ -66,7 +66,7 @@ Tra i principali vincoli per l'hardware satellitare troviamo:
 
 \noindent
 L'hardware limitato ha un impatto diretto sullo sviluppo del software per i satelliti. 
-Rispetto al un contesto terrestre, dove le risorse computazionali sono abbondanti, il software per i satelliti deve essere ottimizzato per funzionare su processori con bassa potenza di calcolo, limitato parallelismo e memoria ridotta. 
+Rispetto al un contesto terrestre, dove le risorse computazionali sono abbondanti, il software per i satelliti deve essere ottimizzato per funzionare su processori con bassa potenza di calcolo e memoria ridotta. 
 Le principali sfide per gli sviluppatori sono:
 
 \begin{itemize}
@@ -76,8 +76,12 @@ Le principali sfide per gli sviluppatori sono:
 \end{itemize}
 
 \noindent
-Particolare attenzione va posta sulle implementazinoni crittografiche, dato che in questo contesto è essenziale riuscire a bilanciare sicurezza e prestazioni
-Occorre ridurre al minimo l'impatto sulle risorse in modo tale che gli algoritmi di crittografia non possano compromettere l'efficienza operativa del satellite.
+È fondamentale prestare particolare attenzione alle implementazioni 
+crittogra\-fiche dato che in contesto come questo, risulta cruciale trovare un equilibrio tra
+sicurezza e prestazioni. Da un lato, è necessario proteggere le comunicazioni
+utilizzando algoritmi crittografici complessi; dall'altro, è essenziale
+garantire che le operazioni eseguite non compromettano l'operatività del
+satellite.
 
 \subsection{Stato Attuale}
 
@@ -98,30 +102,49 @@ Il sistema operativo utilizzato in queste applicazioni è RTEMS (Real-Time Execu
 %	SECTION 2
 %-----------------------------------
 \subsection{Sfide}
-\todo{Scrivere bene quelle che sono le problematiche e come intendiamo affrontarle}
 \noindent
 Per rendere le comunicazioni satellitari sicure ad attacchi Qauntum occorre adottare algoritmi più complessi.
 Questi utilimi, tuttavia, oltre a richiedere più memoria per la gestione delle chiavi,
 comportano un incremento significativo del carico di calcolo. Le sfide da affrontare sono:
 
 \begin{itemize}
-    \item  Aumento complessità computazionale: l'incremento delle dimensioni delle chiavi e della complessità degli algoritmi portano a un aumento del carico.
-    computazionale. Questo impone vincoli importanti su sistemi già limitati in termini di potenza computazionale, come i satelliti. 
+    \item  Aumento complessità computazionale: l'incremento delle dimensioni delle chiavi e della complessità degli algoritmi portano a un aumento del carico computazionale. Aggiungendo ulteriori vincoli su sistemi già limitati. 
     \item Incremento della larghezza di banda necessaria: oltre all'aumento di carico si ha anche magiore utilizzo della larghezza di banda, che in comunicazioni satellitari risuta già limitata.
-    \item Compatibilità retroattiva: compatibilità con i sistemi esistenti. Tramite l'utiizzo di soluzioni ibride, dove algoritmi classici convivono con quelli post-quantum.
+    \item Compatibilità retroattiva: occorre adottare soluzioni ibride, in cui
+    algo\-ritmi crittografici classici coesistono con quelli post-quantum. Questo a 
+    causa dell'eterogeneità delle capacità dei satelliti in orbita.
 \end{itemize}
 
 \section{Benchmarking}
 
-Per determinare se è possibile applicare algoritmi di PQC nel contesto satel\-litare occorre capire quale è il loro impatto sui protocolli di comunicazione.
-Prima lo facciamo nel caso desktop rispetto a quella di quelli classici per 
-vederne le differenze, se queste sono molto evidenti già nel caso simulato allora non ha neanche senso andarle a considerare in un'ambiente
-ancora più limitato.
+Per valutare l'applicabilità degli algoritmi di PQC
+nel contesto satellitare, è fondamentale comprendere il loro impatto sui
+protocolli di comunicazione. Inizialmente, analizzeremo tali algoritmi in un
+ambiente desktop confrontan\-doli con quelli classici per evidenziare eventuali
+differenze. Se le discrepanze risultano già significative nel contesto simulato,
+sarà poco sensato considerarli in un ambiente ancora più limitato.
+
 
 \subsection{Ambiente}
 
-L'ambiente di test, descritto in \textit{Tabella \ref{tab:env}}, è stato progettato in modo da isolare i singoli servizi all'interno di
-container, facilitando l'analisi del carico e delle risorse consumate da ciascuno di questi.
+\begin{comment}
+    L'ambiente di test, descritto in \textit{Tabella \ref{tab:env}}, è stato progettato in modo da isolare i singoli servizi all'interno di
+    container, facilitando l'analisi del carico e delle risorse consumate da ciascuno di questi. 
+\end{comment}
+
+Il protocollo che consideriamo è IPsec, con un focus particolare sulla sua
+implementazione in StrongSwan. Questa scelta è motivata dal fatto che StrongSwan
+opera a un livello più basso dello stack TCP/IP, risultando così uno dei
+protocolli più diffusi. L'implementazione delle primitive post-quantum è fornita dalla libreria \texttt{liboqs}. 
+Questa fa parte del progetto open-source \textit{OpenQuantumSafe} (OQS).
+Il quale a rendere disponibile l'infrastruttura crittografica necessaria per proteggere i sistemi informatici
+dall'avvento dei computer quantistici. L'obiet\-tivo del progetto è quello di fornire:
+
+\begin{itemize}
+    \item API standardizzate per supportare lo scambio chiavi e la firma digitale. 
+    \item Modularità, facilitando l'aggiunta di nuovi algoritmi. 
+    \item Prestazioni ottimizzate per diverse architetture hardware.
+\end{itemize}
 
 
 \begin{table}[htbp] 
@@ -148,21 +171,11 @@ container, facilitando l'analisi del carico e delle risorse consumate da ciascun
     \label{tab:env}
 \end{table}
 
-\noindent
-La libreria \texttt{liboqs} fa parte del progetto open-source \textit{OpenQuantumSafe} (OQS).
-Il quale a rendere disponibile l'infrastruttura crittografica necessaria per proteggere i sistemi informatici
-dall'avvento dei computer quantistici. L'obiet\-tivo del progetto è quello di fornire:
 
-\begin{itemize}
-    \item API standardizzate per supportare lo scambio chiavi e la firma digitale. 
-    \item Modularità, facilitando l'aggiunta di nuovi algoritmi. 
-    \item Prestazioni ottimizzate per diverse architetture hardware.
-\end{itemize}
 
 \noindent
 Si tratta di una raccolta di implementazioni di algoritmi crittografici post-quantum, KEM e SIG, e strumenti per integrarli in protocolli di sicurezza esistenti per sperimentare e testare il loro impatto.
-La versione di Strongswan che andiamo considerare ha integrato al suo interno la libreria e quindi ci consente di vedere 
-gli effetti di quesi algoritmi sul protocollo IKEv2.
+In \textit{Tabelle \ref{tab:env}} è presente una descrizione dettagliata dell'ambiente utilizzato per fare i test.
 
 
 \subsection{Metodologia}
@@ -170,8 +183,6 @@ gli effetti di quesi algoritmi sul protocollo IKEv2.
 Per ragioni progettuali e di portabilità del codice, il servizio Strongswan è stato 
 containerizzato tramite l'utilizzo di Docker. Ciò consente di avere due istanze dello stesso
 servizio in esecuzione contemporaneamente che comunicano attaverso un'interfaccia virtuale. 
-La gestione di queste istanze avviene tramite \texttt{docker-compose}, una rappresentazione
-logica è la seguente.
 
 \begin{center}
     \begin{verbatim}
@@ -192,9 +203,9 @@ In secondo luogo siamo andati a definire quali sono le configurazioni da confron
         \texttt{<ENCR>\text{-}<INTEG>\text{-}<KEM>}
     \end{center}
 
-    \item \textbf{Authentication Method}: dato che stiamo considerando algoritmi post-quantum di firma
-    utilizziamo quella mediante certificati. Quindi per ogni schema di firma andiamo a definire un root certificate
-    ed uno per ogni entità.
+    \item \textbf{Authentication Method}: sono supportati diverse modalità di autentica\-zione, tuttavia noi vogliamo vedere
+    come si comportano gli schemi di firma post-quantum. Per questo motivo utilizzeremo l'autenticazione mediante 
+    certificati. \todo{rimandare in appendice per il concetto di chain e root}
 \end{itemize}
 
 \noindent
@@ -252,13 +263,64 @@ graduale verso l'utilizzo esclusivo di tecnologie quantistiche.
     \label{tab:cipher_suites} 
 \end{table}
 
+
 \noindent
+Il testing viene realizzato attraverso uno script Bash. Nella Figura 3.2 è
+illustrata la struttura dei file necessari per automatizzare l'intero processo,
+consentendo così un'operazione completamente "zero-touch", che riduce al
+minimo l'intervento manuale.
+Tra questi abbiamo:
+
+\todo{dire di fare riferimento in appendice?}
+
+\begin{itemize}
+    \item \texttt{Dockerfile}: a partire da un'immagine Ubuntu si installa il servizio StrongSwan e si integra la libreria liboqs.
+    \item \texttt{docker-compose}: consente di orchestrare i due container, in cui si specifi\-cano volumi e parametri di connessione tra i due.
+\end{itemize}
+\noindent
+Ad ogni container è associato a un volume, identificato con il proprio
+nome, che contiene le configurazioni specifiche (connessioni e certificati) per il daemon.
+Questa struttura facilita la modifica e il testing delle diverse configu\-razioni
+senza influenzare l'altro container, contribuendo a un ambiente di test più
+controllato e flessibile.
+
+\noindent
+Per automatizzare il processo di testing e garantire un'esecuzione efficiente, è
+stato sviluppato uno script in Bash che gestisce l'intero flusso operativo.
+Questo script si basa esclusivamente su utility integrate di Linux, eliminando
+la necessità di installare software aggiuntivo. Esso non solo avvia i container
+e configura i parametri necessari, ma si occupa anche della raccolta e
+dell'analisi dei risultati. In \textit{Figura \ref{fig:flow}} è riportato il suo diagramma di flusso
+in particolare le principali fasi.
+\todo{dire di fare riferimento all'appendice per una descrizione dettagliata}
+\todo{descrivere quelli che sono i principali tool utilizzati?}
 
 
+\begin{figure}
+    \dirtree{% 
+    .1 /. 
+    .2 \textcolor{blue}{carol}. 
+    .3 \textcolor{blue}{conn}. 
+    .3 swanctl.conf. 
+    .3 \textcolor{blue}{x509}. 
+    .3 \textcolor{blue}{x509ca}. 
+    .2 \textcolor{green!80}{docker-compose.yml}. 
+    .2 Dockerfile. 
+    .2 \textcolor{blue}{moon}. 
+    .3 \textcolor{blue}{conn}. 
+    .3 swanctl.conf. 
+    .3 \textcolor{blue}{x509}. 
+    .3 \textcolor{blue}{x509ca}. 
+    .2 strongswan.conf. 
+    .2 \textcolor{green!90}{strongswan.sh}. 
+    }
+    \caption{Struttura delle directory}
+    \label{fig:tree}
+\end{figure}
 
 \begin{figure}[h!]
     \centering
-    \begin{tikzpicture}[node distance=2cm]
+    \begin{tikzpicture}[node distance=2cm, scale=0.8]
         % Definizione dei blocchi 
         \tikzset{
             customnode/.style={rectangle, draw, minimum width=3cm, minimum height=1cm, inner sep=5pt},
@@ -289,28 +351,18 @@ graduale verso l'utilizzo esclusivo di tecnologie quantistiche.
     \label{fig:flow}
 \end{figure}
 
-\noindent
-A questo punto devo andare a parlare della parte dello script
-
-\begin{comment}
-    Metriche utilizzate (Throughput, Tempo totale di esecuzione)
-    Come ho misurato le performance
-    
-\end{comment}
-
-
-\newpage
-
 \subsection{Risutlati}
 
-Le metriche di maggiore interesse per il nostro studio sono quelle che riguardano, il tempo complessivo per stabilire la SA. 
-Non ci interessa il tempo di elaborazione del singolo algoritmo, poichè queste informazioni sono già fornite in maniera esaustiva
-dalla libreria openquantumsafe e inoltre questi tempi sono trascurabili rispetto all'RTT.
+Le metriche di maggiore interesse, per il nostro studio, sono:
 
-Confrontare nella fase auth l'utilizzo di schemi classici rispetto a quelli quantum
+\begin{itemize}
+    \item \textit{Tempo Complessivo} per stabilire la SA tra i due, il tempo di elabora\-zione del singolo algoritmo non ci interessa dato che ampiamente descritte
+    dalla libreria openquantumsafe.   
+    \item \textit{Packet Size} che rappresenta la quantità di dati scambiati
+    tra i due nodi necessari per stabilire una Security Association (SA)
+\end{itemize}
 
-
-E il numero di byte che occorre scambiarsi per generare la SA.
+Ora riportiamo i grafici
 
 \todo{grafico riassuntivo che riporta il confronto tra le varie configurazioni, uno per i tempi e uno per i pacchetti}
 
@@ -334,6 +386,8 @@ E il numero di byte che occorre scambiarsi per generare la SA.
     \caption{Esempio di istogramma con dati fittizi.} 
 \end{figure}
 
+
+\newpage
 \section{Tuttavia}
 
 Notiamo che non ci sono enormi differenze in termini di tempi ma è presente un 

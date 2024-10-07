@@ -1,12 +1,8 @@
 % Appendix A
 
-\chapter{IKEv2 Notation} % Main appendix title
+\chapter{Tecnico} % Main appendix title
 
 \label{AppendixA} % For referencing this appendix elsewhere, use \ref{AppendixA}
-
-Riportare i vari approfondimenti riguardanti IKE
-
-per esempio come vengono generate le varie chiavi e il significato delle informazioni presenti tra i messaggi
 
 
 \subsection{Authentication}
@@ -73,44 +69,115 @@ Dunque può contenere molteplici proposte, le quali devono essere ordinate per p
 
 \newpage
 
-\begin{lstlisting}
+\section{Docker}
+
+Il dockerfile in cui andiamo a containerizzare il servizio è quello in, riferimento al file.
+A partire da un'immagine ubuntu andiamo ad installare tutte le utility necessarie, dopodichè 
+si scarica il sorgenti di oqs e si compila con i parametri specificati.
+Si fa la stessa cosa per strongswan e in fase di confiugrazione si specificano i parametri.
+Infine si fa un clean-up del sistema dalle dipendenze necessarie solo per la compilazione.
+
+\begin{lstlisting}[language=Dockerfile]
+
+FROM ubuntu:22.04
+RUN DEV_PACKAGES="wget unzip bzip2 make gcc libssl-dev cmake ninja-build"
+RUN apt-get update 
+    && apt-get install -y iproute2 iputils-ping nano $DEV_PACKAGES 
+    && mkdir /liboqs && cd /liboqs 
+    && wget linksourcecodeliboqs\$LIBOQS\_VERSION.zip 
+    && unzip $LIBOQS_VERSION.zip && cd liboqs-$LIBOQS_VERSION 
+    && mkdir build && cd build &&
+    && cmake -GNinja -DOQS_USE_OPENSSL=ON \
+        -DBUILD_SHARED_LIBS=ON \
+        -DCMAKE_INSTALL_PREFIX=/usr \
+        -DCMAKE_BUILD_TYPE=Release \
+        -DOQS_BUILD_ONLY_LIB=ON .. 
+    && ninja && ninja install 
+    && cd / && rm -R /liboqs 
+    && mkdir /strongswan-build && cd /strongswan-build 
+    && wget linksourcecode/strongswan-$VERSION.tar.bz2 
+    && tar xfj strongswan-$VERSION.tar.bz2 && cd strongswan-$VERSION 
+    && ./configure --prefix=/usr
+        --sysconfdir=/etc 
+        --disable-ikev1 
+        --enable-frodo 
+        --enable-oqs
+        --enable-silent-rules 
+    && make all && make install 
+    && cd / && rm -R strongswan-build 
+    && ln -s/usr/libexec/ipsec/charon charon 
+    && apt-get -y remove \$DEV\_PACKAGES 
+    && apt-get -y autoremove && apt-get clean 
+    && rm -rf /var/lib/apt/lists/*
+EXPOSE 500 4500
+ENTRYPOINT ["./charon" ]
+\end{lstlisting}
+
+\noindent
+Le opzioni \texttt{cap\_add} sono utilizzate per aggiungere capacità specifiche ai container
+Docker, consentendo loro di eseguire operazioni che normalmente richiederebbero
+privilegi di root. Queelli che servono per il nostr setup sono:
+
+\begin{itemize}
+    \item \texttt{NET\_ADMIN} consente al processo all'interno del
+    container di eseguire operazioni di amministrazione della rete. 
+    Fondamentale per configurare le interfacce di rete e gestire il routing e i
+    firewall, operazioni chiave per VPN e IPsec.
+    \item \texttt{SYS\_MODULE} consente di caricare e scaricare moduli
+    del kernel. Fonda\-mentale per caricare moduli del kernel per supportare 
+    funzionalità IPsec che non sono già caricate.
+    \item \texttt{SYS\_ADMIN} è una delle capacità più potenti e può
+    consentire una vasta gamma di operazioni di amministrazione del sistema.
+
+\end{itemize}
+
+\begin{lstlisting}[style=yaml]
     services: 
         moon: 
             build: ./ 
-            container\_name: moon 
-            cap\_add: 
-                - NET\_ADMIN 
-                - SYS\_ADMIN 
-                - SYS\_MODULE 
-            stdin\_open: true 
-            tty: true 
+            container_name: moon 
+            cap_add: 
+                - NET_ADMIN 
+                - SYS_ADMIN 
+                - SYS_MODULE 
             volumes: 
                 - ./moon:/etc/swanctl 
                 - ./strongswan.conf:/etc/strongswan.conf 
-            networks: 
-                internet:
-                    ipv4\_address: 192.168.0.2 
-                intranet: 
-                    ipv4\_address: 10.1.0.2 
         
         carol: 
             build: ./ 
-            container\_name: carol 
-            depends\_on: 
+            container_name: carol 
+            depends_on: 
                 - moon 
-            cap\_add: 
-                - NET\_ADMIN 
-                - SYS\_ADMIN 
-                - SYS\_MODULE 
-            stdin\_open: true 
-            tty: true 
+            cap_add: 
+                - NET_ADMIN 
+                - SYS_ADMIN 
+                - SYS_MODULE 
             volumes: 
                 - ./carol:/etc/swanctl 
                 - ./strongswan.conf:/etc/strongswan.conf 
-            networks: 
-                internet:
-                    ipv4\_address: 192.168.0.3
     
-    networks: internet: ipam: driver: default config: - subnet: 192.168.0.0/24
-    intranet: ipam: driver: default config: - subnet: 10.1.0.0/16
 \end{lstlisting}
+
+\section{Certificati}
+
+Strongswan mette a disposizione un'utility \texttt{pki} per la gestione della public key infrastrucutre.
+Tramite questa utility siamo andati a generare i certificati che serviranno poi per la fase di
+mutua autenticazione tra i due peer.
+\todo{Vai a vedere su E14 per le dimensioni}
+Andiamo a confrontarne la dimensione:
+\begin{table}[h]
+    \centering
+    \begin{tabular}{lcc}
+        \toprule
+        \textbf{Schema} & \textbf{Chiave private} & \textbf{Certificato} \\
+        \midrule
+        \texttt{ECDSA} & 227 & 530 \\
+        \texttt{dilithium2} & 5.3k & 5.4k\\
+        \texttt{dilithium5} & 5.6k & 4.6k\\
+    \end{tabular}
+\end{table}
+    
+Riportare i comandi per generare i certificati e la firma del CA su quelli dei peer
+Spiegare che più la catena di certificati diventa lunga più è lungo il processo di autenticazione
+e maggiori saranno le dimensioni dei certificati

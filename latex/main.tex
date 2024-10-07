@@ -36,6 +36,8 @@ headsepline, % Uncomment to get a line under the header
 \usepackage{array} 
 \usepackage{multirow}
 \usepackage{pgfplots}
+\usepackage{dirtree}
+\usepackage{tcolorbox}
 
 \lstset{
 language=C, 
@@ -54,6 +56,35 @@ breaklines=true, % Interruzione automatica delle linee
 morekeywords={include,define}, % Aggiungi le direttive al keyword list
 morekeywords=[2]{print},
 morekeywords=[3]{return, int, void} 
+}
+
+\lstdefinestyle{yaml}{ 
+	basicstyle=\ttfamily\small, 
+	columns=fullflexible,
+	keepspaces=true, 
+	showstringspaces=false, 
+	commentstyle=\color{gray},
+	stringstyle=\color{orange}, 
+	keywordstyle=\color{blue}, 
+	morekeywords={version,services, cap\_add, volumes, networks, moon:, carol:, build, container\_name, depends\_on},
+	numbers=none
+}
+
+\lstdefinelanguage{Dockerfile}{ 
+	morekeywords={ FROM, RUN, CMD, LABEL, MAINTAINER,
+EXPOSE, ENV, ADD, COPY, ENTRYPOINT, VOLUME, USER, WORKDIR, ARG, ONBUILD,
+STOPSIGNAL, HEALTHCHECK, SHELL }, 
+	sensitive=true, 
+	morecomment=[l]{\#},
+	morestring=[b]", 
+	morestring=[b]',
+	keywordstyle=\color{blue}, 
+	commentstyle=\color{gray}, 
+	stringstyle=\color{orange}, 
+	basicstyle=\ttfamily\footnotesize, 
+	breaklines=true,
+	numbers=none, 
+	frame=none
 }
 
 \definecolor{mare}{HTML}{0495ce}
@@ -219,8 +250,9 @@ The acknowledgments and the people to thank go here, don't forget to include you
 \textbf{KE} & \textbf{K}ey \textbf{E}xchange \\
 \textbf{PQ} & \textbf{P}ost \textbf{Q}uantum \\
 	
-\textbf{IKE} & \textbf{I}nternet \textbf{K}ey \textbf{E}xchange\\
 \textbf{KEM} & \textbf{K}ey \textbf{E}ncapsulation \textbf{M}echanism \\
+\textbf{SIG} & \textbf{SIG}nature Mechanism \\
+\textbf{IKE} & \textbf{I}nternet \textbf{K}ey \textbf{E}xchange\\
 \textbf{PRF} & \textbf{P}seudo \textbf{R}andom \textbf{F}unction \\
 \textbf{MTU} & \textbf{M}aximum \textbf{T}ransmission \textbf{U}nit \\
 \textbf{ISP} & \textbf{I}nternet \textbf{S}ervice \textbf{P}rovider \\
