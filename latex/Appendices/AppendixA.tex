@@ -185,3 +185,26 @@ Riportare i comandi per generare i certificati e la firma del CA su quelli dei p
 Spiegare che più la catena di certificati diventa lunga più è lungo il processo di autenticazione
 e maggiori saranno le dimensioni dei certificati
 
+
+Per generare una certificato di chiave pubblico Root utilizzare i seguenti comandi:
+\begin{lstlisting}
+    pki --gen --type falcon1024 --outform pem > CA.type.pem 
+    pki --self --type priv --in CA.type.pem 
+        --ca 
+        --lifetime 3652 
+        --dn "CN=CA-Dilithium5"
+        --outform pem > CA.type.cert.pem
+\end{lstlisting}
+
+Per utilizzarlo per firmare la chiave pubblica di qualcun'altro utilizzare il 
+seguente comando:
+\begin{lstlisting}
+    pki --issue 
+        --cacert CA.dilithium5.cert.pem 
+        --cakey CA.dilithium5.pem 
+        --type priv --in Moon.dilithium5.pem 
+        --lifetime 1461 
+        --dn "CN=moon.dilithium5"
+        --outform pem > Moon.dilithium5.cert.pem
+\end{lstlisting}
+

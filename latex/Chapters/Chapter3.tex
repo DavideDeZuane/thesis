@@ -351,71 +351,98 @@ in particolare le principali fasi.
 
 \subsection{Risutlati}
 
-Le metriche di maggiore interesse, per il nostro studio, sono:
+Le principali metriche di interesse per il nostro studio sono state selezionate
+con l'obiettivo di valutare l'overhead introdotto dall'adozione
+delle nuove primitive crittografiche influenzi aspetti chiave come l'efficienza
+della comuni\-cazione e la sicurezza. Queste sono:
 
 \begin{itemize}
-    \item \textit{Tempo Complessivo} per stabilire la SA tra i due, il tempo di elabora\-zione del singolo algoritmo non ci interessa poichè ampiamente descritte
+    \item \textit{Tempo Complessivo} per stabilire la SA tra i due, il tempo di elabora\-zione del singolo algoritmo non ci interessa poichè ampiamente descritto
     dalla libreria openquantumsafe.   
     \item \textit{Packet Size} che rappresenta la quantità di dati necessaria affinchè i due nodi siano in grado 
     di stabilire una Security Association (SA).
 \end{itemize}
 
-Ora riportiamo i grafici
+\noindent
+In \textit{Tabella \ref{tab:result}} sono riportati i risultati delle simulazioni per ciascuna
+configu\-razione. Abbiamo preso in esame le principali metriche per ogni fase di
+scambio del protocollo, permettendo così un confronto più dettagliato tra le
+varie configurazioni. Inoltre, per ciascuno scambio è stata fatta una
+distinzione tra le operazioni dell'initiator e quelle del responder.
 
-\todo{grafico riassuntivo che riporta il confronto tra le varie configurazioni, uno per i tempi e uno per i pacchetti}
+\noindent
+Le metriche riportate sono state ottenute iterando il processo di connessione 50
+volte, mediando così i risultati per un'analisi più accurata delle prestazioni.\\
 
-\newpage
+\noindent
+Nell'analisi che segue, lo scambio intermediate, sebbene riportato separa\-tamente
+nella tabella, è considerato parte integrante del processo di \texttt{INIT}. Infatti,
+questo scambio viene utilizzato sia per trasmettere dati che non rientrano nel
+primo scambio, sia per effettuare un KEM post-quantum, il quale è comunque parte
+del processo di \texttt{INIT}.\\
 
 \begin{table}[h!] 
     \centering 
-    \begin{tabular}{clcccc} 
+    \begin{tabular}{clrrc} 
         \toprule
         \multirow{2}{*}{\textbf{Connessione}} & \multirow{2}{*}{\textbf{Scambio}} & \multicolumn{2}{c}{\textbf{Dati Trasferiti (Byte)}} & \multirow{2}{*}{\textbf{Tempo (ms)}} \\
         \cline{3-4} & & \textbf{Inviati} & \textbf{Ricevuti} \\
         \toprule
-        \multirow{3}{*}{A1} & \texttt{INIT} & 326 & 419 & 1.214 \\ 
+        \multirow{3}{*}{A1} & \texttt{INIT} & 326 & 334 & 1.102 \\ 
                             & \texttt{INTE} & - & - & - \\
-                            & \texttt{AUTH} &  632 & 517 & 0.577 \\ 
+                            & \texttt{AUTH} &  632 & 570 & 0.977 \\ 
         \hline
-        \multirow{3}{*}{B1} & \texttt{INIT} & 1062 & 1038 & 0.532 \\ 
+        \multirow{3}{*}{B1} & \texttt{INIT} & 1062 & 1038 & 0.982 \\ 
                             & \texttt{INTE} & - & - & - \\
-                            & \texttt{AUTH} & 6665 & 6663 & 0.943 \\ 
+                            & \texttt{AUTH} & 6665 & 6663 & 1.1583 \\ 
         \hline
         \multirow{3}{*}{C1} & \texttt{INIT} & 342 & 350 & 0.709 \\ 
                             & \texttt{INTE} & 911 & 879 & 0.912 \\
                             & \texttt{AUTH} & 2623 & 2591 & 1.000 \\ 
         \hline
-        \multirow{3}{*}{A3} & \texttt{INIT} & 358 & 366 & 1.482 \\ 
+        \multirow{3}{*}{A3} & \texttt{INIT} & 358 & 366 & 1.407 \\ 
                             & \texttt{INTE} & - & - & - \\
-                            & \texttt{AUTH} & 638 & 578 & 2.486 \\ 
+                            & \texttt{AUTH} & 638 & 578 & 1.486 \\ 
         \hline
-        \multirow{3}{*}{B3} & \texttt{INIT} & 1446 & 1358 & 0.867 \\ 
+        \multirow{3}{*}{B3} & \texttt{INIT} & 1446 & 1358 & 0.767 \\ 
                             & \texttt{INTE} & - & - & - \\
-                            & \texttt{AUTH} & 9210 & 9180 & 1.262 \\ 
+                            & \texttt{AUTH} & 9210 & 9180 & 1.402 \\ 
         \hline
         \multirow{3}{*}{C3} & \texttt{INIT} & 374 & 382 & 1.642 \\ 
                             & \texttt{INTE} & 1303 & 1207 & 2.488 \\
-                            & \texttt{AUTH} & 4845 & 4831 & 1.262 \\ 
+                            & \texttt{AUTH} & 4845 & 4831 & 1.210 \\ 
         \hline
-        \multirow{3}{*}{A5} & \texttt{INIT} & 349 & 402 & 0.891 \\ 
+        \multirow{3}{*}{A5} & \texttt{INIT} & 394 & 402 & 1.181 \\ 
                             & \texttt{INTE} & - & - & - \\
-                            & \texttt{AUTH} & 646 & 587 & 1.688 \\ 
+                            & \texttt{AUTH} & 646 & 587 & 1.805 \\ 
         \hline
         \multirow{3}{*}{B5} & \texttt{INIT} & 1514 & 1514 & 0.887 \\ 
                             & \texttt{INTE} & 350 & 358 & 1.672 \\
-                            & \texttt{AUTH} & 12501 & 12471 & 1.266 \\ 
+                            & \texttt{AUTH} & 12501 & 12471 & 1.303 \\ 
         \hline
         \multirow{3}{*}{C5} & \texttt{INIT} & 410 & 418 & 1.108 \\ 
                             & \texttt{INTE} & 1729 & 1729 & 1.672 \\
                             & \texttt{AUTH} & 4856 & 4832 & 1.622 \\ 
         \hline
     \end{tabular} 
-    \caption{Confronto tra le varie configurazioni} 
+    \caption{Tabella dei Risultati} 
     \label{tab:result}
         
 \end{table}
 
 
+\newpage 
+\subsubsection*{Packet Size}
+Dai grafici in \textit{Figura \ref{fig:packet_init} e \ref{fig:packet_auth}}, si nota subito come in fasi 
+di autenticazione gli schemi di firma PQ introducano un overhead significativo in termini di dimensione dei certificati 
+a causa della lunghezza delle chiavi. 
+Mentre nella fase di init l'incremento dovuto al quantum è significativo ma neanche troppo
+Oltre a questo c'è anche da considerare il numero di pacchetti necessari ad inviare questi dati, 
+dato che un pacchetto IP ha un Payload massimo pari a 1480, ovvero MTU-Payload, se quello che sto 
+trasmettendo eccede allora ho la frammentazione.
+
+
+
 \begin{figure}[h!] 
     \centering 
     \begin{tikzpicture} 
@@ -426,7 +453,7 @@ Ora riportiamo i grafici
             symbolic x coords={Classica, Quantum, Ibrida}, % etichette asse x 
             xtick=data,
             xlabel={},
-            ylabel={Dimensione Pacchetti (Byte)}, % Etichetta asse Y 
+            ylabel={Dimensione Pacchetti (KByte)}, % Etichetta asse Y 
             nodes near coords,
             bar width=28pt, % larghezza delle barre 
             enlarge x limits={abs=2.3cm}, % spazio tra i gruppi di barre 
@@ -435,16 +462,16 @@ Ora riportiamo i grafici
             grid=none,
             %axis line style=none,
     ] % Dati per configurazioni classiche 
-            \addplot coordinates {(Classica,745) (Quantum,2100) (Ibrida,2462)};  %coordinate per le configurazioni L1
+            \addplot coordinates {(Classica,0.660) (Quantum,2.100) (Ibrida,2.462)};  %coordinate per le configurazioni L1
             \addlegendentry{L1} % Dati per configurazioni post-quantum
-            \addplot coordinates {(Classica,724) (Quantum,3004) (Ibrida,3266)}; 
+            \addplot coordinates {(Classica,0.724) (Quantum,3.004) (Ibrida,3.266)}; 
             \addlegendentry{L3} % Dati per configurazioni post-quantum
-            \addplot coordinates {(Classica,751) (Quantum,3736) (Ibrida,4280)}; 
+            \addplot coordinates {(Classica,0.796) (Quantum,3.736) (Ibrida,4.280)}; 
             \addlegendentry{L5}
         \end{axis} 
     \end{tikzpicture} 
-    \caption{Dimensione dei pacchetti in Byte per \texttt{INIT}}
-    \label{fig:dimensioni_pacchetti} 
+    \caption{KByte totali per \texttt{INIT}}
+    \label{fig:packet_init} 
 \end{figure}
 
 \begin{figure}[h!] 
@@ -457,7 +484,54 @@ Ora riportiamo i grafici
             symbolic x coords={Classica, Quantum, Ibrida}, % etichette asse x 
             xtick=data,
             xlabel={},
-            ylabel={Dimensione Pacchetti (Byte)}, % Etichetta asse Y 
+            ylabel={Dimensione Pacchetti (KByte)}, % Etichetta asse Y 
+            nodes near coords,
+            bar width=28pt, % larghezza delle barre 
+            enlarge x limits={abs=2.3cm}, % spazio tra i gruppi di barre 
+            legend pos=north west, %
+            ymin=0, % limite inferiore asse Y 
+            grid=none,
+            yticklabel style={  /pgf/number format/fixed, 
+                                /pgf/number format/precision=3, }, 
+            scaled y ticks=false,
+            %axis line style=none,
+    ] % Dati per configurazioni classiche 
+            \addplot coordinates {(Classica,1.149) (Quantum,13.228) (Ibrida,5.214)};  %coordinate per le configurazioni L1
+            \addlegendentry{L1} % Dati per configurazioni post-quantum
+            \addplot coordinates {(Classica,1.216) (Quantum,18.390) (Ibrida,9.676)}; 
+            \addlegendentry{L3} % Dati per configurazioni post-quantum
+            \addplot coordinates {(Classica,1.233) (Quantum,24.972) (Ibrida,9.688)}; 
+            \addlegendentry{L5}
+        \end{axis} 
+    \end{tikzpicture} 
+    \caption {KByte totali per \texttt{AUTH}}
+    \label{fig:packet_auth} 
+\end{figure}
+
+\newpage
+\subsubsection*{Tempi}
+
+Notiamo che comunque la confiugrazione più lenta è quella Ibrida
+ma questo è normale dato che deve compiere due volte il processo di KEM.
+
+Mentre i tempi allungati per il quantum che altrimenti risulta molto veloce sono 
+dovuti in particolare alla frammentazione IP, che quindi richiede un riassemblaggio dei pacchetti.
+Continua a descrivere...
+Mentre in figura .. e .., riportiamo un confronto tra i tempi, che come possiamo osservare non si discostano molto 
+tra di loro.
+
+
+\begin{figure}[h!] 
+    \centering 
+    \begin{tikzpicture} 
+        \begin{axis}[ 
+            width=\textwidth,
+            height=8cm, 
+            ybar,
+            symbolic x coords={Classica, Quantum, Ibrida}, % etichette asse x 
+            xtick=data,
+            xlabel={},
+            ylabel={Tempo (ms)}, % Etichetta asse Y 
             nodes near coords,
             bar width=28pt, % larghezza delle barre 
             enlarge x limits={abs=2.3cm}, % spazio tra i gruppi di barre 
@@ -466,23 +540,59 @@ Ora riportiamo i grafici
             grid=none,
             %axis line style=none,
     ] % Dati per configurazioni classiche 
-            \addplot coordinates {(Classica,1149) (Quantum,13228) (Ibrida,5214)};  %coordinate per le configurazioni L1
+            \addplot coordinates {(Classica,0.966) (Quantum,0.984) (Ibrida,1.621)};  %coordinate per le configurazioni L1
             \addlegendentry{L1} % Dati per configurazioni post-quantum
-            \addplot coordinates {(Classica,1216) (Quantum,18390) (Ibrida,9676)}; 
+            \addplot coordinates {(Classica,1.407) (Quantum,0.765) (Ibrida,4.230)}; 
             \addlegendentry{L3} % Dati per configurazioni post-quantum
-            \addplot coordinates {(Classica,1233) (Quantum,24972) (Ibrida,9688)}; 
+            \addplot coordinates {(Classica,1.175) (Quantum,2.559) (Ibrida,2.780)}; 
             \addlegendentry{L5}
         \end{axis} 
     \end{tikzpicture} 
-    \caption{Dimensione dei pacchetti in Byte per \texttt{AUTH}}
-    \label{fig:dimensioni_pacchetti} 
+    \caption{ms totali per \texttt{INIT}}
+    \label{fig:tempi_init} 
+\end{figure}
+
+\begin{figure}[h!] 
+    \centering 
+    \begin{tikzpicture} 
+        \begin{axis}[ 
+            width=\textwidth,
+            height=8cm, 
+            ybar,
+            symbolic x coords={Classica, Quantum, Ibrida}, % etichette asse x 
+            xtick=data,
+            xlabel={},
+            ylabel={Dimensione Pacchetti (KByte)}, % Etichetta asse Y 
+            nodes near coords,
+            bar width=28pt, % larghezza delle barre 
+            enlarge x limits={abs=2.3cm}, % spazio tra i gruppi di barre 
+            legend style={ at={(1.1,1)} },
+            %legend pos=north west, %
+            ymin=0, % limite inferiore asse Y 
+            grid=none,
+            yticklabel style={  /pgf/number format/fixed, 
+                                /pgf/number format/precision=3, }, 
+            scaled y ticks=false,
+            %axis line style=none,
+    ] % Dati per configurazioni classiche 
+            \addplot coordinates {(Classica,1.371) (Quantum,1.150) (Ibrida,1.000)};  %coordinate per le configurazioni L1
+            \addlegendentry{L1} % Dati per configurazioni post-quantum
+            \addplot coordinates {(Classica,1.486) (Quantum,1.395) (Ibrida,1.210)}; 
+            \addlegendentry{L3} % Dati per configurazioni post-quantum
+            \addplot coordinates {(Classica,1.804) (Quantum,1.300) (Ibrida,1.622)}; 
+            \addlegendentry{L5}
+        \end{axis} 
+    \end{tikzpicture} 
+    \caption {ms totali per \texttt{AUTH}}
+    \label{fig:tempi_auth} 
 \end{figure}
 
 
+\section{Osservazioni}
+Andiamo a fare il confronto tra l'incremento subito dall'INIT passando da classico a post quantum 
+quindi da DH a Kyber e facciamo stessa cosa per l'auth
 
-
-\section{Tuttavia}
-
+Per dire che in percentuale la fase di AUTH subisce un overhead molto importante
 Stiamo considerando StrongSwan come protocollo, un software noto per la sua
 flessibilità e per la disponibilità di numerosi plugin. Tuttavia, in un contesto
 limitato come quello dei satelliti, non ha senso portare con sé funzionalità
@@ -502,4 +612,5 @@ simili a quelli che si incontrano nello spazio. Tuttavia, va notato che
 attualmente non esistono implementazioni concrete di Minimal IKE\@. Pertanto,
 abbiamo intrapreso la creazione di una nostra implementazione, con l'obiettivo
 di fornire un punto di partenza per questo tipo di scenario.
+
 

@@ -14,8 +14,10 @@
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Orbite dei satelliti}}{22}{figure.caption.67}%
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Struttura delle directory}}{27}{figure.caption.83}%
 \contentsline {figure}{\numberline {3.3}{\ignorespaces Diagramma di flusso dello script}}{28}{figure.caption.84}%
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Dimensione dei pacchetti in Byte per \texttt {INIT}}}{30}{figure.caption.88}%
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Dimensione dei pacchetti in Byte per \texttt {AUTH}}}{30}{figure.caption.89}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces KByte totali per \texttt {INIT}}}{30}{figure.caption.88}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces KByte totali per \texttt {AUTH}}}{30}{figure.caption.89}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces ms totali per \texttt {INIT}}}{31}{figure.caption.91}%
+\contentsline {figure}{\numberline {3.7}{\ignorespaces ms totali per \texttt {AUTH}}}{31}{figure.caption.92}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Formato IKE Header}}{32}{figure.caption.100}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Formato IKE Header}}{34}{figure.caption.103}%
 \addvspace {10\p@ }

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Arch Linux) (preloaded format=pdflatex 2024.9.29)  7 OCT 2024 21:07
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Arch Linux) (preloaded format=pdflatex 2024.9.29)  8 OCT 2024 11:05
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1060,11 +1060,7 @@ Package csquotes Info: ... found 'babel' package.
 LaTeX Font Info:    Trying to load font information for T1+ppl on input line 136.
  (/usr/share/texmf-dist/tex/latex/psnfss/t1ppl.fd
 File: t1ppl.fd 2001/06/04 font definitions for T1/ppl.
-) (./main.aux (./Chapters/Chapter1.aux) (./Chapters/Chapter2.aux) (./Chapters/Chapter3.aux
-
-LaTeX Warning: Label `fig:dimensioni_pacchetti' multiply defined.
-
-) (./Chapters/Chapter4.aux) (./Appendices/AppendixA.aux))
+) (./main.aux (./Chapters/Chapter1.aux) (./Chapters/Chapter2.aux) (./Chapters/Chapter3.aux) (./Chapters/Chapter4.aux) (./Appendices/AppendixA.aux))
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 136.
@@ -1403,39 +1399,40 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
-Overfull \hbox (8.14473pt too wide) in paragraph at lines 298--300
+Overfull \hbox (8.14473pt too wide) in paragraph at lines 299--301
 []\T1/ppl/m/n/12 (-20) Gli schemi asimmetrici sono vulnerabili alla minaccia del quantum computer
  []
 
 
-Overfull \hbox (8.79105pt too wide) in paragraph at lines 301--304
+Overfull \hbox (8.79105pt too wide) in paragraph at lines 302--305
 []\T1/ppl/m/n/12 (-20) Per rispondere a questa minaccia emergente, si stanno sviluppando algoritmi
  []
 
+[9]
 
-LaTeX Warning: Marginpar on page 9 moved.
+LaTeX Warning: Marginpar on page 10 moved.
 
 
-LaTeX Warning: Marginpar on page 9 moved.
+LaTeX Warning: Marginpar on page 10 moved.
 
-[9] [10]
-Underfull \hbox (badness 10000) in paragraph at lines 343--349
+[10]
+Underfull \hbox (badness 10000) in paragraph at lines 346--352
 
  []
 
 Missing character: There is no ; in font nullfont!
 [11] [12]
-Overfull \hbox (3.29047pt too wide) in paragraph at lines 450--452
+Overfull \hbox (3.29047pt too wide) in paragraph at lines 453--455
 \T1/ppl/m/n/12 (-20) garantire la sicurezza è necessario che mantenga il contesto di ogni connessione,
  []
 
 
-Overfull \hbox (0.45348pt too wide) in paragraph at lines 470--471
+Overfull \hbox (0.45348pt too wide) in paragraph at lines 473--474
 []\T1/ppl/m/it/12 (-20) Protocol Identifier\T1/ppl/m/n/12 (-20) : determina il tipo di protezione da applicare ai pacchetti,
  []
 
 [13]
-Overfull \hbox (9.85863pt too wide) in paragraph at lines 498--502
+Overfull \hbox (9.85863pt too wide) in paragraph at lines 501--505
 \T1/ppl/m/n/12 (-20) Tuttavia queste SA come si configurano?. IPsec prevede tecniche di negoziazione
  []
 
@@ -1443,42 +1440,42 @@ Overfull \hbox (9.85863pt too wide) in paragraph at lines 498--502
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 
-Overfull \hbox (2.1064pt too wide) in paragraph at lines 571--580
+Overfull \hbox (2.1064pt too wide) in paragraph at lines 574--583
  [][] 
  []
 
 [15]
-Overfull \hbox (0.81104pt too wide) in paragraph at lines 596--605
+Overfull \hbox (0.81104pt too wide) in paragraph at lines 599--608
  [][] 
  []
 
 [16]
-Overfull \hbox (13.07326pt too wide) in paragraph at lines 618--620
+Overfull \hbox (13.07326pt too wide) in paragraph at lines 621--623
 []\T1/ppl/m/n/12 (-20) Per esempio nel caso di autenticazione tramite pubkey nella fase di [][][][][][]
  []
 
 
-Overfull \hbox (0.6pt too wide) in paragraph at lines 654--657
+Overfull \hbox (0.6pt too wide) in paragraph at lines 657--660
 []\T1/ppl/m/n/12 (-20) Per evitare che nel trasferimento di grandi dati ciò avvenga viene introdotto
  []
 
 
-Overfull \hbox (2.18152pt too wide) in paragraph at lines 654--657
+Overfull \hbox (2.18152pt too wide) in paragraph at lines 657--660
 \T1/ppl/m/n/12 (-20) dimensione dei dati da trasferire ecceda la dimensione massima che causerebbe
  []
 
 [17]
-Overfull \hbox (2.39633pt too wide) in paragraph at lines 681--684
+Overfull \hbox (2.39633pt too wide) in paragraph at lines 684--687
 \T1/ppl/m/n/12 (-20) pubbliche QC-resistant, tuttavia in generale può essere utilizzzato per trasferire
  []
 
 
-Overfull \hbox (10.23259pt too wide) in paragraph at lines 685--687
+Overfull \hbox (10.23259pt too wide) in paragraph at lines 688--690
 []\T1/ppl/m/n/12 (-20) Permette di realizzare Multiple Key Exchange Gli scambi di chiave aggiuntivi
  []
 
 
-Overfull \hbox (41.36018pt too wide) in paragraph at lines 696--697
+Overfull \hbox (41.36018pt too wide) in paragraph at lines 699--700
 []\T1/ppl/m/n/12 (-20) flag [][][][][][]: il peer dice di supportare la frammentazione
  []
 
@@ -1492,7 +1489,7 @@ Overfull \hbox (41.36018pt too wide) in paragraph at lines 696--697
 
 ]
 Chapter 3.
-<Figures/satellite.png, id=554, 385.44pt x 385.44pt>
+<Figures/satellite.png, id=558, 385.44pt x 385.44pt>
 File: Figures/satellite.png Graphic file (type png)
 <use Figures/satellite.png>
 Package pdftex.def Info: Figures/satellite.png  used on input line 44.
@@ -1501,7 +1498,7 @@ File: Figures/satellite.png Graphic file (type png)
 <use Figures/satellite.png>
 Package pdftex.def Info: Figures/satellite.png  used on input line 45.
 (pdftex.def)             Requested size: 28.45274pt x 28.448pt.
-<Figures/europe.png, id=555, 501.875pt x 501.875pt>
+<Figures/europe.png, id=559, 501.875pt x 501.875pt>
 File: Figures/europe.png Graphic file (type png)
 <use Figures/europe.png>
 Package pdftex.def Info: Figures/europe.png  used on input line 46.
@@ -1523,27 +1520,32 @@ LaTeX Warning: Marginpar on page 27 moved.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [27]
+Underfull \hbox (badness 10000) in paragraph at lines 373--376
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+ []
 
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+Underfull \hbox (badness 10000) in paragraph at lines 377--383
 
-[28]) [29] [30]
+ []
+
+[28] [29] [30]
+Overfull \hbox (35.96034pt too wide) in paragraph at lines 585--586
+ [][] 
+ []
+
+[31]) [32]
 \openout2 = `Chapters/Chapter4.aux'.
 
  (./Chapters/Chapter4.tex
 Chapter 4.
 1: section
-[31
+[33
 
 
 
 
-]) [32]
+]) [34]
 \openout2 = `Appendices/AppendixA.aux'.
 
  (./Appendices/AppendixA.tex
@@ -1563,12 +1565,12 @@ Overfull \hbox (8.21465pt too wide) in paragraph at lines 33--43
  []
 
 1: section
-[33
+[35
 
 
 
 
-] [34] [35] [36]) [37]
+] [36] [37] [38]) [39]
 
 LaTeX Warning: Empty bibliography on input line 326.
 
@@ -1577,29 +1579,25 @@ LaTeX Warning: Empty bibliography on input line 326.
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2020/03/25>
  ***********
-
-
-LaTeX Warning: There were multiply-defined labels.
-
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: ABE94F1E4232E3E213983CE53FE0AE2B;5092.
+(rerunfilecheck)             Checksum: 5C35975179C522F8FA1CF8AC0C4B8534;5118.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 60187 strings out of 476076
- 1427750 string characters out of 5793775
- 2247102 words of memory out of 5000000
- 80770 multiletter control sequences out of 15000+600000
+ 60264 strings out of 476076
+ 1428657 string characters out of 5793775
+ 2236870 words of memory out of 5000000
+ 80827 multiletter control sequences out of 15000+600000
  631524 words of font info for 369 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 100i,21n,101p,1886b,2320s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 100i,21n,101p,1886b,2326s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/mathpazo/fplmri.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfss1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb></usr/share/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/palatino/uplbi8a.pfb></usr/share/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on main.pdf (57 pages, 595972 bytes).
+Output written on main.pdf (59 pages, 604793 bytes).
 PDF statistics:
- 824 PDF objects out of 1000 (max. 8388607)
- 701 compressed objects within 8 object streams
- 236 named destinations out of 1000 (max. 500000)
+ 859 PDF objects out of 1000 (max. 8388607)
+ 734 compressed objects within 8 object streams
+ 256 named destinations out of 1000 (max. 500000)
  118304 words of extra memory for PDF output out of 128383 (max. 10000000)
 
