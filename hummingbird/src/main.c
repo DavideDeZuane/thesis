@@ -14,6 +14,7 @@
 #include <endian.h>
 #include <arpa/inet.h>
 #include <sched.h>
+#include <time.h>
 //librerie per dh
 #include <openssl/evp.h>
 #include <openssl/dh.h>
@@ -206,8 +207,8 @@ int main(void) {
     //la chiave privata non è necessario convertirla dato che possia
     EVP_PKEY_CTX_free(pctx);
 
-    size_t nonce_len = 240;  
-    uint8_t nonce[240];
+    size_t nonce_len = 36;  
+    uint8_t nonce[36];
     generate_nonce(nonce, nonce_len);
 
     PayloadHeader ni_header = {0};
@@ -222,31 +223,37 @@ int main(void) {
     size_t packet_len = 0;
     uint8_t *packet = calloc(packet_len,  sizeof(uint8_t));
     // questa parte di codice popola il buffer con tutti i payload necessari per l' SA_INIT
-    update_payload(PAYLOAD_TYPE_NONCE, &ni_header, &nonce, 240);
+    update_payload(PAYLOAD_TYPE_NONCE, &ni_header, &nonce, nonce_len);
     update_payload(PAYLOAD_TYPE_KE, &ke_header, &ke, sizeof(KeyExchange));
     update_payload(PAYLOAD_TYPE_SA, &sa_header, &proposal, sizeof(Proposal));
     generate_packet(&packet, &packet_len, &header);
+    
+    // prendere il tempo
+    struct timespec start, end;
+    double elapsed_time;
 
+    size_t max_response_len = 500;
+    uint8_t *response = calloc(max_response_len, sizeof(uint8_t));
+    struct sockaddr_in cliaddr;
+    socklen_t len = sizeof(cliaddr);
+    clock_gettime(CLOCK_REALTIME, &start);
     sendto(initiator.socketfd, packet, packet_len, 0, (struct sockaddr*)&responder.node, sizeof(responder.node));
 
+    /*
     printf("############################################################################################################################################\n");
     printf("PACCHETTO FINALE\n");
     printf("############################################################################################################################################\n");
     print_buffer(packet, packet_len);
     free(packet);
-
+    */
     //mettere questa come variabile di dimensione massima
-    size_t max_response_len = 500;
-    uint8_t *response = calloc(max_response_len, sizeof(uint8_t));
-    struct sockaddr_in cliaddr;
-    socklen_t len = sizeof(cliaddr);
 
-
-    printf("In ascolto su porta %d...\n", htons(initiator.node.sin_port));
+    //printf("In ascolto su porta %d...\n", htons(initiator.node.sin_port));
     // la recevfrom consente di specificare parametri extra inoltre come vaore di ritorno da la dimesione della risposta
     // dunque il buffer lo istanziamo a dimensione massimo poi quanto abbiamo ottenuto la dimensione effettiva che non è nota a priori
     // lo ridimensioniamo in modo tale da evitare spreco di memoria
     ssize_t n = recvfrom(initiator.socketfd, response, 1500, 0,  (struct sockaddr *)&cliaddr, &len );
+    clock_gettime(CLOCK_REALTIME, &end);
     if (n < 0) {
         perror("Errore nella ricezione dei dati");
     }
@@ -284,7 +291,11 @@ int main(void) {
 
     unsigned char* secret = derive_secret(pkey_local, peer);
     print_buffer(secret, 16);
-    
+
+    elapsed_time = (end.tv_sec - start.tv_sec) + (end.tv_nsec - start.tv_nsec) / 1e9;
+
+    printf("Tempo trascorso: %f secondi\n", elapsed_time);
+    /* 
     printf("############################################################################################################################################\n");
     printf("CHIAVI\n");
     printf("############################################################################################################################################\n");
@@ -294,7 +305,7 @@ int main(void) {
     print_buffer(ke.ke_data, 256);
     printf("Chiave Pubblica remota: \n");
     print_buffer(pub_key_peer_bytes->data+4, 256);
-    
+    */
     free(peer);
     free(lookup_table);
 

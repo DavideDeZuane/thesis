@@ -1,0 +1,19 @@
+# Ignora i file compilati LaTeX
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.synctex.gz
+*.toc
+
+# Ignora le cartelle generate dai compilatori LaTeX
+_build/
+auxiliary/
+output/
+
+benchmark/pq-openssl/certs
+
+# Ignora tutti i file contenenti chiavi e certificati
+*.pem
+*.crt
